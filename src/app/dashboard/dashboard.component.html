@@ -7,9 +7,13 @@
           <canvas *ngIf="card.id !== 'randomValues'" [attr.id]="card.id"></canvas>
           <div *ngIf="card.id === 'randomValues'">
             <ul class="ultimosValores">
-              <li *ngFor="let value of randomValues"><span class="label">{{ value.label }}:</span> {{ value.value }} {{ value.nuevo }}</li>
+              <li *ngFor="let value of randomValues">
+                <span class="label" [innerHTML]="value.icon"></span>
+                <span class="label">{{ value.label }}:</span>
+                {{ value.value }} {{ value.nuevo }}
+              </li>
             </ul>
-          </div>
+          </div>     
         </div>
       </div>
     </div>

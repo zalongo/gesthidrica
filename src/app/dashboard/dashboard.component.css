@@ -31,3 +31,9 @@ canvas {
     height: 250px;
   }
 }
+.ultimosValores {
+  list-style: none;
+  padding: 0;
+}
+
+
