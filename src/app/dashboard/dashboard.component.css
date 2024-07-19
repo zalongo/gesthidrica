@@ -32,8 +32,28 @@ canvas {
   }
 }
 .ultimosValores {
+  text-justify: auto;
+  line-height: 1.8;
   list-style: none;
   padding: 0;
 }
+.button-exportar {
+  background-color: #1b5c01;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  padding: 10px 20px; 
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px; 
+  min-width: 40%; 
+  max-width: 80%;
+}
 
+.dropdown-item {
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
 

@@ -2,6 +2,11 @@ import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Chart, registerables } from 'chart.js';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
+import * as Papa from 'papaparse';
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable';
 
 
 @Component({
@@ -296,5 +301,137 @@ export class DashboardComponent implements AfterViewInit {
 
   getRandomNumber(min: number, max: number): number {
     return Math.random() * (max - min) + min;
+  }
+  exportAs(format: string, cardId: string) {
+    switch (format) {
+      case 'excel':
+        this.exportToExcel(cardId);
+        break;
+      case 'csv':
+        this.exportToCSV(cardId);
+        break;
+      case 'pdf':
+        this.exportToPDF(cardId);
+        break;
+      default:
+        console.log('Formato no soportado');
+    }
+  }
+
+  exportToExcel(cardId: string) {
+    const card = this.cards.find(c => c.id === cardId);
+
+    if (card) {
+      const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.getCardData(cardId));
+      const wb: XLSX.WorkBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, card.title);
+      XLSX.writeFile(wb, `${card.title}.xlsx`);
+    } else {
+      console.error(`No se encontró ninguna tarjeta con el id '${cardId}'`);
+    }
+  }
+
+  exportToCSV(cardId: string) {
+    const card = this.cards.find(c => c.id === cardId);
+
+    if (card) {
+      const csv = Papa.unparse(this.getCardData(cardId));
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      saveAs(blob, `${card.title}.csv`);
+    } else {
+      console.error(`No se encontró ninguna tarjeta con el id '${cardId}'`);
+    }
+  }
+
+  exportToPDF(cardId: string) {
+    const card = this.cards.find(c => c.id === cardId);
+
+    if (card) {
+      const doc = new jsPDF();
+      doc.text(card.title, 10, 10);
+      const data = this.getCardData(cardId);
+      const columns = Object.keys(data[0]);
+      const rows = data.map(item => Object.values(item));
+
+      (doc as any).autoTable({ head: [columns], body: rows });
+
+      doc.save(`${card.title}.pdf`);
+    } else {
+      console.error(`No se encontró ninguna tarjeta con el id '${cardId}'`);
+    }
+  }
+
+  getCardData(cardId: string): any[] {
+    switch (cardId) {
+      case 'barChart1':
+        return [
+          { Pulso: 1, Humedad: 25 }, { Pulso: 2, Humedad: 27 }, { Pulso: 3, Humedad: 29 },
+          { Pulso: 4, Humedad: 31 }, { Pulso: 5, Humedad: 33 }, { Pulso: 6, Humedad: 35 },
+          { Pulso: 7, Humedad: 37 }, { Pulso: 8, Humedad: 39 }, { Pulso: 9, Humedad: 41 },
+          { Pulso: 10, Humedad: 43 }, { Pulso: 11, Humedad: 45 }, { Pulso: 12, Humedad: 47 },
+          { Pulso: 13, Humedad: 49 }, { Pulso: 14, Humedad: 51 }, { Pulso: 15, Humedad: 53 },
+          { Pulso: 16, Humedad: 55 }, { Pulso: 17, Humedad: 57 }, { Pulso: 18, Humedad: 59 },
+          { Pulso: 19, Humedad: 61 }, { Pulso: 20, Humedad: 63 }, { Pulso: 21, Humedad: 65 },
+          { Pulso: 22, Humedad: 67 }, { Pulso: 23, Humedad: 69 }, { Pulso: 24, Humedad: 71 },
+          { Pulso: 25, Humedad: 73 }, { Pulso: 26, Humedad: 75 }, { Pulso: 27, Humedad: 77 },
+          { Pulso: 28, Humedad: 79 }, { Pulso: 29, Humedad: 81 }, { Pulso: 30, Humedad: 83 }
+        ];
+      case 'barChart2':
+        return [
+          { Pulso: 1, Volumen: 0.5 }, { Pulso: 2, Volumen: 0.4 }, { Pulso: 3, Volumen: 0.5 },
+          { Pulso: 4, Volumen: 0.4 }, { Pulso: 5, Volumen: 0.5 }, { Pulso: 6, Volumen: 0.5 },
+          { Pulso: 7, Volumen: 0.5 }, { Pulso: 8, Volumen: 0.5 }, { Pulso: 9, Volumen: 0.6 },
+          { Pulso: 10, Volumen: 0.7 }, { Pulso: 11, Volumen: 0.6 }, { Pulso: 12, Volumen: 0.6 },
+          { Pulso: 13, Volumen: 0.6 }, { Pulso: 14, Volumen: 0.4 }, { Pulso: 15, Volumen: 0.3 },
+          { Pulso: 16, Volumen: 0.2 }, { Pulso: 17, Volumen: 0.5 }, { Pulso: 18, Volumen: 0.5 },
+          { Pulso: 19, Volumen: 0.5 }, { Pulso: 20, Volumen: 0.5 }, { Pulso: 21, Volumen: 0.5 },
+          { Pulso: 22, Volumen: 0.4 }, { Pulso: 23, Volumen: 0.4 }, { Pulso: 24, Volumen: 0.4 },
+          { Pulso: 25, Volumen: 0.3 }, { Pulso: 26, Volumen: 0.3 }, { Pulso: 27, Volumen: 0.2 },
+          { Pulso: 28, Volumen: 0.2 }, { Pulso: 29, Volumen: 0.1 }, { Pulso: 30, Volumen: 0 }
+        ];
+      case 'lineChart1':
+        return [
+          { Pulso: 1, Temperatura: 14 }, { Pulso: 2, Temperatura: 13 }, { Pulso: 3, Temperatura: 16 },
+          { Pulso: 4, Temperatura: 12 }, { Pulso: 5, Temperatura: 13 }, { Pulso: 6, Temperatura: 12.7 },
+          { Pulso: 7, Temperatura: 12.4 }, { Pulso: 8, Temperatura: 12.1 }, { Pulso: 9, Temperatura: 11.8 },
+          { Pulso: 10, Temperatura: 11.5 }, { Pulso: 11, Temperatura: 11.2 }, { Pulso: 12, Temperatura: 10.9 },
+          { Pulso: 13, Temperatura: 10.6 }, { Pulso: 14, Temperatura: 10.3 }, { Pulso: 15, Temperatura: 10 },
+          { Pulso: 16, Temperatura: 9.7 }, { Pulso: 17, Temperatura: 9.4 }, { Pulso: 18, Temperatura: 9.1 },
+          { Pulso: 19, Temperatura: 8.8 }, { Pulso: 20, Temperatura: 8.5 }, { Pulso: 21, Temperatura: 8.2 },
+          { Pulso: 22, Temperatura: 7.9 }, { Pulso: 23, Temperatura: 7.6 }, { Pulso: 24, Temperatura: 7.3 },
+          { Pulso: 25, Temperatura: 7 }, { Pulso: 26, Temperatura: 6.7 }, { Pulso: 27, Temperatura: 6.4 },
+          { Pulso: 28, Temperatura: 6.1 }, { Pulso: 29, Temperatura: 5.8 }, { Pulso: 30, Temperatura: 5.5 }
+        ];
+      case 'lineChart2':
+        return [
+          { Pulso: 1, Q: 0.5 }, { Pulso: 2, Q: 0.67 }, { Pulso: 3, Q: 0.71 },
+          { Pulso: 4, Q: 0.8 }, { Pulso: 5, Q: 0.5 }, { Pulso: 6, Q: 1.25 },
+          { Pulso: 7, Q: 0.5 }, { Pulso: 8, Q: 0.5 }, { Pulso: 9, Q: 3 },
+          { Pulso: 10, Q: 1.4 }, { Pulso: 11, Q: 3 }, { Pulso: 12, Q: 0.86 },
+          { Pulso: 13, Q: 0.75 }, { Pulso: 14, Q: 0.4 }, { Pulso: 15, Q: 0.3 },
+          { Pulso: 16, Q: 0.2 }, { Pulso: 17, Q: 0.5 }, { Pulso: 18, Q: 0.83 },
+          { Pulso: 19, Q: 0.63 }, { Pulso: 20, Q: 0.56 }, { Pulso: 21, Q: 0.5 },
+          { Pulso: 22, Q: 0.4 }, { Pulso: 23, Q: 0.4 }, { Pulso: 24, Q: 1.33 },
+          { Pulso: 25, Q: 0.3 }, { Pulso: 26, Q: 0.3 }, { Pulso: 27, Q: 0.2 },
+          { Pulso: 28, Q: 0.2 }, { Pulso: 29, Q: 0.1 }, { Pulso: 30, Q: 0 }
+        ];
+      case 'barChart3':
+        return [
+          { Pulso: 1, Tiempo: 1 }, { Pulso: 2, Tiempo: 0.6 }, { Pulso: 3, Tiempo: 0.7 },
+          { Pulso: 4, Tiempo: 0.5 }, { Pulso: 5, Tiempo: 1 }, { Pulso: 6, Tiempo: 0.4 },
+          { Pulso: 7, Tiempo: 1 }, { Pulso: 8, Tiempo: 1 }, { Pulso: 9, Tiempo: 0.2 },
+          { Pulso: 10, Tiempo: 0.5 }, { Pulso: 11, Tiempo: 0.2 }, { Pulso: 12, Tiempo: 0.7 },
+          { Pulso: 13, Tiempo: 0.8 }, { Pulso: 14, Tiempo: 1 }, { Pulso: 15, Tiempo: 1 },
+          { Pulso: 16, Tiempo: 1 }, { Pulso: 17, Tiempo: 1 }, { Pulso: 18, Tiempo: 0.6 },
+          { Pulso: 19, Tiempo: 0.8 }, { Pulso: 20, Tiempo: 0.9 }, { Pulso: 21, Tiempo: 1 },
+          { Pulso: 22, Tiempo: 1 }, { Pulso: 23, Tiempo: 1 }, { Pulso: 24, Tiempo: 0.3 },
+          { Pulso: 25, Tiempo: 1 }, { Pulso: 26, Tiempo: 1 }, { Pulso: 27, Tiempo: 1 },
+          { Pulso: 28, Tiempo: 1 }, { Pulso: 29, Tiempo: 1 }, { Pulso: 30, Tiempo: 1 }
+        ];
+      case 'randomValues':
+        return this.randomValues.map(value => ({ Label: value.label, Value: value.value }));
+      default:
+        return [];
+    }
   }
 }

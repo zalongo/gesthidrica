@@ -21,20 +21,38 @@ export class NavbarComponent {
     {id:2, texto:'Ingles'}
   ]
 
-  notificaciones = [
-    { id: 1, texto: 'notificacion 1' },
-    { id: 2, texto: 'notificacion 2' },
-    { id: 3, texto: 'notificacion 3' },
-    { id: 4, texto: 'notificacion 4' }
-
+  notificaciones1 = [
+    { id: 1, texto: 'El caudal esta cerrado' },
   ];
 
-  deleteNotification(notificationId: number) {
-    const index = this.notificaciones.findIndex(notif => notif.id === notificationId);
+  notificaciones2 = [
+    { id: 2, texto2: 'Temperatura muy alta' },
+  ];
+
+  notificaciones3 = [
+    { id: 3, texto3: 'Estado de la Humedad: Normal' },
+    { id: 3, texto3: 'Probando... '}
+  ];
+
+  deleteNotification1(notificationId: number) {
+    const index = this.notificaciones1.findIndex(notif => notif.id === notificationId);
     if (index !== -1) {
-      this.notificaciones.splice(index, 1);
+      this.notificaciones1.splice(index, 1);
     }
   }
+  deleteNotification2(notificationId: number) {
+    const index = this.notificaciones2.findIndex(notif => notif.id === notificationId);
+    if (index !== -1) {
+      this.notificaciones2.splice(index, 1);
+    }
+  }
+  deleteNotification3(notificationId: number) {
+    const index = this.notificaciones3.findIndex(notif => notif.id === notificationId);
+    if (index !== -1) {
+      this.notificaciones3.splice(index, 1);
+    }
+  }
+
 
   toggleNotifications() {
     this.notificationsEnabled = !this.notificationsEnabled;

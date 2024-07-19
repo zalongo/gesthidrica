@@ -4,6 +4,16 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
+          <div class="dropdown">
+            <button class="button-exportar" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Exportar
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" (click)="exportAs('excel', card.id)">Excel</a></li>
+              <li><a class="dropdown-item" (click)="exportAs('csv', card.id)">CSV</a></li>
+              <li><a class="dropdown-item" (click)="exportAs('pdf', card.id)">PDF</a></li>
+            </ul>
+        </div>
           <canvas *ngIf="card.id !== 'randomValues'" [attr.id]="card.id"></canvas>
           <div *ngIf="card.id === 'randomValues'">
             <ul class="ultimosValores">
