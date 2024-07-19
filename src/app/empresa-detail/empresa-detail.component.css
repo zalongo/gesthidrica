@@ -1,0 +1,46 @@
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Removido .div .card-body ya que no es necesario */
+
+.card-body h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-body .btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.card-body .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.card-body app-dashboard {
+  margin-top: 20px;
+  display: block; /* Asegura que el componente se comporte como un bloque */
+}

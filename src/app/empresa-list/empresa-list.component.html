@@ -1,0 +1,8 @@
+<h2>Lista de Empresas</h2>
+<ul class="list-group">
+  <li *ngFor="let empresa of empresas; let i = index" class="list-group-item">
+    <button class="btn btn-link" (click)="navigateToDetail(empresa)">
+      {{ empresa }}
+    </button>
+  </li>
+</ul>
