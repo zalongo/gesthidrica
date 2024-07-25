@@ -4,9 +4,6 @@
   padding-right: 0;
 }
 
-.container.mt-4 {
-  margin-left: 100px; /* Ajusta según el ancho de tu sidebar */
-}
 
 @media (max-width: 768px) {
   .container.mt-4 {

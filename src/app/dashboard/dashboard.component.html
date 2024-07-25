@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let card of cards">
+    <div class="col-md-6 mb-4" *ngFor="let card of cards">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
@@ -13,17 +13,8 @@
               <li><a class="dropdown-item" (click)="exportAs('csv', card.id)">CSV</a></li>
               <li><a class="dropdown-item" (click)="exportAs('pdf', card.id)">PDF</a></li>
             </ul>
-        </div>
-          <canvas *ngIf="card.id !== 'randomValues'" [attr.id]="card.id"></canvas>
-          <div *ngIf="card.id === 'randomValues'">
-            <ul class="ultimosValores">
-              <li *ngFor="let value of randomValues">
-                <span class="label" [innerHTML]="value.icon"></span>
-                <span class="label">{{ value.label }}:</span>
-                {{ value.value }} {{ value.medida }}
-              </li>
-            </ul>
-          </div>     
+          </div>
+          <canvas [attr.id]="card.id"></canvas>
         </div>
       </div>
     </div>
