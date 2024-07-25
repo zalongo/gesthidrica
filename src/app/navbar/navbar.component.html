@@ -13,15 +13,33 @@
       </ul>
       <div class="collapse navbar-collapse" id="navbarNav">
         <a class="nav-link" routerLink="adminDashboard">Admin</a>
+      
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+        </li>
+      </ul>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Reports</a>
+        </li>
+      </ul>
+
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Analytics</a>
+        </li>
+      </ul>
       </div>
+
       <div class="d-flex">
-        <button class="btn btn-primary" type="button" (click)="openNot()">   
+        <button class="btn btn-primary" type="button" (click)="openNot()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell"
             viewBox="0 0 16 16">
             <path
               d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
           </svg>
-        </button> 
+        </button>
         <button class="btn btn-primary" type="button" (click)="openConf()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear"
             viewBox="0 0 16 16">
@@ -58,7 +76,7 @@
       <input type="checkbox" [checked]="notificationsEnabled" (change)="toggleLanguage()">
       <span class="slider round"></span>
     </label>
-      
+
     <span class="s-text2">Ingles</span>
   </div>
 </div>
@@ -75,37 +93,40 @@
     <h2 class="card-title">Notificaciones</h2>
     <ul>
       <!-- Notificaciones1 -->
-      <li *ngFor="let notificacion1 of notificaciones1; trackBy: trackById" 
-          [ngClass]="'notificacion-' + notificacion1.id">
+      <li *ngFor="let notificacion1 of notificaciones1; trackBy: trackById"
+        [ngClass]="'notificacion-' + notificacion1.id">
         {{notificacion1.texto}}
         <button (click)="deleteNotification1(notificacion1.id)" class="boton-x">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
           </svg>
         </button>
       </li>
 
       <!-- Notificaciones2 -->
       <li *ngFor="let notificacion2 of notificaciones2; trackBy: trackById"
-          [ngClass]="'notificacion-' + notificacion2.id">
+        [ngClass]="'notificacion-' + notificacion2.id">
         {{notificacion2.texto2}}
         <button (click)="deleteNotification2(notificacion2.id)" class="boton-x">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
           </svg>
         </button>
       </li>
 
       <!-- Notificaciones3 -->
       <li *ngFor="let notificacion3 of notificaciones3; trackBy: trackById"
-          [ngClass]="'notificacion-' + notificacion3.id">
+        [ngClass]="'notificacion-' + notificacion3.id">
         {{notificacion3.texto3}}
         <button (click)="deleteNotification3(notificacion3.id)" class="boton-x">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
           </svg>
         </button>
       </li>
