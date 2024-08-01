@@ -29,14 +29,22 @@ export class DashboardComponent implements AfterViewInit {
 
   charts: { [key: string]: Chart } = {};
 
-  constructor(private googleSheetsService: GoogleSheetsService,private sanitizer: DomSanitizer) {
+  activeIndex: number | null = null;
+
+  toggleAccordion(index: number) {
+    this.activeIndex = this.activeIndex === index ? null : index;
+  }
+  
+
+  constructor(private googleSheetsService: GoogleSheetsService, private sanitizer: DomSanitizer) {
     Chart.register(...registerables);
   }
 
   ngAfterViewInit() {
+    this.generateRandomValues();
     this.initializeCharts();
     this.loadGoogleSheetsData();
-        this.generateRandomValues();
+
 
   }
 
@@ -48,7 +56,6 @@ export class DashboardComponent implements AfterViewInit {
     this.createLineChart4();
     this.createLineChart5();
     this.createLineChart6();
-
   }
 
   randomValues: { label: string, value: number, nuevo: string, icon: SafeHtml }[] = [];
@@ -304,12 +311,12 @@ export class DashboardComponent implements AfterViewInit {
       `)
       },
       {
-        label: 'Variable 1', value:0, nuevo:'',icon:''
+        label: 'Variable 1', value: 0, nuevo: '', icon: ''
       },
       {
-        label: 'Variable 2', value:3, nuevo:'',icon:''
+        label: 'Variable 2', value: 3, nuevo: '', icon: ''
       },
-      
+
     ];
   }
 
@@ -343,7 +350,7 @@ export class DashboardComponent implements AfterViewInit {
     const ws = XLSX.utils.json_to_sheet(exportData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Datos');
-    
+
     const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
     const blob = new Blob([wbout], { type: 'application/octet-stream' });
     saveAs(blob, 'datos.xlsx');
