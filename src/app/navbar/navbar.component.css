@@ -1,23 +1,20 @@
-/* navbar.component.css */
+/* navbar.component.css /
 .navbar {
-  background-color: #007bff;
-  /* Color de fondo del navbar */
+  background-color: #ffffff;
+  / Color de fondo del navbar /
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.navbar .navbar-brand {
-  color: #000000;
-  
-  font-size: 24px;
-  font-weight: bold;
+.custom-navbar {
+  background-color: #404756; / Color de fondo /
+  color: rgb(255, 255, 255); / Color del texto /
 }
 
-.navbar .nav-link {
-  color: #000000;
-  padding: 8px 16px;
-  font-size: 16px;
-}
+.custom-navbar .navbar-brand, 
+.custom-navbar .nav-link {
+  color: rgb(255, 255, 255); / Color del texto de los enlaces 
+}*/
 
 .navbar .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);

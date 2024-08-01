@@ -10,7 +10,7 @@
 }
 
 .card-header {
-  background-color: #007bff;
+  background-color: #ffffff;
   color: white;
   padding: 15px;
   text-align: center;
@@ -20,8 +20,6 @@
   padding: 20px;
 }
 
-/* Removido .div .card-body ya que no es necesario */
-
 .card-body h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -29,7 +27,7 @@
 }
 
 .card-body .btn-primary {
-  background-color: #007bff;
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;

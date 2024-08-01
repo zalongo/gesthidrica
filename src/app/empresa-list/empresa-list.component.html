@@ -1,8 +1,11 @@
 <h2>Lista de Empresas</h2>
 <ul class="list-group">
   <li *ngFor="let empresa of empresas; let i = index" class="list-group-item">
-    <button class="btn btn-link" (click)="navigateToDetail(empresa)">
-      {{ empresa }}
+    <button class="btn-link" (click)="navigateToDetail(empresa)">
+      {{ empresa.nombre }}
     </button>
+    <div class="repcom">
+      Representante Legal: {{ empresa.representante }} - Comuna: {{ empresa.comuna }}
+    </div>
   </li>
 </ul>

@@ -2,36 +2,33 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 import { Router, RouterLink, RouterModule } from '@angular/router';
-import {  ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgOptimizedImage } from '@angular/common';
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, LoginComponent,ReactiveFormsModule,RouterLink,RouterModule],
+  imports: [CommonModule, LoginComponent, ReactiveFormsModule, RouterLink, RouterModule, NgOptimizedImage],
   templateUrl: "./navbar.component.html",
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent { 
+export class NavbarComponent {
 
   trackById(index: number, item: any) {
     return item.id;
   }
   notificationsEnabled = true;
-  changeLanguage =[
-    {id:1, texto:'Español'},
-    {id:2, texto:'Ingles'}
+  changeLanguage = [
+    { id: 1, texto: 'Español' },
+    { id: 2, texto: 'Ingles' }
   ]
 
   notificaciones1 = [
     { id: 1, texto: 'El caudal esta cerrado' },
-  ];
+    { id: 2, texto: 'Temperatura muy alta' },
+    { id: 3, texto: 'Estado de la Humedad: Normal' },
+    { id: 3, texto: 'Probando... ' }
 
-  notificaciones2 = [
-    { id: 2, texto2: 'Temperatura muy alta' },
-  ];
-
-  notificaciones3 = [
-    { id: 3, texto3: 'Estado de la Humedad: Normal' },
-    { id: 3, texto3: 'Probando... '}
   ];
 
   deleteNotification1(notificationId: number) {
@@ -40,18 +37,7 @@ export class NavbarComponent {
       this.notificaciones1.splice(index, 1);
     }
   }
-  deleteNotification2(notificationId: number) {
-    const index = this.notificaciones2.findIndex(notif => notif.id === notificationId);
-    if (index !== -1) {
-      this.notificaciones2.splice(index, 1);
-    }
-  }
-  deleteNotification3(notificationId: number) {
-    const index = this.notificaciones3.findIndex(notif => notif.id === notificationId);
-    if (index !== -1) {
-      this.notificaciones3.splice(index, 1);
-    }
-  }
+  
 
 
   toggleNotifications() {
@@ -92,7 +78,7 @@ export class NavbarComponent {
 
   isNotificacionesOpen: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   openNotificaciones() {
     this.isNotificacionesOpen = true;
