@@ -1,18 +1,25 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from '../login/login.component';
+
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
+import { GoogleSheetsService } from '../services/google-sheets.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, LoginComponent, ReactiveFormsModule, RouterLink, RouterModule, NgOptimizedImage],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, RouterModule, NgOptimizedImage],
   templateUrl: "./navbar.component.html",
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  constructor(private router: Router, private googleSheetsService: GoogleSheetsService) { }
+
+  handleAuthClick() {
+    this.googleSheetsService.handleAuthClick();
+  }
 
   trackById(index: number, item: any) {
     return item.id;
@@ -78,7 +85,7 @@ export class NavbarComponent {
 
   isNotificacionesOpen: boolean = false;
 
-  constructor(private router: Router) { }
+
 
   openNotificaciones() {
     this.isNotificacionesOpen = true;

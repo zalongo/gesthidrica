@@ -65,7 +65,7 @@ export class DashboardComponent implements AfterViewInit {
     this.googleSheetsService.authStatus.subscribe(async (authenticated) => {
       if (authenticated) {
         const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
-        const range = 'Mod_1!A:D';
+        const range = 'Humedad';
         const records = await this.googleSheetsService.getRecords(sheetId, range);
 
         if (records.length > 0) {

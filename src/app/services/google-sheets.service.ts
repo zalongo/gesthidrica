@@ -3,7 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 
 declare var gapi: any;
 declare var google: any;
-
 @Injectable({
   providedIn: 'root'
 })
@@ -85,6 +84,10 @@ export class GoogleSheetsService {
     }
     console.log('Token response received:', resp);
     this.authStatus.next(true);
+    
+    // Almacena el token si es necesario
+    const accessToken = resp.access_token;
+    // Puedes almacenar el token en un lugar seguro o en el estado de tu aplicación
   }
 
   private maybeEnableButtons() {
@@ -99,7 +102,7 @@ export class GoogleSheetsService {
       console.error('Token client is not initialized.');
       return;
     }
-
+  
     this.tokenClient.callback = async (resp: any) => {
       if (resp.error !== undefined) {
         console.error('Error during token request:', resp);
@@ -107,7 +110,8 @@ export class GoogleSheetsService {
       }
       this.authStatus.next(true);
     };
-
+  
+    // Usa el flujo de redirección para la autenticación
     if (gapi.client.getToken() === null) {
       this.tokenClient.requestAccessToken({ prompt: 'consent' });
     } else {
@@ -121,6 +125,9 @@ export class GoogleSheetsService {
       google.accounts.oauth2.revoke(token.access_token);
       gapi.client.setToken('');
       this.authStatus.next(false);
+      console.log('User signed out.');
+    } else {
+      console.log('No token found, user is already signed out.');
     }
   }
 
