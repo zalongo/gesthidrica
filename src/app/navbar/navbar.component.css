@@ -5,6 +5,10 @@
   text-align: left;
 }
 
+.navbar-nav{
+  display: inline-block;
+}
+
 .custom-navbar {
   background-color: #404756;
   color: rgb(255, 255, 255);

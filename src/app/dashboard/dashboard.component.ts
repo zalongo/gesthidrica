@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Chart, registerables } from 'chart.js';
+import { Chart, registerables, Title } from 'chart.js';
 import { GoogleSheetsService } from '../services/google-sheets.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -18,13 +18,14 @@ import 'jspdf-autotable';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-    { id: 'lineChart1', title: 'Temperatura'},
+    { id: 'lineChart1', title: 'Temperatura', imageSrc: 'https://i.ibb.co/jftYD2h/logo.jpg'},
     { id: 'lineChart2', title: 'Humedad' },
     { id: 'barChart1', title: 'Velocidad Viento' },
     { id: 'lineChart3', title: 'Precipitación' },
     { id: 'lineChart4', title: 'Radiación UV' },
     { id: 'lineChart5', title: 'Humedad Suelo' },
-    { id: 'lineChart6', title: 'Caudal Q' }
+    { id: 'lineChart6', title: 'Caudal Q' },
+    { id: 'ultimosValores', title:'Ultimos Valores'}
   ];
 
   charts: { [key: string]: Chart } = {};
@@ -34,7 +35,7 @@ export class DashboardComponent implements AfterViewInit {
   toggleAccordion(index: number) {
     this.activeIndex = this.activeIndex === index ? null : index;
   }
-  
+
 
   constructor(private googleSheetsService: GoogleSheetsService, private sanitizer: DomSanitizer) {
     Chart.register(...registerables);
