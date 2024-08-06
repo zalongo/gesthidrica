@@ -1,30 +1,30 @@
-/* navbar.component.css /
 .navbar {
   background-color: #ffffff;
-  / Color de fondo del navbar /
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .custom-navbar {
-  background-color: #404756; / Color de fondo /
-  color: rgb(255, 255, 255); / Color del texto /
+  background-color: #404756;
+  color: rgb(255, 255, 255);
 }
 
-.custom-navbar .navbar-brand, 
+.custom-navbar .navbar-brand,
 .custom-navbar .nav-link {
-  color: rgb(255, 255, 255); / Color del texto de los enlaces 
-}*/
+  color: rgb(255, 255, 255);
+}
 
 .navbar .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
 
-.btn,btn-primary {
+.btn,
+btn-primary {
   margin-left: 5px;
 }
-.boton-x{
+
+.boton-x {
   border: 0;
   background-color: transparent;
 }
@@ -53,6 +53,7 @@
   margin-top: 0;
   margin-right: 0;
 }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -89,6 +90,7 @@
   -webkit-transition: .4s;
   transition: .4s;
 }
+
 input:checked+.slider {
   background-color: #000000;
 }
@@ -111,29 +113,30 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
-.a-d
-{
+.a-d {
   color: rgb(0, 0, 0);
   padding: 14px;
   font-size: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.s-text1{
+.s-text1 {
   font-size: 15px;
   padding-right: 20px;
 }
-.s-text2{
+
+.s-text2 {
   font-size: 15px;
   padding-left: 20px;
 }
+
 .notificacion-1,
 .notificacion-2,
 .notificacion-3 {
   padding: 20px;
   margin: 10px 0;
   font-size: 18px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
@@ -169,7 +172,6 @@ input:checked+.slider:before {
 }
 
 
-ul 
-{
+ul {
   list-style: none;
 }

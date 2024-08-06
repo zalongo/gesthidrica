@@ -9,8 +9,19 @@
   overflow: hidden;
 }
 
+.mb-0 {
+  color: white;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .card-header {
-  background-color: #ffffff;
+  background: #7474BF;
+  background: -webkit-linear-gradient(to right, #366f97);
+  background: linear-gradient(to right, #2194c2, #106372);
   color: white;
   padding: 15px;
   text-align: center;

@@ -2,18 +2,31 @@
   padding-top: 0px;
 }
 
+.ultimosValores {
+  display: grid;
+  min-height: 270px;
+  text-align: left;
+  list-style-type: none;
+  padding-top: 5%;
+  box-shadow: none;
+}
+
 .card {
   margin: 10px 0;
   border: none;
-  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: 1px solid black;
+  box-sizing: border-box;
 }
 
-.ultimosValores {
-  display: grid;
-  min-height: 300px;
-  list-style-type: none;
-  padding-top: 5%;
+.accordion-button
+{
+  background-color: #366f97;
+  color: white;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0;
 }
 
 .expanded {
@@ -29,7 +42,7 @@
 .card-title {
   font-size: 18px;
   margin-bottom:0;
-  color: #000000;
+  color: #ffffff;
   font-weight: bold;
   padding:0;
 }
@@ -52,15 +65,14 @@ canvas {
 .button-exportar {
   background-color: #1b5c01;
   border: none;
-  border-radius: 15px;
+  border-radius: 8px;
   color: white;
   padding: 10px 20px;
   margin-bottom: 10px;
-  text-align: center;
   text-decoration: none;
   font-size: 14px;
-  min-width: 40%;
-  max-width: 40%;
+  min-width: 60%;
+  max-width: 60%;
 }
 
 .dropdown-item {
