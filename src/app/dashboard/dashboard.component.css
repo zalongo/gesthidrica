@@ -2,6 +2,12 @@
   padding-top: 0px;
 }
 
+.logoCard{
+  width: 15%;
+  height: 100%;
+  margin: auto;
+}
+
 .ultimosValores {
   display: grid;
   min-height: 270px;

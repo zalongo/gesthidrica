@@ -18,7 +18,7 @@ import 'jspdf-autotable';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-    { id: 'lineChart1', title: 'Temperatura', imageSrc: 'https://i.ibb.co/jftYD2h/logo.jpg'},
+    { id: 'lineChart1', title: 'Temperatura', imageSrc: 'https://images.vexels.com/media/users/3/127021/isolated/preview/c0cf811b6355be6f12fed44bf51e8fd2-termometro-de-temperatura-icon-svg.png'},
     { id: 'lineChart2', title: 'Humedad' },
     { id: 'barChart1', title: 'Velocidad Viento' },
     { id: 'lineChart3', title: 'Precipitación' },
@@ -40,13 +40,14 @@ export class DashboardComponent implements AfterViewInit {
   constructor(private googleSheetsService: GoogleSheetsService, private sanitizer: DomSanitizer) {
     Chart.register(...registerables);
   }
+  ultimosValoresData: { label: string, value: number, unit: string }[] = [];
+
 
   ngAfterViewInit() {
     this.generateRandomValues();
     this.initializeCharts();
     this.loadGoogleSheetsData();
-
-
+    this.initializeUltimosValoresData();
   }
 
   initializeCharts() {
@@ -76,6 +77,18 @@ export class DashboardComponent implements AfterViewInit {
         this.googleSheetsService.handleAuthClick();
       }
     });
+  }
+
+  initializeUltimosValoresData() {
+    this.ultimosValoresData = [
+      { label: 'Temperatura', value: 19.35, unit: '°C' },
+      { label: 'Humedad', value: 98.35, unit: '%' },
+      { label: 'Velocidad Viento', value: 4.77, unit: 'Km/h' },
+      { label: 'Precipitación', value: 0.00, unit: 'mm' },
+      { label: 'Radiación UV', value: 0.46, unit: 'mW/cm²' },
+      { label: 'Humedad Suelo', value: 52.01, unit: '%' },
+      { label: 'Caudal Q', value: 0.10, unit: 'm³/s' }
+    ];
   }
 
   updateChartsWithGoogleSheetsData(records: any[]) {
