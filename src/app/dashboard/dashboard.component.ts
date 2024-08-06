@@ -18,7 +18,7 @@ import 'jspdf-autotable';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-    { id: 'lineChart1', title: 'Temperatura' },
+    { id: 'lineChart1', title: 'Temperatura'},
     { id: 'lineChart2', title: 'Humedad' },
     { id: 'barChart1', title: 'Velocidad Viento' },
     { id: 'lineChart3', title: 'Precipitación' },
@@ -78,7 +78,7 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   updateChartsWithGoogleSheetsData(records: any[]) {
-    const lastRecords = records.slice(-30); // Get the last 10 records
+    const lastRecords = records.slice(-30);
     const labels = lastRecords.map(record => record[0]);
     const temperatureData = lastRecords.map(record => parseFloat(record[1].replace(',', '.')));
     const humidityData = lastRecords.map(record => parseFloat(record[2].replace(',', '.')));
@@ -310,13 +310,6 @@ export class DashboardComponent implements AfterViewInit {
 </svg>
       `)
       },
-      {
-        label: 'Variable 1', value: 0, nuevo: '', icon: ''
-      },
-      {
-        label: 'Variable 2', value: 3, nuevo: '', icon: ''
-      },
-
     ];
   }
 
