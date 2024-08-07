@@ -101,6 +101,10 @@ export class DashboardComponent implements AfterViewInit {
     this.updateChart(this.charts['lineChart1'], labels, temperatureData, '°C');
     this.updateChart(this.charts['lineChart2'], labels, humidityData, '%');
     this.updateChart(this.charts['barChart1'], labels, windSpeedData, 'Km/h');
+
+    this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C');
+    this.updateUltimosValoresData('Humedad', humidityData[humidityData.length - 1], '%');
+    this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h');
   }
 
   updateChart(chart: Chart, labels: string[], data: number[], label: string) {
@@ -108,6 +112,16 @@ export class DashboardComponent implements AfterViewInit {
     chart.data.datasets[0].data = data;
     chart.data.datasets[0].label = label;
     chart.update();
+  }
+
+  updateUltimosValoresData(label: string, value: number, unit: string) {
+    const index = this.ultimosValoresData.findIndex(item => item.label === label);
+    if (index !== -1) {
+      this.ultimosValoresData[index].value = value;
+      this.ultimosValoresData[index].unit = unit;
+    } else {
+      this.ultimosValoresData.push({ label, value, unit });
+    }
   }
 
   createLineChart1() {
