@@ -4,10 +4,6 @@ import { Chart, registerables, Title } from 'chart.js';
 import { GoogleSheetsService } from '../services/google-sheets.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { saveAs } from 'file-saver';
-import { jsPDF } from 'jspdf';
-import 'jspdf-autotable';
-
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -340,75 +336,9 @@ export class DashboardComponent implements AfterViewInit {
     ];
   }
 
-  exportAs(type: string, id: string) {
-    switch (type) {
-      case 'excel':
-        this.exportToExcel(id);
-        break;
-      case 'csv':
-        this.exportToCSV(id);
-        break;
-      case 'pdf':
-        this.exportToPDF(id);
-        break;
-      default:
-        console.error('Tipo de exportación no soportado');
-    }
-  }
+  
 
-  exportToExcel(id: string) {
-    const chart = this.charts[id];
-    const data = chart.data.datasets[0].data;
-    const labels = chart.data.labels || [];
-
-    const exportData = labels.map((label, index) => ({
-      Label: label || `Label ${index + 1}`,
-      Value: data[index],
-      Unidad: chart.data.datasets[0].label
-    }));
-
-  }
-
-  exportToCSV(id: string) {
-    const chart = this.charts[id];
-    const data = chart.data.datasets[0].data;
-    const labels = chart.data.labels || [];
-
-    const exportData = labels.map((label, index) => ({
-      Label: label || `Label ${index + 1}`,
-      Value: data[index],
-      Unidad: chart.data.datasets[0].label
-    }));
-
-    const csvHeaders = 'Label,Value,Unidad\n';
-    const csvRows = exportData.map(item => `${item.Label},${item.Value},${item.Unidad}`).join('\n');
-    const csv = csvHeaders + csvRows;
-
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
-    saveAs(blob, 'datos.csv');
-  }
-
-  exportToPDF(id: string) {
-    const chart = this.charts[id];
-    const data = chart.data.datasets[0].data;
-    const labels = chart.data.labels || [];
-
-    const exportData = labels.map((label, index) => [label || `Label ${index + 1}`, data[index], chart.data.datasets[0].label]);
-
-    const doc = new jsPDF();
-
-    const headers = [['Etiqueta', 'Valor', 'Medida']];
-
-    (doc as any).autoTable({
-      head: headers,
-      body: exportData,
-      startY: 10,
-      styles: { halign: 'center' },
-      headStyles: { fillColor: [22, 160, 133] }
-    });
-
-    doc.save('datos.pdf');
-  }
+ 
 
   getChartData(id: string) {
     const chart = this.charts[id];
