@@ -4,7 +4,6 @@ import { Chart, registerables, Title } from 'chart.js';
 import { GoogleSheetsService } from '../services/google-sheets.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
@@ -368,13 +367,6 @@ export class DashboardComponent implements AfterViewInit {
       Unidad: chart.data.datasets[0].label
     }));
 
-    const ws = XLSX.utils.json_to_sheet(exportData);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Datos');
-
-    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const blob = new Blob([wbout], { type: 'application/octet-stream' });
-    saveAs(blob, 'datos.xlsx');
   }
 
   exportToCSV(id: string) {
