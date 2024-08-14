@@ -4,11 +4,6 @@ import { Chart, registerables, Title } from 'chart.js';
 import { GoogleSheetsService } from '../services/google-sheets.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
-import { jsPDF } from 'jspdf';
-import 'jspdf-autotable';
-
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -18,7 +13,7 @@ import 'jspdf-autotable';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-    { id: 'lineChart1', title: 'Temperatura', imageSrc: 'https://i.ibb.co/jftYD2h/logo.jpg'},
+    { id: 'lineChart1', title: 'Temperatura', /*imageSrc: 'https://images.vexels.com/media/users/3/127021/isolated/preview/c0cf811b6355be6f12fed44bf51e8fd2-termometro-de-temperatura-icon-svg.png'*/},
     { id: 'lineChart2', title: 'Humedad' },
     { id: 'barChart1', title: 'Velocidad Viento' },
     { id: 'lineChart3', title: 'Precipitación' },
@@ -40,13 +35,14 @@ export class DashboardComponent implements AfterViewInit {
   constructor(private googleSheetsService: GoogleSheetsService, private sanitizer: DomSanitizer) {
     Chart.register(...registerables);
   }
+  ultimosValoresData: { label: string, value: number, unit: string }[] = [];
+
 
   ngAfterViewInit() {
     this.generateRandomValues();
     this.initializeCharts();
     this.loadGoogleSheetsData();
-
-
+    this.initializeUltimosValoresData();
   }
 
   initializeCharts() {
@@ -78,6 +74,18 @@ export class DashboardComponent implements AfterViewInit {
     });
   }
 
+  initializeUltimosValoresData() {
+    this.ultimosValoresData = [
+      { label: 'Temperatura', value: 19.35, unit: '°C' },
+      { label: 'Humedad', value: 98.35, unit: '%' },
+      { label: 'Velocidad Viento', value: 4.77, unit: 'Km/h' },
+      { label: 'Precipitación', value: 0.00, unit: 'mm' },
+      { label: 'Radiación UV', value: 0.46, unit: 'mW/cm²' },
+      { label: 'Humedad Suelo', value: 52.01, unit: '%' },
+      { label: 'Caudal Q', value: 0.10, unit: 'm³/s' }
+    ];
+  }
+
   updateChartsWithGoogleSheetsData(records: any[]) {
     const lastRecords = records.slice(-30);
     const labels = lastRecords.map(record => record[0]);
@@ -88,6 +96,10 @@ export class DashboardComponent implements AfterViewInit {
     this.updateChart(this.charts['lineChart1'], labels, temperatureData, '°C');
     this.updateChart(this.charts['lineChart2'], labels, humidityData, '%');
     this.updateChart(this.charts['barChart1'], labels, windSpeedData, 'Km/h');
+
+    this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C');
+    this.updateUltimosValoresData('Humedad', humidityData[humidityData.length - 1], '%');
+    this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h');
   }
 
   updateChart(chart: Chart, labels: string[], data: number[], label: string) {
@@ -95,6 +107,16 @@ export class DashboardComponent implements AfterViewInit {
     chart.data.datasets[0].data = data;
     chart.data.datasets[0].label = label;
     chart.update();
+  }
+
+  updateUltimosValoresData(label: string, value: number, unit: string) {
+    const index = this.ultimosValoresData.findIndex(item => item.label === label);
+    if (index !== -1) {
+      this.ultimosValoresData[index].value = value;
+      this.ultimosValoresData[index].unit = unit;
+    } else {
+      this.ultimosValoresData.push({ label, value, unit });
+    }
   }
 
   createLineChart1() {
@@ -314,82 +336,9 @@ export class DashboardComponent implements AfterViewInit {
     ];
   }
 
-  exportAs(type: string, id: string) {
-    switch (type) {
-      case 'excel':
-        this.exportToExcel(id);
-        break;
-      case 'csv':
-        this.exportToCSV(id);
-        break;
-      case 'pdf':
-        this.exportToPDF(id);
-        break;
-      default:
-        console.error('Tipo de exportación no soportado');
-    }
-  }
+  
 
-  exportToExcel(id: string) {
-    const chart = this.charts[id];
-    const data = chart.data.datasets[0].data;
-    const labels = chart.data.labels || [];
-
-    const exportData = labels.map((label, index) => ({
-      Label: label || `Label ${index + 1}`,
-      Value: data[index],
-      Unidad: chart.data.datasets[0].label
-    }));
-
-    const ws = XLSX.utils.json_to_sheet(exportData);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Datos');
-
-    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const blob = new Blob([wbout], { type: 'application/octet-stream' });
-    saveAs(blob, 'datos.xlsx');
-  }
-
-  exportToCSV(id: string) {
-    const chart = this.charts[id];
-    const data = chart.data.datasets[0].data;
-    const labels = chart.data.labels || [];
-
-    const exportData = labels.map((label, index) => ({
-      Label: label || `Label ${index + 1}`,
-      Value: data[index],
-      Unidad: chart.data.datasets[0].label
-    }));
-
-    const csvHeaders = 'Label,Value,Unidad\n';
-    const csvRows = exportData.map(item => `${item.Label},${item.Value},${item.Unidad}`).join('\n');
-    const csv = csvHeaders + csvRows;
-
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
-    saveAs(blob, 'datos.csv');
-  }
-
-  exportToPDF(id: string) {
-    const chart = this.charts[id];
-    const data = chart.data.datasets[0].data;
-    const labels = chart.data.labels || [];
-
-    const exportData = labels.map((label, index) => [label || `Label ${index + 1}`, data[index], chart.data.datasets[0].label]);
-
-    const doc = new jsPDF();
-
-    const headers = [['Etiqueta', 'Valor', 'Medida']];
-
-    (doc as any).autoTable({
-      head: headers,
-      body: exportData,
-      startY: 10,
-      styles: { halign: 'center' },
-      headStyles: { fillColor: [22, 160, 133] }
-    });
-
-    doc.save('datos.pdf');
-  }
+ 
 
   getChartData(id: string) {
     const chart = this.charts[id];

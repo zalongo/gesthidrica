@@ -8,12 +8,13 @@
               [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i"
               (click)="toggleAccordion(i)">
               {{ card.title }}
+              <!-- <img [src]=card.imageSrc class="logoCard"> -->
             </button>
           </h5>
           <div class="accordion-body accordion-collapse collapse" [attr.id]="'collapse' + i"
             data-bs-parent="#accordionExample">
             <div class="row">
-              <div class="col-md-4">
+              <div *ngIf="card.id !== 'ultimosValores'" class="col-md-6">
                 <div><h4>Variable 2(Unidad)</h4>
                 </div>
                 <div class="card">
@@ -25,13 +26,13 @@
                     Exportar Datos
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" (click)="exportAs('excel', card.id)">Excel</a></li>
-                    <li><a class="dropdown-item" (click)="exportAs('csv', card.id)">CSV</a></li>
-                    <li><a class="dropdown-item" (click)="exportAs('pdf', card.id)">PDF</a></li>
+                    <li><a class="dropdown-item" >Excel</a></li>
+                    <li><a class="dropdown-item">CSV</a></li>
+                    <li><a class="dropdown-item" >PDF</a></li>
                   </ul>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6" *ngIf="card.id !== 'ultimosValores'">
                 <div><h4>Variable 3(Unidad)</h4></div>
                 <div class="card">
                   <canvas [attr.id]="card.id"></canvas>
@@ -42,12 +43,33 @@
                     Exportar Datos
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" (click)="exportAs('excel', card.id)">Excel</a></li>
-                    <li><a class="dropdown-item" (click)="exportAs('csv', card.id)">CSV</a></li>
-                    <li><a class="dropdown-item" (click)="exportAs('pdf', card.id)">PDF</a></li>
+                    <li><a class="dropdown-item" >Excel</a></li>
+                    <li><a class="dropdown-item" >CSV</a></li>
+                    <li><a class="dropdown-item">PDF</a></li>
                   </ul>
                 </div>
               </div>
+              <div *ngIf="card.id === 'ultimosValores'">
+                <div class="col-md-12">
+                  <div><h4>Últimos Valores</h4></div>
+                  <div class="card">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Etiqueta</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Unidad</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let data of ultimosValoresData">
+                          <td>{{data.label}}</td>
+                          <td>{{data.value}}</td>
+                          <td>{{data.unit}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
             </div>
           </div>
         </div>
