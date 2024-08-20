@@ -22,8 +22,6 @@ export class DashboardComponent implements AfterViewInit {
     { id: 'lineChart6', title: 'Caudal Q' },
     { id: 'ultimosValores', title:'Ultimos Valores'}
   ];
-
-
   
   charts: { [key: string]: Chart } = {};
 
@@ -33,7 +31,8 @@ export class DashboardComponent implements AfterViewInit {
     this.activeIndex = this.activeIndex === index ? null : index;
   }
 
-  constructor(private googleSheetsService: GoogleSheetsService) {
+
+  constructor(private googleSheetsService: GoogleSheetsService, private sanitizer: DomSanitizer) {
     Chart.register(...registerables);
   }
   ultimosValoresData: { label: string, value: number, unit: string }[] = [];
@@ -87,7 +86,6 @@ export class DashboardComponent implements AfterViewInit {
     ];
   }
 
-
   updateChartsWithGoogleSheetsData(records: any[]) {
     const lastRecords = records.slice(-30);
     const labels = lastRecords.map(record => record[0]);
@@ -102,7 +100,6 @@ export class DashboardComponent implements AfterViewInit {
     this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C');
     this.updateUltimosValoresData('Humedad', humidityData[humidityData.length - 1], '%');
     this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h');
-    
   }
 
   updateChart(chart: Chart, labels: string[], data: number[], label: string) {
@@ -355,5 +352,4 @@ export class DashboardComponent implements AfterViewInit {
       value: data[index]
     }));
   }
-  
 }
