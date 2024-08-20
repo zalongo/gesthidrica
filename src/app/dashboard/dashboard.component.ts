@@ -22,7 +22,7 @@ export class DashboardComponent implements AfterViewInit {
     { id: 'lineChart6', title: 'Caudal Q' },
     { id: 'ultimosValores', title:'Ultimos Valores'}
   ];
-
+  
   charts: { [key: string]: Chart } = {};
 
   activeIndex: number | null = null;

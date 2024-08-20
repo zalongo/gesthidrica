@@ -1,14 +1,14 @@
 <div class="container mt-4">
-<h2>Lista de Empresas</h2>
-</div>
-<ul class="list-group">
-  <li *ngFor="let empresa of empresas; let i = index" class="list-group-item">
-    <button class="btn-link" (click)="navigateToDetail(empresa)">
-      {{ empresa.nombre }}
-    </button>
-    <div class="repcom">
-      Representante Legal: {{ empresa.representante }} <br>
-      Comuna: {{ empresa.comuna }}
-    </div>
-  </li>
-</ul>
+  <h2>Lista de Empresas</h2>
+  </div>
+  <ul class="list-group">
+    <li *ngFor="let empresa of empresas; let i = index" class="list-group-item btn" (click)="navigateToDetail(empresa)">
+      <button class="btn-link" (click)="navigateToDetail(empresa)">
+        {{ empresa.nombre }}
+      </button>
+      <div class="repcom">
+        Representante Legal: {{ empresa.representante }} <br>
+        Comuna: {{ empresa.comuna }}
+      </div>
+    </li>
+  </ul>
