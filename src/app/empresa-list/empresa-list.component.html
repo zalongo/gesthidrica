@@ -3,7 +3,7 @@
   </div>
   <ul class="list-group">
     <li *ngFor="let empresa of empresas; let i = index" class="list-group-item btn" (click)="navigateToDetail(empresa)">
-      <button class="btn-link" (click)="navigateToDetail(empresa)">
+      <button class="btn-link">
         {{ empresa.nombre }}
       </button>
       <div class="repcom">
