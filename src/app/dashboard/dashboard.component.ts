@@ -13,14 +13,14 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-    { id: 'lineChart1', title: 'Temperatura'},
-    { id: 'lineChart2', title: 'Humedad Suelo' },
-    { id: 'barChart1', title: 'Velocidad Viento' },
-    { id: 'lineChart3', title: 'Precipitación' },
-    { id: 'lineChart4', title: 'Radiación UV' },
-    { id: 'lineChart5', title: 'Bateria' },
-    { id: 'lineChart6', title: 'Caudal Q' },
-    { id: 'ultimosValores', title:'Ultimos Valores'}
+    { id: 'lineChart1', title: 'Temperatura', visible: true },
+    { id: 'lineChart2', title: 'Humedad Suelo', visible: true },
+    { id: 'barChart1', title: 'Velocidad Viento', visible: true },
+    { id: 'lineChart3', title: 'Precipitación', visible: false },
+    { id: 'lineChart4', title: 'Radiación UV', visible: false }, 
+    { id: 'lineChart5', title: 'Bateria', visible: true },
+    { id: 'lineChart6', title: 'Caudal Q', visible: false },
+    { id: 'ultimosValores', title: 'Ultimos Valores', visible: true }
   ];
 
   charts: { [key: string]: Chart } = {};
@@ -46,13 +46,19 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   initializeCharts() {
-    this.createLineChart1();
-    this.createLineChart2();
-    this.createBarChart1();
-    this.createLineChart3();
-    this.createLineChart4();
-    this.createLineChart5();
-    this.createLineChart6();
+    this.cards.forEach(card => {
+      if (card.visible) {
+        switch (card.id) {
+          case 'lineChart1': this.createLineChart1(); break;
+          case 'lineChart2': this.createLineChart2(); break;
+          case 'barChart1': this.createBarChart1(); break;
+          case 'lineChart3': this.createLineChart3(); break;
+          case 'lineChart4': this.createLineChart4(); break;
+          case 'lineChart5': this.createLineChart5(); break;
+          case 'lineChart6': this.createLineChart6(); break;
+        }
+      }
+    });
   }
 
   randomValues: { label: string, value: number, nuevo: string, icon: SafeHtml }[] = [];
@@ -336,9 +342,6 @@ export class DashboardComponent implements AfterViewInit {
     ];
   }
 
-  
-
- 
 
   getChartData(id: string) {
     const chart = this.charts[id];
