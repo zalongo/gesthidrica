@@ -41,8 +41,16 @@ export class DashboardComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.generateRandomValues();
     this.initializeCharts();
-    this.loadGoogleSheetsData();
-    this.initializeUltimosValoresData();
+  
+    // Agrega un delay de medio segundo antes de cargar los datos de Google Sheets
+    setTimeout(() => {
+      this.loadGoogleSheetsData();
+    }, 1000); // 500 milisegundos = 0.5 segundos
+  
+    // Agrega otro delay si también quieres que initializeUltimosValoresData tenga un retraso
+    setTimeout(() => {
+      this.initializeUltimosValoresData();
+    }, 1000); // Ajusta el tiempo si es necesario
   }
 
   initializeCharts() {
