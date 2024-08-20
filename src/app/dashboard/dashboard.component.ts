@@ -13,7 +13,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-    { id: 'lineChart1', title: 'Temperatura', /*imageSrc: 'https://images.vexels.com/media/users/3/127021/isolated/preview/c0cf811b6355be6f12fed44bf51e8fd2-termometro-de-temperatura-icon-svg.png'*/},
+    { id: 'lineChart1', title: 'Temperatura'},
     { id: 'lineChart2', title: 'Humedad Suelo' },
     { id: 'barChart1', title: 'Velocidad Viento' },
     { id: 'lineChart3', title: 'Precipitación' },
