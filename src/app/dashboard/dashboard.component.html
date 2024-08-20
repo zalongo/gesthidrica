@@ -40,16 +40,22 @@
                 <div>
                   <h4>Variable 3(Unidad)</h4>
                 </div>
-                <div class="card">
-                  <div class="grid-container">
-                    <!-- Aquí puedes agregar las celdas de tu cuadrícula -->
-                    <div class="grid-item">Dato 1</div>
-                    <div class="grid-item">Dato 2</div>
-                    <div class="grid-item">Dato 3</div>
-                    <div class="grid-item">Dato 4</div>
-                    <!-- Continúa agregando más celdas según sea necesario -->
-                  </div>
-                </div>
+                    <div class="card">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">{{card.title}}</th>
+                            <th scope="col">Fecha</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let data of ultimosValoresData">
+                            <td>{{data.value}}</td>
+                            <td>{{data.unit}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                 <div class="mt-3">
                   <button class="button-exportar" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                     aria-expanded="false">

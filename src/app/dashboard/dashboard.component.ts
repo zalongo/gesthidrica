@@ -21,6 +21,8 @@ export class DashboardComponent implements AfterViewInit {
     { id: 'lineChart6', title: 'Caudal Q' },
     { id: 'ultimosValores', title:'Ultimos Valores'}
   ];
+
+
   
   charts: { [key: string]: Chart } = {};
 
@@ -85,6 +87,7 @@ export class DashboardComponent implements AfterViewInit {
     ];
   }
 
+
   updateChartsWithGoogleSheetsData(records: any[]) {
     const lastRecords = records.slice(-30);
     const labels = lastRecords.map(record => record[0]);
@@ -99,6 +102,7 @@ export class DashboardComponent implements AfterViewInit {
     this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C');
     this.updateUltimosValoresData('Humedad', humidityData[humidityData.length - 1], '%');
     this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h');
+    
   }
 
   updateChart(chart: Chart, labels: string[], data: number[], label: string) {
@@ -319,13 +323,14 @@ export class DashboardComponent implements AfterViewInit {
   getChartData(id: string) {
     const chart = this.charts[id];
     if (!chart) return [];
-
+  
     const labels = chart.data.labels || [];
     const data = chart.data.datasets[0].data || [];
-
+  
     return labels.map((label: any, index: number) => ({
       label,
       value: data[index]
     }));
   }
+  
 }
