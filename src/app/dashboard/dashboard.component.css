@@ -90,7 +90,6 @@ canvas {
   min-width: auto;
 }
 
-/* Clases adicionales para manejar la expansión */
 .expanded {
   flex: 0 0 100%;
   max-width: 100%;
