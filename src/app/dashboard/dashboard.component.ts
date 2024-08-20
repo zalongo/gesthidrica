@@ -17,12 +17,12 @@ export class DashboardComponent implements AfterViewInit {
     { id: 'lineChart2', title: 'Humedad Suelo', visible: true },
     { id: 'barChart1', title: 'Velocidad Viento', visible: true },
     { id: 'lineChart3', title: 'Precipitación', visible: false },
-    { id: 'lineChart4', title: 'Radiación UV', visible: false }, 
+    { id: 'lineChart4', title: 'Radiación UV', visible: false },
     { id: 'lineChart5', title: 'Bateria', visible: true },
     { id: 'lineChart6', title: 'Caudal Q', visible: false },
     { id: 'ultimosValores', title: 'Ultimos Valores', visible: true }
   ];
-  
+
   charts: { [key: string]: Chart } = {};
 
   activeIndex: number | null = null;
