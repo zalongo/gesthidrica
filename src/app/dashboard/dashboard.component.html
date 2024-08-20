@@ -4,15 +4,15 @@
       <div class="card-principal">
         <div class="card-body accordion-item">
           <h5 class="card-title accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-              [attr.data-bs-target]="'#collapse' + i" [attr.aria-expanded]="activeIndex === i"
-              [attr.aria-controls]="'collapse' + i" (click)="toggleAccordion(i)">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i"
+              (click)="toggleAccordion(i)">
               {{ card.title }}
               <!-- <img [src]=card.imageSrc class="logoCard"> -->
             </button>
           </h5>
           <div class="accordion-body accordion-collapse collapse" [attr.id]="'collapse' + i"
-            [ngClass]="{'show': activeIndex === i}" data-bs-parent="#accordionExample">
+            data-bs-parent="#accordionExample">
             <div class="row">
               <!-- Variable 2 -->
               <div *ngIf="card.id !== 'ultimosValores'" class="col-md-6">
@@ -34,17 +34,20 @@
                   </ul>
                 </div>
               </div>
-
+            
+              <!-- Variable 3 con Grid -->
               <div *ngIf="card.id !== 'ultimosValores'" class="col-md-6">
                 <div>
                   <h4>Variable 3(Unidad)</h4>
                 </div>
                 <div class="card">
                   <div class="grid-container">
-                    <div class="grid-item">{{card.title}}</div>
-                    <div class="grid-item"></div>
-                    <div class="grid-item"></div>
-                    <div class="grid-item"></div>
+                    <!-- Aquí puedes agregar las celdas de tu cuadrícula -->
+                    <div class="grid-item">Dato 1</div>
+                    <div class="grid-item">Dato 2</div>
+                    <div class="grid-item">Dato 3</div>
+                    <div class="grid-item">Dato 4</div>
+                    <!-- Continúa agregando más celdas según sea necesario -->
                   </div>
                 </div>
                 <div class="mt-3">
@@ -60,31 +63,28 @@
                 </div>
               </div>
             </div>
-
-            <div *ngIf="card.id === 'ultimosValores'">
-              <div class="col-md-12">
-                <div>
-                  <h4>Últimos Valores</h4>
-                </div>
-                <div class="card">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Etiqueta</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Unidad</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let data of ultimosValoresData">
-                        <td>{{data.label}}</td>
-                        <td>{{data.value}}</td>
-                        <td>{{data.unit}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+            
+              <div *ngIf="card.id === 'ultimosValores'">
+                <div class="col-md-12">
+                  <div><h4>Últimos Valores</h4></div>
+                  <div class="card">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Etiqueta</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Unidad</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let data of ultimosValoresData">
+                          <td>{{data.label}}</td>
+                          <td>{{data.value}}</td>
+                          <td>{{data.unit}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
             </div>
           </div>
         </div>
