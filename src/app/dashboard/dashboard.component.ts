@@ -32,7 +32,6 @@ export class DashboardComponent implements AfterViewInit {
     this.activeIndex = this.activeIndex === index ? null : index;
   }
 
-
   constructor(private googleSheetsService: GoogleSheetsService) {
     Chart.register(...registerables);
   }
@@ -320,6 +319,19 @@ export class DashboardComponent implements AfterViewInit {
 
  
 
+  // getChartData(id: string) {
+  //   const chart = this.charts[id];
+  //   if (!chart) return [];
+
+  //   const labels = chart.data.labels || [];
+  //   const data = chart.data.datasets[0].data || [];
+
+  //   return labels.map((label: any, index: number) => ({
+  //     label,
+  //     value: data[index]
+  //   }));
+  // }
+
   getChartData(id: string) {
     const chart = this.charts[id];
     if (!chart) return [];
@@ -328,8 +340,8 @@ export class DashboardComponent implements AfterViewInit {
     const data = chart.data.datasets[0].data || [];
   
     return labels.map((label: any, index: number) => ({
-      label,
-      value: data[index]
+      label, // Esto será la fecha
+      value: data[index] // Este es el valor correspondiente a esa fecha
     }));
   }
   
