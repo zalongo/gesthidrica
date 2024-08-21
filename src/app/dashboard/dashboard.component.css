@@ -1,0 +1,114 @@
+.container {
+  padding-top: 0px;
+}
+
+.logoCard{
+  width: 15%;
+  height: 100%;
+  margin: auto;
+}
+
+.ultimosValores {
+  display: grid;
+  min-height: 270px;
+  text-align: left;
+  list-style-type: none;
+  padding-top: 5%;
+  box-shadow: none;
+}
+
+.card {
+  margin: 10px 0;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.accordion-button
+{
+  background-color: #366f97;
+  color: white;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0;
+}
+
+
+.expanded {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.card-body {
+  padding: 0;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom:0;
+  color: #ffffff;
+  font-weight: bold;
+  padding:0;
+}
+
+canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+@media (max-width: 768px) {
+  canvas {
+    height: 250px;
+  }
+}
+
+.accordion-body {
+  width: 100%;
+}
+
+.button-exportar {
+  background-color: #1b5c01;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  min-width: 60%;
+  max-width: 60%;
+}
+
+.dropdown-item {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  min-width: auto;
+}
+
+.expanded {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.row {
+  margin: auto;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}

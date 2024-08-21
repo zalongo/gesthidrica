@@ -1,0 +1,19 @@
+/* footer.component.css */
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  text-align:center;
+}
+
+.container 
+{
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+nav
+{
+  background-color: #404756;
+}
+
+img
+{
+  width: 150px;
+  height: 140px;
+  margin: 5px 5px 5px 5px;
+}
+
+.logo
+{
+  margin-left: 220px;
+  color: white;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
