@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { EmpresaHistoricoComponent } from '../empresa-historico/empresa-historico.component';
 
 @Component({
   selector: 'app-empresa-detail',
   standalone: true,
-  imports: [CommonModule, DashboardComponent],
+  imports: [CommonModule, DashboardComponent,EmpresaHistoricoComponent],
   templateUrl: './empresa-detail.component.html',
   styleUrls: ['./empresa-detail.component.css']
 })
