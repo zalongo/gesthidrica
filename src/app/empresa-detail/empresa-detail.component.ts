@@ -14,7 +14,7 @@ export class EmpresaDetailComponent implements OnInit {
   empresa: string = '';
 
   empresas = [
-    'Agrícola los Pellines',
+    'Soc. Inv. Matristica',
     'Agricola Jorge Borgeaud',
     'Agrícola Los Puntales',
     'Soc. Inv. Matristica',
