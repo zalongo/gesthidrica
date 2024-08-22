@@ -8,14 +8,52 @@
   margin: auto;
 }
 
-.ultimosValores {
-  display: grid;
-  min-height: 270px;
-  text-align: left;
-  list-style-type: none;
-  padding-top: 5%;
-  box-shadow: none;
+.ultimostitulos 
+{
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px;
+  background-color: #007b8f;
 }
+
+.ultimosvalores {
+  display: grid;
+  min-height: 260px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+
+.table thead th {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 
 .card {
   margin: 10px 0;

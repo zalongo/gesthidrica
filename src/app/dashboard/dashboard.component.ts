@@ -20,7 +20,6 @@ export class DashboardComponent implements AfterViewInit {
     { id: 'lineChart4', title: 'Radiación UV', visible: false },
     { id: 'lineChart5', title: 'Bateria', visible: true },
     { id: 'lineChart6', title: 'Caudal Q', visible: false },
-    { id: 'ultimosValores', title: 'Ultimos Valores', visible: true }
   ];
 
   charts: { [key: string]: Chart } = {};
