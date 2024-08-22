@@ -28,6 +28,6 @@ export class EmpresaListComponent {
 
   navigateToDetail(empresa: any) {
     const id = this.empresas.indexOf(empresa);
-    this.router.navigate(['/empresa', id]);
+    this.router.navigate(['botones']);
   }
 }
