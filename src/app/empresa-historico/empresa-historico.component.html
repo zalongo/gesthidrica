@@ -2,11 +2,11 @@
     <div style="text-align: center;display: flex;">
         <div class="col-md-6">
             <h4>Fecha de Inicio</h4>
-            <input type="date">
+            <input type="date" [(ngModel)]="fechaInicio">
         </div>
         <div class="col-md-6">
             <h4>Fecha Límite</h4>
-            <input type="date">
+            <input type="date" [(ngModel)]="fechaLimite">
         </div>
     </div>
     <div class="input-group mb-3 mt-3">
@@ -15,38 +15,16 @@
             <option *ngFor="let option of options">{{option.nombre}}</option>
         </select>
     </div>
-    <div class="d-grid gap-2 col-6 mx-auto text-center">
-        <button type="button" class="btn btn-secondary btn-sm" onclick="guardar()">Guardar</button>
+    <div class="d-grid gap-2 col-6 mx-auto text-center mb-3">
+        <button type="button" class="btn btn-secondary btn-sm" (click)="guardar()">Guardar</button>
     </div>
     <div class="row">
         <ng-container *ngFor="let card of cards; let i = index">
-<!--             <div *ngIf="card.id !== 'ultimosValores'" class="col-md-6">
- -->                <div class="card">
+            <div class="col-md-6" *ngIf="card.visible">
+                <div class="card mb-3">
                     <canvas [attr.id]="card.id"></canvas>
                 </div>
-<!--             </div>
- -->            <!--<div *ngIf="card.id !== 'ultimosValores'" class="col-md-6">
-                     <div class="card">
-                    <div class="scroll" style="max-height: 300px; overflow-y: auto;">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Fecha</th>
-                                    <th scope="col">Valor</th>
-                                    <th scope="col">Hora</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let data of ultimosValoresData">
-                                    <td class="col-md-4">20/08/2024</td>
-                                    <td class="col-md-4">17</td>
-                                    <td class="col-md-4">18:34</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
-            <!-- div -->
+            </div>
         </ng-container>
     </div>
 </div>
