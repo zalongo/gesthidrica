@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { EmpresaListComponent } from './empresa-list/empresa-list.component';
 import { EmpresaDetailComponent } from './empresa-detail/empresa-detail.component';
-import { BotonsComponent } from './botons/botons.component';import { EmpresaHistoricoComponent } from './empresa-historico/empresa-historico.component';
+import { EmpresaHistoricoComponent } from './empresa-historico/empresa-historico.component';
 import { EmpresaDetailAdminComponent } from './empresa-detail-admin/empresa-detail-admin.component';
 
 export const routes: Routes = [
@@ -9,7 +9,6 @@ export const routes: Routes = [
   { path: 'empresa/:id', component: EmpresaDetailComponent},
   { path: 'adminDashboard', component: EmpresaDetailAdminComponent},
   { path: 'historicosEmpresa/:id', component: EmpresaHistoricoComponent},
-  {path: 'botones', component: BotonsComponent}
 ];
 export default routes;
 

@@ -30,6 +30,7 @@
 
 .table {
   width: 100%;
+  height: 90%;
   border-collapse: collapse;
 }
 
@@ -136,7 +137,9 @@ canvas {
 
 .row {
   margin: auto;
+  margin-top: 20px; /* Ajusta este valor según sea necesario */
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
