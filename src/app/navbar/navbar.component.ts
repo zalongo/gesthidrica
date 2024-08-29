@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
@@ -17,6 +16,12 @@ export class NavbarComponent {
 
   constructor(private router: Router, private googleSheetsService: GoogleSheetsService) { }
 
+  isMenuOpen: boolean = false;
+
+  navigateToHistoricos() {
+    this.router.navigate(['/historicosEmpresa']);
+  }
+
   handleAuthClick() {
     this.googleSheetsService.handleAuthClick();
   }
@@ -24,18 +29,19 @@ export class NavbarComponent {
   trackById(index: number, item: any) {
     return item.id;
   }
+
   notificationsEnabled = true;
+
   changeLanguage = [
     { id: 1, texto: 'Español' },
     { id: 2, texto: 'Ingles' }
-  ]
+  ];
 
   notificaciones1 = [
     { id: 1, texto: 'El caudal esta cerrado' },
     { id: 2, texto: 'Temperatura muy alta' },
     { id: 3, texto: 'Estado de la Humedad: Normal' },
-    { id: 3, texto: 'Probando... ' }
-
+    { id: 4, texto: 'Probando... ' }
   ];
 
   deleteNotification1(notificationId: number) {
@@ -44,14 +50,12 @@ export class NavbarComponent {
       this.notificaciones1.splice(index, 1);
     }
   }
-  
-
 
   toggleNotifications() {
     this.notificationsEnabled = !this.notificationsEnabled;
   }
-  toggleLanguage() {
-  }
+
+  toggleLanguage() {}
 
   isOpen = false;
   isOpenConf = false;
@@ -71,7 +75,7 @@ export class NavbarComponent {
   }
 
   openConf() {
-    this.isOpenConf = !this.isOpenConf; // Alterna el valor de isOpen
+    this.isOpenConf = !this.isOpenConf;
     if (this.isOpenConf) {
       addEventListener("click", this.closeModalConf);
     } else {
@@ -79,13 +83,12 @@ export class NavbarComponent {
     }
     this.isOpen = false;
   }
+
   closeModalConf() {
     this.isOpenConf = false;
   }
 
   isNotificacionesOpen: boolean = false;
-
-
 
   openNotificaciones() {
     this.isNotificacionesOpen = true;
@@ -101,5 +104,20 @@ export class NavbarComponent {
 
   navigateToRegister() {
     this.router.navigate(['/register']);
+  }
+
+  // Nueva función para alternar el menú
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // Cerrar el menú si se hace clic fuera de él
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: Event) {
+    const target = event.target as HTMLElement;
+    const menuIcon = document.getElementById('menuDropdownIcon');
+    if (this.isMenuOpen && menuIcon && !menuIcon.contains(target) && !target.closest('.dropdown-menu')) {
+      this.isMenuOpen = false;
+    }
   }
 }

@@ -8,7 +8,7 @@ export const routes: Routes = [
   { path: '', component: EmpresaListComponent },
   { path: 'empresa/:id', component: EmpresaDetailComponent},
   { path: 'adminDashboard', component: EmpresaDetailAdminComponent},
-  { path: 'historicosEmpresa/:id', component: EmpresaHistoricoComponent},
+  { path: 'historicosEmpresa', component: EmpresaHistoricoComponent },
 ];
 export default routes;
 
