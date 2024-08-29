@@ -2,3 +2,11 @@
     width: 30%;
     margin: 0 auto;
 }
+
+.card{
+    max-height: 100%;
+}
+.tabla{
+    max-height: 273px;
+    overflow-y: auto;
+}

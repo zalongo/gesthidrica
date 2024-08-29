@@ -1,30 +1,55 @@
 <div class="container">
-    <div style="text-align: center;display: flex;">
-        <div class="col-md-6">
-            <h4>Fecha de Inicio</h4>
-            <input type="date" [(ngModel)]="fechaInicio">
-        </div>
-        <div class="col-md-6">
-            <h4>Fecha Límite</h4>
-            <input type="date" [(ngModel)]="fechaLimite">
-        </div>
+    <!-- Fecha de inicio y límite -->
+    <div style="text-align: center; display: flex;">
+      <div class="col-md-6">
+        <h4>Fecha de Inicio</h4>
+        <input type="date" [(ngModel)]="fechaInicio">
+      </div>
+      <div class="col-md-6">
+        <h4>Fecha Límite</h4>
+        <input type="date" [(ngModel)]="fechaLimite">
+      </div>
     </div>
+  
+    <!-- Selección de parámetro -->
     <div class="input-group mb-3 mt-3">
-        <label class="input-group-text" for="inputGroupSelect01">Parámetro</label>
-        <select class="form-select" id="inputGroupSelect01" [(ngModel)]="selectedOption">
-            <option *ngFor="let option of options">{{option.nombre}}</option>
-        </select>
+      <label class="input-group-text" for="inputGroupSelect01">Parámetro</label>
+      <select class="form-select" id="inputGroupSelect01" [(ngModel)]="selectedOption">
+        <option *ngFor="let option of options">{{option.nombre}}</option>
+      </select>
     </div>
+  
+    <!-- Botón Guardar -->
     <div class="d-grid gap-2 col-6 mx-auto text-center mb-3">
-        <button type="button" class="btn btn-secondary btn-sm" (click)="guardar()">Guardar</button>
+      <button type="button" class="btn btn-secondary btn-sm" (click)="guardar()">Guardar</button>
     </div>
-    <div class="row">
-        <ng-container *ngFor="let card of cards; let i = index">
-            <div class="col-md-6" *ngIf="card.visible">
-                <div class="card mb-3">
-                    <canvas [attr.id]="card.id"></canvas>
-                </div>
-            </div>
-        </ng-container>
+  
+    <!-- Gráficos -->
+    <div class="row contenido">
+      <ng-container *ngFor="let card of cards; let i = index">
+        <div class="col-6" *ngIf="card.visible">
+          <div class="card mb-3">
+            <canvas [attr.id]="card.id"></canvas>
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-6 card tabla" *ngIf="tablaVisible">
+        <table class="table" style="text-align: center;">
+          <thead>
+            <tr>
+              <th scope="col">Fecha y Hora</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Unidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of ultimosValoresData">
+              <td>{{data.label}}</td>
+              <td>{{data.value}}</td>
+              <td>{{data.unit}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-</div>
+  

@@ -24,6 +24,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     { id: 'barChart1', title: 'Velocidad Viento', visible: false },
   ];
 
+  tablaVisible: boolean = false;
   fechaInicio: string = '';
   fechaLimite: string = '';
 
@@ -36,14 +37,18 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
 
   }
 
+
   guardar() {
     if (!this.fechaInicio || !this.fechaLimite) {
       alert('Por favor, seleccione una fecha de inicio y una fecha límite.');
-      return; // No continuar si las fechas no están completas
+      return;
     }
-    this.casosGraficos(this.selectedOption);
-    this.loadGoogleSheetsData(); // Asegúrate de que los datos se actualicen después de cambiar la opción
-    
+
+    setTimeout(() => {
+      this.casosGraficos(this.selectedOption);
+      this.loadGoogleSheetsData(); 
+      this.tablaVisible = true; // Mostrar la tabla después de presionar 'Guardar'
+    }, 300);
   }
 
   convertDateFormat(dateStr: string): Date {
@@ -57,13 +62,13 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     }
     const start = new Date(this.fechaInicio);
     const end = new Date(this.fechaLimite);
-  
+
     // Filtrar registros por fecha
     const filteredRecords = records.filter(record => {
       const date = this.convertDateFormat(record[0]);
       return date >= start && date <= end;
     });
-  
+
     // Agrupar registros por día
     const recordsByDay: { [key: string]: any[] } = {};
     filteredRecords.forEach(record => {
@@ -74,7 +79,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
       }
       recordsByDay[dateStr].push(record);
     });
-  
+
     // Seleccionar una cantidad específica de datos por día
     const selectedRecords: any[] = [];
     Object.keys(recordsByDay).forEach(dateStr => {
@@ -83,7 +88,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
       const limitedRecords = dayRecords.slice(0, 6); // Por ejemplo, tomar solo 5 registros por día
       selectedRecords.push(...limitedRecords);
     });
-  
+
     return selectedRecords;
   }
 
@@ -127,11 +132,40 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
 
         if (records.length > 0) {
           this.updateChartsWithGoogleSheetsData(records);
+          this.updateTableWithGoogleSheetsData(records); // Actualizar la tabla también
         }
       } else {
         this.googleSheetsService.handleAuthClick();
       }
     });
+  }
+
+  updateTableWithGoogleSheetsData(records: any[]) {
+    const filteredRecords = this.filterRecordsByDate(records);
+
+    switch (this.selectedOption) {
+      case 'Temperatura':
+        this.ultimosValoresData = filteredRecords.map(record => ({
+          label: record[0] + " " + record[1],
+          value: parseFloat(record[1].replace(',', '.')),
+          unit: '°C'
+        }));
+        break;
+      case 'Humedad':
+        this.ultimosValoresData = filteredRecords.map(record => ({
+          label: record[0] + " " + record[1],
+          value: parseFloat(record[2].replace(',', '.')),
+          unit: '%'
+        }));
+        break;
+      case 'Velocidad Viento':
+        this.ultimosValoresData = filteredRecords.map(record => ({
+          label: record[0] + " " + record[1],
+          value: parseFloat(record[3].replace(',', '.')),
+          unit: 'Km/h'
+        }));
+        break;
+    }
   }
 
   updateChart(chart: Chart, labels: string[], data: number[], label: string) {
@@ -142,25 +176,25 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
   }
 
   updateChartsWithGoogleSheetsData(records: any[]) {
-  const filteredRecords = this.filterRecordsByDate(records);
-  const labels = filteredRecords.map(record => record[0] + " " + " " + record[1]);
-  const temperatureData = filteredRecords.map(record => parseFloat(record[1].replace(',', '.')));
-  const humidityData = filteredRecords.map(record => parseFloat(record[2].replace(',', '.')));
-  const windSpeedData = filteredRecords.map(record => parseFloat(record[3].replace(',', '.')));
+    const filteredRecords = this.filterRecordsByDate(records);
+    const labels = filteredRecords.map(record => record[0] + " " + " " + record[1]);
+    const temperatureData = filteredRecords.map(record => parseFloat(record[1].replace(',', '.')));
+    const humidityData = filteredRecords.map(record => parseFloat(record[2].replace(',', '.')));
+    const windSpeedData = filteredRecords.map(record => parseFloat(record[3].replace(',', '.')));
 
-  if (this.cards[0].visible) {
-    this.createLineChart1();
-    this.updateChart(this.charts['lineChart1'], labels, temperatureData, '°C');
+    if (this.cards[0].visible) {
+      this.createLineChart1();
+      this.updateChart(this.charts['lineChart1'], labels, temperatureData, '°C');
+    }
+    if (this.cards[1].visible) {
+      this.createLineChart2();
+      this.updateChart(this.charts['lineChart2'], labels, humidityData, '%');
+    }
+    if (this.cards[2].visible) {
+      this.createBarChart1();
+      this.updateChart(this.charts['barChart1'], labels, windSpeedData, 'Km/h');
+    }
   }
-  if (this.cards[1].visible) {
-    this.createLineChart2();
-    this.updateChart(this.charts['lineChart2'], labels, humidityData, '%');
-  }
-  if (this.cards[2].visible) {
-    this.createBarChart1();
-    this.updateChart(this.charts['barChart1'], labels, windSpeedData, 'Km/h');
-  }
-}
 
   createLineChart1() {
     const existingChart = this.charts['lineChart1'];
