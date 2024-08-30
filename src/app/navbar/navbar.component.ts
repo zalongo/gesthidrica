@@ -4,6 +4,7 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { GoogleSheetsService } from '../services/google-sheets.service';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,9 +15,19 @@ import { GoogleSheetsService } from '../services/google-sheets.service';
 })
 export class NavbarComponent {
 
-  constructor(private router: Router, private googleSheetsService: GoogleSheetsService) { }
+  isMenuOpen = false;
 
-  isMenuOpen: boolean = false;
+  constructor(private router: Router, private googleSheetsService: GoogleSheetsService, private menuService: MenuService) { }
+
+  ngOnInit() {
+    this.menuService.toggleMenu$.subscribe(() => {
+      this.toggleMenu();
+    });
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   navigateToHistoricos() {
     this.router.navigate(['/historicosEmpresa']);
@@ -106,18 +117,7 @@ export class NavbarComponent {
     this.router.navigate(['/register']);
   }
 
-  // Nueva función para alternar el menú
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  // Cerrar el menú si se hace clic fuera de él
-  @HostListener('document:click', ['$event'])
-  handleClickOutside(event: Event) {
-    const target = event.target as HTMLElement;
-    const menuIcon = document.getElementById('menuDropdownIcon');
-    if (this.isMenuOpen && menuIcon && !menuIcon.contains(target) && !target.closest('.dropdown-menu')) {
-      this.isMenuOpen = false;
-    }
+  navigateToDashboard() {
+    this.router.navigate(['/empresa/:{id}']);
   }
 }
