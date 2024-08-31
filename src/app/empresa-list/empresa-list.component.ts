@@ -1,6 +1,7 @@
 import { Router } from "@angular/router";
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MenuService } from "../services/menu.service";
 
 @Component({
   selector: 'app-empresa-list',
@@ -24,10 +25,10 @@ export class EmpresaListComponent {
     // { nombre: 'Agrícola David Estrada', representante: 'Nombre Apellido', comuna: 'Comuna' }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private menuService: MenuService) {}
 
   navigateToDetail(empresa: any) {
-    const id = this.empresas.indexOf(empresa);
-    this.router.navigate(['botones']);
+    this.menuService.triggerToggleMenu();
   }
+  
 }
