@@ -82,7 +82,7 @@ export class DashboardComponent implements AfterViewInit {
   initializeUltimosValoresData() {
     this.ultimosValoresData = [
       { label: 'Temperatura', value: 19.35, unit: '°C' },
-      { label: 'Humedad', value: 98.35, unit: '%' },
+      { label: 'Humedad Suelo', value: 98.35, unit: '%' },
       { label: 'Velocidad Viento', value: 4.77, unit: 'Km/h' },
       { label: 'Precipitación', value: 0.00, unit: 'mm' },
       { label: 'Radiación UV', value: 0.46, unit: 'mW/cm²' },
@@ -307,7 +307,6 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   generateRandomValues() {
-    const temperature = 19.35;
     const humidity = 98.35;
     const windSpeed = 4.77;
     const precipitation = 0.00;
