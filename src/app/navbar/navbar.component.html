@@ -9,7 +9,7 @@
     <i class="fas fa-list mx-2" id="menuDropdownIcon"></i>
     <ul class="dropdown-menu dropdown-menu-end" [class.show]="isMenuOpen" aria-labelledby="menuDropdownIcon">
       <li><a class="dropdown-item" [routerLink]="['/historicosEmpresa']">Datos históricos</a></li>
-      <li><a class="dropdown-item">Datos cruzados</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/datosCruzadosEmpresa']" >Datos cruzados</a></li>
       <li><a class="dropdown-item" [routerLink]="['empresa/:id']">Datos en tiempo real</a></li>
     </ul>    
   </div>

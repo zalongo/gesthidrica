@@ -1,0 +1,21 @@
+<div>
+    <h2>Datos Cruzados</h2>
+    
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="selectedData.temperatura" (change)="updateChartData()"/>
+        Temperatura
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="selectedData.humedad" (change)="updateChartData()" />
+        Humedad
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="selectedData.velocidadViento" (change)="updateChartData()" />
+        Velocidad del Viento
+      </label>
+    </div>
+  
+    <canvas id="dataChart"></canvas>
+  </div>
+  
