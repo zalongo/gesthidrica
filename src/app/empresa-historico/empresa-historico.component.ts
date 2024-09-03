@@ -34,9 +34,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.loadGoogleSheetsData();
-
   }
-
 
   guardar() {
     if (!this.fechaInicio || !this.fechaLimite) {
@@ -85,7 +83,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     Object.keys(recordsByDay).forEach(dateStr => {
       const dayRecords = recordsByDay[dateStr];
       // Limitar la cantidad de datos por día
-      const limitedRecords = dayRecords.slice(0, 6); // Por ejemplo, tomar solo 5 registros por día
+      const limitedRecords = dayRecords.slice(0, 6); // Por ejemplo, tomar solo 6 registros por día
       selectedRecords.push(...limitedRecords);
     });
 
@@ -99,14 +97,12 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
         this.cards[1].visible = false;
         this.cards[2].visible = false;
         this.createLineChart1();
-
         break;
       case 'Humedad':
         this.cards[1].visible = true;
         this.cards[0].visible = false;
         this.cards[2].visible = false;
         this.createLineChart2();
-
         break;
       case 'Velocidad Viento':
         this.cards[2].visible = true;
@@ -127,12 +123,18 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     this.googleSheetsService.authStatus.subscribe(async (authenticated) => {
       if (authenticated) {
         const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
-        const range = 'Humedad';
-        const records = await this.googleSheetsService.getRecords(sheetId, range);
 
-        if (records.length > 0) {
-          this.updateChartsWithGoogleSheetsData(records);
-          this.updateTableWithGoogleSheetsData(records); // Actualizar la tabla también
+        // Obtener datos de la hoja de Humedad
+        const humidityRange = 'Humedad';
+        const humidityRecords = await this.googleSheetsService.getRecords(sheetId, humidityRange);
+
+        // Obtener datos de la hoja de Estación
+        const stationRange = 'Estacion';
+        const stationRecords = await this.googleSheetsService.getRecords(sheetId, stationRange);
+
+        if (humidityRecords.length > 0 && stationRecords.length > 0) {
+          this.updateChartsWithGoogleSheetsData(humidityRecords, stationRecords);
+          this.updateTableWithGoogleSheetsData(humidityRecords, stationRecords); // Actualizar la tabla también
         }
       } else {
         this.googleSheetsService.handleAuthClick();
@@ -140,28 +142,29 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     });
   }
 
-  updateTableWithGoogleSheetsData(records: any[]) {
-    const filteredRecords = this.filterRecordsByDate(records);
+  updateTableWithGoogleSheetsData(humidityRecords: any[], stationRecords: any[]) {
+    const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords);
+    const filteredStationRecords = this.filterRecordsByDate(stationRecords);
 
     switch (this.selectedOption) {
       case 'Temperatura':
-        this.ultimosValoresData = filteredRecords.map(record => ({
+        this.ultimosValoresData = filteredStationRecords.map(record => ({
           label: record[0] + " " + record[1],
-          value: parseFloat(record[1].replace(',', '.')),
+          value: parseFloat(record[2].replace(',', '.')),
           unit: '°C'
         }));
         break;
       case 'Humedad':
-        this.ultimosValoresData = filteredRecords.map(record => ({
+        this.ultimosValoresData = filteredHumidityRecords.map(record => ({
           label: record[0] + " " + record[1],
-          value: parseFloat(record[2].replace(',', '.')),
+          value: parseFloat(record[1].replace(',', '.')),
           unit: '%'
         }));
         break;
       case 'Velocidad Viento':
-        this.ultimosValoresData = filteredRecords.map(record => ({
+        this.ultimosValoresData = filteredStationRecords.map(record => ({
           label: record[0] + " " + record[1],
-          value: parseFloat(record[3].replace(',', '.')),
+          value: parseFloat(record[5].replace(',', '.')),
           unit: 'Km/h'
         }));
         break;
@@ -175,24 +178,28 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     chart.update();
   }
 
-  updateChartsWithGoogleSheetsData(records: any[]) {
-    const filteredRecords = this.filterRecordsByDate(records);
-    const labels = filteredRecords.map(record => record[0] + " " + " " + record[1]);
-    const temperatureData = filteredRecords.map(record => parseFloat(record[1].replace(',', '.')));
-    const humidityData = filteredRecords.map(record => parseFloat(record[2].replace(',', '.')));
-    const windSpeedData = filteredRecords.map(record => parseFloat(record[3].replace(',', '.')));
+  updateChartsWithGoogleSheetsData(humidityRecords: any[], stationRecords: any[]) {
+    const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords);
+    const filteredStationRecords = this.filterRecordsByDate(stationRecords);
+
+    const labelsHumidity = filteredHumidityRecords.map(record => record[0] + " " + record[1]);
+    const humidityData = filteredHumidityRecords.map(record => parseFloat(record[1].replace(',', '.')));
+
+    const labelsStation = filteredStationRecords.map(record => record[0] + " " + record[1]);
+    const temperatureData = filteredStationRecords.map(record => parseFloat(record[2].replace(',', '.')));
+    const windSpeedData = filteredStationRecords.map(record => parseFloat(record[5].replace(',', '.')));
 
     if (this.cards[0].visible) {
       this.createLineChart1();
-      this.updateChart(this.charts['lineChart1'], labels, temperatureData, '°C');
+      this.updateChart(this.charts['lineChart1'], labelsStation, temperatureData, '°C');
     }
     if (this.cards[1].visible) {
       this.createLineChart2();
-      this.updateChart(this.charts['lineChart2'], labels, humidityData, '%');
+      this.updateChart(this.charts['lineChart2'], labelsHumidity, humidityData, '%');
     }
     if (this.cards[2].visible) {
       this.createBarChart1();
-      this.updateChart(this.charts['barChart1'], labels, windSpeedData, 'Km/h');
+      this.updateChart(this.charts['barChart1'], labelsStation, windSpeedData, 'Km/h');
     }
   }
 
@@ -227,7 +234,6 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
       });
     }
   }
-
 
   createLineChart2() {
     const existingChart = this.charts['lineChart2'];
@@ -283,6 +289,9 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
+          x: {
+            beginAtZero: true
+          },
           y: {
             beginAtZero: true
           }
