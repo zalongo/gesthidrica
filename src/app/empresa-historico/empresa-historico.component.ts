@@ -134,7 +134,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
 
         if (humidityRecords.length > 0 && stationRecords.length > 0) {
           this.updateChartsWithGoogleSheetsData(humidityRecords, stationRecords);
-          this.updateTableWithGoogleSheetsData(humidityRecords, stationRecords); // Actualizar la tabla también
+          this.updateTableWithGoogleSheetsData(humidityRecords, stationRecords); 
         }
       } else {
         this.googleSheetsService.handleAuthClick();
