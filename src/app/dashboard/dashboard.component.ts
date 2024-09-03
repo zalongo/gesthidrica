@@ -34,7 +34,9 @@ export class DashboardComponent implements AfterViewInit {
   constructor(private googleSheetsService: GoogleSheetsService, private sanitizer: DomSanitizer) {
     Chart.register(...registerables);
   }
-  ultimosValoresData: { label: string, value: number, unit: string }[] = [];
+  ultimosValoresData: { label: string, value: number, unit: string, hora: string }[] = [];
+
+
 
 
   ngAfterViewInit() {
@@ -60,7 +62,6 @@ export class DashboardComponent implements AfterViewInit {
     });
   }
 
-  randomValues: { label: string, value: number, nuevo: string, icon: SafeHtml }[] = [];
 
 
   async loadGoogleSheetsData() {
@@ -79,21 +80,24 @@ export class DashboardComponent implements AfterViewInit {
     });
   }
 
+
   initializeUltimosValoresData() {
     this.ultimosValoresData = [
-      { label: 'Temperatura', value: 19.35, unit: '°C' },
-      { label: 'Humedad Suelo', value: 98.35, unit: '%' },
-      { label: 'Velocidad Viento', value: 4.77, unit: 'Km/h' },
-      { label: 'Precipitación', value: 0.00, unit: 'mm' },
-      { label: 'Radiación UV', value: 0.46, unit: 'mW/cm²' },
-      { label: 'Humedad Suelo', value: 52.01, unit: '%' },
-      { label: 'Caudal Q', value: 0.10, unit: 'm³/s' }
+      { label: 'Temperatura', value: 19.35, unit: '°C', hora: '00:00' },
+      { label: 'Humedad Suelo', value: 98.35, unit: '%', hora: '00:00' },
+      { label: 'Velocidad Viento', value: 4.77, unit: 'Km/h', hora: '00:00' },
+      { label: 'Precipitación', value: 0.00, unit: 'mm', hora: '00:00' },
+      { label: 'Radiación UV', value: 0.46, unit: 'mW/cm²', hora: '00:00' },
+      { label: 'Humedad Suelo', value: 52.01, unit: '%', hora: '00:00' },
+      { label: 'Caudal Q', value: 0.10, unit: 'm³/s', hora: '00:00' }
     ];
   }
 
   updateChartsWithGoogleSheetsData(records: any[]) {
     const lastRecords = records.slice(-30);
-    const labels = lastRecords.map(record => record[0]+ " " +" "  + record[1]);
+    const labels = lastRecords.map(record => record[0] + " " + " " + record[1]);
+    const hora = lastRecords.map(record => record[0] + " " + " " + record[1]);
+    const ultimaHora = hora[hora.length - 1];
     const temperatureData = lastRecords.map(record => parseFloat(record[1].replace(',', '.')));
     const humidityData = lastRecords.map(record => parseFloat(record[2].replace(',', '.')));
     const windSpeedData = lastRecords.map(record => parseFloat(record[3].replace(',', '.')));
@@ -102,11 +106,10 @@ export class DashboardComponent implements AfterViewInit {
     this.updateChart(this.charts['lineChart2'], labels, humidityData, '%');
     this.updateChart(this.charts['barChart1'], labels, windSpeedData, 'Km/h');
 
-    this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C');
-    this.updateUltimosValoresData('Humedad', humidityData[humidityData.length - 1], '%');
-    this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h');
+    this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C', ultimaHora);
+    this.updateUltimosValoresData('Humedad', humidityData[humidityData.length - 1], '%', ultimaHora);
+    this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h', ultimaHora);
   }
-
   updateChart(chart: Chart, labels: string[], data: number[], label: string) {
     chart.data.labels = labels;
     chart.data.datasets[0].data = data;
@@ -114,13 +117,14 @@ export class DashboardComponent implements AfterViewInit {
     chart.update();
   }
 
-  updateUltimosValoresData(label: string, value: number, unit: string) {
+  updateUltimosValoresData(label: string, value: number, unit: string, hora:string) {
     const index = this.ultimosValoresData.findIndex(item => item.label === label);
     if (index !== -1) {
       this.ultimosValoresData[index].value = value;
       this.ultimosValoresData[index].unit = unit;
+      this.ultimosValoresData[index].hora = hora;
     } else {
-      this.ultimosValoresData.push({ label, value, unit });
+      this.ultimosValoresData.push({ label, value, unit, hora });
     }
   }
 
