@@ -2,7 +2,7 @@
   <h2>Lista de Empresas</h2>
   </div>
   <ul class="list-group">
-    <li *ngFor="let empresa of empresas; let i = index" class="list-group-item btn" (click)="navigateToDetail(empresa)">
+    <li *ngFor="let empresa of empresas; let i = index" class="list-group-item btn">
       <button class="btn-link">
         {{ empresa.nombre }}
       </button>

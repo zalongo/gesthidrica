@@ -1,7 +1,6 @@
 import { Router } from "@angular/router";
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuService } from "../services/menu.service";
 
 @Component({
   selector: 'app-empresa-list',
@@ -25,10 +24,5 @@ export class EmpresaListComponent {
     // { nombre: 'Agrícola David Estrada', representante: 'Nombre Apellido', comuna: 'Comuna' }
   ];
 
-  constructor(private router: Router, private menuService: MenuService) {}
-
-  navigateToDetail(empresa: any) {
-    this.menuService.triggerToggleMenu();
-  }
-  
+  constructor(private router: Router) {} 
 }

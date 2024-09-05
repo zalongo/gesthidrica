@@ -4,7 +4,6 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { GoogleSheetsService } from '../services/google-sheets.service';
-import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,13 +16,7 @@ export class NavbarComponent {
 
   isMenuOpen = false;
 
-  constructor(private router: Router, private googleSheetsService: GoogleSheetsService, private menuService: MenuService) { }
-
-  ngOnInit() {
-    this.menuService.toggleMenu$.subscribe(() => {
-      this.toggleMenu();
-    });
-  }
+  constructor(private router: Router, private googleSheetsService: GoogleSheetsService) { }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
