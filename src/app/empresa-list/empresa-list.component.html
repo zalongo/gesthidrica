@@ -1,8 +1,7 @@
 <div class="container mt-4">
   <h2>Lista de Empresas</h2>
-  </div>
   <ul class="list-group">
-    <li *ngFor="let empresa of empresas; let i = index" class="list-group-item btn">
+    <li *ngFor="let empresa of empresas; let i = index" class="list-group-item btn" (click)="openModal(empresa)">
       <button class="btn-link">
         {{ empresa.nombre }}
       </button>
@@ -12,3 +11,23 @@
       </div>
     </li>
   </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="empresaModal" tabindex="-1" aria-labelledby="empresaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="empresaModalLabel">Opciones para {{ selectedEmpresa?.nombre }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item btn" (click)="navigateTo('datosHistoricos')">Datos Históricos</li>
+          <li class="list-group-item btn" (click)="navigateTo('datosCruzados')">Datos Cruzados</li>
+          <li class="list-group-item btn" (click)="navigateTo('tiempoReal')">Datos en Tiempo Real</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
