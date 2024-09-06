@@ -5,6 +5,10 @@ nav {
   background-color: #404756;
 }
 
+.boton{
+  margin-right: 2%;
+}
+
 nav img {
   margin-right: 20px; 
   max-width: 100px; 

@@ -28,7 +28,7 @@ ul.list-group {
 .list-group-item {
   margin-bottom: 4px;
   padding: 10px 15px;
-  background: #ffffff;
+  background-color: #ffffff;
   border-radius: 20px;
   transition: background-color 0.3s, box-shadow 0.3s;
   border: 2px solid #2194c2 ;

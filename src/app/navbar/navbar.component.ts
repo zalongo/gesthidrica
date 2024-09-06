@@ -18,6 +18,10 @@ export class NavbarComponent {
 
   constructor(private router: Router, private googleSheetsService: GoogleSheetsService) { }
 
+  navigateToHuella(){
+    this.router.navigate(['huellaHidrica']);
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
