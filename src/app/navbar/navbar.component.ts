@@ -18,6 +18,17 @@ export class NavbarComponent {
 
   constructor(private router: Router, private googleSheetsService: GoogleSheetsService) { }
 
+  @HostListener('document:click', ['$event'])
+  clickout(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (this.isOpen && !target.closest('#notificacionesAbrir') && !target.closest('.btn-primary')) {
+      this.closeModal();
+    }
+    if (this.isOpenConf && !target.closest('#configAbrir') && !target.closest('.btn-primary')) {
+      this.closeModalConf();
+    }
+  }
+
   navigateToHuella(){
     this.router.navigate(['huellaHidrica']);
   }
