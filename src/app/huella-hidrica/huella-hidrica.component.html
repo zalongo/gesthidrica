@@ -1,1 +1,44 @@
-<p>huella-hidrica works!</p>
+<form [formGroup]="huellaHidricaForm" (ngSubmit)="onSubmit()">
+  <!-- Campo de nombre de la empresa -->
+  <div>
+    <label for="nombreEmpresa">Nombre de la Empresa</label>
+    <input id="nombreEmpresa" type="text" formControlName="nombreEmpresa" />
+    <div *ngIf="huellaHidricaForm.get('nombreEmpresa')?.invalid && huellaHidricaForm.get('nombreEmpresa')?.touched">
+      El nombre de la empresa es requerido
+    </div>
+  </div>
+
+  <div>
+    <label for="instalacion">Instalación a la que se medirá</label>
+    <input id="instalacion" type="text" formControlName="instalacion" />
+    <div *ngIf="huellaHidricaForm.get('instalacion')?.invalid && huellaHidricaForm.get('instalacion')?.touched">
+      La instalación es requerida
+    </div>
+  </div>
+
+  <div>
+    <label for="region">Ubicación de la instalación: Región</label>
+    <select id="region" formControlName="region">
+      <option value="" disabled>Seleccione una región</option>
+      <option *ngFor="let region of regiones" [value]="region">{{ region }}</option>
+    </select>
+    <div *ngIf="huellaHidricaForm.get('region')?.invalid && huellaHidricaForm.get('region')?.touched">
+      La región es requerida
+    </div>
+  </div>
+
+  <div>
+    <label for="comuna">Ubicación de la instalación: Comuna</label>
+    <select id="comuna" formControlName="comuna" [disabled]="comunas.length === 0">
+      <option value="" disabled>Seleccione una comuna</option>
+      <option *ngFor="let comuna of comunas" [value]="comuna">{{ comuna }}</option>
+    </select>
+    <div *ngIf="huellaHidricaForm.get('comuna')?.invalid && huellaHidricaForm.get('comuna')?.touched">
+      La comuna es requerida
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="huellaHidricaForm.invalid">Enviar</button>
+  </div>
+</form>

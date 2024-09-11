@@ -16,5 +16,5 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'huellaHidrica', component: HuellaHidricaComponent }
 ];
-export default routes;
 
+export default routes;
