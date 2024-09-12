@@ -4,25 +4,29 @@
       <div>
         <h4 class="ultimostitulos">Últimos Valores</h4>
       </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Etiqueta</th>
-              <th scope="col">Valor</th>
-              <th scope="col">Unidad</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let data of ultimosValoresData">
-              <td>{{data.label}}</td>
-              <td>{{data.value}}</td>
-              <td>{{data.unit}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Etiqueta</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Unidad</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of ultimosValoresData">
+            <td>{{data.label}}</td>
+            <td>{{data.value}}</td>
+            <td>{{data.unit}}</td>
+            <td>FECHA</td>
+            <td>{{data.hora}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <!-- variable 2 -->
+  </div>
+  <!-- variable 2 -->
   <div class="row accordion" id="accordionExample">
     <ng-container *ngFor="let card of cards; let i = index">
       <div class="col-md-4 mb-4" *ngIf="card.visible" [ngClass]="{'expanded': activeIndex === i}">
