@@ -1,6 +1,6 @@
-<div>
+<div class="row">
+  <div class="col-md-12">
     <h2>Datos Cruzados</h2>
-    
     <div>
       <label>
         <input type="checkbox" [(ngModel)]="selectedData.temperatura" (change)="updateChartData()"/>
@@ -15,7 +15,35 @@
         Velocidad del Viento
       </label>
     </div>
-  
-    <canvas id="dataChart"></canvas>
+    <canvas class="col-md-12" id="dataChart"></canvas>
+
+    
+
+  <div *ngIf="tableData.length > 0" class="col-md-12">
+    <div class="card">
+      <div class="scroll" style="max-height: 300px; overflow-y: auto;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Hora</th>
+              <th scope="col" *ngIf="selectedData.temperatura">Temperatura (°C)</th>
+              <th scope="col" *ngIf="selectedData.velocidadViento">VelocidadViento (Km/h)</th>
+              <th scope="col" *ngIf="selectedData.humedad">Humedad (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of tableData">
+              <td>{{data.fecha}}</td>
+              <td>{{data.hora}}</td>
+              <td *ngIf="selectedData.temperatura">{{data.temperatura}}</td>
+              <td *ngIf="selectedData.velocidadViento">{{data.velocidadViento}}</td>
+              <td *ngIf="selectedData.humedad">{{data.humedad}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-  
+</div>
+</div>

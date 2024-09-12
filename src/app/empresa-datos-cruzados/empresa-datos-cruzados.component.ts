@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectorRef } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { GoogleSheetsService } from '../services/google-sheets.service';
 import { CommonModule } from '@angular/common';
@@ -19,9 +19,10 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
     velocidadViento: true
   };
 
+  tableData: any[] = [];
   charts: { [key: string]: Chart } = {};
 
-  constructor(private googleSheetsService: GoogleSheetsService) {
+  constructor(private googleSheetsService: GoogleSheetsService, private cdr: ChangeDetectorRef) {
     Chart.register(...registerables);
   }
 
@@ -105,32 +106,20 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
       this.loadGoogleSheetsData();
       return;
     }
-
-    // Filtrar registros para los últimos dos días
+  
     const filteredStationRecords = this.filterRecordsByDate(stationRecords, 2);
     const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords, 2);
-
-    // Agrupar los datos de humedad por hora
+  
     const hourlyHumidityRecords = this.groupByHour(filteredHumidityRecords);
-
-    console.log('Hourly Humidity Records:', hourlyHumidityRecords);
-
-    // Extraer etiquetas y datos
+  
     const labelsStation = filteredStationRecords.map(record => this.formatDateTime(record[0], record[1]));
     const temperatureData = filteredStationRecords.map(record => parseFloat(record[2].replace(',', '.')));
     const windSpeedData = filteredStationRecords.map(record => parseFloat(record[5].replace(',', '.')));
-
     const labelsHumidity = hourlyHumidityRecords.map(record => record.date);
     const humidityData = hourlyHumidityRecords.map(record => record.humidity);
-
-    console.log('Labels Humidity:', labelsHumidity);
-    console.log('Humidity Data:', humidityData);
-    console.log('Labels Station:', labelsStation);
-    console.log('Temperature Data:', temperatureData);
-    console.log('Wind Speed Data:', windSpeedData);
-
+  
     const datasets: any[] = [];
-
+  
     if (this.selectedData.temperatura) {
       datasets.push({
         label: 'Temperatura (°C)',
@@ -140,7 +129,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
         borderWidth: 2
       });
     }
-
+  
     if (this.selectedData.humedad) {
       datasets.push({
         label: 'Humedad (%)',
@@ -150,7 +139,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
         borderWidth: 2
       });
     }
-
+  
     if (this.selectedData.velocidadViento) {
       datasets.push({
         label: 'Velocidad del Viento (Km/h)',
@@ -161,6 +150,17 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
       });
     }
 
+    this.tableData = filteredStationRecords.reverse().map(record => ({
+      fecha: record[0],
+      hora: record[1],
+      temperatura: record[2],
+      velocidadViento: record[5],
+      humedad: record[6] // Asegúrate que este índice sea correcto para los datos de humedad
+    }));
+
+    this.cdr.detectChanges();
+  
+    // Crear o actualizar el gráfico
     if (this.charts['dataChart']) {
       this.charts['dataChart'].destroy();
     }
@@ -194,5 +194,41 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
         }
       });
     }
+    this.tableData = [];
+
+    filteredStationRecords.forEach(record => {
+      const formattedDate = this.formatDateTime(record[0], record[1]);
+      const newRow: any = {
+        fecha: formattedDate.split(', ')[0],
+        hora: formattedDate.split(', ')[1],
+      };
+  
+      if (this.selectedData.temperatura) {
+        newRow.temperatura = parseFloat(record[2].replace(',', '.'));
+      }
+      if (this.selectedData.velocidadViento) {
+        newRow.velocidadViento = parseFloat(record[5].replace(',', '.'));
+      }
+  
+      this.tableData.push(newRow);
+    });
+  
+    hourlyHumidityRecords.forEach(record => {
+      const date = record.date.split(' ')[0];
+      const hour = record.date.split(' ')[1];
+  
+      let row = this.tableData.find(r => r.fecha === date && r.hora === hour);
+      if (!row) {
+        row = { fecha: date, hora: hour };
+        this.tableData.push(row);
+      }
+  
+      if (this.selectedData.humedad) {
+        row.humedad = record.humidity;
+      }
+    });
   }
 }
+
+
+
