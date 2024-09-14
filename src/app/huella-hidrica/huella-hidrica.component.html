@@ -1,5 +1,199 @@
-<form [formGroup]="huellaHidricaForm" (ngSubmit)="onSubmit()">
-  <!-- Campo de nombre de la empresa -->
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+        aria-expanded="true" aria-controls="collapseOne">
+        <strong>¿Qué es la Huella Hídrica? </strong>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p class="p1">La huella hídrica es un indicador que mide el <b>volumen total de agua dulce que se
+            utiliza para producir los bienes y servicios consumidos por un individuo, comunidad o producido
+            por una empresa.</b> <br><br>
+
+          Este concepto se puede desglosar en tres componentes: <br>
+
+        <div class="parent">
+          <div class="div1">
+            <p class="azul"><b>Huella hídrica azul</b></p> Esta categoría está asociada a agua de fuentes
+            superficiales y subterráneas
+          </div>
+          <div class="div2">
+            <p class="verde"><b>Huella hídrica verde</b></p> Esta categoría corresponde al agua de lluvia
+            almacenada en el suelo
+          </div>
+          <div class="div3">
+            <p class="gris"><b>Huella hídrica gris</b></p> Esta categoría incluye a todas las descargas de
+            aguas que salen del proceso.
+          </div>
+        </div><br>
+
+        <p class="p1">Este concepto fue introducido por el profesor Arjen Hoekstra en 2002 para evaluar el uso
+          del agua de manera integral, considerando tanto el consumo directo como indirecto.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+        aria-expanded="false" aria-controls="collapseTwo">
+        <strong>¿Para qué nos sirve este indicador?</strong>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p class="p1">El indicador de huella hídrica es de gran utilidad en varios contextos, principalmente en
+          la gestión sostenible de los recursos hídricos, la planificación estratégica y la sensibilización
+          sobre el consumo de agua. A continuación se detallan algunas de sus principales aplicaciones y
+          beneficios:
+
+        <div class="d1">
+          <p class="p1"><b>1. Gestión Sostenible del Agua: </b><br></p>
+          <div class="parent2">
+            <div class="div11">
+              <p class="p3"><strong>Planificación de Recursos Hídricos: </strong> Permite a gobiernos y
+                organizaciones evaluar el uso del agua y desarrollar políticas para su gestión
+                sostenible. Al identificar las áreas y actividades con mayor huella hídrica, se pueden
+                priorizar acciones para mejorar la eficiencia en el uso del agua y reducir el
+                desperdicio.
+            </div>
+            <div class="div12">
+              <img class="img" src="https://i.postimg.cc/fTWYFKHn/water.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="d1">
+          <p class="p1"><b> 2. Toma de Decisiones Empresariales: </b><br></p>
+          <div class="parent2">
+            <div class="div11">
+              <p class="p3"><strong>Sostenibilidad Corporativa: </strong> Las empresas utilizan la huella
+                hídrica para evaluar y mejorar sus prácticas en la cadena de suministro, buscando
+                reducir su impacto ambiental. Esto puede llevar a innovaciones en productos y procesos
+                que consuman menos agua. <br><br>
+                <strong>Gestión de Riesgos:</strong> Ayuda a las empresas a identificar riesgos
+                relacionados con la disponibilidad y la calidad del agua, lo cual es esencial en
+                sectores como la agricultura, la manufactura, y la energía.
+              </p>
+
+            </div>
+            <div class="div12">
+              <img class="img" src="https://i.postimg.cc/Dyzb5zZ7/decision.png">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="d1">
+          <p class="p1"><b>3. Comparación y Optimización:</b><br> </p>
+          <div class="parent2">
+            <div class="div11">
+              <p class="p3"><strong>Comparación entre Productos y Regiones: </strong>Permite comparar la
+                eficiencia del uso del agua entre diferentes productos, regiones o prácticas agrícolas,
+                promoviendo la adopción de las mejores prácticas.<br><br>
+                <strong>Optimización de Procesos: </strong> Al desglosar el uso del agua en sus
+                componentes azul, verde y gris, se pueden identificar oportunidades específicas para
+                reducir el consumo de agua en las distintas etapas de producción.
+              </p><br>
+
+            </div>
+            <div class="div12">
+              <img class="img" src="https://i.postimg.cc/13nVhYwT/optimization.png">
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+        aria-expanded="false" aria-controls="collapseThree">
+        <strong>¿Qué necesito para calcularlo?</strong>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p class="p1">Para poder calcular este indicador, se requiere información asociada al proceso productivo
+          que se realiza en la empresa. A continuación te presentamos una lista de chequeo para que comiences
+          a recopilar esta información:</p>
+        <ol class="p3">
+          <li>Descripción de los procesos productivos realizados, detallando los equipos y donde se utiliza
+            agua</li>
+          <li>Producción de un año calendario (Enero - Diciembre) por tipo de producto</li>
+          <li>Cantidad de agua mensual que ingresa al proceso por fuente de agua (Ej: Agua potable, agua de
+            pozo, cuerpos de agua superficial), detallada por área de uso (Ej: Servicios Sanitarios, lavado
+            de maquinaria, riego de producción) </li>
+          <li>Cantidad de agua mensual que sale del proceso, separada por: </li>
+          <ul>
+            <li> Agua descargada, detallando proceso o equipo que descarga, cantidad y cuerpo receptor</li>
+            <li> Agua infiltrada, detallando proceso o equipo que descarga, cantidad y punto de infiltración
+            </li>
+            <li> Agua consumida, detallando tipo de agua consumida, la cantidad y proceso o equipo que
+              consume el agua </li>
+          </ul>
+          <li>Parámetros Fisicoquímicos para definir la calidad de las aguas que salen del proceso: Se debe
+            tomar muestras de:</li>
+          <ul>
+            <li>Puntos de descarga a cuerpos receptores</li>
+            <li>Puntos de agua de infiltración</li>
+          </ul>
+          Se deben considerar los siguientes parámetros a medir, de manera mensual:
+          <ul>
+            <li>Nitrógeno Total</li>
+            <li>Nitrógeno Total Kjeldahl</li>
+            <li>Fósforo Total</li>
+            <li>Fosfato</li>
+            <li>Demanda Química de Oxígeno (DQO)</li>
+            <li>Demanda Biológica de Oxígeno (DBO)</li>
+            <li>Arsénico</li>
+            <li>Cadmio</li>
+            <li>Cromo</li>
+            <li>Cobre</li>
+            <li>Mercurio</li>
+            <li>Níquel</li>
+            <li>Plomo</li>
+            <li>Zinc</li>
+            <li>Pentaclorofenol</li>
+          </ul>
+        </ol>
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer"></div>
+
+<!-- <form [formGroup]="huellaHidricaForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="nombreEmpresa">Nombre de la Empresa</label>
     <input id="nombreEmpresa" type="text" formControlName="nombreEmpresa" />
@@ -41,4 +235,4 @@
   <div>
     <button type="submit" [disabled]="huellaHidricaForm.invalid">Enviar</button>
   </div>
-</form>
+</form> -->
