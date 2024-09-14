@@ -19,7 +19,7 @@
             <td>{{data.label}}</td>
             <td>{{data.value}}</td>
             <td>{{data.unit}}</td>
-            <td>FECHA</td>
+            <td>{{data.fecha}}</td>
             <td>{{data.hora}}</td>
           </tr>
         </tbody>
@@ -60,10 +60,11 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let data of ultimosValoresData">
-                            <td class="col-md-4">{{data.hora}}</td>
+                          <!-- Mostrar los últimos valores de la variable seleccionada -->
+                          <tr *ngFor="let data of getFilteredData(card.title).slice(0, 5)">
+                            <td class="col-md-4">{{data.fecha}}</td>
                             <td class="col-md-4">{{data.value}}</td>
-                            <td class="col-md-4">{{data.unit}}</td>
+                            <td class="col-md-4">{{data.hora}}</td>
                           </tr>
                         </tbody>
                       </table>

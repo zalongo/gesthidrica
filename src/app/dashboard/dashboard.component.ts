@@ -26,10 +26,22 @@ export class DashboardComponent implements AfterViewInit {
 
   activeIndex: number | null = null;
 
-  ultimosValoresData: { label: string; value: number; unit: string; hora: string }[] = []; 
+  ultimosValoresData: { label: string; value: number; unit: string; fecha: string; hora: string }[] = [];
+  
 
   constructor(private googleSheetsService: GoogleSheetsService) {
     Chart.register(...registerables);
+  }
+
+  getFilteredData(label: string) {
+    const filteredData = this.ultimosValoresData.filter(item => item.label === label);
+    console.log(`Filtrando por ${label}: `, filteredData);
+    return filteredData.slice(-5); // Devuelve los últimos 5 elementos
+  }
+
+  getUltimosValores(label: string) {
+    // Aquí devolverá los datos solo para la variable seleccionada 'ultimosValores'
+    return this.ultimosValoresData.find(item => item.label === label);
   }
 
   ngAfterViewInit() {
@@ -53,16 +65,18 @@ export class DashboardComponent implements AfterViewInit {
           case 'lineChart5': this.createLineChart5(); break;
           case 'lineChart6': this.createLineChart6(); break;
           case 'lineChart7': this.createLineChart7(); break;
+          default: console.warn(`Unknown chart ID: ${card.id}`);
         }
       }
     });
   }
+  
 
   async loadGoogleSheetsData() {
     this.googleSheetsService.authStatus.subscribe(async (authenticated) => {
       if (authenticated) {
         const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
-        
+
         // Load data from 'Humedad' sheet
         const humedadRange = 'Humedad!A:D'; // Include all relevant columns
         const humedadRecords = await this.googleSheetsService.getRecords(sheetId, humedadRange);
@@ -80,6 +94,18 @@ export class DashboardComponent implements AfterViewInit {
     });
   }
 
+  extractDate(dateTime: string): string {
+    // Suponiendo que el formato es 'YYYY-MM-DD HH:MM'
+    return dateTime.split(' ')[0]; // Devuelve solo la parte de la fecha
+  }
+
+  extractTime(dateTime: string): string {
+    // Suponiendo que el formato es 'YYYY-MM-DD HH:MM'
+    return dateTime.split(' ')[1]; // Devuelve solo la parte de la hora
+  }
+
+
+
   updateChartsWithGoogleSheetsData(humedadRecords: any[], estacionRecords: any[]) {
     const lastHumedadRecords = humedadRecords.slice(-30);
     const lastEstacionRecords = estacionRecords.slice(-30);
@@ -96,31 +122,51 @@ export class DashboardComponent implements AfterViewInit {
 
     this.updateChart(this.charts['lineChart1'], labelsEstacion, temperatureData, '°C');
     this.updateChart(this.charts['lineChart2'], labelsHumedad, humedadData, '%');
-    this.updateChart(this.charts['lineChart7'], labelsEstacion, humidityAirData, '%');
-    this.updateChart(this.charts['lineChart1'], labelsEstacion, windSpeedData, 'Km/h');
+    this.updateChart(this.charts['barChart1'], labelsEstacion, windSpeedData, 'Km/h');
+    this.updateChart(this.charts['lineChart3'], labelsEstacion, humidityAirData, '%');
     this.updateChart(this.charts['lineChart5'], labelsHumedad, voltageData, 'V');
 
-    this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C', labelsEstacion[labelsEstacion.length - 1]);
-    this.updateUltimosValoresData('Humedad Suelo', humedadData[humedadData.length - 1], '%', labelsHumedad[labelsHumedad.length - 1]);
-    this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h', labelsEstacion[labelsEstacion.length - 1]);
-    this.updateUltimosValoresData('Humedad Aire', humidityAirData[humidityAirData.length - 1], '%', labelsEstacion[labelsEstacion.length - 1]);
+    this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C',
+      this.extractDate(labelsEstacion[labelsEstacion.length - 1]),
+      this.extractTime(labelsEstacion[labelsEstacion.length - 1]));
+
+    this.updateUltimosValoresData('Humedad Suelo', humedadData[humedadData.length - 1], '%',
+      this.extractDate(labelsHumedad[labelsHumedad.length - 1]),
+      this.extractTime(labelsHumedad[labelsHumedad.length - 1]));
+
+    this.updateUltimosValoresData('Velocidad Viento', windSpeedData[windSpeedData.length - 1], 'Km/h',
+      this.extractDate(labelsEstacion[labelsEstacion.length - 1]),
+      this.extractTime(labelsEstacion[labelsEstacion.length - 1]));
+
+    this.updateUltimosValoresData('Humedad aire', humidityAirData[humidityAirData.length - 1], '%',
+      this.extractDate(labelsEstacion[labelsEstacion.length - 1]),
+      this.extractTime(labelsEstacion[labelsEstacion.length - 1]));
+      
+    this.updateUltimosValoresData('Bateria', voltageData[voltageData.length - 1], 'V',
+      this.extractDate(labelsEstacion[labelsEstacion.length - 1]),
+      this.extractTime(labelsEstacion[labelsEstacion.length - 1]));
+      
   }
 
-  updateChart(chart: Chart, labels: string[], data: number[], label: string) {
-    chart.data.labels = labels;
-    chart.data.datasets[0].data = data;
-    chart.data.datasets[0].label = label;
-    chart.update();
+  updateChart(chart: Chart | undefined, labels: string[], data: number[], label: string) {
+    if (chart) {
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = data;
+      chart.data.datasets[0].label = label;
+      chart.update();
+    } else {
+      console.error('Chart is not defined or not initialized properly');
+    }
   }
 
-  updateUltimosValoresData(label: string, value: number, unit: string, hora: string) {
+  updateUltimosValoresData(label: string, value: number, unit: string, fecha: string, hora: string) {
     const index = this.ultimosValoresData.findIndex(item => item.label === label);
     if (index !== -1) {
       this.ultimosValoresData[index].value = value;
       this.ultimosValoresData[index].unit = unit;
       this.ultimosValoresData[index].hora = hora;
     } else {
-      this.ultimosValoresData.push({ label, value, unit, hora });
+      this.ultimosValoresData.push({ label, value, unit, fecha, hora });
     }
   }
 
