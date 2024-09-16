@@ -27,6 +27,45 @@ export class DashboardComponent implements AfterViewInit {
   activeIndex: number | null = null;
 
   ultimosValoresData: { label: string; value: number; unit: string; fecha: string; hora: string }[] = [];
+
+
+  ultimosValoresData2: { label: string; value: number; unit: string; fecha: string; hora: string }[] = [
+    // Datos para Temperatura
+    { label: 'Temperatura', value: 22.5, unit: '°C', fecha: '2024-09-16', hora: '12:00' },
+    { label: 'Temperatura', value: 23.1, unit: '°C', fecha: '2024-09-16', hora: '13:00' },
+    { label: 'Temperatura', value: 24.0, unit: '°C', fecha: '2024-09-16', hora: '14:00' },
+    { label: 'Temperatura', value: 24.5, unit: '°C', fecha: '2024-09-16', hora: '15:00' },
+    { label: 'Temperatura', value: 25.0, unit: '°C', fecha: '2024-09-16', hora: '16:00' },
+  
+    // Datos para Humedad Suelo
+    { label: 'Humedad Suelo', value: 45, unit: '%', fecha: '2024-09-16', hora: '12:00' },
+    { label: 'Humedad Suelo', value: 46, unit: '%', fecha: '2024-09-16', hora: '13:00' },
+    { label: 'Humedad Suelo', value: 47, unit: '%', fecha: '2024-09-16', hora: '14:00' },
+    { label: 'Humedad Suelo', value: 48, unit: '%', fecha: '2024-09-16', hora: '15:00' },
+    { label: 'Humedad Suelo', value: 49, unit: '%', fecha: '2024-09-16', hora: '16:00' },
+  
+    // Datos para Velocidad Viento
+    { label: 'Velocidad Viento', value: 15, unit: 'Km/h', fecha: '2024-09-16', hora: '12:00' },
+    { label: 'Velocidad Viento', value: 14, unit: 'Km/h', fecha: '2024-09-16', hora: '13:00' },
+    { label: 'Velocidad Viento', value: 16, unit: 'Km/h', fecha: '2024-09-16', hora: '14:00' },
+    { label: 'Velocidad Viento', value: 17, unit: 'Km/h', fecha: '2024-09-16', hora: '15:00' },
+    { label: 'Velocidad Viento', value: 18, unit: 'Km/h', fecha: '2024-09-16', hora: '16:00' },
+  
+    // Datos para Humedad aire
+    { label: 'Humedad aire', value: 60, unit: '%', fecha: '2024-09-16', hora: '12:00' },
+    { label: 'Humedad aire', value: 62, unit: '%', fecha: '2024-09-16', hora: '13:00' },
+    { label: 'Humedad aire', value: 63, unit: '%', fecha: '2024-09-16', hora: '14:00' },
+    { label: 'Humedad aire', value: 64, unit: '%', fecha: '2024-09-16', hora: '15:00' },
+    { label: 'Humedad aire', value: 65, unit: '%', fecha: '2024-09-16', hora: '16:00' },
+  
+    // Datos para Bateria
+    { label: 'Bateria', value: 75, unit: 'V', fecha: '2024-09-16', hora: '12:00' },
+    { label: 'Bateria', value: 77, unit: 'V', fecha: '2024-09-16', hora: '13:00' },
+    { label: 'Bateria', value: 78, unit: 'V', fecha: '2024-09-16', hora: '14:00' },
+    { label: 'Bateria', value: 80, unit: 'V', fecha: '2024-09-16', hora: '15:00' },
+    { label: 'Bateria', value: 82, unit: 'V', fecha: '2024-09-16', hora: '16:00' }
+  ];
+  
   
 
   constructor(private googleSheetsService: GoogleSheetsService) {
@@ -34,7 +73,7 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   getFilteredData(label: string) {
-    const filteredData = this.ultimosValoresData.filter(item => item.label === label);
+    const filteredData = this.ultimosValoresData2.filter(item => item.label === label);
     console.log(`Filtrando por ${label}: `, filteredData);
     return filteredData.slice(-5); // Devuelve los últimos 5 elementos
   }
@@ -167,6 +206,7 @@ export class DashboardComponent implements AfterViewInit {
       this.ultimosValoresData[index].hora = hora;
     } else {
       this.ultimosValoresData.push({ label, value, unit, fecha, hora });
+      console.log(this.ultimosValoresData)
     }
   }
 
