@@ -123,7 +123,7 @@ export class DashboardComponent implements AfterViewInit {
     this.updateChart(this.charts['lineChart1'], labelsEstacion, temperatureData, '°C');
     this.updateChart(this.charts['lineChart2'], labelsHumedad, humedadData, '%');
     this.updateChart(this.charts['barChart1'], labelsEstacion, windSpeedData, 'Km/h');
-    this.updateChart(this.charts['lineChart3'], labelsEstacion, humidityAirData, '%');
+    this.updateChart(this.charts['lineChart7'], labelsEstacion, humidityAirData, '%');
     this.updateChart(this.charts['lineChart5'], labelsHumedad, voltageData, 'V');
 
     this.updateUltimosValoresData('Temperatura', temperatureData[temperatureData.length - 1], '°C',
