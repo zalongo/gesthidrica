@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,7 +16,15 @@ export class HuellaHidricaComponent implements OnInit {
   comunas: string[] = [];
   comunasAraucania: string[] = ['Temuco', 'Villarrica', 'Pucón', 'Padre Las Casas', 'Angol'];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
+
+  navigateToHuella(){
+    this.router.navigate(['']);
+  }
+
+  navigateToCalculo(){
+    this.router.navigate(['calcularHuella']);
+  }
 
   ngOnInit(): void {
     this.huellaHidricaForm = this.fb.group({
