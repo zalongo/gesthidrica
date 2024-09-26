@@ -6,6 +6,7 @@ import { EmpresaDetailAdminComponent } from './empresa-detail-admin/empresa-deta
 import { EmpresaDatosCruzadosComponent } from './empresa-datos-cruzados/empresa-datos-cruzados.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HuellaHidricaComponent } from './huella-hidrica/huella-hidrica.component';
+import { CalcularHuellaComponent } from './calcular-huella/calcular-huella.component';
 
 export const routes: Routes = [
   { path: '', component: EmpresaListComponent },
@@ -14,7 +15,8 @@ export const routes: Routes = [
   { path: 'historicosEmpresa', component: EmpresaHistoricoComponent },
   { path: 'datosCruzadosEmpresa', component: EmpresaDatosCruzadosComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'huellaHidrica', component: HuellaHidricaComponent }
+  { path: 'huellaHidrica', component: HuellaHidricaComponent },
+  { path: 'calcularHuella', component: CalcularHuellaComponent }
 ];
 
 export default routes;
