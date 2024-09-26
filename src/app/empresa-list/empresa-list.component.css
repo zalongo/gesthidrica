@@ -13,7 +13,7 @@ h2 {
   background: #7474BF;
   background: -webkit-linear-gradient(to right, #366f97);
   background: linear-gradient(to right, #187ea7, #106372);
-  color: white;
+  color: rgb(141, 140, 140);
   padding: 15px;
   text-align: center;
   border-radius: 10px;
