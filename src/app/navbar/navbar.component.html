@@ -5,4 +5,12 @@
   <div class="titulo">
     <a href="#">Plataforma de Visualización de Datos Meteorológicos</a>
   </div>
+  <div class="boton" >
+    <button type="button" class="btn btn-success" (click)="navigateToHuella()">Huella Hidrica</button>
+  </div>
+  <ul class="dropdown-menu dropdown-menu-end" [class.show]="isMenuOpen" aria-labelledby="menuDropdownIcon">
+    <li><a class="dropdown-item" [routerLink]="['/historicosEmpresa']">Datos históricos</a></li>
+    <li><a class="dropdown-item" [routerLink]="['/datosCruzadosEmpresa']">Datos cruzados</a></li>
+    <li><a class="dropdown-item" [routerLink]="['empresa/:id']">Datos en tiempo real</a></li>
+  </ul>
 </nav>
