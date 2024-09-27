@@ -1,4 +1,5 @@
 <div class="container">
+  <!-- Sección de Últimos Valores (muestra el último valor de cada gráfico) -->
   <div class="ultimosvalores">
     <div class="col-md-12">
       <div>
@@ -15,18 +16,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of ultimosValoresData">
-            <td>{{data.label}}</td>
-            <td>{{data.value}}</td>
-            <td>{{data.unit}}</td>
-            <td>{{data.fecha}}</td>
-            <td>{{data.hora}}</td>
+          <tr *ngFor="let card of cards">
+            <td>{{card.title}}</td>
+            <td>{{getLastValue(card.title)?.value}}</td>
+            <td>{{getLastValue(card.title)?.unit || ''}}</td>
+            <td>{{getLastValue(card.title)?.fecha}}</td>
+            <td>{{getLastValue(card.title)?.hora}}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <!-- variable 2 -->
+
+  <!-- Sección de Gráficos y Tablas -->
   <div class="row accordion" id="accordionExample">
     <ng-container *ngFor="let card of cards; let i = index">
       <div class="col-md-4 mb-4" *ngIf="card.visible" [ngClass]="{'expanded': activeIndex === i}">
@@ -42,13 +44,15 @@
             <div class="accordion-body accordion-collapse collapse" [attr.id]="'collapse' + i"
               data-bs-parent="#accordionExample">
               <div class="row">
-                <div *ngIf="card.id !== 'ultimosValores'" class="col-md-6">
+                <!-- Gráfico -->
+                <div class="col-md-6">
                   <div class="card">
                     <canvas [attr.id]="card.id"></canvas>
                   </div>
                 </div>
-                <!-- variable 3 -->
-                <div *ngIf="card.id !== 'ultimosValores'" class="col-md-6">
+
+                <!-- Tabla de valores correspondientes al gráfico -->
+                <div class="col-md-6">
                   <div class="card">
                     <div class="scroll" style="max-height: 300px; overflow-y: auto;">
                       <table class="table">
@@ -60,8 +64,8 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <!-- Mostrar los últimos valores de la variable seleccionada -->
-                          <tr *ngFor="let data of getFilteredData(card.title).slice(0, 5)">
+                          <!-- Mostrar los últimos 10 valores de la variable seleccionada -->
+                          <tr *ngFor="let data of getFilteredData(card.title)">
                             <td class="col-md-4">{{data.fecha}}</td>
                             <td class="col-md-4">{{data.value}}</td>
                             <td class="col-md-4">{{data.hora}}</td>
@@ -71,8 +75,12 @@
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
+    </ng-container>
+  </div>
+</div>
