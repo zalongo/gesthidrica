@@ -16,7 +16,9 @@ export class DashboardComponent implements AfterViewInit {
     { id: 'lineChart2', title: 'Humedad Suelo', visible: true },
     { id: 'barChart1', title: 'Velocidad Viento', visible: true },
     { id: 'lineChart5', title: 'Bateria', visible: true },
-    { id: 'lineChart7', title: 'Humedad aire', visible: true }
+    { id: 'lineChart7', title: 'Humedad aire', visible: true },
+    { id: 'lineChart8', title: 'Precipitación', visible: true },
+    { id: 'lineChart9', title: 'Caudalímetro', visible: true }
   ];
 
   charts: { [key: string]: Chart } = {};
@@ -47,6 +49,8 @@ export class DashboardComponent implements AfterViewInit {
           case 'barChart1': this.createBarChart1(); break;
           case 'lineChart5': this.createLineChart5(); break;
           case 'lineChart7': this.createLineChart7(); break;
+          case 'lineChart8': this.createLineChart8(); break;
+          case 'lineChart9': this.createLineChart9(); break;
           default: console.warn(`Unknown chart ID: ${card.id}`);
         }
       }
@@ -63,11 +67,15 @@ export class DashboardComponent implements AfterViewInit {
         const humedadRecords = await this.googleSheetsService.getRecords(sheetId, humedadRange);
 
         // Cargar datos de la hoja 'Estacion'
-        const estacionRange = 'Estacion!A:F';
+        const estacionRange = 'Estacion!A:H';
         const estacionRecords = await this.googleSheetsService.getRecords(sheetId, estacionRange);
 
-        if (humedadRecords.length > 0 && estacionRecords.length > 0) {
-          this.updateChartsWithGoogleSheetsData(humedadRecords, estacionRecords);
+        // Cargar datos de la hoja 'Caudal'
+        const caudalRange = 'Caudal!A:E';
+        const caudalRecords = await this.googleSheetsService.getRecords(sheetId, caudalRange);
+
+        if (humedadRecords.length > 0 && estacionRecords.length > 0 && caudalRecords.length > 0) {
+          this.updateChartsWithGoogleSheetsData(humedadRecords, estacionRecords, caudalRecords);
         }
       } else {
         this.googleSheetsService.handleAuthClick();
@@ -85,15 +93,23 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   // Función para actualizar los gráficos con los datos obtenidos
-  updateChartsWithGoogleSheetsData(humedadRecords: any[], estacionRecords: any[]) {
+  updateChartsWithGoogleSheetsData(humedadRecords: any[], estacionRecords: any[], caudalRecords: any[]) {
     const lastHumedadRecords = humedadRecords.slice(-30);
     const lastEstacionRecords = estacionRecords.slice(-30);
+    const lastCaudalRecords = caudalRecords.slice(-30);
+
 
     const labelsHumedad = lastHumedadRecords.map(record => record[0] + " " + record[1]);
     const labelsEstacion = lastEstacionRecords.map(record => record[0] + " " + record[1]);
+    const labelsCaudal = lastCaudalRecords.map(record => record[0] + " " + record[1]);
+
 
     const humedadData = lastHumedadRecords.map(record => parseFloat(record[2].replace(',', '.')));
     const voltageData = lastHumedadRecords.map(record => parseFloat(record[3].replace(',', '.')));
+
+    const precipitationData = lastEstacionRecords.map(record => parseFloat(record[7].replace(',', '.')));
+
+    const flowMeterData = lastCaudalRecords.map(record => parseFloat(record[2].replace(',', '.')));
 
     const temperatureData = lastEstacionRecords.map(record => parseFloat(record[2].replace(',', '.')));
     const humidityAirData = lastEstacionRecords.map(record => parseFloat(record[3].replace(',', '.')));
@@ -115,6 +131,12 @@ export class DashboardComponent implements AfterViewInit {
     if (voltageData && voltageData.length) {
       this.storeVariableData('Bateria', labelsHumedad, voltageData, 'V');
     }
+    if (precipitationData && precipitationData.length) {
+      this.storeVariableData('Precipitación', labelsEstacion, precipitationData, 'mm');
+    }
+    if (flowMeterData && flowMeterData.length) {
+      this.storeVariableData('Caudalímetro', labelsCaudal, flowMeterData, 'L/min');
+    }
 
     // Actualizar los gráficos con los datos
     this.updateChart(this.charts['lineChart1'], labelsEstacion, temperatureData, '°C');
@@ -122,6 +144,8 @@ export class DashboardComponent implements AfterViewInit {
     this.updateChart(this.charts['barChart1'], labelsEstacion, windSpeedData, 'Km/h');
     this.updateChart(this.charts['lineChart7'], labelsEstacion, humidityAirData, '%');
     this.updateChart(this.charts['lineChart5'], labelsHumedad, voltageData, 'V');
+    this.updateChart(this.charts['lineChart8'], labelsEstacion, precipitationData, 'mm');
+    this.updateChart(this.charts['lineChart9'], labelsCaudal, flowMeterData, 'L/min');
   }
 
   // Función para almacenar datos históricos de cada variable con validación
@@ -236,6 +260,56 @@ export class DashboardComponent implements AfterViewInit {
   createLineChart7() {
     // Implementación similar para la gráfica de Humedad Aire
   }
+
+  createLineChart8() {
+    const ctx = document.getElementById('lineChart8') as HTMLCanvasElement;
+    if (ctx) {
+      this.charts['lineChart8'] = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [],
+          datasets: [{
+            label: 'Precipitación (mm)',
+            data: [],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+  }
+
+  createLineChart9() {
+    const ctx = document.getElementById('lineChart9') as HTMLCanvasElement;
+    if (ctx) {
+      this.charts['lineChart9'] = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [],
+          datasets: [{
+            label: 'Caudal (L/min)',
+            data: [],
+            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+            borderColor: 'rgba(255, 206, 86, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+  }
+
+
 
   // Función para obtener datos filtrados según el título de la tarjeta
   getFilteredData(title: string): { value: number; fecha: string; hora: string }[] {
