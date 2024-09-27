@@ -254,11 +254,55 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   createLineChart5() {
-    // Implementación similar para la gráfica de Batería
+    const ctx = document.getElementById('lineChart5') as HTMLCanvasElement;
+    this.charts['lineChart5'] = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [{
+          label: 'Bateria %',
+          data: [],
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
   }
 
   createLineChart7() {
-    // Implementación similar para la gráfica de Humedad Aire
+    const ctx = document.getElementById('lineChart7') as HTMLCanvasElement;
+    this.charts['lineChart7'] = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [{
+          label: 'Humedad aire',
+          data: [],
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
   }
 
   createLineChart8() {
