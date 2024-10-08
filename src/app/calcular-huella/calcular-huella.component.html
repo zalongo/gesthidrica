@@ -1,0 +1,748 @@
+<div *ngIf="currentStep === 1">
+    <h3>Datos de la Medición de Huella de Agua</h3>
+    <table>
+        <tr>
+            <td><label for="medicionHuella">¿A qué se le medirá la huella de agua?</label></td>
+            <td><input id="medicionHuella" type="text" name="medicionHuella" required /></td>
+        </tr>
+        <tr>
+            <td><label for="anioMedicion">Año de medición</label></td>
+            <td><input id="anioMedicion" type="number" name="anioMedicion" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidadFuncional">Unidad Funcional (UF)</label></td>
+            <td><input id="unidadFuncional" type="text" name="unidadFuncional" required /></td>
+        </tr>
+    </table>
+
+    <h3>Datos de la Empresa</h3>
+    <table>
+        <tr>
+            <td><label for="nombreEmpresa">Nombre de la empresa</label></td>
+            <td><input id="nombreEmpresa" type="text" name="nombreEmpresa" required /></td>
+        </tr>
+        <tr>
+            <td><label for="instalacionMedida">Instalación que se medirá</label></td>
+            <td><input id="instalacionMedida" type="text" name="instalacionMedida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="ubicacionMedidaR">Ubicación de la instalación: Región</label></td>
+            <td><input id="ubicacionMedidaR" type="text" name="ubicacionMedidaR" required /></td>
+        </tr>
+        <tr>
+            <td><label for="ubicacionMedidaC">Ubicación de la instalación: Comuna</label></td>
+            <td><input id="ubicacionMedidaC" type="text" name="ubicacionMedidaC" required /></td>
+        </tr>
+        <tr>
+            <td><label for="tipoProducto">Tipo de producto que se fabrican en la instalación</label></td>
+            <td><input id="tipoProducto" type="text" name="tipoProducto" required /></td>
+        </tr>
+    </table>
+
+    <h3>Datos del Responsable de Completar la Planilla</h3>
+    <table>
+        <tr>
+            <td><label for="nombreResponsable">Nombre y Apellido</label></td>
+            <td><input id="nombreResponsable" type="text" name="nombreResponsable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="cargoResponsable">Cargo</label></td>
+            <td><input id="cargoResponsable" type="text" name="cargoResponsable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="correoResponsable">Correo</label></td>
+            <td><input id="correoResponsable" type="email" name="correoResponsable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="telefonoResponsable">Teléfono</label></td>
+            <td><input id="telefonoResponsable" type="tel" name="telefonoResponsable" required /></td>
+        </tr>
+    </table>
+    <div>
+        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+    </div>
+</div>
+
+<div *ngIf="currentStep === 2">
+    <h3>Producción Mensual</h3>
+    <table>
+        <tr>
+            <td><label for="productoCategoria">Producto/Categoría de producto</label></td>
+            <td><input id="productoCategoria" type="text" name="productoCategoria" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidad">Unidad</label></td>
+            <td><input id="unidad" type="text" name="unidad" required /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h4>Producción por mes</h4>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="enero">Enero:</label></td>
+            <td><input id="enero" type="number" name="enero" required /></td>
+        </tr>
+        <tr>
+            <td><label for="febrero">Febrero:</label></td>
+            <td><input id="febrero" type="number" name="febrero" required /></td>
+        </tr>
+        <tr>
+            <td><label for="marzo">Marzo:</label></td>
+            <td><input id="marzo" type="number" name="marzo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="abril">Abril:</label></td>
+            <td><input id="abril" type="number" name="abril" required /></td>
+        </tr>
+        <tr>
+            <td><label for="mayo">Mayo:</label></td>
+            <td><input id="mayo" type="number" name="mayo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="junio">Junio:</label></td>
+            <td><input id="junio" type="number" name="junio" required /></td>
+        </tr>
+        <tr>
+            <td><label for="julio">Julio:</label></td>
+            <td><input id="julio" type="number" name="julio" required /></td>
+        </tr>
+        <tr>
+            <td><label for="agosto">Agosto:</label></td>
+            <td><input id="agosto" type="number" name="agosto" required /></td>
+        </tr>
+        <tr>
+            <td><label for="septiembre">Septiembre:</label></td>
+            <td><input id="septiembre" type="number" name="septiembre" required /></td>
+        </tr>
+        <tr>
+            <td><label for="octubre">Octubre:</label></td>
+            <td><input id="octubre" type="number" name="octubre" required /></td>
+        </tr>
+        <tr>
+            <td><label for="noviembre">Noviembre:</label></td>
+            <td><input id="noviembre" type="number" name="noviembre" required /></td>
+        </tr>
+        <tr>
+            <td><label for="diciembre">Diciembre:</label></td>
+            <td><input id="diciembre" type="number" name="diciembre" required /></td>
+        </tr>
+    </table>
+    <div class="col-md-12">
+        <button class="botonAnt" (click)="previousStep()">Anterior</button>
+        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+    </div>
+</div>
+
+<div *ngIf="currentStep == 3">
+    <h3>Entradas de Agua</h3>
+
+    <h4>Entrada Mensual de Agua Potable</h4>
+    <table>
+        <tr>
+            <td><label for="procesoAguaPotable">Fuente - Uso/Equipo</label></td>
+            <td><input id="procesoAguaPotable" type="text" name="procesoAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidadAguaPotable">Unidad</label></td>
+            <td><input id="unidadAguaPotable" type="text" name="unidadAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="eneroAguaPotable">Enero</label></td>
+            <td><input id="eneroAguaPotable" type="number" name="eneroAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="febreroAguaPotable">Febrero</label></td>
+            <td><input id="febreroAguaPotable" type="number" name="febreroAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="marzoAguaPotable">Marzo</label></td>
+            <td><input id="marzoAguaPotable" type="number" name="marzoAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="abrilAguaPotable">Abril</label></td>
+            <td><input id="abrilAguaPotable" type="number" name="abrilAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="mayoAguaPotable">Mayo</label></td>
+            <td><input id="mayoAguaPotable" type="number" name="mayoAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="junioAguaPotable">Junio</label></td>
+            <td><input id="junioAguaPotable" type="number" name="junioAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="julioAguaPotable">Julio</label></td>
+            <td><input id="julioAguaPotable" type="number" name="julioAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="agostoAguaPotable">Agosto</label></td>
+            <td><input id="agostoAguaPotable" type="number" name="agostoAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="septiembreAguaPotable">Septiembre</label></td>
+            <td><input id="septiembreAguaPotable" type="number" name="septiembreAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="octubreAguaPotable">Octubre</label></td>
+            <td><input id="octubreAguaPotable" type="number" name="octubreAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="noviembreAguaPotable">Noviembre</label></td>
+            <td><input id="noviembreAguaPotable" type="number" name="noviembreAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="diciembreAguaPotable">Diciembre</label></td>
+            <td><input id="diciembreAguaPotable" type="number" name="diciembreAguaPotable" required /></td>
+        </tr>
+        <tr>
+            <td><label for="totalAnualAguaPotable">Total Anual</label></td>
+            <td><input id="totalAnualAguaPotable" type="number" name="totalAnualAguaPotable" value="0" readonly /></td>
+        </tr>
+    </table>
+
+    <h4>Entrada Mensual de Agua de Pozo</h4>
+    <table>
+        <tr>
+            <td><label for="procesoAguaPozo">Fuente - Uso/Equipo</label></td>
+            <td><input id="procesoAguaPozo" type="text" name="procesoAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidadAguaPozo">Unidad</label></td>
+            <td><input id="unidadAguaPozo" type="text" name="unidadAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="eneroAguaPozo">Enero</label></td>
+            <td><input id="eneroAguaPozo" type="number" name="eneroAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="febreroAguaPozo">Febrero</label></td>
+            <td><input id="febreroAguaPozo" type="number" name="febreroAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="marzoAguaPozo">Marzo</label></td>
+            <td><input id="marzoAguaPozo" type="number" name="marzoAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="abrilAguaPozo">Abril</label></td>
+            <td><input id="abrilAguaPozo" type="number" name="abrilAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="mayoAguaPozo">Mayo</label></td>
+            <td><input id="mayoAguaPozo" type="number" name="mayoAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="junioAguaPozo">Junio</label></td>
+            <td><input id="junioAguaPozo" type="number" name="junioAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="julioAguaPozo">Julio</label></td>
+            <td><input id="julioAguaPozo" type="number" name="julioAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="agostoAguaPozo">Agosto</label></td>
+            <td><input id="agostoAguaPozo" type="number" name="agostoAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="septiembreAguaPozo">Septiembre</label></td>
+            <td><input id="septiembreAguaPozo" type="number" name="septiembreAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="octubreAguaPozo">Octubre</label></td>
+            <td><input id="octubreAguaPozo" type="number" name="octubreAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="noviembreAguaPozo">Noviembre</label></td>
+            <td><input id="noviembreAguaPozo" type="number" name="noviembreAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="diciembreAguaPozo">Diciembre</label></td>
+            <td><input id="diciembreAguaPozo" type="number" name="diciembreAguaPozo" required /></td>
+        </tr>
+        <tr>
+            <td><label for="totalAnualAguaPozo">Total Anual</label></td>
+            <td><input id="totalAnualAguaPozo" type="number" name="totalAnualAguaPozo" value="0" readonly /></td>
+        </tr>
+    </table>
+
+    <h4>Entrada Mensual de Agua Dulce de Fuentes Superficiales</h4>
+    <table>
+        <tr>
+            <td><label for="procesoAguaSuperficial">Fuente - Uso/Equipo</label></td>
+            <td><input id="procesoAguaSuperficial" type="text" name="procesoAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidadAguaSuperficial">Unidad</label></td>
+            <td><input id="unidadAguaSuperficial" type="text" name="unidadAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="eneroAguaSuperficial">Enero</label></td>
+            <td><input id="eneroAguaSuperficial" type="number" name="eneroAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="febreroAguaSuperficial">Febrero</label></td>
+            <td><input id="febreroAguaSuperficial" type="number" name="febreroAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="marzoAguaSuperficial">Marzo</label></td>
+            <td><input id="marzoAguaSuperficial" type="number" name="marzoAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="abrilAguaSuperficial">Abril</label></td>
+            <td><input id="abrilAguaSuperficial" type="number" name="abrilAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="mayoAguaSuperficial">Mayo</label></td>
+            <td><input id="mayoAguaSuperficial" type="number" name="mayoAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="junioAguaSuperficial">Junio</label></td>
+            <td><input id="junioAguaSuperficial" type="number" name="junioAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="julioAguaSuperficial">Julio</label></td>
+            <td><input id="julioAguaSuperficial" type="number" name="julioAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="agostoAguaSuperficial">Agosto</label></td>
+            <td><input id="agostoAguaSuperficial" type="number" name="agostoAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="septiembreAguaSuperficial">Septiembre</label></td>
+            <td><input id="septiembreAguaSuperficial" type="number" name="septiembreAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="octubreAguaSuperficial">Octubre</label></td>
+            <td><input id="octubreAguaSuperficial" type="number" name="octubreAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="noviembreAguaSuperficial">Noviembre</label></td>
+            <td><input id="noviembreAguaSuperficial" type="number" name="noviembreAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="diciembreAguaSuperficial">Diciembre</label></td>
+            <td><input id="diciembreAguaSuperficial" type="number" name="diciembreAguaSuperficial" required /></td>
+        </tr>
+        <tr>
+            <td><label for="totalAnualAguaSuperficial">Total Anual</label></td>
+            <td><input id="totalAnualAguaSuperficial" type="number" name="totalAnualAguaSuperficial" value="0"
+                    readonly /></td>
+        </tr>
+    </table>
+
+
+    <div class="col-md-12">
+        <button class="botonAnt" (click)="previousStep()">Anterior</button>
+        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+    </div>
+</div>
+<div *ngIf="currentStep == 4">
+    <h2>SALIDA DE AGUA</h2><br>
+
+    <!-- Salida Mensual de Agua Descargada -->
+    <h3>Salida Mensual de Agua Descargada</h3>
+    <table>
+        <tr>
+            <td><label for="procesoAguaDescargada">Proceso/Equipo Relacionado</label></td>
+            <td><input id="procesoAguaDescargada" type="text" name="procesoAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidadAguaDescargada">Unidad</label></td>
+            <td><input id="unidadAguaDescargada" type="text" name="unidadAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="eneroAguaDescargada">Enero</label></td>
+            <td><input id="eneroAguaDescargada" type="number" name="eneroAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="febreroAguaDescargada">Febrero</label></td>
+            <td><input id="febreroAguaDescargada" type="number" name="febreroAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="marzoAguaDescargada">Marzo</label></td>
+            <td><input id="marzoAguaDescargada" type="number" name="marzoAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="abrilAguaDescargada">Abril</label></td>
+            <td><input id="abrilAguaDescargada" type="number" name="abrilAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="mayoAguaDescargada">Mayo</label></td>
+            <td><input id="mayoAguaDescargada" type="number" name="mayoAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="junioAguaDescargada">Junio</label></td>
+            <td><input id="junioAguaDescargada" type="number" name="junioAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="julioAguaDescargada">Julio</label></td>
+            <td><input id="julioAguaDescargada" type="number" name="julioAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="agostoAguaDescargada">Agosto</label></td>
+            <td><input id="agostoAguaDescargada" type="number" name="agostoAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="septiembreAguaDescargada">Septiembre</label></td>
+            <td><input id="septiembreAguaDescargada" type="number" name="septiembreAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="octubreAguaDescargada">Octubre</label></td>
+            <td><input id="octubreAguaDescargada" type="number" name="octubreAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="noviembreAguaDescargada">Noviembre</label></td>
+            <td><input id="noviembreAguaDescargada" type="number" name="noviembreAguaDescargada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="diciembreAguaDescargada">Diciembre</label></td>
+            <td><input id="diciembreAguaDescargada" type="number" name="diciembreAguaDescargada" required /></td>
+        </tr>
+    </table>
+
+    <!-- Salida Mensual de Agua Infiltrada -->
+    <h3>Salida Mensual de Agua Infiltrada</h3>
+    <table>
+        <tr>
+            <td><label for="procesoAguaInfiltrada">Proceso/Equipo Relacionado</label></td>
+            <td><input id="procesoAguaInfiltrada" type="text" name="procesoAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidadAguaInfiltrada">Unidad</label></td>
+            <td><input id="unidadAguaInfiltrada" type="text" name="unidadAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="eneroAguaInfiltrada">Enero</label></td>
+            <td><input id="eneroAguaInfiltrada" type="number" name="eneroAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="febreroAguaInfiltrada">Febrero</label></td>
+            <td><input id="febreroAguaInfiltrada" type="number" name="febreroAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="marzoAguaInfiltrada">Marzo</label></td>
+            <td><input id="marzoAguaInfiltrada" type="number" name="marzoAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="abrilAguaInfiltrada">Abril</label></td>
+            <td><input id="abrilAguaInfiltrada" type="number" name="abrilAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="mayoAguaInfiltrada">Mayo</label></td>
+            <td><input id="mayoAguaInfiltrada" type="number" name="mayoAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="junioAguaInfiltrada">Junio</label></td>
+            <td><input id="junioAguaInfiltrada" type="number" name="junioAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="julioAguaInfiltrada">Julio</label></td>
+            <td><input id="julioAguaInfiltrada" type="number" name="julioAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="agostoAguaInfiltrada">Agosto</label></td>
+            <td><input id="agostoAguaInfiltrada" type="number" name="agostoAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="septiembreAguaInfiltrada">Septiembre</label></td>
+            <td><input id="septiembreAguaInfiltrada" type="number" name="septiembreAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="octubreAguaInfiltrada">Octubre</label></td>
+            <td><input id="octubreAguaInfiltrada" type="number" name="octubreAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="noviembreAguaInfiltrada">Noviembre</label></td>
+            <td><input id="noviembreAguaInfiltrada" type="number" name="noviembreAguaInfiltrada" required /></td>
+        </tr>
+        <tr>
+            <td><label for="diciembreAguaInfiltrada">Diciembre</label></td>
+            <td><input id="diciembreAguaInfiltrada" type="number" name="diciembreAguaInfiltrada" required /></td>
+        </tr>
+    </table>
+
+    <h3>Salida Mensual de Agua Consumida</h3>
+    <table>
+        <tr>
+            <td><label for="procesoAguaConsumida">Proceso/Equipo Relacionado</label></td>
+            <td><input id="procesoAguaConsumida" type="text" name="procesoAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="unidadAguaConsumida">Unidad</label></td>
+            <td><input id="unidadAguaConsumida" type="text" name="unidadAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="eneroAguaConsumida">Enero</label></td>
+            <td><input id="eneroAguaConsumida" type="number" name="eneroAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="febreroAguaConsumida">Febrero</label></td>
+            <td><input id="febreroAguaConsumida" type="number" name="febreroAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="marzoAguaConsumida">Marzo</label></td>
+            <td><input id="marzoAguaConsumida" type="number" name="marzoAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="abrilAguaConsumida">Abril</label></td>
+            <td><input id="abrilAguaConsumida" type="number" name="abrilAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="mayoAguaConsumida">Mayo</label></td>
+            <td><input id="mayoAguaConsumida" type="number" name="mayoAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="junioAguaConsumida">Junio</label></td>
+            <td><input id="junioAguaConsumida" type="number" name="junioAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="julioAguaConsumida">Julio</label></td>
+            <td><input id="julioAguaConsumida" type="number" name="julioAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="agostoAguaConsumida">Agosto</label></td>
+            <td><input id="agostoAguaConsumida" type="number" name="agostoAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="septiembreAguaConsumida">Septiembre</label></td>
+            <td><input id="septiembreAguaConsumida" type="number" name="septiembreAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="octubreAguaConsumida">Octubre</label></td>
+            <td><input id="octubreAguaConsumida" type="number" name="octubreAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="noviembreAguaConsumida">Noviembre</label></td>
+            <td><input id="noviembreAguaConsumida" type="number" name="noviembreAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="diciembreAguaConsumida">Diciembre</label></td>
+            <td><input id="diciembreAguaConsumida" type="number" name="diciembreAguaConsumida" required /></td>
+        </tr>
+        <tr>
+            <td><label for="totalAnualAguaConsumida">Total Anual</label></td>
+            <td><input id="totalAnualAguaConsumida" type="number" name="totalAnualAguaConsumida" value="0" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td><label for="porcentajeAguaConsumida">Porcentaje</label></td>
+            <td><input id="porcentajeAguaConsumida" type="number" name="porcentajeAguaConsumida" value="0" readonly />
+            </td>
+        </tr>
+    </table>
+    
+    <div class="col-md-12">
+        <button class="botonAnt" (click)="previousStep()">Anterior</button>
+        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+    </div>
+</div>
+<!-- Calidad de las Aguas Descargadas -->
+<div *ngIf="currentStep == 5">
+    <h3>CALIDAD DE LAS AGUAS DESCARGADAS</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>PARÁMETRO</th>
+                <th>ABREVIACIÓN</th>
+                <th>UNIDAD</th>
+                <th>ENERO</th>
+                <th>FEBRERO</th>
+                <th>MARZO</th>
+                <th>ABRIL</th>
+                <th>MAYO</th>
+                <th>JUNIO</th>
+                <th>JULIO</th>
+                <th>AGOSTO</th>
+                <th>SEPTIEMBRE</th>
+                <th>OCTUBRE</th>
+                <th>NOVIEMBRE</th>
+                <th>DICIEMBRE</th>
+                <th>MIN</th>
+                <th>MAX</th>
+                <th>PROMEDIO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NITRÓGENO TOTAL</td>
+                <td>N</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="nitrogenoTotalEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="nitrogenoTotalPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>NITRÓGENO TOTAL KJELDAHL</td>
+                <td>NTK</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="ntkEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="ntkPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>FÓSFORO TOTAL</td>
+                <td>P</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="fosforoTotalEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosforoTotalPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>FOSFATO</td>
+                <td>PO4</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="fosfatoEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="fosfatoPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>DEMANDA QUÍMICA DE OXÍGENO</td>
+                <td>DQO</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="dqoEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="dqoPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>DEMANA BIOLÓGICA DE OXÍGENO</td>
+                <td>DBO</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="dboEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="dboPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>FENOL</td>
+                <td>FEN</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="fenolEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="fenolPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>COLOR</td>
+                <td>CO</td>
+                <td>[U.H]</td>
+                <td><input type="number" name="colorEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="colorPromedio" value="0" step="0.001" /></td>
+            </tr>
+            <tr>
+                <td>ACEITES Y GRASAS</td>
+                <td>AG</td>
+                <td>[mg/L]</td>
+                <td><input type="number" name="aceitesEnero" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesFebrero" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesMarzo" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesAbril" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesMayo" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesJunio" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesJulio" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesAgosto" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesSeptiembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesOctubre" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesNoviembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesDiciembre" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesMin" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesMax" value="0" step="0.001" /></td>
+                <td><input type="number" name="aceitesPromedio" value="0" step="0.001" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
