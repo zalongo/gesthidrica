@@ -24,4 +24,8 @@ export class CalcularHuellaComponent {
       this.currentStep--;
     }
   }
+
+  calcular(){
+    
+  }
 }
