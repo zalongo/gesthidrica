@@ -12,7 +12,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class CalcularHuellaComponent {
   currentStep: number = 1;
-  medicionHuella: string = '';  // La variable enlazada con ngModel
+  
+  medicionHuella: string = '';
+  anioMedicion: string = '';
+  unidadFuncional: string = '';
+  nombreEmpresa: string = '';
+  instalacionMedida: string = '';
+  ubicacionMedidaR: string = '';
+  ubicacionMedidaC: string = '';
+  tipoProducto: string = '';
+  nombreResponsable: string = '';
+  cargoResponsable: string = '';
+  correoResponsable: string = '';
+  telefonoResponsable: string = '';
 
   // Inyectar el servicio de Google Sheets en el constructor
   constructor(private googleSheetsService: GoogleSheetsService) { }
@@ -33,17 +45,33 @@ export class CalcularHuellaComponent {
 
   // Método para guardar el dato en la hoja de Google Sheets
   guardarEnGoogleSheets() {
-    const rango = '3. INFORMACIÓN!B5';  // El rango específico en la hoja
-    const valores = [[this.medicionHuella]];  // El valor ingresado en la celda B5
-
+    const rango = '3. INFORMACIÓN!B5:B18';  // El rango específico en la hoja
+    const valores = [
+      [this.medicionHuella],           // B5
+      [this.anioMedicion],             // B6
+      [this.unidadFuncional],
+      [],          // B7
+      [this.nombreEmpresa],             // B9
+      [this.instalacionMedida],        // B10
+      [this.ubicacionMedidaR],         // B11
+      [this.ubicacionMedidaC],         // B12
+      [this.tipoProducto],      
+      [],        // B13
+      [this.nombreResponsable],         // B15
+      [this.cargoResponsable],          // B16
+      [this.correoResponsable],         // B17
+      [this.telefonoResponsable]        // B18
+    ];
+  
     this.googleSheetsService.addDataToSheet(rango, valores)
       .then((response: any) => {
-        console.log('Dato guardado exitosamente:', response);
+        console.log('Datos guardados exitosamente:', response);
       })
       .catch((error: any) => {
-        console.error('Error al guardar el dato:', error);
+        console.error('Error al guardar los datos:', error);
       });
   }
+  
 
   // Método para cálculos adicionales si es necesario
   calcular() {

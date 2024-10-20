@@ -7,11 +7,11 @@
         </tr>        
         <tr>
             <td><label for="anioMedicion">Año de medición</label></td>
-            <td><input id="anioMedicion" type="number" name="anioMedicion" required /></td>
+            <td><input id="anioMedicion" type="text" name="anioMedicion" [(ngModel)]="anioMedicion" required /></td>
         </tr>
         <tr>
             <td><label for="unidadFuncional">Unidad Funcional (UF)</label></td>
-            <td><input id="unidadFuncional" type="text" name="unidadFuncional" required /></td>
+            <td><input id="unidadFuncional" type="text" name="unidadFuncional" [(ngModel)]="unidadFuncional" required /></td>
         </tr>
     </table>
 
@@ -19,23 +19,23 @@
     <table>
         <tr>
             <td><label for="nombreEmpresa">Nombre de la empresa</label></td>
-            <td><input id="nombreEmpresa" type="text" name="nombreEmpresa" required /></td>
+            <td><input id="nombreEmpresa" type="text" name="nombreEmpresa" [(ngModel)]="nombreEmpresa" required /></td>
         </tr>
         <tr>
             <td><label for="instalacionMedida">Instalación que se medirá</label></td>
-            <td><input id="instalacionMedida" type="text" name="instalacionMedida" required /></td>
+            <td><input id="instalacionMedida" type="text" name="instalacionMedida" [(ngModel)]="instalacionMedida" required /></td>
         </tr>
         <tr>
             <td><label for="ubicacionMedidaR">Ubicación de la instalación: Región</label></td>
-            <td><input id="ubicacionMedidaR" type="text" name="ubicacionMedidaR" required /></td>
+            <td><input id="ubicacionMedidaR" type="text" name="ubicacionMedidaR" [(ngModel)]="ubicacionMedidaR" required /></td>
         </tr>
         <tr>
             <td><label for="ubicacionMedidaC">Ubicación de la instalación: Comuna</label></td>
-            <td><input id="ubicacionMedidaC" type="text" name="ubicacionMedidaC" required /></td>
+            <td><input id="ubicacionMedidaC" type="text" name="ubicacionMedidaC" [(ngModel)]="ubicacionMedidaC" required /></td>
         </tr>
         <tr>
             <td><label for="tipoProducto">Tipo de producto que se fabrican en la instalación</label></td>
-            <td><input id="tipoProducto" type="text" name="tipoProducto" required /></td>
+            <td><input id="tipoProducto" type="text" name="tipoProducto" [(ngModel)]="tipoProducto" required /></td>
         </tr>
     </table>
 
@@ -43,19 +43,19 @@
     <table>
         <tr>
             <td><label for="nombreResponsable">Nombre y Apellido</label></td>
-            <td><input id="nombreResponsable" type="text" name="nombreResponsable" required /></td>
+            <td><input id="nombreResponsable" type="text" name="nombreResponsable" [(ngModel)]="nombreResponsable" required /></td>
         </tr>
         <tr>
             <td><label for="cargoResponsable">Cargo</label></td>
-            <td><input id="cargoResponsable" type="text" name="cargoResponsable" required /></td>
+            <td><input id="cargoResponsable" type="text" name="cargoResponsable" [(ngModel)]="cargoResponsable" required /></td>
         </tr>
         <tr>
             <td><label for="correoResponsable">Correo</label></td>
-            <td><input id="correoResponsable" type="email" name="correoResponsable" required /></td>
+            <td><input id="correoResponsable" type="email" name="correoResponsable" [(ngModel)]="correoResponsable" required /></td>
         </tr>
         <tr>
             <td><label for="telefonoResponsable">Teléfono</label></td>
-            <td><input id="telefonoResponsable" type="tel" name="telefonoResponsable" required /></td>
+            <td><input id="telefonoResponsable" type="tel" name="telefonoResponsable" [(ngModel)]="telefonoResponsable" required /></td>
         </tr>
     </table>
     <div>
