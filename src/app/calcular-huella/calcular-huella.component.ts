@@ -42,6 +42,12 @@ export class CalcularHuellaComponent {
       this.currentStep--;
     }
   }
+  // Aca hay que agregar mas datos, las hojas que corresponde con la celda que corresponde.
+  // Hay que hacer que la autenticacion se haga al principio y no al enviar los datos.
+  // Al enviar los datos el formulario, que quede en blanco para agregar datos nuevamente.
+  // Trabaja Felipe 
+
+
 
   // Método para guardar el dato en la hoja de Google Sheets
   guardarEnGoogleSheets() {
