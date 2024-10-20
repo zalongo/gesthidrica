@@ -46,6 +46,7 @@ export class CalcularHuellaComponent {
   // Hay que hacer que la autenticacion se haga al principio y no al enviar los datos.
   // Al enviar los datos el formulario, que quede en blanco para agregar datos nuevamente.
   // Trabaja Felipe 
+  // Falta que se descargue la hoja de la hoja de huella hidrica en formato exel para imprimir.
 
 
 
