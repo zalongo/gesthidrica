@@ -10,7 +10,9 @@ export class GoogleSheetsService {
   private CLIENT_ID = '599544962025-ub5lm6j50g0dlg15c6ps77pubsnmuv5h.apps.googleusercontent.com';
   private API_KEY = 'AIzaSyDkxDDVxkMV9UerEdr85IL-hxXYXjqF5pA';
   private DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
-  private SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+  private SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
+  public spreadsheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
+
 
   private tokenClient: any;
   private gapiInited = false;
@@ -144,4 +146,39 @@ export class GoogleSheetsService {
       return [];
     }
   }
+
+  async writeRecords(sheetId: string, range: string, values: any[][]): Promise<void> {
+    try {
+      const response = await gapi.client.sheets.spreadsheets.values.update({
+        spreadsheetId: sheetId,
+        range: range,
+        valueInputOption: 'RAW',
+        resource: {
+          values: values,
+        },
+      });
+      console.log('Datos escritos en la hoja:', response);
+    } catch (error) {
+      console.error('Error al escribir datos en la hoja de cálculo:', error);
+    }
+  }
+  addDataToSheet(range: string, values: any[]) {
+    const token = gapi.client.getToken();
+  
+    if (!token) {
+      console.error('No token found. Please authenticate first.');
+      return Promise.reject('No token found. Please authenticate first.');
+    }
+  
+    return gapi.client.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: range,
+      valueInputOption: 'RAW',
+      resource: {
+        values: values,
+      },
+    });
+  }
+  
+  
 }

@@ -19,5 +19,7 @@ describe('CalcularHuellaComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });   
+  
+  
 });

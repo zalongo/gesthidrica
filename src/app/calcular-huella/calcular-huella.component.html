@@ -3,8 +3,8 @@
     <table>
         <tr>
             <td><label for="medicionHuella">¿A qué se le medirá la huella de agua?</label></td>
-            <td><input id="medicionHuella" type="text" name="medicionHuella" required /></td>
-        </tr>
+            <td><input id="medicionHuella" type="text" name="medicionHuella" [(ngModel)]="medicionHuella" required /></td>
+        </tr>        
         <tr>
             <td><label for="anioMedicion">Año de medición</label></td>
             <td><input id="anioMedicion" type="number" name="anioMedicion" required /></td>
