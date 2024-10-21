@@ -1,49 +1,38 @@
 .table-container {
-    max-width: 100%;
-    /* Evitar que el contenedor sea más ancho que la pantalla */
-    overflow-x: auto;
-    /* Agregar desplazamiento horizontal si es necesario */
+    max-width: 100%; /* Evitar que el contenedor sea más ancho que la pantalla */
+    overflow-x: auto; /* Agregar desplazamiento horizontal si es necesario */
 }
 
-.col-md-12 {
+.col-md-12{
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
 }
 
-.botonSig {
+.botonSig{
     margin-right: 0;
-    float: right;
 }
 
-.botonAnt {
+.botonAnt{
     margin-left: 0;
 }
 
 table {
-    width: 100%;
-    /* Hacer que la tabla ocupe el 100% del ancho del contenedor */
-    border-collapse: collapse;
-    /* Colapsar bordes */
+    width: 100%; /* Hacer que la tabla ocupe el 100% del ancho del contenedor */
+    border-collapse: collapse; /* Colapsar bordes */
     overflow-x: auto;
 }
 
-th,
-td {
-    border: 1px solid #ddd;
-    /* Bordes de la tabla */
-    text-align: center;
-    /* Alinear texto al centro */
+th, td {
+    border: 1px solid #ddd; /* Bordes de la tabla */
+    text-align: center; /* Alinear texto al centro */
 }
 
 th {
-    background-color: #f2f2f2;
-    /* Fondo diferente para el encabezado */
+    background-color: #f2f2f2; /* Fondo diferente para el encabezado */
 }
 
 input {
-    width: 80%;
-    /* Ancho fijo para los campos de entrada */
-    text-align: center;
-    /* Alinear texto al centro */
+    width: 80%; /* Ancho fijo para los campos de entrada */
+    text-align: center; /* Alinear texto al centro */
 }

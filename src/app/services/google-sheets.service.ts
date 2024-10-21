@@ -169,6 +169,12 @@ export class GoogleSheetsService {
       console.error('No token found. Please authenticate first.');
       return Promise.reject('No token found. Please authenticate first.');
     }
+
+  // Asegúrate de que values sea un array de arrays
+  if (!Array.isArray(values) || !Array.isArray(values[0])) {
+    console.error('Invalid values format. It should be an array of arrays.');
+    return Promise.reject('Invalid values format. It should be an array of arrays.');
+  }
   
     return gapi.client.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
