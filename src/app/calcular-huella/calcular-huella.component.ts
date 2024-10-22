@@ -28,23 +28,22 @@ export class CalcularHuellaComponent {
   telefonoResponsable: string = '';
 
   // Datos de producción mensual
-  producto: string = '';
-  descripcion: string = '';
-  unidad: string = '';
-  enero: number = 0;
-  febrero: number = 0;
-  marzo: number = 0;
-  abril: number = 0;
-  mayo: number = 0;
-  junio: number = 0;
-  julio: number = 0;
-  agosto: number = 0;
-  septiembre: number = 0;
-  octubre: number = 0;
-  noviembre: number = 0;
-  diciembre: number = 0;
-  
-  // Datos de entrada de agua potable mensual
+producto: string = '';
+descripcion: string = '';
+unidad: string = '';
+enero: number = 0;
+febrero: number = 0;
+marzo: number = 0;
+abril: number = 0;
+mayo: number = 0;
+junio: number = 0;
+julio: number = 0;
+agosto: number = 0;
+septiembre: number = 0;
+octubre: number = 0;
+noviembre: number = 0;
+diciembre: number = 0;
+// Datos de entrada de agua potable mensual
 aguaPotableMensualUso: string = '';
 aguaPotableMensualEnero: number = 0;
 aguaPotableMensualFebrero: number = 0;
@@ -58,8 +57,6 @@ aguaPotableMensualSeptiembre: number = 0;
 aguaPotableMensualOctubre: number = 0;
 aguaPotableMensualNoviembre: number = 0;
 aguaPotableMensualDiciembre: number = 0;
-
-
 // Datos de entrada de agua de pozo mensual
 aguaPozoFuenteUso: string = '';
 aguaPozoEnero: number = 0;
@@ -132,7 +129,201 @@ salidaAguaConsumidaSeptiembre: number = 0;
 salidaAguaConsumidaOctubre: number = 0;
 salidaAguaConsumidaNoviembre: number = 0;
 salidaAguaConsumidaDiciembre: number = 0;
-
+//DatosUltimaPaginaF1
+nitrogenoEnero: number = 0;
+nitrogenoFebrero: number = 0;
+nitrogenoMarzo: number = 0;
+nitrogenoAbril: number = 0;
+nitrogenoMayo: number = 0;
+nitrogenoJunio: number = 0;
+nitrogenoJulio: number = 0;
+nitrogenoAgosto: number = 0;
+nitrogenoSeptiembre: number = 0;
+nitrogenoOctubre: number = 0;
+nitrogenoNoviembre: number = 0;
+nitrogenoDiciembre: number = 0;
+//DatosUltimaPagF2
+nitrogenoKjeldahlEnero: number = 0;
+nitrogenoKjeldahlFebrero: number = 0;
+nitrogenoKjeldahlMarzo: number = 0;
+nitrogenoKjeldahlAbril: number = 0;
+nitrogenoKjeldahlMayo: number = 0;
+nitrogenoKjeldahlJunio: number = 0;
+nitrogenoKjeldahlJulio: number = 0;
+nitrogenoKjeldahlAgosto: number = 0;
+nitrogenoKjeldahlSeptiembre: number = 0;
+nitrogenoKjeldahlOctubre: number = 0;
+nitrogenoKjeldahlNoviembre: number = 0;
+nitrogenoKjeldahlDiciembre: number = 0;
+//DatosUltimaPagF3
+fosforoTotalEnero: number = 0;
+fosforoTotalFebrero: number = 0;
+fosforoTotalMarzo: number = 0;
+fosforoTotalAbril: number = 0;
+fosforoTotalMayo: number = 0;
+fosforoTotalJunio: number = 0;
+fosforoTotalJulio: number = 0;
+fosforoTotalAgosto: number = 0;
+fosforoTotalSeptiembre: number = 0;
+fosforoTotalOctubre: number = 0;
+fosforoTotalNoviembre: number = 0;
+fosforoTotalDiciembre: number = 0;
+//DatosUltimaPagF4
+fosfatoEnero: number = 0;
+fosfatoFebrero: number = 0;
+fosfatoMarzo: number = 0;
+fosfatoAbril: number = 0;
+fosfatoMayo: number = 0;
+fosfatoJunio: number = 0;
+fosfatoJulio: number = 0;
+fosfatoAgosto: number = 0;
+fosfatoSeptiembre: number = 0;
+fosfatoOctubre: number = 0;
+fosfatoNoviembre: number = 0;
+fosfatoDiciembre: number = 0;
+//DatosUltimaPagF5
+dqoEnero: number = 0;
+dqoFebrero: number = 0;
+dqoMarzo: number = 0;
+dqoAbril: number = 0;
+dqoMayo: number = 0;
+dqoJunio: number = 0;
+dqoJulio: number = 0;
+dqoAgosto: number = 0;
+dqoSeptiembre: number = 0;
+dqoOctubre: number = 0;
+dqoNoviembre: number = 0;
+dqoDiciembre: number = 0;
+//DatosUltimaPagF6
+dboEnero: number = 0;
+    dboFebrero: number = 0;
+    dboMarzo: number = 0;
+    dboAbril: number = 0;
+    dboMayo: number = 0;
+    dboJunio: number = 0;
+    dboJulio: number = 0;
+    dboAgosto: number = 0;
+    dboSeptiembre: number = 0;
+    dboOctubre: number = 0;
+    dboNoviembre: number = 0;
+    dboDiciembre: number = 0;
+  //DatosUltimaPagF7
+  arsenicoEnero: number = 0;
+    arsenicoFebrero: number = 0;
+    arsenicoMarzo: number = 0;
+    arsenicoAbril: number = 0;
+    arsenicoMayo: number = 0;
+    arsenicoJunio: number = 0;
+    arsenicoJulio: number = 0;
+    arsenicoAgosto: number = 0;
+    arsenicoSeptiembre: number = 0;
+    arsenicoOctubre: number = 0;
+    arsenicoNoviembre: number = 0;
+    arsenicoDiciembre: number = 0;
+    //DatosUltimaPagF8
+    cadmioEnero: number = 0;
+    cadmioFebrero: number = 0;
+    cadmioMarzo: number = 0;
+    cadmioAbril: number = 0;
+    cadmioMayo: number = 0;
+    cadmioJunio: number = 0;
+    cadmioJulio: number = 0;
+    cadmioAgosto: number = 0;
+    cadmioSeptiembre: number = 0;
+    cadmioOctubre: number = 0;
+    cadmioNoviembre: number = 0;
+    cadmioDiciembre: number = 0;
+    //DatosUltimaPagF9
+    cromoEnero: number = 0;
+    cromoFebrero: number = 0;
+    cromoMarzo: number = 0;
+    cromoAbril: number = 0;
+    cromoMayo: number = 0;
+    cromoJunio: number = 0;
+    cromoJulio: number = 0;
+    cromoAgosto: number = 0;
+    cromoSeptiembre: number = 0;
+    cromoOctubre: number = 0;
+    cromoNoviembre: number = 0;
+    cromoDiciembre: number = 0;
+    //DatosUltimaPagF10
+    cobreEnero: number = 0;
+    cobreFebrero: number = 0;
+    cobreMarzo: number = 0;
+    cobreAbril: number = 0;
+    cobreMayo: number = 0;
+    cobreJunio: number = 0;
+    cobreJulio: number = 0;
+    cobreAgosto: number = 0;
+    cobreSeptiembre: number = 0;
+    cobreOctubre: number = 0;
+    cobreNoviembre: number = 0;
+    cobreDiciembre: number = 0;
+    //DatosUltimaPagF11
+    mercurioEnero: number = 0;
+    mercurioFebrero: number = 0;
+    mercurioMarzo: number = 0;
+    mercurioAbril: number = 0;
+    mercurioMayo: number = 0;
+    mercurioJunio: number = 0;
+    mercurioJulio: number = 0;
+    mercurioAgosto: number = 0;
+    mercurioSeptiembre: number = 0;
+    mercurioOctubre: number = 0;
+    mercurioNoviembre: number = 0;
+    mercurioDiciembre: number = 0;
+    //DatosUltimaPagF12
+    niquelEnero: number = 0;
+    niquelFebrero: number = 0;
+    niquelMarzo: number = 0;
+    niquelAbril: number = 0;
+    niquelMayo: number = 0;
+    niquelJunio: number = 0;
+    niquelJulio: number = 0;
+    niquelAgosto: number = 0;
+    niquelSeptiembre: number = 0;
+    niquelOctubre: number = 0;
+    niquelNoviembre: number = 0;
+    niquelDiciembre: number = 0;
+    //DatosUltimaPagF13
+    plomoEnero: number = 0;
+    plomoFebrero: number = 0;
+    plomoMarzo: number = 0;
+    plomoAbril: number = 0;
+    plomoMayo: number = 0;
+    plomoJunio: number = 0;
+    plomoJulio: number = 0;
+    plomoAgosto: number = 0;
+    plomoSeptiembre: number = 0;
+    plomoOctubre: number = 0;
+    plomoNoviembre: number = 0;
+    plomoDiciembre: number = 0;
+    //DatosUltimaPagF14
+    zincEnero: number = 0;
+    zincFebrero: number = 0;
+    zincMarzo: number = 0;
+    zincAbril: number = 0;
+    zincMayo: number = 0;
+    zincJunio: number = 0;
+    zincJulio: number = 0;
+    zincAgosto: number = 0;
+    zincSeptiembre: number = 0;
+    zincOctubre: number = 0;
+    zincNoviembre: number = 0;
+    zincDiciembre: number = 0;
+    //DatosUltimaPagF15
+    pentaclorofenolEnero: number = 0;
+    pentaclorofenolFebrero: number = 0;
+    pentaclorofenolMarzo: number = 0;
+    pentaclorofenolAbril: number = 0;
+    pentaclorofenolMayo: number = 0;
+    pentaclorofenolJunio: number = 0;
+    pentaclorofenolJulio: number = 0;
+    pentaclorofenolAgosto: number = 0;
+    pentaclorofenolSeptiembre: number = 0;
+    pentaclorofenolOctubre: number = 0;
+    pentaclorofenolNoviembre: number = 0;
+    pentaclorofenolDiciembre: number = 0;
   // Inyectar el servicio de Google Sheets en el constructor
   constructor(private googleSheetsService: GoogleSheetsService) {}
 
@@ -156,6 +347,7 @@ salidaAguaConsumidaDiciembre: number = 0;
     this.guardarDatosHoja4();
     this.guardarDatosHoja5();
     this.guardarDatosSalidaAgua();
+    this.guardarDatosCalidadAgua();
     
 
     // Reiniciar el formulario después de guardar los datos
@@ -245,7 +437,7 @@ salidaAguaConsumidaDiciembre: number = 0;
     ];
 
     // Segunda tabla: Entrada Mensual de Agua de Pozo
-    const rangoAguaPozo = '5. USO DIRECTO DE AGUA!A16:N16'; // Rango para la segunda tabla
+    const rangoAguaPozo = '5. USO DIRECTO DE AGUA!A:16:N16'; // Rango para la segunda tabla
     const valoresAguaPozo = [
         [
             this.aguaPozoFuenteUso, // A16
@@ -405,39 +597,373 @@ salidaAguaConsumidaDiciembre: number = 0;
         });
 }
 
+private guardarDatosCalidadAgua() {
+  const rangoNitrogeno = '7. CALIDAD DE AGUA!D6:O6'; // Rango para la tabla de agua descargada
+  const valoresNitrogeno= [
+      [
+          this.nitrogenoEnero, // D6
+          this.nitrogenoFebrero,  // E6 (puedes ajustar este valor según sea necesario)
+          this.nitrogenoMarzo, // F6
+          this.nitrogenoAbril, // G6
+          this.nitrogenoMayo, // H6
+          this.nitrogenoJunio, // I6
+          this.nitrogenoJulio, // J6
+          this.nitrogenoAgosto, // K6
+          this.nitrogenoSeptiembre, // L6
+          this.nitrogenoOctubre, // M6
+          this.nitrogenoNoviembre, // N6
+          this.nitrogenoDiciembre, // O6
+      ]
+  ];
+  // Guardar en la Hoja 7 
+  this.googleSheetsService.addDataToSheet(rangoNitrogeno, valoresNitrogeno)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
 
-  // Método para reiniciar todos los campos del formulario
-  reiniciarFormulario() {
-    this.medicionHuella = '';
-    this.anioMedicion = '';
-    this.unidadFuncional = '';
-    this.nombreEmpresa = '';
-    this.instalacionMedida = '';
-    this.ubicacionMedidaR = '';
-    this.ubicacionMedidaC = '';
-    this.tipoProducto = '';
-    this.nombreResponsable = '';
-    this.cargoResponsable = '';
-    this.correoResponsable = '';
-    this.telefonoResponsable = '';
-    this.producto = '';
-    this.descripcion = '';
-    this.unidad = '';
-    this.enero = 0;
-    this.febrero = 0;
-    this.marzo = 0;
-    this.abril = 0;
-    this.mayo = 0;
-    this.junio = 0;
-    this.julio = 0;
-    this.agosto = 0;
-    this.septiembre = 0;
-    this.octubre = 0;
-    this.noviembre = 0;
-    this.diciembre = 0;
-    
-  }
+  const rangoNitrogenoKjeldahl = '7. CALIDAD DE AGUA!D7:O7'; // Rango para la tabla de agua del nitrógeno Kjeldahl
+  const valoresNitrogenoKjeldahl = [
+      [
+          this.nitrogenoKjeldahlEnero, // D7
+          this.nitrogenoKjeldahlFebrero, // E7
+          this.nitrogenoKjeldahlMarzo, // F7
+          this.nitrogenoKjeldahlAbril, // G7
+          this.nitrogenoKjeldahlMayo, // H7
+          this.nitrogenoKjeldahlJunio, // I7
+          this.nitrogenoKjeldahlJulio, // J7
+          this.nitrogenoKjeldahlAgosto, // K7
+          this.nitrogenoKjeldahlSeptiembre, // L7
+          this.nitrogenoKjeldahlOctubre, // M7
+          this.nitrogenoKjeldahlNoviembre, // N7
+          this.nitrogenoKjeldahlDiciembre, // O7
+      ]
+  ];
 
+  // Guardar en la Hoja 7 
+  this.googleSheetsService.addDataToSheet(rangoNitrogenoKjeldahl, valoresNitrogenoKjeldahl)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoFosforo = '7. CALIDAD DE AGUA!D8:O8'; // Rango para el fosforo total
+  const valoresFosforo = [
+      [
+          this.fosforoTotalEnero, // D8
+          this.fosforoTotalFebrero, // E8
+          this.fosforoTotalMarzo, // F8
+          this.fosforoTotalAbril, // G8
+          this.fosforoTotalMayo, // H8
+          this.fosforoTotalJunio, // I8
+          this.fosforoTotalJulio, // J8
+          this.fosforoTotalAgosto, // K8
+          this.fosforoTotalSeptiembre, // L8
+          this.fosforoTotalOctubre, // M8
+          this.fosforoTotalNoviembre, // N8
+          this.fosforoTotalDiciembre, // O8
+      ]
+  ];
+  // Guardar en la Hoja 7 
+  this.googleSheetsService.addDataToSheet(rangoFosforo, valoresFosforo)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoFosfato = '7. CALIDAD DE AGUA!D9:O9'; // Rango para el fosfato
+  const valoresFosfato = [
+      [
+          this.fosfatoEnero, // D9
+          this.fosfatoFebrero, // E9
+          this.fosfatoMarzo, // F9
+          this.fosfatoAbril, // G9
+          this.fosfatoMayo, // H9
+          this.fosfatoJunio, // I9
+          this.fosfatoJulio, // J9
+          this.fosfatoAgosto, // K9
+          this.fosfatoSeptiembre, // L9
+          this.fosfatoOctubre, // M9
+          this.fosfatoNoviembre, // N9
+          this.fosfatoDiciembre, // O9
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoFosfato, valoresFosfato)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoDqo = '7. CALIDAD DE AGUA!D10:O10'; // Rango para la DQO
+  const valoresDqo = [
+      [
+          this.dqoEnero,
+          this.dqoFebrero,
+          this.dqoMarzo,
+          this.dqoAbril,
+          this.dqoMayo,
+          this.dqoJunio,
+          this.dqoJulio,
+          this.dqoAgosto,
+          this.dqoSeptiembre,
+          this.dqoOctubre,
+          this.dqoNoviembre,
+          this.dqoDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoDqo, valoresDqo)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoDbo = '7. CALIDAD DE AGUA!D11:O11'; // Rango para la DBO
+  const valoresDbo = [
+      [
+          this.dboEnero,
+          this.dboFebrero,
+          this.dboMarzo,
+          this.dboAbril,
+          this.dboMayo,
+          this.dboJunio,
+          this.dboJulio,
+          this.dboAgosto,
+          this.dboSeptiembre,
+          this.dboOctubre,
+          this.dboNoviembre,
+          this.dboDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoDbo, valoresDbo)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoArsenico = '7. CALIDAD DE AGUA!D12:O12'; // Rango para el arsénico
+  const valoresArsenico = [
+      [
+          this.arsenicoEnero,
+          this.arsenicoFebrero,
+          this.arsenicoMarzo,
+          this.arsenicoAbril,
+          this.arsenicoMayo,
+          this.arsenicoJunio,
+          this.arsenicoJulio,
+          this.arsenicoAgosto,
+          this.arsenicoSeptiembre,
+          this.arsenicoOctubre,
+          this.arsenicoNoviembre,
+          this.arsenicoDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoArsenico, valoresArsenico)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoCadmio = '7. CALIDAD DE AGUA!D18:O18'; // Rango para el cadmio
+  const valoresCadmio = [
+      [
+          this.cadmioEnero,
+          this.cadmioFebrero,
+          this.cadmioMarzo,
+          this.cadmioAbril,
+          this.cadmioMayo,
+          this.cadmioJunio,
+          this.cadmioJulio,
+          this.cadmioAgosto,
+          this.cadmioSeptiembre,
+          this.cadmioOctubre,
+          this.cadmioNoviembre,
+          this.cadmioDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoCadmio, valoresCadmio)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoCromo = '7. CALIDAD DE AGUA!D19:O19'; // Rango para el cromo
+  const valoresCromo = [
+      [
+          this.cromoEnero,
+          this.cromoFebrero,
+          this.cromoMarzo,
+          this.cromoAbril,
+          this.cromoMayo,
+          this.cromoJunio,
+          this.cromoJulio,
+          this.cromoAgosto,
+          this.cromoSeptiembre,
+          this.cromoOctubre,
+          this.cromoNoviembre,
+          this.cromoDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoCromo, valoresCromo)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoCobre = '7. CALIDAD DE AGUA!D20:O20'; // Rango para el cobre
+  const valoresCobre = [
+      [
+          this.cobreEnero,
+          this.cobreFebrero,
+          this.cobreMarzo,
+          this.cobreAbril,
+          this.cobreMayo,
+          this.cobreJunio,
+          this.cobreJulio,
+          this.cobreAgosto,
+          this.cobreSeptiembre,
+          this.cobreOctubre,
+          this.cobreNoviembre,
+          this.cobreDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoCobre, valoresCobre)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoMercurio = '7. CALIDAD DE AGUA!D34:O34'; // Rango para el mercurio
+  const valoresMercurio = [
+      [
+          this.mercurioEnero,
+          this.mercurioFebrero,
+          this.mercurioMarzo,
+          this.mercurioAbril,
+          this.mercurioMayo,
+          this.mercurioJunio,
+          this.mercurioJulio,
+          this.mercurioAgosto,
+          this.mercurioSeptiembre,
+          this.mercurioOctubre,
+          this.mercurioNoviembre,
+          this.mercurioDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoMercurio, valoresMercurio)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoNiquel = '7. CALIDAD DE AGUA!D35:O35'; // Rango para el níquel
+  const valoresNiquel = [
+      [
+          this.niquelEnero,
+          this.niquelFebrero,
+          this.niquelMarzo,
+          this.niquelAbril,
+          this.niquelMayo,
+          this.niquelJunio,
+          this.niquelJulio,
+          this.niquelAgosto,
+          this.niquelSeptiembre,
+          this.niquelOctubre,
+          this.niquelNoviembre,
+          this.niquelDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoNiquel, valoresNiquel)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoPlomo = '7. CALIDAD DE AGUA!D36:O36'; // Rango para el plomo
+  const valoresPlomo = [
+      [
+          this.plomoEnero,
+          this.plomoFebrero,
+          this.plomoMarzo,
+          this.plomoAbril,
+          this.plomoMayo,
+          this.plomoJunio,
+          this.plomoJulio,
+          this.plomoAgosto,
+          this.plomoSeptiembre,
+          this.plomoOctubre,
+          this.plomoNoviembre,
+          this.plomoDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoPlomo, valoresPlomo)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoZinc = '7. CALIDAD DE AGUA!D48:O48'; // Rango para el zinc
+  const valoresZinc = [
+      [
+          this.zincEnero,
+          this.zincFebrero,
+          this.zincMarzo,
+          this.zincAbril,
+          this.zincMayo,
+          this.zincJunio,
+          this.zincJulio,
+          this.zincAgosto,
+          this.zincSeptiembre,
+          this.zincOctubre,
+          this.zincNoviembre,
+          this.zincDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoZinc, valoresZinc)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+  const rangoPentaclorofenol = '7. CALIDAD DE AGUA!D60:O60'; // Rango para el pentaclorofenol
+  const valoresPentaclorofenol = [
+      [
+          this.pentaclorofenolEnero,
+          this.pentaclorofenolFebrero,
+          this.pentaclorofenolMarzo,
+          this.pentaclorofenolAbril,
+          this.pentaclorofenolMayo,
+          this.pentaclorofenolJunio,
+          this.pentaclorofenolJulio,
+          this.pentaclorofenolAgosto,
+          this.pentaclorofenolSeptiembre,
+          this.pentaclorofenolOctubre,
+          this.pentaclorofenolNoviembre,
+          this.pentaclorofenolDiciembre,
+      ]
+  ];
+  this.googleSheetsService.addDataToSheet(rangoPentaclorofenol, valoresPentaclorofenol)
+  .then((response: any) => {
+      console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
+  })
+  .catch((error: any) => {
+      console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
+  });
+}
   // Método para cálculos adicionales si es necesario
   calcular() {
     // Primero, autentica al usuario
