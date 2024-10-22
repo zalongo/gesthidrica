@@ -390,7 +390,7 @@ dboEnero: number = 0;
       [
         this.producto,
         this.descripcion,
-        '',
+        '[kg]',
         this.enero,
         this.febrero,
         this.marzo,
@@ -419,7 +419,7 @@ dboEnero: number = 0;
     const valoresAguaPotable = [
         [
             this.aguaPotableMensualUso, // C6
-            0,  
+            '[m3]',  
             this.aguaPotableMensualEnero, // D6
             this.aguaPotableMensualFebrero, // E6
             this.aguaPotableMensualMarzo, // F6
@@ -441,7 +441,7 @@ dboEnero: number = 0;
     const valoresAguaPozo = [
         [
             this.aguaPozoFuenteUso, // A16
-            0,                   //B16
+            '[m3]',                   //B16
             this.aguaPozoEnero, // C16
             this.aguaPozoFebrero, // D16
             this.aguaPozoMarzo, // E16
@@ -462,7 +462,7 @@ dboEnero: number = 0;
     const valoresAguaSuperficial = [
         [
             this.aguaSuperficialFuenteUso,
-            0,   // C26
+            '[m3]',   // C26
             this.aguaSuperficialEnero, // D26
             this.aguaSuperficialFebrero, // E26
             this.aguaSuperficialMarzo, // F26
@@ -512,7 +512,7 @@ dboEnero: number = 0;
     const valoresSalidaAguaDescargada = [
         [
             this.salidaAguaDescargadaProceso, // A6
-            0,  // B6 (puedes ajustar este valor según sea necesario)
+            '[m3]',  // B6 (puedes ajustar este valor según sea necesario)
             this.salidaAguaDescargadaEnero, // C6
             this.salidaAguaDescargadaFebrero, // D6
             this.salidaAguaDescargadaMarzo, // E6
@@ -533,7 +533,7 @@ dboEnero: number = 0;
     const valoresSalidaAguaSuperficial = [
         [
             this.salidaAguaConsumidaProceso, // A26
-            0,  // B26 (ajustar según sea necesario)
+            '[m3]',  // B26 (ajustar según sea necesario)
             this.salidaAguaConsumidaEnero, // C26
             this.salidaAguaConsumidaFebrero, // D26
             this.salidaAguaConsumidaMarzo, // E26
@@ -553,7 +553,7 @@ dboEnero: number = 0;
     const valoresSalidaAguaInfiltrada = [
         [
             this.salidaAguaInfiltradaProceso, // A16
-            0,  // B16 (ajustar según sea necesario)
+            '[m3]',  // B16 (ajustar según sea necesario)
             this.salidaAguaInfiltradaEnero, // C16
             this.salidaAguaInfiltradaFebrero, // D16
             this.salidaAguaInfiltradaMarzo, // E16

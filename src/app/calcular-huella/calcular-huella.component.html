@@ -91,7 +91,7 @@
             <tr>
                 <td><input id="producto" type="text" name="producto" [(ngModel)]="producto" /></td>
                 <td><input id="descripcion" type="text" name="descripcion" [(ngModel)]="descripcion" /></td>
-                <td>cm<sup>3</sup></td>
+                <td>m<sup>3</sup></td>
                 <td><input id="enero" type="number" name="enero" [(ngModel)]="enero" required /></td>
                 <td><input id="febrero" type="number" name="febrero" [(ngModel)]="febrero" required /></td>
                 <td><input id="marzo" type="number" name="marzo" [(ngModel)]="marzo" required /></td>
@@ -104,8 +104,8 @@
                 <td><input id="octubre" type="number" name="octubre" [(ngModel)]="octubre" required /></td>
                 <td><input id="noviembre" type="number" name="noviembre" [(ngModel)]="noviembre" required /></td>
                 <td><input id="diciembre" type="number" name="diciembre" [(ngModel)]="diciembre" required /></td>
-                <td><input id="total" type="number" name="total" value="0" step="0.001" /></td>
-                <td><input id="promedio" type="number" name="promedio" value="0" step="0.001" /></td>
+                <td><input id="total" type="number" name="total" value="0" step="0.001" readonly/></td>
+                <td><input id="promedio" type="number" name="promedio" value="0" step="0.001" readonly/></td>
             </tr>
         </tbody>
     </table>
@@ -146,7 +146,7 @@
         <tbody>
             <tr>
                 <td><input type="text" id="aguaPotableMensualUso" [(ngModel)]="aguaPotableMensualUso" /></td>
-                <td>cm<sup>3</sup></td>
+                <td>m<sup>3</sup></td>
                 <td><input type="number" id="aguaPotableMensualEnero" [(ngModel)]="aguaPotableMensualEnero" value="0" step="0.001" /></td>
                 <td><input type="number" id="aguaPotableMensualFebrero" [(ngModel)]="aguaPotableMensualFebrero" value="0" step="0.001" /></td>
                 <td><input type="number" id="aguaPotableMensualMarzo" [(ngModel)]="aguaPotableMensualMarzo" value="0" step="0.001" /></td>
@@ -190,7 +190,7 @@
         <tbody>
             <tr>
                 <td><input type="text" id="aguaPozoFuenteUso" [(ngModel)]="aguaPozoFuenteUso" required /></td>
-                <td>cm<sup>3</sup></td>
+                <td>m<sup>3</sup></td>
                 <td><input type="number" id="aguaPozoEnero" [(ngModel)]="aguaPozoEnero" value="0" step="0.001" required /></td>
                 <td><input type="number" id="aguaPozoFebrero" [(ngModel)]="aguaPozoFebrero" value="0" step="0.001" required /></td>
                 <td><input type="number" id="aguaPozoMarzo" [(ngModel)]="aguaPozoMarzo" value="0" step="0.001" required /></td>
@@ -234,7 +234,7 @@
         <tbody>
             <tr>
                 <td><input type="text" id="aguaSuperficialFuenteUso" [(ngModel)]="aguaSuperficialFuenteUso" required /></td>
-                <td>cm<sup>3</sup></td>
+                <td>m<sup>3</sup></td>
                 <td><input type="number" id="aguaSuperficialEnero" [(ngModel)]="aguaSuperficialEnero" value="0" step="0.001" required /></td>
                 <td><input type="number" id="aguaSuperficialFebrero" [(ngModel)]="aguaSuperficialFebrero" value="0" step="0.001" required /></td>
                 <td><input type="number" id="aguaSuperficialMarzo" [(ngModel)]="aguaSuperficialMarzo" value="0" step="0.001" required /></td>
@@ -290,7 +290,7 @@
         <tbody>
             <tr>
                 <td><input id="procesoAguaDescargada" type="text" [(ngModel)]="salidaAguaDescargadaProceso" required /></td>
-                <td>cm<sup>3</sup></td>
+                <td>m<sup>3</sup></td>
                 <td><input id="eneroAguaDescargada" type="number" [(ngModel)]="salidaAguaDescargadaEnero" value="0" step="0.001" required /></td>
                 <td><input id="febreroAguaDescargada" type="number" [(ngModel)]="salidaAguaDescargadaFebrero" value="0" step="0.001" required /></td>
                 <td><input id="marzoAguaDescargada" type="number" [(ngModel)]="salidaAguaDescargadaMarzo" value="0" step="0.001" required /></td>
@@ -335,7 +335,7 @@
         <tbody>
             <tr>
                 <td><input id="procesoAguaInfiltrada" type="text" [(ngModel)]="salidaAguaInfiltradaProceso" required /></td>
-                <td>cm<sup>3</sup></td>
+                <td>m<sup>3</sup></td>
                 <td><input id="eneroAguaInfiltrada" type="number" [(ngModel)]="salidaAguaInfiltradaEnero" value="0" step="0.001" required /></td>
                 <td><input id="febreroAguaInfiltrada" type="number" [(ngModel)]="salidaAguaInfiltradaFebrero" value="0" step="0.001" required /></td>
                 <td><input id="marzoAguaInfiltrada" type="number" [(ngModel)]="salidaAguaInfiltradaMarzo" value="0" step="0.001" required /></td>
@@ -380,7 +380,7 @@
         <tbody>
             <tr>
                 <td><input id="procesoAguaConsumida" type="text" [(ngModel)]="salidaAguaConsumidaProceso" required /></td>
-                <td>cm<sup>3</sup></td>
+                <td>m<sup>3</sup></td>
                 <td><input id="eneroAguaConsumida" type="number" [(ngModel)]="salidaAguaConsumidaEnero" value="0" step="0.001" required /></td>
                 <td><input id="febreroAguaConsumida" type="number" [(ngModel)]="salidaAguaConsumidaFebrero" value="0" step="0.001" required /></td>
                 <td><input id="marzoAguaConsumida" type="number" [(ngModel)]="salidaAguaConsumidaMarzo" value="0" step="0.001" required /></td>
@@ -447,9 +447,9 @@
                 <td><input id="nitrogenoOctubre" type="number" [(ngModel)]="nitrogenoOctubre" value="0" step="0.001" /></td>
                 <td><input id="nitrogenoNoviembre" type="number" [(ngModel)]="nitrogenoNoviembre" value="0" step="0.001" /></td>
                 <td><input id="nitrogenoDiciembre" type="number" [(ngModel)]="nitrogenoDiciembre" value="0" step="0.001" /></td>
-                <td><input id="nitrogenoMin" type="number" value="0" step="0.001" /></td>
-                <td><input id="nitrogenoMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="nitrogenoPromedio" type="number" value="0" step="0.001" /></td>
+                <td><input id="nitrogenoMin" type="number" value="0" step="0.001" readonly/></td>
+                <td><input id="nitrogenoMax" type="number"  value="0" step="0.001"readonly /></td>
+                <td><input id="nitrogenoPromedio" type="number" value="0" step="0.001" readonly/></td>
 
             </tr>
             <tr>
@@ -468,9 +468,9 @@
                 <td><input id="nitrogenoKjeldahlOctubre" type="number" [(ngModel)]="nitrogenoKjeldahlOctubre" value="0" step="0.001" /></td>
                 <td><input id="nitrogenoKjeldahlNoviembre" type="number" [(ngModel)]="nitrogenoKjeldahlNoviembre" value="0" step="0.001" /></td>
                 <td><input id="nitrogenoKjeldahlDiciembre" type="number" [(ngModel)]="nitrogenoKjeldahlDiciembre" value="0" step="0.001" /></td>
-                <td><input id="nitrogenoKjeldahlMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="nitrogenoKjeldahlMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="nitrogenoKjeldahlPromedio" type="number" value="0" step="0.001" /></td>
+                <td><input id="nitrogenoKjeldahlMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="nitrogenoKjeldahlMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="nitrogenoKjeldahlPromedio" type="number" value="0" step="0.001" readonly/></td>
 
             </tr>
             <tr>
@@ -489,9 +489,9 @@
                 <td><input id="fosforoTotalOctubre" type="number" [(ngModel)]="fosforoTotalOctubre" value="0" step="0.001" /></td>
                 <td><input id="fosforoTotalNoviembre" type="number" [(ngModel)]="fosforoTotalNoviembre" value="0" step="0.001" /></td>
                 <td><input id="fosforoTotalDiciembre" type="number" [(ngModel)]="fosforoTotalDiciembre" value="0" step="0.001" /></td>
-                <td><input id="fosforoTotalMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="fosforoTotalMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="fosforoTotalPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="fosforoTotalMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="fosforoTotalMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="fosforoTotalPromedio" type="number"  value="0" step="0.001" readonly/></td>
 
             </tr>
             <tr>
@@ -510,9 +510,9 @@
                 <td><input id="fosfatoOctubre" type="number" [(ngModel)]="fosfatoOctubre" value="0" step="0.001" /></td>
                 <td><input id="fosfatoNoviembre" type="number" [(ngModel)]="fosfatoNoviembre" value="0" step="0.001" /></td>
                 <td><input id="fosfatoDiciembre" type="number" [(ngModel)]="fosfatoDiciembre" value="0" step="0.001" /></td>
-                <td><input id="fosfatoMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="fosfatoMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="fosfatoPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="fosfatoMin" type="number"  value="0" step="0.001" readonly /></td>
+                <td><input id="fosfatoMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="fosfatoPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>DEMANDA QUÍMICA DE OXÍGENO</td>
@@ -530,9 +530,9 @@
                 <td><input id="dqoOctubre" type="number" [(ngModel)]="dqoOctubre" value="0" step="0.001" /></td>
                 <td><input id="dqoNoviembre" type="number" [(ngModel)]="dqoNoviembre" value="0" step="0.001" /></td>
                 <td><input id="dqoDiciembre" type="number" [(ngModel)]="dqoDiciembre" value="0" step="0.001" /></td>
-                <td><input id="dqoMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="dqoMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="dqoPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="dqoMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="dqoMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="dqoPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>DEMANDA BIOLÓGICA DE OXÍGENO</td>
@@ -550,9 +550,9 @@
                 <td><input id="dboOctubre" type="number" [(ngModel)]="dboOctubre" value="0" step="0.001" /></td>
                 <td><input id="dboNoviembre" type="number" [(ngModel)]="dboNoviembre" value="0" step="0.001" /></td>
                 <td><input id="dboDiciembre" type="number" [(ngModel)]="dboDiciembre" value="0" step="0.001" /></td>
-                <td><input id="dboMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="dboMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="dboPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="dboMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="dboMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="dboPromedio" type="number"  value="0" step="0.001" readonly/></td>
 
             </tr>
             <tr>
@@ -571,9 +571,9 @@
                 <td><input id="arsenicoOctubre" type="number" [(ngModel)]="arsenicoOctubre" value="0" step="0.001" /></td>
                 <td><input id="arsenicoNoviembre" type="number" [(ngModel)]="arsenicoNoviembre" value="0" step="0.001" /></td>
                 <td><input id="arsenicoDiciembre" type="number" [(ngModel)]="arsenicoDiciembre" value="0" step="0.001" /></td>
-                <td><input id="arsenicoMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="arsenicoMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="arsenicoPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="arsenicoMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="arsenicoMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="arsenicoPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>CADMIO</td>
@@ -591,9 +591,9 @@
                 <td><input id="cadmioOctubre" type="number" [(ngModel)]="cadmioOctubre" value="0" step="0.001" /></td>
                 <td><input id="cadmioNoviembre" type="number" [(ngModel)]="cadmioNoviembre" value="0" step="0.001" /></td>
                 <td><input id="cadmioDiciembre" type="number" [(ngModel)]="cadmioDiciembre" value="0" step="0.001" /></td>
-                <td><input id="cadmioMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="cadmioMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="cadmioPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="cadmioMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="cadmioMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="cadmioPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>CROMO</td>
@@ -611,9 +611,9 @@
                 <td><input id="cromoOctubre" type="number" [(ngModel)]="cromoOctubre" value="0" step="0.001" /></td>
                 <td><input id="cromoNoviembre" type="number" [(ngModel)]="cromoNoviembre" value="0" step="0.001" /></td>
                 <td><input id="cromoDiciembre" type="number" [(ngModel)]="cromoDiciembre" value="0" step="0.001" /></td>
-                <td><input id="cromoMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="cromoMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="cromoPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="cromoMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="cromoMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="cromoPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>COBRE</td>
@@ -631,9 +631,9 @@
                 <td><input id="cobreOctubre" type="number" [(ngModel)]="cobreOctubre" value="0" step="0.001" /></td>
                 <td><input id="cobreNoviembre" type="number" [(ngModel)]="cobreNoviembre" value="0" step="0.001" /></td>
                 <td><input id="cobreDiciembre" type="number" [(ngModel)]="cobreDiciembre" value="0" step="0.001" /></td>
-                <td><input id="cobreMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="cobreMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="cobrePromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="cobreMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="cobreMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="cobrePromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>MERCURIO</td>
@@ -651,9 +651,9 @@
                 <td><input id="mercurioOctubre" type="number" [(ngModel)]="mercurioOctubre" value="0" step="0.001" /></td>
                 <td><input id="mercurioNoviembre" type="number" [(ngModel)]="mercurioNoviembre" value="0" step="0.001" /></td>
                 <td><input id="mercurioDiciembre" type="number" [(ngModel)]="mercurioDiciembre" value="0" step="0.001" /></td>
-                <td><input id="mercurioMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="mercurioMax" type="number" value="0" step="0.001" /></td>
-                <td><input id="mercurioPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="mercurioMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="mercurioMax" type="number" value="0" step="0.001" readonly/></td>
+                <td><input id="mercurioPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>NIQUEL</td>
@@ -671,9 +671,9 @@
                 <td><input id="niquelOctubre" type="number" [(ngModel)]="niquelOctubre" value="0" step="0.001" /></td>
                 <td><input id="niquelNoviembre" type="number" [(ngModel)]="niquelNoviembre" value="0" step="0.001" /></td>
                 <td><input id="niquelDiciembre" type="number" [(ngModel)]="niquelDiciembre" value="0" step="0.001" /></td>
-                <td><input id="niquelMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="niquelMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="niquelPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="niquelMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="niquelMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="niquelPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <tr>
                 <td>PLOMO</td>
@@ -691,9 +691,9 @@
                 <td><input id="plomoOctubre" type="number" [(ngModel)]="plomoOctubre" value="0" step="0.001" /></td>
                 <td><input id="plomoNoviembre" type="number" [(ngModel)]="plomoNoviembre" value="0" step="0.001" /></td>
                 <td><input id="plomoDiciembre" type="number" [(ngModel)]="plomoDiciembre" value="0" step="0.001" /></td>
-                <td><input id="plomoMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="plomoMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="plomoPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="plomoMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="plomoMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="plomoPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
             <!-- Fila para Zinc -->
             <tr>
@@ -712,9 +712,9 @@
                 <td><input id="zincOctubre" type="number" [(ngModel)]="zincOctubre" value="0" step="0.001" /></td>
                 <td><input id="zincNoviembre" type="number" [(ngModel)]="zincNoviembre" value="0" step="0.001" /></td>
                 <td><input id="zincDiciembre" type="number" [(ngModel)]="zincDiciembre" value="0" step="0.001" /></td>
-                <td><input id="zincMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="zincMax" type="number" value="0" step="0.001" /></td>
-                <td><input id="zincPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="zincMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="zincMax" type="number" value="0" step="0.001"readonly /></td>
+                <td><input id="zincPromedio" type="number"  value="0" step="0.001" readonly/></td>
 
             </tr>
 
@@ -735,9 +735,9 @@
                 <td><input id="pentaclorofenolOctubre" type="number" [(ngModel)]="pentaclorofenolOctubre" value="0" step="0.001" /></td>
                 <td><input id="pentaclorofenolNoviembre" type="number" [(ngModel)]="pentaclorofenolNoviembre" value="0" step="0.001" /></td>
                 <td><input id="pentaclorofenolDiciembre" type="number" [(ngModel)]="pentaclorofenolDiciembre" value="0" step="0.001" /></td>
-                <td><input id="pentaclorofenolMin" type="number"  value="0" step="0.001" /></td>
-                <td><input id="pentaclorofenolMax" type="number"  value="0" step="0.001" /></td>
-                <td><input id="pentaclorofenolPromedio" type="number"  value="0" step="0.001" /></td>
+                <td><input id="pentaclorofenolMin" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="pentaclorofenolMax" type="number"  value="0" step="0.001" readonly/></td>
+                <td><input id="pentaclorofenolPromedio" type="number"  value="0" step="0.001" readonly/></td>
             </tr>
         </tbody>
     </table>
