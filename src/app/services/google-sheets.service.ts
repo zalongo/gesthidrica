@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import * as XLSX from 'xlsx';
 
 declare var gapi: any;
 declare var google: any;
@@ -7,6 +8,9 @@ declare var google: any;
   providedIn: 'root'
 })
 export class GoogleSheetsService {
+  downloadSelectedSheets(selectedSheets: string[]): any {
+    throw new Error('Method not implemented.');
+  }
   private CLIENT_ID = '599544962025-ub5lm6j50g0dlg15c6ps77pubsnmuv5h.apps.googleusercontent.com';
   private API_KEY = 'AIzaSyDkxDDVxkMV9UerEdr85IL-hxXYXjqF5pA';
   private DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
@@ -23,6 +27,49 @@ export class GoogleSheetsService {
   constructor() {
     this.loadGapi();
     this.loadGis();
+  }
+
+  public async downloadExcel() {
+    const sheetNames = [
+      '3. INFORMACIÓN',
+      '4. PRODUCCIÓN',
+      '5. USO DIRECTO DE AGUA',
+      '6. DESCRIPCIÓN',
+      '7. CALIDAD DE AGUA',
+      '8. INDICADORES EVALUADOS',
+      '9. EMISIÓN CONTAMINANTES',
+      '10. FC INDICADORES',
+      '11. RESULTADOS HUELLA DIRECTA',
+      '12. RESUMEN HUELLA DIRECTA'
+    ];
+
+    const workbook = XLSX.utils.book_new(); // Crea un nuevo libro de trabajo
+
+    try {
+      for (const sheetName of sheetNames) {
+        // Obtén los datos de cada hoja
+        const data = await this.getRecords(this.spreadsheetId, sheetName);
+
+        // Convierte los datos en una hoja de trabajo
+        const worksheet = XLSX.utils.aoa_to_sheet(data);
+
+        // Agrega la hoja de trabajo al libro
+        XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
+      }
+
+      // Genera el archivo Excel y permite su descarga
+      const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+      const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+
+      // Crea un enlace de descarga y haz clic en él programáticamente
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'Datos_Google_Sheets.xlsx';
+      link.click();
+
+    } catch (error) {
+      console.error('Error al descargar los datos:', error);
+    }
   }
 
   private loadGapi() {
@@ -86,7 +133,7 @@ export class GoogleSheetsService {
     }
     console.log('Token response received:', resp);
     this.authStatus.next(true);
-    
+
     // Almacena el token si es necesario
     const accessToken = resp.access_token;
     // Puedes almacenar el token en un lugar seguro o en el estado de tu aplicación
@@ -104,7 +151,7 @@ export class GoogleSheetsService {
       console.error('Token client is not initialized.');
       return;
     }
-  
+
     this.tokenClient.callback = async (resp: any) => {
       if (resp.error !== undefined) {
         console.error('Error during token request:', resp);
@@ -112,7 +159,7 @@ export class GoogleSheetsService {
       }
       this.authStatus.next(true);
     };
-  
+
     // Usa el flujo de redirección para la autenticación
     if (gapi.client.getToken() === null) {
       this.tokenClient.requestAccessToken({ prompt: 'consent' });
@@ -164,18 +211,18 @@ export class GoogleSheetsService {
   }
   addDataToSheet(range: string, values: any[]) {
     const token = gapi.client.getToken();
-  
+
     if (!token) {
       console.error('No token found. Please authenticate first.');
       return Promise.reject('No token found. Please authenticate first.');
     }
 
-  // Asegúrate de que values sea un array de arrays
-  if (!Array.isArray(values) || !Array.isArray(values[0])) {
-    console.error('Invalid values format. It should be an array of arrays.');
-    return Promise.reject('Invalid values format. It should be an array of arrays.');
-  }
-  
+    // Asegúrate de que values sea un array de arrays
+    if (!Array.isArray(values) || !Array.isArray(values[0])) {
+      console.error('Invalid values format. It should be an array of arrays.');
+      return Promise.reject('Invalid values format. It should be an array of arrays.');
+    }
+
     return gapi.client.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
       range: range,
