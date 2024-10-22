@@ -59,7 +59,7 @@
         </tr>
     </table>
     <div>
-        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+        <button class="btn btn-primary mt-3" (click)="nextStep()">Siguiente</button>
     </div>
 </div>
 
@@ -111,8 +111,8 @@
     </table>
 
     <div class="col-md-12">
-        <button class="botonAnt" (click)="previousStep()">Anterior</button>
-        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+        <button class="btn btn-secondary me-2" (click)="previousStep()">Anterior</button>
+        <button class="btn btn-primary mt-3" (click)="nextStep()">Siguiente</button>
     </div>
 </div>
 
@@ -253,12 +253,9 @@
         </tbody>
     </table>
 
-
-
-
     <div class="col-md-12">
-        <button class="botonAnt" (click)="previousStep()">Anterior</button>
-        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+        <button class="btn btn-secondary me-2" (click)="previousStep()">Anterior</button>
+        <button class="btn btn-primary mt-3" (click)="nextStep()">Siguiente</button>
     </div>
 </div>
 <div *ngIf="currentStep == 4">
@@ -400,8 +397,8 @@
     </table>
 
     <div class="col-md-12">
-        <button class="botonAnt" (click)="previousStep()">Anterior</button>
-        <button class="botonSig" (click)="nextStep()">Siguiente</button>
+        <button class="btn btn-secondary me-2" (click)="previousStep()">Anterior</button>
+        <button class="btn btn-primary mt-3" (click)="nextStep()">Siguiente</button>
     </div>
 </div>
 <!-- Calidad de las Aguas Descargadas -->
@@ -743,9 +740,10 @@
     </table>
 
 
-    <div class="col-md-12">
-        <button class="botonAnt" (click)="previousStep()">Anterior</button>
-        <button class="botonSig" (click)="calcular()">Resultados</button>
-        <button class="botonDescargar" (click)="download()" [disabled]="!isLoggedIn">Descargar</button>
+    <div class="col-md-12 text-center mt-4">
+        <button class="btn btn-secondary me-2" (click)="previousStep()">Anterior</button>
+        <button class="btn btn-primary me-2" (click)="calcular()">Enviar</button>
+        <button class="btn btn-success" (click)="download()" [disabled]="!isLoggedIn">Descargar</button>
     </div>
+    
 </div>
