@@ -43,6 +43,7 @@ export class CalcularHuellaComponent {
   octubre: number = 0;
   noviembre: number = 0;
   diciembre: number = 0;
+  
   // Datos de entrada de agua potable mensual
 aguaPotableMensualUso: string = '';
 aguaPotableMensualEnero: number = 0;
@@ -244,7 +245,7 @@ salidaAguaConsumidaDiciembre: number = 0;
     ];
 
     // Segunda tabla: Entrada Mensual de Agua de Pozo
-    const rangoAguaPozo = '5. USO DIRECTO DE AGUA!A:16:N16'; // Rango para la segunda tabla
+    const rangoAguaPozo = '5. USO DIRECTO DE AGUA!A16:N16'; // Rango para la segunda tabla
     const valoresAguaPozo = [
         [
             this.aguaPozoFuenteUso, // A16
@@ -404,11 +405,6 @@ salidaAguaConsumidaDiciembre: number = 0;
         });
 }
 
-
-
-
-
-  
 
   // Método para reiniciar todos los campos del formulario
   reiniciarFormulario() {

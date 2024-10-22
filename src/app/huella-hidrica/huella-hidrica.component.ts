@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { GoogleSheetsService } from '../services/google-sheets.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -16,10 +17,14 @@ export class HuellaHidricaComponent implements OnInit {
   comunas: string[] = [];
   comunasAraucania: string[] = ['Temuco', 'Villarrica', 'Pucón', 'Padre Las Casas', 'Angol'];
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private googleSheetsService: GoogleSheetsService) {}
 
   navigateToHuella(){
     this.router.navigate(['']);
+  }
+
+  handleAuthClick() {
+    this.googleSheetsService.handleAuthClick(); // Llama a la función del servicio
   }
 
   navigateToCalculo(){
