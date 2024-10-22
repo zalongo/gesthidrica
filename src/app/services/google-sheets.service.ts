@@ -29,48 +29,36 @@ export class GoogleSheetsService {
     this.loadGis();
   }
 
-  public async downloadExcel() {
-    const sheetNames = [
-      '3. INFORMACIÓN',
-      '4. PRODUCCIÓN',
-      '5. USO DIRECTO DE AGUA',
-      '6. DESCRIPCIÓN',
-      '7. CALIDAD DE AGUA',
-      '8. INDICADORES EVALUADOS',
-      '9. EMISIÓN CONTAMINANTES',
-      '10. FC INDICADORES',
-      '11. RESULTADOS HUELLA DIRECTA',
-      '12. RESUMEN HUELLA DIRECTA'
-    ];
-
+  public async downloadExcel(selectedSheets: string[]) {
     const workbook = XLSX.utils.book_new(); // Crea un nuevo libro de trabajo
 
     try {
-      for (const sheetName of sheetNames) {
-        // Obtén los datos de cada hoja
-        const data = await this.getRecords(this.spreadsheetId, sheetName);
+        for (const sheetName of selectedSheets) {
+            // Obtén los datos de cada hoja
+            const data = await this.getRecords(this.spreadsheetId, sheetName);
 
-        // Convierte los datos en una hoja de trabajo
-        const worksheet = XLSX.utils.aoa_to_sheet(data);
+            // Convierte los datos en una hoja de trabajo
+            const worksheet = XLSX.utils.aoa_to_sheet(data);
 
-        // Agrega la hoja de trabajo al libro
-        XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
-      }
+            // Agrega la hoja de trabajo al libro
+            XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
+        }
 
-      // Genera el archivo Excel y permite su descarga
-      const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-      const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+        // Genera el archivo Excel y permite su descarga
+        const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+        const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
 
-      // Crea un enlace de descarga y haz clic en él programáticamente
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = 'Datos_Google_Sheets.xlsx';
-      link.click();
+        // Crea un enlace de descarga y haz clic en él programáticamente
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'Datos_Google_Sheets.xlsx';
+        link.click();
 
     } catch (error) {
-      console.error('Error al descargar los datos:', error);
+        console.error('Error al descargar los datos:', error);
     }
-  }
+}
+
 
   private loadGapi() {
     const script = document.createElement('script');

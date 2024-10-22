@@ -746,5 +746,6 @@
     <div class="col-md-12">
         <button class="botonAnt" (click)="previousStep()">Anterior</button>
         <button class="botonSig" (click)="calcular()">Resultados</button>
+        <button class="botonDescargar" (click)="download()" [disabled]="!isLoggedIn">Descargar</button>
     </div>
 </div>

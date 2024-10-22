@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CalcularHuellaComponent {
     currentStep: number = 1;
+    isLoggedIn: boolean = false;
 
     // Datos de la medición de huella
     medicionHuella: string = '';
@@ -967,23 +968,55 @@ export class CalcularHuellaComponent {
     // Método para cálculos adicionales si es necesario
 
     calcular() {
-        // Autentica al usuario primero
         this.googleSheetsService.handleAuthClick()
             .then(() => {
                 console.log('Usuario autenticado, ahora se guardarán los datos.');
-
+    
                 // Después de autenticar, guarda los datos
-                return this.guardarDatos(); // Es importante devolver la promesa aquí
+                return this.guardarDatos();
             })
             .then(() => {
-                console.log('Datos guardados exitosamente. Ahora se descargará el Excel.');
-
-                // Después de guardar los datos, descarga el Excel
-                this.googleSheetsService.downloadExcel();
+                console.log('Datos guardados exitosamente. Ahora se habilitará el botón de descarga.');
+                this.isLoggedIn = true; // Actualiza el estado de autenticación
+                this.guardarDatos();
             })
             .catch((error) => {
                 console.error('Error durante el proceso de autenticación o guardado:', error);
             });
     }
+    
+      download() {
+        // Si el usuario está autenticado, proceder a descargar las hojas seleccionadas
+        this.googleSheetsService.handleAuthClick()
+            .then(() => {
+                console.log('Usuario autenticado, ahora se guardarán los datos.');
+    
+                // Después de autenticar, guarda los datos
+                return this.guardarDatos();
+            })
+        if (this.isLoggedIn) {
+          const selectedSheets = [
+            '3. INFORMACIÓN',
+            '4. PRODUCCIÓN',
+            '5. USO DIRECTO DE AGUA',
+            '6. DESCRIPCIÓN',
+            '7. CALIDAD DE AGUA',
+            '8. INDICADORES EVALUADOS',
+            '9. EMISIÓN CONTAMINANTES',
+            '10. FC INDICADORES',
+            '11. RESULTADOS HUELLA DIRECTA',
+            '12. RESUMEN HUELLA DIRECTA'
+          ];
+          this.googleSheetsService.downloadExcel(selectedSheets)
+            .then(() => {
+              console.log('Descarga de hojas seleccionadas completada.');
+            })
+            .catch((error: any) => {
+              console.error('Error al descargar las hojas seleccionadas:', error);
+            });
+        } else {
+          console.error('El usuario no está autenticado. No se puede descargar.');
+        }
+      }      
 }
 
