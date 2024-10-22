@@ -437,7 +437,7 @@ dboEnero: number = 0;
     ];
 
     // Segunda tabla: Entrada Mensual de Agua de Pozo
-    const rangoAguaPozo = '5. USO DIRECTO DE AGUA!A:16:N16'; // Rango para la segunda tabla
+    const rangoAguaPozo = '5. USO DIRECTO DE AGUA!A16:N16'; // Rango para la segunda tabla
     const valoresAguaPozo = [
         [
             this.aguaPozoFuenteUso, // A16
@@ -771,7 +771,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoCadmio = '7. CALIDAD DE AGUA!D18:O18'; // Rango para el cadmio
+  const rangoCadmio = '7. CALIDAD DE AGUA!D13:O13'; // Rango para el cadmio
   const valoresCadmio = [
       [
           this.cadmioEnero,
@@ -795,7 +795,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoCromo = '7. CALIDAD DE AGUA!D19:O19'; // Rango para el cromo
+  const rangoCromo = '7. CALIDAD DE AGUA!D14:O14'; // Rango para el cromo
   const valoresCromo = [
       [
           this.cromoEnero,
@@ -819,7 +819,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoCobre = '7. CALIDAD DE AGUA!D20:O20'; // Rango para el cobre
+  const rangoCobre = '7. CALIDAD DE AGUA!D15:O15'; // Rango para el cobre
   const valoresCobre = [
       [
           this.cobreEnero,
@@ -843,7 +843,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoMercurio = '7. CALIDAD DE AGUA!D34:O34'; // Rango para el mercurio
+  const rangoMercurio = '7. CALIDAD DE AGUA!D16:O16'; // Rango para el mercurio
   const valoresMercurio = [
       [
           this.mercurioEnero,
@@ -867,7 +867,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoNiquel = '7. CALIDAD DE AGUA!D35:O35'; // Rango para el níquel
+  const rangoNiquel = '7. CALIDAD DE AGUA!D17:O17'; // Rango para el níquel
   const valoresNiquel = [
       [
           this.niquelEnero,
@@ -891,7 +891,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoPlomo = '7. CALIDAD DE AGUA!D36:O36'; // Rango para el plomo
+  const rangoPlomo = '7. CALIDAD DE AGUA!D18:O18'; // Rango para el plomo
   const valoresPlomo = [
       [
           this.plomoEnero,
@@ -915,7 +915,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoZinc = '7. CALIDAD DE AGUA!D48:O48'; // Rango para el zinc
+  const rangoZinc = '7. CALIDAD DE AGUA!D19:O19'; // Rango para el zinc
   const valoresZinc = [
       [
           this.zincEnero,
@@ -939,7 +939,7 @@ private guardarDatosCalidadAgua() {
   .catch((error: any) => {
       console.error('Error al guardar los datos en Hoja 7 - Calidad Agua', error);
   });
-  const rangoPentaclorofenol = '7. CALIDAD DE AGUA!D60:O60'; // Rango para el pentaclorofenol
+  const rangoPentaclorofenol = '7. CALIDAD DE AGUA!D20:O20'; // Rango para el pentaclorofenol
   const valoresPentaclorofenol = [
       [
           this.pentaclorofenolEnero,
