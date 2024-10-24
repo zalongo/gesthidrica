@@ -33,31 +33,45 @@ export class GoogleSheetsService {
     const workbook = XLSX.utils.book_new(); // Crea un nuevo libro de trabajo
 
     try {
-        for (const sheetName of selectedSheets) {
-            // Obtén los datos de cada hoja
-            const data = await this.getRecords(this.spreadsheetId, sheetName);
+      for (const sheetName of selectedSheets) {
+        // Obtén los datos de cada hoja (asumiendo que los datos son una matriz de arrays)
+        const data: (string | number)[][] = await this.getRecords(this.spreadsheetId, sheetName);
 
-            // Convierte los datos en una hoja de trabajo
-            const worksheet = XLSX.utils.aoa_to_sheet(data);
+        // Convierte los datos en una hoja de trabajo
+        const worksheet = XLSX.utils.aoa_to_sheet(data);
 
-            // Agrega la hoja de trabajo al libro
-            XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
-        }
+        // Ajusta el ancho de las columnas en función de los datos
+        const columnWidths = data[0].map((_: string | number, colIndex: number) => {
+          // Encuentra la longitud máxima de los datos en esta columna
+          const maxLength = data.reduce((max: number, row: (string | number)[]) => {
+            const cellValue = row[colIndex] ? row[colIndex].toString() : '';
+            return Math.max(max, cellValue.length);
+          }, 0);
+          return { wch: maxLength + 2 }; // Agrega un poco de espacio extra
+        });
 
-        // Genera el archivo Excel y permite su descarga
-        const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-        const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+        // Asigna los anchos de columna a la hoja
+        worksheet['!cols'] = columnWidths;
 
-        // Crea un enlace de descarga y haz clic en él programáticamente
-        const link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = 'Datos_Google_Sheets.xlsx';
-        link.click();
+        // Agrega la hoja de trabajo al libro
+        XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
+      }
+
+      // Genera el archivo Excel y permite su descarga
+      const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+      const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+
+      // Crea un enlace de descarga y haz clic en él programáticamente
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'Datos_Google_Sheets.xlsx';
+      link.click();
 
     } catch (error) {
-        console.error('Error al descargar los datos:', error);
+      console.error('Error al descargar los datos:', error);
     }
-}
+  }
+
 
 
   private loadGapi() {
