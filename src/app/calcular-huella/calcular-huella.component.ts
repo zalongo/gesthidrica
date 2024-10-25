@@ -130,201 +130,598 @@ export class CalcularHuellaComponent {
     salidaAguaConsumidaOctubre: number = 0;
     salidaAguaConsumidaNoviembre: number = 0;
     salidaAguaConsumidaDiciembre: number = 0;
+
+
+
+
+
+
+
     //DatosUltimaPaginaF1
-    nitrogenoEnero: number = 0;
-    nitrogenoFebrero: number = 0;
-    nitrogenoMarzo: number = 0;
-    nitrogenoAbril: number = 0;
-    nitrogenoMayo: number = 0;
-    nitrogenoJunio: number = 0;
-    nitrogenoJulio: number = 0;
-    nitrogenoAgosto: number = 0;
-    nitrogenoSeptiembre: number = 0;
-    nitrogenoOctubre: number = 0;
-    nitrogenoNoviembre: number = 0;
-    nitrogenoDiciembre: number = 0;
+    nitrogenoEnero1: number = 0;
+    nitrogenoFebrero1: number = 0;
+    nitrogenoMarzo1: number = 0;
+    nitrogenoAbril1: number = 0;
+    nitrogenoMayo1: number = 0;
+    nitrogenoJunio1: number = 0;
+    nitrogenoJulio1: number = 0;
+    nitrogenoAgosto1: number = 0;
+    nitrogenoSeptiembre1: number = 0;
+    nitrogenoOctubre1: number = 0;
+    nitrogenoNoviembre1: number = 0;
+    nitrogenoDiciembre1: number = 0;
+
+    nitrogenoEnero2: number = 0;
+    nitrogenoFebrero2: number = 0;
+    nitrogenoMarzo2: number = 0;
+    nitrogenoAbril2: number = 0;
+    nitrogenoMayo2: number = 0;
+    nitrogenoJunio2: number = 0;
+    nitrogenoJulio2: number = 0;
+    nitrogenoAgosto2: number = 0;
+    nitrogenoSeptiembre2: number = 0;
+    nitrogenoOctubre2: number = 0;
+    nitrogenoNoviembre2: number = 0;
+    nitrogenoDiciembre2: number = 0;
+
+    nitrogenoEnero3: number = 0;
+    nitrogenoFebrero3: number = 0;
+    nitrogenoMarzo3: number = 0;
+    nitrogenoAbril3: number = 0;
+    nitrogenoMayo3: number = 0;
+    nitrogenoJunio3: number = 0;
+    nitrogenoJulio3: number = 0;
+    nitrogenoAgosto3: number = 0;
+    nitrogenoSeptiembre3: number = 0;
+    nitrogenoOctubre3: number = 0;
+    nitrogenoNoviembre3: number = 0;
+    nitrogenoDiciembre3: number = 0;
     //DatosUltimaPagF2
-    nitrogenoKjeldahlEnero: number = 0;
-    nitrogenoKjeldahlFebrero: number = 0;
-    nitrogenoKjeldahlMarzo: number = 0;
-    nitrogenoKjeldahlAbril: number = 0;
-    nitrogenoKjeldahlMayo: number = 0;
-    nitrogenoKjeldahlJunio: number = 0;
-    nitrogenoKjeldahlJulio: number = 0;
-    nitrogenoKjeldahlAgosto: number = 0;
-    nitrogenoKjeldahlSeptiembre: number = 0;
-    nitrogenoKjeldahlOctubre: number = 0;
-    nitrogenoKjeldahlNoviembre: number = 0;
-    nitrogenoKjeldahlDiciembre: number = 0;
+    nitrogenoKjeldahlEnero1: number = 0;
+    nitrogenoKjeldahlFebrero1: number = 0;
+    nitrogenoKjeldahlMarzo1: number = 0;
+    nitrogenoKjeldahlAbril1: number = 0;
+    nitrogenoKjeldahlMayo1: number = 0;
+    nitrogenoKjeldahlJunio1: number = 0;
+    nitrogenoKjeldahlJulio1: number = 0;
+    nitrogenoKjeldahlAgosto1: number = 0;
+    nitrogenoKjeldahlSeptiembre1: number = 0;
+    nitrogenoKjeldahlOctubre1: number = 0;
+    nitrogenoKjeldahlNoviembre1: number = 0;
+    nitrogenoKjeldahlDiciembre1: number = 0;
+
+    nitrogenoKjeldahlEnero2: number = 0;
+    nitrogenoKjeldahlFebrero2: number = 0;
+    nitrogenoKjeldahlMarzo2: number = 0;
+    nitrogenoKjeldahlAbril2: number = 0;
+    nitrogenoKjeldahlMayo2: number = 0;
+    nitrogenoKjeldahlJunio2: number = 0;
+    nitrogenoKjeldahlJulio2: number = 0;
+    nitrogenoKjeldahlAgosto2: number = 0;
+    nitrogenoKjeldahlSeptiembre2: number = 0;
+    nitrogenoKjeldahlOctubre2: number = 0;
+    nitrogenoKjeldahlNoviembre2: number = 0;
+    nitrogenoKjeldahlDiciembre2: number = 0;
+
+    nitrogenoKjeldahlEnero3: number = 0;
+    nitrogenoKjeldahlFebrero3: number = 0;
+    nitrogenoKjeldahlMarzo3: number = 0;
+    nitrogenoKjeldahlAbril3: number = 0;
+    nitrogenoKjeldahlMayo3: number = 0;
+    nitrogenoKjeldahlJunio3: number = 0;
+    nitrogenoKjeldahlJulio3: number = 0;
+    nitrogenoKjeldahlAgosto3: number = 0;
+    nitrogenoKjeldahlSeptiembre3: number = 0;
+    nitrogenoKjeldahlOctubre3: number = 0;
+    nitrogenoKjeldahlNoviembre3: number = 0;
+    nitrogenoKjeldahlDiciembre3: number = 0;
     //DatosUltimaPagF3
-    fosforoTotalEnero: number = 0;
-    fosforoTotalFebrero: number = 0;
-    fosforoTotalMarzo: number = 0;
-    fosforoTotalAbril: number = 0;
-    fosforoTotalMayo: number = 0;
-    fosforoTotalJunio: number = 0;
-    fosforoTotalJulio: number = 0;
-    fosforoTotalAgosto: number = 0;
-    fosforoTotalSeptiembre: number = 0;
-    fosforoTotalOctubre: number = 0;
-    fosforoTotalNoviembre: number = 0;
-    fosforoTotalDiciembre: number = 0;
+    fosforoTotalEnero1: number = 0;
+    fosforoTotalFebrero1: number = 0;
+    fosforoTotalMarzo1: number = 0;
+    fosforoTotalAbril1: number = 0;
+    fosforoTotalMayo1: number = 0;
+    fosforoTotalJunio1: number = 0;
+    fosforoTotalJulio1: number = 0;
+    fosforoTotalAgosto1: number = 0;
+    fosforoTotalSeptiembre1: number = 0;
+    fosforoTotalOctubre1: number = 0;
+    fosforoTotalNoviembre1: number = 0;
+    fosforoTotalDiciembre1: number = 0;
+
+    fosforoTotalEnero2: number = 0;
+    fosforoTotalFebrero2: number = 0;
+    fosforoTotalMarzo2: number = 0;
+    fosforoTotalAbril2: number = 0;
+    fosforoTotalMayo2: number = 0;
+    fosforoTotalJunio2: number = 0;
+    fosforoTotalJulio2: number = 0;
+    fosforoTotalAgosto2: number = 0;
+    fosforoTotalSeptiembre2: number = 0;
+    fosforoTotalOctubre2: number = 0;
+    fosforoTotalNoviembre2: number = 0;
+    fosforoTotalDiciembre2: number = 0;
+
+    fosforoTotalEnero3: number = 0;
+    fosforoTotalFebrero3: number = 0;
+    fosforoTotalMarzo3: number = 0;
+    fosforoTotalAbril3: number = 0;
+    fosforoTotalMayo3: number = 0;
+    fosforoTotalJunio3: number = 0;
+    fosforoTotalJulio3: number = 0;
+    fosforoTotalAgosto3: number = 0;
+    fosforoTotalSeptiembre3: number = 0;
+    fosforoTotalOctubre3: number = 0;
+    fosforoTotalNoviembre3: number = 0;
+    fosforoTotalDiciembre3: number = 0;
     //DatosUltimaPagF4
-    fosfatoEnero: number = 0;
-    fosfatoFebrero: number = 0;
-    fosfatoMarzo: number = 0;
-    fosfatoAbril: number = 0;
-    fosfatoMayo: number = 0;
-    fosfatoJunio: number = 0;
-    fosfatoJulio: number = 0;
-    fosfatoAgosto: number = 0;
-    fosfatoSeptiembre: number = 0;
-    fosfatoOctubre: number = 0;
-    fosfatoNoviembre: number = 0;
-    fosfatoDiciembre: number = 0;
+    fosfatoEnero1: number = 0;
+    fosfatoFebrero1: number = 0;
+    fosfatoMarzo1: number = 0;
+    fosfatoAbril1: number = 0;
+    fosfatoMayo1: number = 0;
+    fosfatoJunio1: number = 0;
+    fosfatoJulio1: number = 0;
+    fosfatoAgosto1: number = 0;
+    fosfatoSeptiembre1: number = 0;
+    fosfatoOctubre1: number = 0;
+    fosfatoNoviembre1: number = 0;
+    fosfatoDiciembre1: number = 0;
+
+    fosfatoEnero2: number = 0;
+    fosfatoFebrero2: number = 0;
+    fosfatoMarzo2: number = 0;
+    fosfatoAbril2: number = 0;
+    fosfatoMayo2: number = 0;
+    fosfatoJunio2: number = 0;
+    fosfatoJulio2: number = 0;
+    fosfatoAgosto2: number = 0;
+    fosfatoSeptiembre2: number = 0;
+    fosfatoOctubre2: number = 0;
+    fosfatoNoviembre2: number = 0;
+    fosfatoDiciembre2: number = 0;
+
+    fosfatoEnero3: number = 0;
+    fosfatoFebrero3: number = 0;
+    fosfatoMarzo3: number = 0;
+    fosfatoAbril3: number = 0;
+    fosfatoMayo3: number = 0;
+    fosfatoJunio3: number = 0;
+    fosfatoJulio3: number = 0;
+    fosfatoAgosto3: number = 0;
+    fosfatoSeptiembre3: number = 0;
+    fosfatoOctubre3: number = 0;
+    fosfatoNoviembre3: number = 0;
+    fosfatoDiciembre3: number = 0;
     //DatosUltimaPagF5
-    dqoEnero: number = 0;
-    dqoFebrero: number = 0;
-    dqoMarzo: number = 0;
-    dqoAbril: number = 0;
-    dqoMayo: number = 0;
-    dqoJunio: number = 0;
-    dqoJulio: number = 0;
-    dqoAgosto: number = 0;
-    dqoSeptiembre: number = 0;
-    dqoOctubre: number = 0;
-    dqoNoviembre: number = 0;
-    dqoDiciembre: number = 0;
+    dqoEnero1: number = 0;
+    dqoFebrero1: number = 0;
+    dqoMarzo1: number = 0;
+    dqoAbril1: number = 0;
+    dqoMayo1: number = 0;
+    dqoJunio1: number = 0;
+    dqoJulio1: number = 0;
+    dqoAgosto1: number = 0;
+    dqoSeptiembre1: number = 0;
+    dqoOctubre1: number = 0;
+    dqoNoviembre1: number = 0;
+    dqoDiciembre1: number = 0;
+
+    dqoEnero2: number = 0;
+    dqoFebrero2: number = 0;
+    dqoMarzo2: number = 0;
+    dqoAbril2: number = 0;
+    dqoMayo2: number = 0;
+    dqoJunio2: number = 0;
+    dqoJulio2: number = 0;
+    dqoAgosto2: number = 0;
+    dqoSeptiembre2: number = 0;
+    dqoOctubre2: number = 0;
+    dqoNoviembre2: number = 0;
+    dqoDiciembre2: number = 0;
+
+    dqoEnero3: number = 0;
+    dqoFebrero3: number = 0;
+    dqoMarzo3: number = 0;
+    dqoAbril3: number = 0;
+    dqoMayo3: number = 0;
+    dqoJunio3: number = 0;
+    dqoJulio3: number = 0;
+    dqoAgosto3: number = 0;
+    dqoSeptiembre3: number = 0;
+    dqoOctubre3: number = 0;
+    dqoNoviembre3: number = 0;
+    dqoDiciembre3: number = 0;
     //DatosUltimaPagF6
-    dboEnero: number = 0;
-    dboFebrero: number = 0;
-    dboMarzo: number = 0;
-    dboAbril: number = 0;
-    dboMayo: number = 0;
-    dboJunio: number = 0;
-    dboJulio: number = 0;
-    dboAgosto: number = 0;
-    dboSeptiembre: number = 0;
-    dboOctubre: number = 0;
-    dboNoviembre: number = 0;
-    dboDiciembre: number = 0;
+    dboEnero1: number = 0;
+    dboFebrero1: number = 0;
+    dboMarzo1: number = 0;
+    dboAbril1: number = 0;
+    dboMayo1: number = 0;
+    dboJunio1: number = 0;
+    dboJulio1: number = 0;
+    dboAgosto1: number = 0;
+    dboSeptiembre1: number = 0;
+    dboOctubre1: number = 0;
+    dboNoviembre1: number = 0;
+    dboDiciembre1: number = 0;
+
+    dboEnero2: number = 0;
+    dboFebrero2: number = 0;
+    dboMarzo2: number = 0;
+    dboAbril2: number = 0;
+    dboMayo2: number = 0;
+    dboJunio2: number = 0;
+    dboJulio2: number = 0;
+    dboAgosto2: number = 0;
+    dboSeptiembre2: number = 0;
+    dboOctubre2: number = 0;
+    dboNoviembre2: number = 0;
+    dboDiciembre2: number = 0;
+
+    dboEnero3: number = 0;
+    dboFebrero3: number = 0;
+    dboMarzo3: number = 0;
+    dboAbril3: number = 0;
+    dboMayo3: number = 0;
+    dboJunio3: number = 0;
+    dboJulio3: number = 0;
+    dboAgosto3: number = 0;
+    dboSeptiembre3: number = 0;
+    dboOctubre3: number = 0;
+    dboNoviembre3: number = 0;
+    dboDiciembre3: number = 0;
     //DatosUltimaPagF7
-    arsenicoEnero: number = 0;
-    arsenicoFebrero: number = 0;
-    arsenicoMarzo: number = 0;
-    arsenicoAbril: number = 0;
-    arsenicoMayo: number = 0;
-    arsenicoJunio: number = 0;
-    arsenicoJulio: number = 0;
-    arsenicoAgosto: number = 0;
-    arsenicoSeptiembre: number = 0;
-    arsenicoOctubre: number = 0;
-    arsenicoNoviembre: number = 0;
-    arsenicoDiciembre: number = 0;
+    arsenicoEnero1: number = 0;
+    arsenicoFebrero1: number = 0;
+    arsenicoMarzo1: number = 0;
+    arsenicoAbril1: number = 0;
+    arsenicoMayo1: number = 0;
+    arsenicoJunio1: number = 0;
+    arsenicoJulio1: number = 0;
+    arsenicoAgosto1: number = 0;
+    arsenicoSeptiembre1: number = 0;
+    arsenicoOctubre1: number = 0;
+    arsenicoNoviembre1: number = 0;
+    arsenicoDiciembre1: number = 0;
+
+    arsenicoEnero2: number = 0;
+    arsenicoFebrero2: number = 0;
+    arsenicoMarzo2: number = 0;
+    arsenicoAbril2: number = 0;
+    arsenicoMayo2: number = 0;
+    arsenicoJunio2: number = 0;
+    arsenicoJulio2: number = 0;
+    arsenicoAgosto2: number = 0;
+    arsenicoSeptiembre2: number = 0;
+    arsenicoOctubre2: number = 0;
+    arsenicoNoviembre2: number = 0;
+    arsenicoDiciembre2: number = 0;
+
+    arsenicoEnero3: number = 0;
+    arsenicoFebrero3: number = 0;
+    arsenicoMarzo3: number = 0;
+    arsenicoAbril3: number = 0;
+    arsenicoMayo3: number = 0;
+    arsenicoJunio3: number = 0;
+    arsenicoJulio3: number = 0;
+    arsenicoAgosto3: number = 0;
+    arsenicoSeptiembre3: number = 0;
+    arsenicoOctubre3: number = 0;
+    arsenicoNoviembre3: number = 0;
+    arsenicoDiciembre3: number = 0;
     //DatosUltimaPagF8
-    cadmioEnero: number = 0;
-    cadmioFebrero: number = 0;
-    cadmioMarzo: number = 0;
-    cadmioAbril: number = 0;
-    cadmioMayo: number = 0;
-    cadmioJunio: number = 0;
-    cadmioJulio: number = 0;
-    cadmioAgosto: number = 0;
-    cadmioSeptiembre: number = 0;
-    cadmioOctubre: number = 0;
-    cadmioNoviembre: number = 0;
-    cadmioDiciembre: number = 0;
+    cadmioEnero1: number = 0;
+    cadmioFebrero1: number = 0;
+    cadmioMarzo1: number = 0;
+    cadmioAbril1: number = 0;
+    cadmioMayo1: number = 0;
+    cadmioJunio1: number = 0;
+    cadmioJulio1: number = 0;
+    cadmioAgosto1: number = 0;
+    cadmioSeptiembre1: number = 0;
+    cadmioOctubre1: number = 0;
+    cadmioNoviembre1: number = 0;
+    cadmioDiciembre1: number = 0;
+
+    cadmioEnero2: number = 0;
+    cadmioFebrero2: number = 0;
+    cadmioMarzo2: number = 0;
+    cadmioAbril2: number = 0;
+    cadmioMayo2: number = 0;
+    cadmioJunio2: number = 0;
+    cadmioJulio2: number = 0;
+    cadmioAgosto2: number = 0;
+    cadmioSeptiembre2: number = 0;
+    cadmioOctubre2: number = 0;
+    cadmioNoviembre2: number = 0;
+    cadmioDiciembre2: number = 0;
+
+    cadmioEnero3: number = 0;
+    cadmioFebrero3: number = 0;
+    cadmioMarzo3: number = 0;
+    cadmioAbril3: number = 0;
+    cadmioMayo3: number = 0;
+    cadmioJunio3: number = 0;
+    cadmioJulio3: number = 0;
+    cadmioAgosto3: number = 0;
+    cadmioSeptiembre3: number = 0;
+    cadmioOctubre3: number = 0;
+    cadmioNoviembre3: number = 0;
+    cadmioDiciembre3: number = 0;
     //DatosUltimaPagF9
-    cromoEnero: number = 0;
-    cromoFebrero: number = 0;
-    cromoMarzo: number = 0;
-    cromoAbril: number = 0;
-    cromoMayo: number = 0;
-    cromoJunio: number = 0;
-    cromoJulio: number = 0;
-    cromoAgosto: number = 0;
-    cromoSeptiembre: number = 0;
-    cromoOctubre: number = 0;
-    cromoNoviembre: number = 0;
-    cromoDiciembre: number = 0;
+    cromoEnero1: number = 0;
+    cromoFebrero1: number = 0;
+    cromoMarzo1: number = 0;
+    cromoAbril1: number = 0;
+    cromoMayo1: number = 0;
+    cromoJunio1: number = 0;
+    cromoJulio1: number = 0;
+    cromoAgosto1: number = 0;
+    cromoSeptiembre1: number = 0;
+    cromoOctubre1: number = 0;
+    cromoNoviembre1: number = 0;
+    cromoDiciembre1: number = 0;
+
+    cromoEnero2: number = 0;
+    cromoFebrero2: number = 0;
+    cromoMarzo2: number = 0;
+    cromoAbril2: number = 0;
+    cromoMayo2: number = 0;
+    cromoJunio2: number = 0;
+    cromoJulio2: number = 0;
+    cromoAgosto2: number = 0;
+    cromoSeptiembre2: number = 0;
+    cromoOctubre2: number = 0;
+    cromoNoviembre2: number = 0;
+    cromoDiciembre2: number = 0;
+
+    cromoEnero3: number = 0;
+    cromoFebrero3: number = 0;
+    cromoMarzo3: number = 0;
+    cromoAbril3: number = 0;
+    cromoMayo3: number = 0;
+    cromoJunio3: number = 0;
+    cromoJulio3: number = 0;
+    cromoAgosto3: number = 0;
+    cromoSeptiembre3: number = 0;
+    cromoOctubre3: number = 0;
+    cromoNoviembre3: number = 0;
+    cromoDiciembre3: number = 0;
     //DatosUltimaPagF10
-    cobreEnero: number = 0;
-    cobreFebrero: number = 0;
-    cobreMarzo: number = 0;
-    cobreAbril: number = 0;
-    cobreMayo: number = 0;
-    cobreJunio: number = 0;
-    cobreJulio: number = 0;
-    cobreAgosto: number = 0;
-    cobreSeptiembre: number = 0;
-    cobreOctubre: number = 0;
-    cobreNoviembre: number = 0;
-    cobreDiciembre: number = 0;
+    cobreEnero1: number = 0;
+    cobreFebrero1: number = 0;
+    cobreMarzo1: number = 0;
+    cobreAbril1: number = 0;
+    cobreMayo1: number = 0;
+    cobreJunio1: number = 0;
+    cobreJulio1: number = 0;
+    cobreAgosto1: number = 0;
+    cobreSeptiembre1: number = 0;
+    cobreOctubre1: number = 0;
+    cobreNoviembre1: number = 0;
+    cobreDiciembre1: number = 0;
+
+    cobreEnero2: number = 0;
+    cobreFebrero2: number = 0;
+    cobreMarzo2: number = 0;
+    cobreAbril2: number = 0;
+    cobreMayo2: number = 0;
+    cobreJunio2: number = 0;
+    cobreJulio2: number = 0;
+    cobreAgosto2: number = 0;
+    cobreSeptiembre2: number = 0;
+    cobreOctubre2: number = 0;
+    cobreNoviembre2: number = 0;
+    cobreDiciembre2: number = 0;
+
+    cobreEnero3: number = 0;
+    cobreFebrero3: number = 0;
+    cobreMarzo3: number = 0;
+    cobreAbril3: number = 0;
+    cobreMayo3: number = 0;
+    cobreJunio3: number = 0;
+    cobreJulio3: number = 0;
+    cobreAgosto3: number = 0;
+    cobreSeptiembre3: number = 0;
+    cobreOctubre3: number = 0;
+    cobreNoviembre3: number = 0;
+    cobreDiciembre3: number = 0;
     //DatosUltimaPagF11
-    mercurioEnero: number = 0;
-    mercurioFebrero: number = 0;
-    mercurioMarzo: number = 0;
-    mercurioAbril: number = 0;
-    mercurioMayo: number = 0;
-    mercurioJunio: number = 0;
-    mercurioJulio: number = 0;
-    mercurioAgosto: number = 0;
-    mercurioSeptiembre: number = 0;
-    mercurioOctubre: number = 0;
-    mercurioNoviembre: number = 0;
-    mercurioDiciembre: number = 0;
+    mercurioEnero1: number = 0;
+    mercurioFebrero1: number = 0;
+    mercurioMarzo1: number = 0;
+    mercurioAbril1: number = 0;
+    mercurioMayo1: number = 0;
+    mercurioJunio1: number = 0;
+    mercurioJulio1: number = 0;
+    mercurioAgosto1: number = 0;
+    mercurioSeptiembre1: number = 0;
+    mercurioOctubre1: number = 0;
+    mercurioNoviembre1: number = 0;
+    mercurioDiciembre1: number = 0;
+
+    mercurioEnero2: number = 0;
+    mercurioFebrero2: number = 0;
+    mercurioMarzo2: number = 0;
+    mercurioAbril2: number = 0;
+    mercurioMayo2: number = 0;
+    mercurioJunio2: number = 0;
+    mercurioJulio2: number = 0;
+    mercurioAgosto2: number = 0;
+    mercurioSeptiembre2: number = 0;
+    mercurioOctubre2: number = 0;
+    mercurioNoviembre2: number = 0;
+    mercurioDiciembre2: number = 0;
+
+    mercurioEnero3: number = 0;
+    mercurioFebrero3: number = 0;
+    mercurioMarzo3: number = 0;
+    mercurioAbril3: number = 0;
+    mercurioMayo3: number = 0;
+    mercurioJunio3: number = 0;
+    mercurioJulio3: number = 0;
+    mercurioAgosto3: number = 0;
+    mercurioSeptiembre3: number = 0;
+    mercurioOctubre3: number = 0;
+    mercurioNoviembre3: number = 0;
+    mercurioDiciembre3: number = 0;
     //DatosUltimaPagF12
-    niquelEnero: number = 0;
-    niquelFebrero: number = 0;
-    niquelMarzo: number = 0;
-    niquelAbril: number = 0;
-    niquelMayo: number = 0;
-    niquelJunio: number = 0;
-    niquelJulio: number = 0;
-    niquelAgosto: number = 0;
-    niquelSeptiembre: number = 0;
-    niquelOctubre: number = 0;
-    niquelNoviembre: number = 0;
-    niquelDiciembre: number = 0;
+    niquelEnero1: number = 0;
+    niquelFebrero1: number = 0;
+    niquelMarzo1: number = 0;
+    niquelAbril1: number = 0;
+    niquelMayo1: number = 0;
+    niquelJunio1: number = 0;
+    niquelJulio1: number = 0;
+    niquelAgosto1: number = 0;
+    niquelSeptiembre1: number = 0;
+    niquelOctubre1: number = 0;
+    niquelNoviembre1: number = 0;
+    niquelDiciembre1: number = 0;
+
+    niquelEnero2: number = 0;
+    niquelFebrero2: number = 0;
+    niquelMarzo2: number = 0;
+    niquelAbril2: number = 0;
+    niquelMayo2: number = 0;
+    niquelJunio2: number = 0;
+    niquelJulio2: number = 0;
+    niquelAgosto2: number = 0;
+    niquelSeptiembre2: number = 0;
+    niquelOctubre2: number = 0;
+    niquelNoviembre2: number = 0;
+    niquelDiciembre2: number = 0;
+
+    niquelEnero3: number = 0;
+    niquelFebrero3: number = 0;
+    niquelMarzo3: number = 0;
+    niquelAbril3: number = 0;
+    niquelMayo3: number = 0;
+    niquelJunio3: number = 0;
+    niquelJulio3: number = 0;
+    niquelAgosto3: number = 0;
+    niquelSeptiembre3: number = 0;
+    niquelOctubre3: number = 0;
+    niquelNoviembre3: number = 0;
+    niquelDiciembre3: number = 0;
     //DatosUltimaPagF13
-    plomoEnero: number = 0;
-    plomoFebrero: number = 0;
-    plomoMarzo: number = 0;
-    plomoAbril: number = 0;
-    plomoMayo: number = 0;
-    plomoJunio: number = 0;
-    plomoJulio: number = 0;
-    plomoAgosto: number = 0;
-    plomoSeptiembre: number = 0;
-    plomoOctubre: number = 0;
-    plomoNoviembre: number = 0;
-    plomoDiciembre: number = 0;
+    plomoEnero1: number = 0;
+    plomoFebrero1: number = 0;
+    plomoMarzo1: number = 0;
+    plomoAbril1: number = 0;
+    plomoMayo1: number = 0;
+    plomoJunio1: number = 0;
+    plomoJulio1: number = 0;
+    plomoAgosto1: number = 0;
+    plomoSeptiembre1: number = 0;
+    plomoOctubre1: number = 0;
+    plomoNoviembre1: number = 0;
+    plomoDiciembre1: number = 0;
+
+    plomoEnero2: number = 0;
+    plomoFebrero2: number = 0;
+    plomoMarzo2: number = 0;
+    plomoAbril2: number = 0;
+    plomoMayo2: number = 0;
+    plomoJunio2: number = 0;
+    plomoJulio2: number = 0;
+    plomoAgosto2: number = 0;
+    plomoSeptiembre2: number = 0;
+    plomoOctubre2: number = 0;
+    plomoNoviembre2: number = 0;
+    plomoDiciembre2: number = 0;
+
+    plomoEnero3: number = 0;
+    plomoFebrero3: number = 0;
+    plomoMarzo3: number = 0;
+    plomoAbril3: number = 0;
+    plomoMayo3: number = 0;
+    plomoJunio3: number = 0;
+    plomoJulio3: number = 0;
+    plomoAgosto3: number = 0;
+    plomoSeptiembre3: number = 0;
+    plomoOctubre3: number = 0;
+    plomoNoviembre3: number = 0;
+    plomoDiciembre3: number = 0;
     //DatosUltimaPagF14
-    zincEnero: number = 0;
-    zincFebrero: number = 0;
-    zincMarzo: number = 0;
-    zincAbril: number = 0;
-    zincMayo: number = 0;
-    zincJunio: number = 0;
-    zincJulio: number = 0;
-    zincAgosto: number = 0;
-    zincSeptiembre: number = 0;
-    zincOctubre: number = 0;
-    zincNoviembre: number = 0;
-    zincDiciembre: number = 0;
+    zincEnero1: number = 0;
+    zincFebrero1: number = 0;
+    zincMarzo1: number = 0;
+    zincAbril1: number = 0;
+    zincMayo1: number = 0;
+    zincJunio1: number = 0;
+    zincJulio1: number = 0;
+    zincAgosto1: number = 0;
+    zincSeptiembre1: number = 0;
+    zincOctubre1: number = 0;
+    zincNoviembre1: number = 0;
+    zincDiciembre1: number = 0;
+
+    zincEnero2: number = 0;
+    zincFebrero2: number = 0;
+    zincMarzo2: number = 0;
+    zincAbril2: number = 0;
+    zincMayo2: number = 0;
+    zincJunio2: number = 0;
+    zincJulio2: number = 0;
+    zincAgosto2: number = 0;
+    zincSeptiembre2: number = 0;
+    zincOctubre2: number = 0;
+    zincNoviembre2: number = 0;
+    zincDiciembre2: number = 0;
+
+    zincEnero3: number = 0;
+    zincFebrero3: number = 0;
+    zincMarzo3: number = 0;
+    zincAbril3: number = 0;
+    zincMayo3: number = 0;
+    zincJunio3: number = 0;
+    zincJulio3: number = 0;
+    zincAgosto3: number = 0;
+    zincSeptiembre3: number = 0;
+    zincOctubre3: number = 0;
+    zincNoviembre3: number = 0;
+    zincDiciembre3: number = 0;
     //DatosUltimaPagF15
-    pentaclorofenolEnero: number = 0;
-    pentaclorofenolFebrero: number = 0;
-    pentaclorofenolMarzo: number = 0;
-    pentaclorofenolAbril: number = 0;
-    pentaclorofenolMayo: number = 0;
-    pentaclorofenolJunio: number = 0;
-    pentaclorofenolJulio: number = 0;
-    pentaclorofenolAgosto: number = 0;
-    pentaclorofenolSeptiembre: number = 0;
-    pentaclorofenolOctubre: number = 0;
-    pentaclorofenolNoviembre: number = 0;
-    pentaclorofenolDiciembre: number = 0;
+    pentaclorofenolEnero1: number = 0;
+    pentaclorofenolFebrero1: number = 0;
+    pentaclorofenolMarzo1: number = 0;
+    pentaclorofenolAbril1: number = 0;
+    pentaclorofenolMayo1: number = 0;
+    pentaclorofenolJunio1: number = 0;
+    pentaclorofenolJulio1: number = 0;
+    pentaclorofenolAgosto1: number = 0;
+    pentaclorofenolSeptiembre1: number = 0;
+    pentaclorofenolOctubre1: number = 0;
+    pentaclorofenolNoviembre1: number = 0;
+    pentaclorofenolDiciembre1: number = 0;
+
+    pentaclorofenolEnero2: number = 0;
+    pentaclorofenolFebrero2: number = 0;
+    pentaclorofenolMarzo2: number = 0;
+    pentaclorofenolAbril2: number = 0;
+    pentaclorofenolMayo2: number = 0;
+    pentaclorofenolJunio2: number = 0;
+    pentaclorofenolJulio2: number = 0;
+    pentaclorofenolAgosto2: number = 0;
+    pentaclorofenolSeptiembre2: number = 0;
+    pentaclorofenolOctubre2: number = 0;
+    pentaclorofenolNoviembre2: number = 0;
+    pentaclorofenolDiciembre2: number = 0;
+
+    pentaclorofenolEnero3: number = 0;
+    pentaclorofenolFebrero3: number = 0;
+    pentaclorofenolMarzo3: number = 0;
+    pentaclorofenolAbril3: number = 0;
+    pentaclorofenolMayo3: number = 0;
+    pentaclorofenolJunio3: number = 0;
+    pentaclorofenolJulio3: number = 0;
+    pentaclorofenolAgosto3: number = 0;
+    pentaclorofenolSeptiembre3: number = 0;
+    pentaclorofenolOctubre3: number = 0;
+    pentaclorofenolNoviembre3: number = 0;
+    pentaclorofenolDiciembre3: number = 0;
     // Inyectar el servicio de Google Sheets en el constructor
     constructor(private googleSheetsService: GoogleSheetsService) { }
 
@@ -616,7 +1013,7 @@ export class CalcularHuellaComponent {
                 this.nitrogenoDiciembre, // O6
             ]
         ];
-        // Guardar en la Hoja 7 
+        // Guardar en la Hoja 7
         this.googleSheetsService.addDataToSheet(rangoNitrogeno, valoresNitrogeno)
             .then((response: any) => {
                 console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
@@ -643,7 +1040,7 @@ export class CalcularHuellaComponent {
             ]
         ];
 
-        // Guardar en la Hoja 7 
+        // Guardar en la Hoja 7
         this.googleSheetsService.addDataToSheet(rangoNitrogenoKjeldahl, valoresNitrogenoKjeldahl)
             .then((response: any) => {
                 console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
@@ -668,7 +1065,7 @@ export class CalcularHuellaComponent {
                 this.fosforoTotalDiciembre, // O8
             ]
         ];
-        // Guardar en la Hoja 7 
+        // Guardar en la Hoja 7
         this.googleSheetsService.addDataToSheet(rangoFosforo, valoresFosforo)
             .then((response: any) => {
                 console.log('Datos guardados exitosamente en Hoja 7 - Calidad Agua', response);
@@ -971,7 +1368,7 @@ export class CalcularHuellaComponent {
         this.googleSheetsService.handleAuthClick()
             .then(() => {
                 console.log('Usuario autenticado, ahora se guardarán los datos.');
-    
+
                 // Después de autenticar, guarda los datos
                 return this.guardarDatos();
             })
@@ -984,13 +1381,13 @@ export class CalcularHuellaComponent {
                 console.error('Error durante el proceso de autenticación o guardado:', error);
             });
     }
-    
+
       download() {
         // Si el usuario está autenticado, proceder a descargar las hojas seleccionadas
         this.googleSheetsService.handleAuthClick()
             .then(() => {
                 console.log('Usuario autenticado, ahora se guardarán los datos.');
-    
+
                 // Después de autenticar, guarda los datos
                 return this.guardarDatos();
             })
@@ -1017,6 +1414,6 @@ export class CalcularHuellaComponent {
         } else {
           console.error('El usuario no está autenticado. No se puede descargar.');
         }
-      }      
+      }
 }
 
