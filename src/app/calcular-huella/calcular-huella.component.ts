@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { GoogleSheetsService } from '../services/google-sheets.service';
 import { FormsModule } from '@angular/forms';
+import { jsPDF } from 'jspdf';
+import autoTable from 'jspdf-autotable';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-calcular-huella',
@@ -326,7 +329,7 @@ export class CalcularHuellaComponent {
     pentaclorofenolNoviembre: number = 0;
     pentaclorofenolDiciembre: number = 0;
     // Inyectar el servicio de Google Sheets en el constructor
-    constructor(private googleSheetsService: GoogleSheetsService) { }
+    constructor(private googleSheetsService: GoogleSheetsService, private router: Router) { }
 
     // Método para avanzar al siguiente paso
     nextStep() {
@@ -971,7 +974,7 @@ export class CalcularHuellaComponent {
         this.googleSheetsService.handleAuthClick()
             .then(() => {
                 console.log('Usuario autenticado, ahora se guardarán los datos.');
-    
+
                 // Después de autenticar, guarda los datos
                 return this.guardarDatos();
             })
@@ -984,39 +987,58 @@ export class CalcularHuellaComponent {
                 console.error('Error durante el proceso de autenticación o guardado:', error);
             });
     }
-    
-      download() {
+
+    download() {
         // Si el usuario está autenticado, proceder a descargar las hojas seleccionadas
         this.googleSheetsService.handleAuthClick()
             .then(() => {
                 console.log('Usuario autenticado, ahora se guardarán los datos.');
-    
-                // Después de autenticar, guarda los datos
                 return this.guardarDatos();
             })
-        if (this.isLoggedIn) {
-          const selectedSheets = [
-            '3. INFORMACIÓN',
-            '4. PRODUCCIÓN',
-            '5. USO DIRECTO DE AGUA',
-            '6. DESCRIPCIÓN',
-            '7. CALIDAD DE AGUA',
-            '8. INDICADORES EVALUADOS',
-            '9. EMISIÓN CONTAMINANTES',
-            '10. FC INDICADORES',
-            '11. RESULTADOS HUELLA DIRECTA',
-            '12. RESUMEN HUELLA DIRECTA'
-          ];
-          this.googleSheetsService.downloadExcel(selectedSheets)
             .then(() => {
-              console.log('Descarga de hojas seleccionadas completada.');
+                console.log('Datos guardados exitosamente. Ahora se redirigirá al resumen.');
+                this.isLoggedIn = true; // Actualiza el estado de autenticación
+                this.router.navigate(['/resumen']); // Redirigir al componente Resumen
             })
-            .catch((error: any) => {
-              console.error('Error al descargar las hojas seleccionadas:', error);
+            .catch((error) => {
+                console.error('Error durante el proceso de autenticación o guardado:', error);
             });
-        } else {
-          console.error('El usuario no está autenticado. No se puede descargar.');
-        }
-      }      
+    }
+
+    generaPdf() {
+        const doc = new jsPDF();
+
+        // Datos de la tabla
+        const tableData = [
+            ['Fuente - Uso/Equipo', 'Unidad', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre', 'Promedio', 'Total'],
+            [
+                this.aguaSuperficialFuenteUso, // Fuente - Uso/Equipo
+                'm³', // Unidad
+                this.aguaSuperficialEnero,
+                this.aguaSuperficialFebrero,
+                this.aguaSuperficialMarzo,
+                this.aguaSuperficialAbril,
+                this.aguaSuperficialMayo,
+                this.aguaSuperficialJunio,
+                this.aguaSuperficialJulio,
+                this.aguaSuperficialAgosto,
+                this.aguaSuperficialSeptiembre,
+                this.aguaSuperficialOctubre,
+                this.aguaSuperficialNoviembre,
+                this.aguaSuperficialDiciembre,
+                "Promedio",
+                "Total"
+            ]
+        ];
+
+        // Agregar la tabla al PDF
+        autoTable(doc, {
+            head: [tableData[0]], // Encabezados
+            body: [tableData[1]], // Datos de la tabla
+        });
+
+        // Guardar el PDF
+        doc.save('tabla_agua_superficial.pdf');
+    }
 }
 

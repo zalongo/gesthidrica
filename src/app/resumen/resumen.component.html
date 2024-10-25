@@ -1,0 +1,393 @@
+<div class="container">
+  <div class="table-responsive">
+    <button id="generate-pdf" class="btn btn-primary" (click)="generaPdf()">Generar PDF</button>
+    <!-- Botón para generar PDF -->
+    <table class="table table-striped table-bordered table-success">
+      <thead>
+        <tr style="font-size: 12px;">
+          <th colspan="6" style="font-size: 20px;">HUELLA DE AGUA DIRECTA</th>
+          <!-- INVENTARIO -->
+          <td>ENTRADA AGUA POTABLE </td>
+          <td>ENTRADA AGUA POZO </td>
+          <td>ENTRADA AGUA SUPERFICIAL</td>
+          <td>SALIDA AGUA DESCARGADA</td>
+          <td>SALIDA AGUA INFILTRADA</td>
+          <td>AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)</td>
+          <td>NITRÓGENO TOTAL</td>
+          <td>NITRÓGENO TOTAL KJELDAHL</td>
+          <td>FOSFATO</td>
+          <td>DEMANDA QUÍMICA DE OXÍGENO</td>
+          <td>DEMANDA BIOLÓGICA DE OXÍGENO</td>
+          <td>ARSÉNICO</td>
+          <td>CADMIO</td>
+          <td>CROMO</td>
+          <td>COBRE</td>
+          <td>NIQUEL</td>
+          <td>PLOMO</td>
+          <td>ZINC</td>
+          <td>PENTACLOROFENOL</td>
+          <!-- INVENTARIO -->
+        </tr>
+        <tr style="font-size: 10px;">
+          <th style="height: 20px;">Ubicación</th>
+          <th style="height: 20px;" colspan="5">Nombre Flujo de Agua</th>
+          <!-- Ajuste de altura -->
+          <td style="height: 20px;">[m3/UF]</td>
+          <td style="height: 20px;">[m3/UF]</td>
+          <td style="height: 20px;">[m3/UF]</td>
+          <td style="height: 20px;">[m3/UF]</td>
+          <td style="height: 20px;">[kg N/UF]</td>
+          <td style="height: 20px;">[kg NKT/UF]</td>
+          <td style="height: 20px;">[kg P/UF]</td>
+          <td style="height: 20px;">[kg PO4/UF]</td>
+          <td style="height: 20px;">[kg DQO/UF]</td>
+          <td style="height: 20px;">[kg As/UF]</td>
+          <td style="height: 20px;">[kg Cd/UF]</td>
+          <td style="height: 20px;">[kg Cd/UF]</td>
+          <td style="height: 20px;">[kg Cr/UF]</td>
+          <td style="height: 20px;">[kg Cu/UF]</td>
+          <td style="height: 20px;">[kg Hg/UF]</td>
+          <td style="height: 20px;">[kg Ni/UF]</td>
+          <td style="height: 20px;">[kg Pb/UF]</td>
+          <td style="height: 20px;">[kg Zn/UF]</td>
+          <td style="height: 20px;">[kg C6OHCL5/UF]</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Ejemplo: Agua Potable - Casino y Servicios Sanitarios</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua Potable -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua Potable -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua Potable -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua Potable -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Ejemplo: Agua de Pozo - Lavado de Materias Primas</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="5">0</td>
+          <td>Ejemplo: Agua de Pozo - Limpieza de Equipos</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="5">0</td>
+          <td>Agua de Pozo -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua de Pozo -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua de Canal "Nombre del Canal" - Condensadores Evaporativos</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua de XXX "Indicar Nombre de XXX" -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua de XXX "Indicar Nombre de XXX" -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="5">Agua de XXX "Indicar Nombre de XXX" -</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="6">Total</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+<script>
+  document.getElementById('generate-pdf').addEventListener('click', function () {
+    // Lógica para generar y descargar el PDF de la tabla
+    const element = document.querySelector('.container'); // Selecciona la tabla
+    html2pdf()
+      .from(element)
+      .save('tabla_huella_agua.pdf'); // Nombre del archivo PDF
+  });
+
+</script>
