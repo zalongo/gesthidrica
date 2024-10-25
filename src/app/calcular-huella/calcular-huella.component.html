@@ -290,6 +290,112 @@
     </tbody>
   </table>
 
+  <h4>Entrada Mensual de Agua de Pozo</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Fuente - Uso/Equipo</th>
+        <th>Unidad</th>
+        <th>Enero</th>
+        <th>Febrero</th>
+        <th>Marzo</th>
+        <th>Abril</th>
+        <th>Mayo</th>
+        <th>Junio</th>
+        <th>Julio</th>
+        <th>Agosto</th>
+        <th>Septiembre</th>
+        <th>Octubre</th>
+        <th>Noviembre</th>
+        <th>Diciembre</th>
+        <th>Total</th>
+        <th>Promedio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" id="aguaPozoFuenteUso" [(ngModel)]="aguaPozoFuenteUso" required /></td>
+        <td>m<sup>3</sup></td>
+        <td><input type="number" id="aguaPozoEnero" [(ngModel)]="aguaPozoEnero" value="0" step="0.001" required /></td>
+        <td><input type="number" id="aguaPozoFebrero" [(ngModel)]="aguaPozoFebrero" value="0" step="0.001" required />
+        </td>
+        <td><input type="number" id="aguaPozoMarzo" [(ngModel)]="aguaPozoMarzo" value="0" step="0.001" required /></td>
+        <td><input type="number" id="aguaPozoAbril" [(ngModel)]="aguaPozoAbril" value="0" step="0.001" required /></td>
+        <td><input type="number" id="aguaPozoMayo" [(ngModel)]="aguaPozoMayo" value="0" step="0.001" required /></td>
+        <td><input type="number" id="aguaPozoJunio" [(ngModel)]="aguaPozoJunio" value="0" step="0.001" required /></td>
+        <td><input type="number" id="aguaPozoJulio" [(ngModel)]="aguaPozoJulio" value="0" step="0.001" required /></td>
+        <td><input type="number" id="aguaPozoAgosto" [(ngModel)]="aguaPozoAgosto" value="0" step="0.001" required />
+        </td>
+        <td><input type="number" id="aguaPozoSeptiembre" [(ngModel)]="aguaPozoSeptiembre" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaPozoOctubre" [(ngModel)]="aguaPozoOctubre" value="0" step="0.001" required />
+        </td>
+        <td><input type="number" id="aguaPozoNoviembre" [(ngModel)]="aguaPozoNoviembre" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaPozoDiciembre" [(ngModel)]="aguaPozoDiciembre" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaPozoTotal" value="0" step="0.001" readonly /></td>
+        <td><input type="number" id="aguaPozoPorcentaje" value="0" step="0.001" readonly /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Entrada Mensual de Agua Dulce de Fuentes Superficiales</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Fuente - Uso/Equipo</th>
+        <th>Unidad</th>
+        <th>Enero</th>
+        <th>Febrero</th>
+        <th>Marzo</th>
+        <th>Abril</th>
+        <th>Mayo</th>
+        <th>Junio</th>
+        <th>Julio</th>
+        <th>Agosto</th>
+        <th>Septiembre</th>
+        <th>Octubre</th>
+        <th>Noviembre</th>
+        <th>Diciembre</th>
+        <th>Promedio</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" id="aguaSuperficialFuenteUso" [(ngModel)]="aguaSuperficialFuenteUso" required /></td>
+        <td>m<sup>3</sup></td>
+        <td><input type="number" id="aguaSuperficialEnero" [(ngModel)]="aguaSuperficialEnero" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialFebrero" [(ngModel)]="aguaSuperficialFebrero" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialMarzo" [(ngModel)]="aguaSuperficialMarzo" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialAbril" [(ngModel)]="aguaSuperficialAbril" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialMayo" [(ngModel)]="aguaSuperficialMayo" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialJunio" [(ngModel)]="aguaSuperficialJunio" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialJulio" [(ngModel)]="aguaSuperficialJulio" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialAgosto" [(ngModel)]="aguaSuperficialAgosto" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialSeptiembre" [(ngModel)]="aguaSuperficialSeptiembre" value="0"
+            step="0.001" required /></td>
+        <td><input type="number" id="aguaSuperficialOctubre" [(ngModel)]="aguaSuperficialOctubre" value="0" step="0.001"
+            required /></td>
+        <td><input type="number" id="aguaSuperficialNoviembre" [(ngModel)]="aguaSuperficialNoviembre" value="0"
+            step="0.001" required /></td>
+        <td><input type="number" id="aguaSuperficialDiciembre" [(ngModel)]="aguaSuperficialDiciembre" value="0"
+            step="0.001" required /></td>
+        <td><input type="number" id="aguaSuperficialPromedio" value="0" step="0.001" readonly /></td>
+        <td><input type="number" id="aguaSuperficialTotal" value="0" step="0.001" readonly /></td>
+      </tr>
+    </tbody>
+  </table>
+
   <div class="col-md-12">
     <button class="btn btn-secondary me-2" (click)="previousStep()">Anterior</button>
     <button class="btn btn-primary mt-3" (click)="nextStep()">Siguiente</button>
@@ -505,305 +611,308 @@
         <td>NITRÓGENO TOTAL</td>
         <td>N</td>
         <td>[mg/L]</td>
-        <td><input id="nitrogenoEnero" type="number" [(ngModel)]="nitrogenoEnero" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoFebrero" type="number" [(ngModel)]="nitrogenoFebrero" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoMarzo" type="number" [(ngModel)]="nitrogenoMarzo" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoAbril" type="number" [(ngModel)]="nitrogenoAbril" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoMayo" type="number" [(ngModel)]="nitrogenoMayo" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoJunio" type="number" [(ngModel)]="nitrogenoJunio" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoJulio" type="number" [(ngModel)]="nitrogenoJulio" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoAgosto" type="number" [(ngModel)]="nitrogenoAgosto" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoSeptiembre" type="number" [(ngModel)]="nitrogenoSeptiembre" value="0" step="0.001" />
+        <td><input id="nitrogenoEnero1" type="number" [(ngModel)]="nitrogenoEnero1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoFebrero1" type="number" [(ngModel)]="nitrogenoFebrero1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoMarzo1" type="number" [(ngModel)]="nitrogenoMarzo1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoAbril1" type="number" [(ngModel)]="nitrogenoAbril1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoMayo1" type="number" [(ngModel)]="nitrogenoMayo1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoJunio1" type="number" [(ngModel)]="nitrogenoJunio1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoJulio1" type="number" [(ngModel)]="nitrogenoJulio1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoAgosto1" type="number" [(ngModel)]="nitrogenoAgosto1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoSeptiembre1" type="number" [(ngModel)]="nitrogenoSeptiembre1" value="0" step="0.001" />
         </td>
-        <td><input id="nitrogenoOctubre" type="number" [(ngModel)]="nitrogenoOctubre" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoNoviembre" type="number" [(ngModel)]="nitrogenoNoviembre" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoDiciembre" type="number" [(ngModel)]="nitrogenoDiciembre" value="0" step="0.001" /></td>
-        <td><input id="nitrogenoMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="nitrogenoMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="nitrogenoPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoOctubre1" type="number" [(ngModel)]="nitrogenoOctubre1" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoNoviembre1" type="number" [(ngModel)]="nitrogenoNoviembre1" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoDiciembre1" type="number" [(ngModel)]="nitrogenoDiciembre1" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoPromedio1" type="number" value="0" step="0.001" readonly /></td>
 
       </tr>
       <tr>
         <td>NITRÓGENO TOTAL KJELDAHL</td>
         <td>NTK</td>
         <td>[mg/L]</td>
-        <td><input id="nitrogenoKjeldahlEnero" type="number" [(ngModel)]="nitrogenoKjeldahlEnero" value="0"
+        <td><input id="nitrogenoKjeldahlEnero1" type="number" [(ngModel)]="nitrogenoKjeldahlEnero1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlFebrero" type="number" [(ngModel)]="nitrogenoKjeldahlFebrero" value="0"
+        <td><input id="nitrogenoKjeldahlFebrero1" type="number" [(ngModel)]="nitrogenoKjeldahlFebrero1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlMarzo" type="number" [(ngModel)]="nitrogenoKjeldahlMarzo" value="0"
+        <td><input id="nitrogenoKjeldahlMarzo1" type="number" [(ngModel)]="nitrogenoKjeldahlMarzo1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlAbril" type="number" [(ngModel)]="nitrogenoKjeldahlAbril" value="0"
+        <td><input id="nitrogenoKjeldahlAbril1" type="number" [(ngModel)]="nitrogenoKjeldahlAbril1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlMayo" type="number" [(ngModel)]="nitrogenoKjeldahlMayo" value="0"
+        <td><input id="nitrogenoKjeldahlMayo1" type="number" [(ngModel)]="nitrogenoKjeldahlMayo1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlJunio" type="number" [(ngModel)]="nitrogenoKjeldahlJunio" value="0"
+        <td><input id="nitrogenoKjeldahlJunio1" type="number" [(ngModel)]="nitrogenoKjeldahlJunio1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlJulio" type="number" [(ngModel)]="nitrogenoKjeldahlJulio" value="0"
+        <td><input id="nitrogenoKjeldahlJulio1" type="number" [(ngModel)]="nitrogenoKjeldahlJulio1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlAgosto" type="number" [(ngModel)]="nitrogenoKjeldahlAgosto" value="0"
+        <td><input id="nitrogenoKjeldahlAgosto1" type="number" [(ngModel)]="nitrogenoKjeldahlAgosto1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlSeptiembre" type="number" [(ngModel)]="nitrogenoKjeldahlSeptiembre" value="0"
+        <td><input id="nitrogenoKjeldahlSeptiembre1" type="number" [(ngModel)]="nitrogenoKjeldahlSeptiembre1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlOctubre" type="number" [(ngModel)]="nitrogenoKjeldahlOctubre" value="0"
+        <td><input id="nitrogenoKjeldahlOctubre1" type="number" [(ngModel)]="nitrogenoKjeldahlOctubre1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlNoviembre" type="number" [(ngModel)]="nitrogenoKjeldahlNoviembre" value="0"
+        <td><input id="nitrogenoKjeldahlNoviembre1" type="number" [(ngModel)]="nitrogenoKjeldahlNoviembre1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlDiciembre" type="number" [(ngModel)]="nitrogenoKjeldahlDiciembre" value="0"
+        <td><input id="nitrogenoKjeldahlDiciembre1" type="number" [(ngModel)]="nitrogenoKjeldahlDiciembre1" value="0"
             step="0.001" /></td>
-        <td><input id="nitrogenoKjeldahlMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="nitrogenoKjeldahlMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="nitrogenoKjeldahlPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoKjeldahlMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoKjeldahlMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoKjeldahlPromedio1" type="number" value="0" step="0.001" readonly /></td>
 
       </tr>
       <tr>
         <td>FÓSFORO TOTAL</td>
         <td>P</td>
         <td>[mg/L]</td>
-        <td><input id="fosforoTotalEnero" type="number" [(ngModel)]="fosforoTotalEnero" value="0" step="0.001" /></td>
-        <td><input id="fosforoTotalFebrero" type="number" [(ngModel)]="fosforoTotalFebrero" value="0" step="0.001" />
+        <td><input id="fosforoTotalEnero1" type="number" [(ngModel)]="fosforoTotalEnero1" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalFebrero1" type="number" [(ngModel)]="fosforoTotalFebrero1" value="0" step="0.001" />
         </td>
-        <td><input id="fosforoTotalMarzo" type="number" [(ngModel)]="fosforoTotalMarzo" value="0" step="0.001" /></td>
-        <td><input id="fosforoTotalAbril" type="number" [(ngModel)]="fosforoTotalAbril" value="0" step="0.001" /></td>
-        <td><input id="fosforoTotalMayo" type="number" [(ngModel)]="fosforoTotalMayo" value="0" step="0.001" /></td>
-        <td><input id="fosforoTotalJunio" type="number" [(ngModel)]="fosforoTotalJunio" value="0" step="0.001" /></td>
-        <td><input id="fosforoTotalJulio" type="number" [(ngModel)]="fosforoTotalJulio" value="0" step="0.001" /></td>
-        <td><input id="fosforoTotalAgosto" type="number" [(ngModel)]="fosforoTotalAgosto" value="0" step="0.001" /></td>
-        <td><input id="fosforoTotalSeptiembre" type="number" [(ngModel)]="fosforoTotalSeptiembre" value="0"
-            step="0.001" /></td>
-        <td><input id="fosforoTotalOctubre" type="number" [(ngModel)]="fosforoTotalOctubre" value="0" step="0.001" />
+        <td><input id="fosforoTotalMarzo1" type="number" [(ngModel)]="fosforoTotalMarzo1" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalAbril1" type="number" [(ngModel)]="fosforoTotalAbril1" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalMayo1" type="number" [(ngModel)]="fosforoTotalMayo1" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalJunio1" type="number" [(ngModel)]="fosforoTotalJunio1" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalJulio1" type="number" [(ngModel)]="fosforoTotalJulio1" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalAgosto1" type="number" [(ngModel)]="fosforoTotalAgosto1" value="0" step="0.001" />
         </td>
-        <td><input id="fosforoTotalNoviembre" type="number" [(ngModel)]="fosforoTotalNoviembre" value="0"
+        <td><input id="fosforoTotalSeptiembre1" type="number" [(ngModel)]="fosforoTotalSeptiembre1" value="0"
             step="0.001" /></td>
-        <td><input id="fosforoTotalDiciembre" type="number" [(ngModel)]="fosforoTotalDiciembre" value="0"
+        <td><input id="fosforoTotalOctubre1" type="number" [(ngModel)]="fosforoTotalOctubre1" value="0" step="0.001" />
+        </td>
+        <td><input id="fosforoTotalNoviembre1" type="number" [(ngModel)]="fosforoTotalNoviembre1" value="0"
             step="0.001" /></td>
-        <td><input id="fosforoTotalMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="fosforoTotalMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="fosforoTotalPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosforoTotalDiciembre1" type="number" [(ngModel)]="fosforoTotalDiciembre1" value="0"
+            step="0.001" /></td>
+        <td><input id="fosforoTotalMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosforoTotalMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosforoTotalPromedio1" type="number" value="0" step="0.001" readonly /></td>
 
       </tr>
       <tr>
         <td>FOSFATO</td>
         <td>PO4</td>
         <td>[mg/L]</td>
-        <td><input id="fosfatoEnero" type="number" [(ngModel)]="fosfatoEnero" value="0" step="0.001" /></td>
-        <td><input id="fosfatoFebrero" type="number" [(ngModel)]="fosfatoFebrero" value="0" step="0.001" /></td>
-        <td><input id="fosfatoMarzo" type="number" [(ngModel)]="fosfatoMarzo" value="0" step="0.001" /></td>
-        <td><input id="fosfatoAbril" type="number" [(ngModel)]="fosfatoAbril" value="0" step="0.001" /></td>
-        <td><input id="fosfatoMayo" type="number" [(ngModel)]="fosfatoMayo" value="0" step="0.001" /></td>
-        <td><input id="fosfatoJunio" type="number" [(ngModel)]="fosfatoJunio" value="0" step="0.001" /></td>
-        <td><input id="fosfatoJulio" type="number" [(ngModel)]="fosfatoJulio" value="0" step="0.001" /></td>
-        <td><input id="fosfatoAgosto" type="number" [(ngModel)]="fosfatoAgosto" value="0" step="0.001" /></td>
-        <td><input id="fosfatoSeptiembre" type="number" [(ngModel)]="fosfatoSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="fosfatoOctubre" type="number" [(ngModel)]="fosfatoOctubre" value="0" step="0.001" /></td>
-        <td><input id="fosfatoNoviembre" type="number" [(ngModel)]="fosfatoNoviembre" value="0" step="0.001" /></td>
-        <td><input id="fosfatoDiciembre" type="number" [(ngModel)]="fosfatoDiciembre" value="0" step="0.001" /></td>
-        <td><input id="fosfatoMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="fosfatoMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="fosfatoPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosfatoEnero1" type="number" [(ngModel)]="fosfatoEnero1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoFebrero1" type="number" [(ngModel)]="fosfatoFebrero1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMarzo1" type="number" [(ngModel)]="fosfatoMarzo1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoAbril1" type="number" [(ngModel)]="fosfatoAbril1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMayo1" type="number" [(ngModel)]="fosfatoMayo1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoJunio1" type="number" [(ngModel)]="fosfatoJunio1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoJulio1" type="number" [(ngModel)]="fosfatoJulio1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoAgosto1" type="number" [(ngModel)]="fosfatoAgosto1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoSeptiembre1" type="number" [(ngModel)]="fosfatoSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoOctubre1" type="number" [(ngModel)]="fosfatoOctubre1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoNoviembre1" type="number" [(ngModel)]="fosfatoNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoDiciembre1" type="number" [(ngModel)]="fosfatoDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosfatoMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosfatoPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>DEMANDA QUÍMICA DE OXÍGENO</td>
         <td>DQO</td>
         <td>[mg/L]</td>
-        <td><input id="dqoEnero" type="number" [(ngModel)]="dqoEnero" value="0" step="0.001" /></td>
-        <td><input id="dqoFebrero" type="number" [(ngModel)]="dqoFebrero" value="0" step="0.001" /></td>
-        <td><input id="dqoMarzo" type="number" [(ngModel)]="dqoMarzo" value="0" step="0.001" /></td>
-        <td><input id="dqoAbril" type="number" [(ngModel)]="dqoAbril" value="0" step="0.001" /></td>
-        <td><input id="dqoMayo" type="number" [(ngModel)]="dqoMayo" value="0" step="0.001" /></td>
-        <td><input id="dqoJunio" type="number" [(ngModel)]="dqoJunio" value="0" step="0.001" /></td>
-        <td><input id="dqoJulio" type="number" [(ngModel)]="dqoJulio" value="0" step="0.001" /></td>
-        <td><input id="dqoAgosto" type="number" [(ngModel)]="dqoAgosto" value="0" step="0.001" /></td>
-        <td><input id="dqoSeptiembre" type="number" [(ngModel)]="dqoSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="dqoOctubre" type="number" [(ngModel)]="dqoOctubre" value="0" step="0.001" /></td>
-        <td><input id="dqoNoviembre" type="number" [(ngModel)]="dqoNoviembre" value="0" step="0.001" /></td>
-        <td><input id="dqoDiciembre" type="number" [(ngModel)]="dqoDiciembre" value="0" step="0.001" /></td>
-        <td><input id="dqoMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="dqoMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="dqoPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dqoEnero1" type="number" [(ngModel)]="dqoEnero1" value="0" step="0.001" /></td>
+        <td><input id="dqoFebrero1" type="number" [(ngModel)]="dqoFebrero1" value="0" step="0.001" /></td>
+        <td><input id="dqoMarzo1" type="number" [(ngModel)]="dqoMarzo1" value="0" step="0.001" /></td>
+        <td><input id="dqoAbril1" type="number" [(ngModel)]="dqoAbril1" value="0" step="0.001" /></td>
+        <td><input id="dqoMayo1" type="number" [(ngModel)]="dqoMayo1" value="0" step="0.001" /></td>
+        <td><input id="dqoJunio1" type="number" [(ngModel)]="dqoJunio1" value="0" step="0.001" /></td>
+        <td><input id="dqoJulio1" type="number" [(ngModel)]="dqoJulio1" value="0" step="0.001" /></td>
+        <td><input id="dqoAgosto1" type="number" [(ngModel)]="dqoAgosto1" value="0" step="0.001" /></td>
+        <td><input id="dqoSeptiembre1" type="number" [(ngModel)]="dqoSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="dqoOctubre1" type="number" [(ngModel)]="dqoOctubre1" value="0" step="0.001" /></td>
+        <td><input id="dqoNoviembre1" type="number" [(ngModel)]="dqoNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="dqoDiciembre1" type="number" [(ngModel)]="dqoDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="dqoMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dqoMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dqoPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>DEMANDA BIOLÓGICA DE OXÍGENO</td>
         <td>DBO</td>
         <td>[mg/L]</td>
-        <td><input id="dboEnero" type="number" [(ngModel)]="dboEnero" value="0" step="0.001" /></td>
-        <td><input id="dboFebrero" type="number" [(ngModel)]="dboFebrero" value="0" step="0.001" /></td>
-        <td><input id="dboMarzo" type="number" [(ngModel)]="dboMarzo" value="0" step="0.001" /></td>
-        <td><input id="dboAbril" type="number" [(ngModel)]="dboAbril" value="0" step="0.001" /></td>
-        <td><input id="dboMayo" type="number" [(ngModel)]="dboMayo" value="0" step="0.001" /></td>
-        <td><input id="dboJunio" type="number" [(ngModel)]="dboJunio" value="0" step="0.001" /></td>
-        <td><input id="dboJulio" type="number" [(ngModel)]="dboJulio" value="0" step="0.001" /></td>
-        <td><input id="dboAgosto" type="number" [(ngModel)]="dboAgosto" value="0" step="0.001" /></td>
-        <td><input id="dboSeptiembre" type="number" [(ngModel)]="dboSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="dboOctubre" type="number" [(ngModel)]="dboOctubre" value="0" step="0.001" /></td>
-        <td><input id="dboNoviembre" type="number" [(ngModel)]="dboNoviembre" value="0" step="0.001" /></td>
-        <td><input id="dboDiciembre" type="number" [(ngModel)]="dboDiciembre" value="0" step="0.001" /></td>
-        <td><input id="dboMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="dboMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="dboPromedio" type="number" value="0" step="0.001" readonly /></td>
-
+        <td><input id="dboEnero1" type="number" [(ngModel)]="dboEnero1" value="0" step="0.001" /></td>
+        <td><input id="dboFebrero1" type="number" [(ngModel)]="dboFebrero1" value="0" step="0.001" /></td>
+        <td><input id="dboMarzo1" type="number" [(ngModel)]="dboMarzo1" value="0" step="0.001" /></td>
+        <td><input id="dboAbril1" type="number" [(ngModel)]="dboAbril1" value="0" step="0.001" /></td>
+        <td><input id="dboMayo1" type="number" [(ngModel)]="dboMayo1" value="0" step="0.001" /></td>
+        <td><input id="dboJunio1" type="number" [(ngModel)]="dboJunio1" value="0" step="0.001" /></td>
+        <td><input id="dboJulio1" type="number" [(ngModel)]="dboJulio1" value="0" step="0.001" /></td>
+        <td><input id="dboAgosto1" type="number" [(ngModel)]="dboAgosto1" value="0" step="0.001" /></td>
+        <td><input id="dboSeptiembre1" type="number" [(ngModel)]="dboSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="dboOctubre1" type="number" [(ngModel)]="dboOctubre1" value="0" step="0.001" /></td>
+        <td><input id="dboNoviembre1" type="number" [(ngModel)]="dboNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="dboDiciembre1" type="number" [(ngModel)]="dboDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="dboMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dboMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dboPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>ARSÉNICO</td>
         <td>As</td>
         <td>[mg/L]</td>
-        <td><input id="arsenicoEnero" type="number" [(ngModel)]="arsenicoEnero" value="0" step="0.001" /></td>
-        <td><input id="arsenicoFebrero" type="number" [(ngModel)]="arsenicoFebrero" value="0" step="0.001" /></td>
-        <td><input id="arsenicoMarzo" type="number" [(ngModel)]="arsenicoMarzo" value="0" step="0.001" /></td>
-        <td><input id="arsenicoAbril" type="number" [(ngModel)]="arsenicoAbril" value="0" step="0.001" /></td>
-        <td><input id="arsenicoMayo" type="number" [(ngModel)]="arsenicoMayo" value="0" step="0.001" /></td>
-        <td><input id="arsenicoJunio" type="number" [(ngModel)]="arsenicoJunio" value="0" step="0.001" /></td>
-        <td><input id="arsenicoJulio" type="number" [(ngModel)]="arsenicoJulio" value="0" step="0.001" /></td>
-        <td><input id="arsenicoAgosto" type="number" [(ngModel)]="arsenicoAgosto" value="0" step="0.001" /></td>
-        <td><input id="arsenicoSeptiembre" type="number" [(ngModel)]="arsenicoSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="arsenicoOctubre" type="number" [(ngModel)]="arsenicoOctubre" value="0" step="0.001" /></td>
-        <td><input id="arsenicoNoviembre" type="number" [(ngModel)]="arsenicoNoviembre" value="0" step="0.001" /></td>
-        <td><input id="arsenicoDiciembre" type="number" [(ngModel)]="arsenicoDiciembre" value="0" step="0.001" /></td>
-        <td><input id="arsenicoMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="arsenicoMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="arsenicoPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="arsenicoEnero1" type="number" [(ngModel)]="arsenicoEnero1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoFebrero1" type="number" [(ngModel)]="arsenicoFebrero1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMarzo1" type="number" [(ngModel)]="arsenicoMarzo1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoAbril1" type="number" [(ngModel)]="arsenicoAbril1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMayo1" type="number" [(ngModel)]="arsenicoMayo1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoJunio1" type="number" [(ngModel)]="arsenicoJunio1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoJulio1" type="number" [(ngModel)]="arsenicoJulio1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoAgosto1" type="number" [(ngModel)]="arsenicoAgosto1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoSeptiembre1" type="number" [(ngModel)]="arsenicoSeptiembre1" value="0" step="0.001" />
+        </td>
+        <td><input id="arsenicoOctubre1" type="number" [(ngModel)]="arsenicoOctubre1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoNoviembre1" type="number" [(ngModel)]="arsenicoNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoDiciembre1" type="number" [(ngModel)]="arsenicoDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="arsenicoMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="arsenicoPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>CADMIO</td>
         <td>Cd</td>
         <td>[mg/L]</td>
-        <td><input id="cadmioEnero" type="number" [(ngModel)]="cadmioEnero" value="0" step="0.001" /></td>
-        <td><input id="cadmioFebrero" type="number" [(ngModel)]="cadmioFebrero" value="0" step="0.001" /></td>
-        <td><input id="cadmioMarzo" type="number" [(ngModel)]="cadmioMarzo" value="0" step="0.001" /></td>
-        <td><input id="cadmioAbril" type="number" [(ngModel)]="cadmioAbril" value="0" step="0.001" /></td>
-        <td><input id="cadmioMayo" type="number" [(ngModel)]="cadmioMayo" value="0" step="0.001" /></td>
-        <td><input id="cadmioJunio" type="number" [(ngModel)]="cadmioJunio" value="0" step="0.001" /></td>
-        <td><input id="cadmioJulio" type="number" [(ngModel)]="cadmioJulio" value="0" step="0.001" /></td>
-        <td><input id="cadmioAgosto" type="number" [(ngModel)]="cadmioAgosto" value="0" step="0.001" /></td>
-        <td><input id="cadmioSeptiembre" type="number" [(ngModel)]="cadmioSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="cadmioOctubre" type="number" [(ngModel)]="cadmioOctubre" value="0" step="0.001" /></td>
-        <td><input id="cadmioNoviembre" type="number" [(ngModel)]="cadmioNoviembre" value="0" step="0.001" /></td>
-        <td><input id="cadmioDiciembre" type="number" [(ngModel)]="cadmioDiciembre" value="0" step="0.001" /></td>
-        <td><input id="cadmioMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="cadmioMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="cadmioPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cadmioEnero1" type="number" [(ngModel)]="cadmioEnero1" value="0" step="0.001" /></td>
+        <td><input id="cadmioFebrero1" type="number" [(ngModel)]="cadmioFebrero1" value="0" step="0.001" /></td>
+        <td><input id="cadmioMarzo1" type="number" [(ngModel)]="cadmioMarzo1" value="0" step="0.001" /></td>
+        <td><input id="cadmioAbril1" type="number" [(ngModel)]="cadmioAbril1" value="0" step="0.001" /></td>
+        <td><input id="cadmioMayo1" type="number" [(ngModel)]="cadmioMayo1" value="0" step="0.001" /></td>
+        <td><input id="cadmioJunio1" type="number" [(ngModel)]="cadmioJunio1" value="0" step="0.001" /></td>
+        <td><input id="cadmioJulio1" type="number" [(ngModel)]="cadmioJulio1" value="0" step="0.001" /></td>
+        <td><input id="cadmioAgosto1" type="number" [(ngModel)]="cadmioAgosto1" value="0" step="0.001" /></td>
+        <td><input id="cadmioSeptiembre1" type="number" [(ngModel)]="cadmioSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="cadmioOctubre1" type="number" [(ngModel)]="cadmioOctubre1" value="0" step="0.001" /></td>
+        <td><input id="cadmioNoviembre1" type="number" [(ngModel)]="cadmioNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="cadmioDiciembre1" type="number" [(ngModel)]="cadmioDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="cadmioMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cadmioMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cadmioPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>CROMO</td>
         <td>Cr</td>
         <td>[mg/L]</td>
-        <td><input id="cromoEnero" type="number" [(ngModel)]="cromoEnero" value="0" step="0.001" /></td>
-        <td><input id="cromoFebrero" type="number" [(ngModel)]="cromoFebrero" value="0" step="0.001" /></td>
-        <td><input id="cromoMarzo" type="number" [(ngModel)]="cromoMarzo" value="0" step="0.001" /></td>
-        <td><input id="cromoAbril" type="number" [(ngModel)]="cromoAbril" value="0" step="0.001" /></td>
-        <td><input id="cromoMayo" type="number" [(ngModel)]="cromoMayo" value="0" step="0.001" /></td>
-        <td><input id="cromoJunio" type="number" [(ngModel)]="cromoJunio" value="0" step="0.001" /></td>
-        <td><input id="cromoJulio" type="number" [(ngModel)]="cromoJulio" value="0" step="0.001" /></td>
-        <td><input id="cromoAgosto" type="number" [(ngModel)]="cromoAgosto" value="0" step="0.001" /></td>
-        <td><input id="cromoSeptiembre" type="number" [(ngModel)]="cromoSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="cromoOctubre" type="number" [(ngModel)]="cromoOctubre" value="0" step="0.001" /></td>
-        <td><input id="cromoNoviembre" type="number" [(ngModel)]="cromoNoviembre" value="0" step="0.001" /></td>
-        <td><input id="cromoDiciembre" type="number" [(ngModel)]="cromoDiciembre" value="0" step="0.001" /></td>
-        <td><input id="cromoMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="cromoMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="cromoPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cromoEnero1" type="number" [(ngModel)]="cromoEnero1" value="0" step="0.001" /></td>
+        <td><input id="cromoFebrero1" type="number" [(ngModel)]="cromoFebrero1" value="0" step="0.001" /></td>
+        <td><input id="cromoMarzo1" type="number" [(ngModel)]="cromoMarzo1" value="0" step="0.001" /></td>
+        <td><input id="cromoAbril1" type="number" [(ngModel)]="cromoAbril1" value="0" step="0.001" /></td>
+        <td><input id="cromoMayo1" type="number" [(ngModel)]="cromoMayo1" value="0" step="0.001" /></td>
+        <td><input id="cromoJunio1" type="number" [(ngModel)]="cromoJunio1" value="0" step="0.001" /></td>
+        <td><input id="cromoJulio1" type="number" [(ngModel)]="cromoJulio1" value="0" step="0.001" /></td>
+        <td><input id="cromoAgosto1" type="number" [(ngModel)]="cromoAgosto1" value="0" step="0.001" /></td>
+        <td><input id="cromoSeptiembre1" type="number" [(ngModel)]="cromoSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="cromoOctubre1" type="number" [(ngModel)]="cromoOctubre1" value="0" step="0.001" /></td>
+        <td><input id="cromoNoviembre1" type="number" [(ngModel)]="cromoNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="cromoDiciembre1" type="number" [(ngModel)]="cromoDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="cromoMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cromoMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cromoPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>COBRE</td>
         <td>Cu</td>
         <td>[mg/L]</td>
-        <td><input id="cobreEnero" type="number" [(ngModel)]="cobreEnero" value="0" step="0.001" /></td>
-        <td><input id="cobreFebrero" type="number" [(ngModel)]="cobreFebrero" value="0" step="0.001" /></td>
-        <td><input id="cobreMarzo" type="number" [(ngModel)]="cobreMarzo" value="0" step="0.001" /></td>
-        <td><input id="cobreAbril" type="number" [(ngModel)]="cobreAbril" value="0" step="0.001" /></td>
-        <td><input id="cobreMayo" type="number" [(ngModel)]="cobreMayo" value="0" step="0.001" /></td>
-        <td><input id="cobreJunio" type="number" [(ngModel)]="cobreJunio" value="0" step="0.001" /></td>
-        <td><input id="cobreJulio" type="number" [(ngModel)]="cobreJulio" value="0" step="0.001" /></td>
-        <td><input id="cobreAgosto" type="number" [(ngModel)]="cobreAgosto" value="0" step="0.001" /></td>
-        <td><input id="cobreSeptiembre" type="number" [(ngModel)]="cobreSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="cobreOctubre" type="number" [(ngModel)]="cobreOctubre" value="0" step="0.001" /></td>
-        <td><input id="cobreNoviembre" type="number" [(ngModel)]="cobreNoviembre" value="0" step="0.001" /></td>
-        <td><input id="cobreDiciembre" type="number" [(ngModel)]="cobreDiciembre" value="0" step="0.001" /></td>
-        <td><input id="cobreMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="cobreMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="cobrePromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cobreEnero1" type="number" [(ngModel)]="cobreEnero1" value="0" step="0.001" /></td>
+        <td><input id="cobreFebrero1" type="number" [(ngModel)]="cobreFebrero1" value="0" step="0.001" /></td>
+        <td><input id="cobreMarzo1" type="number" [(ngModel)]="cobreMarzo1" value="0" step="0.001" /></td>
+        <td><input id="cobreAbril1" type="number" [(ngModel)]="cobreAbril1" value="0" step="0.001" /></td>
+        <td><input id="cobreMayo1" type="number" [(ngModel)]="cobreMayo1" value="0" step="0.001" /></td>
+        <td><input id="cobreJunio1" type="number" [(ngModel)]="cobreJunio1" value="0" step="0.001" /></td>
+        <td><input id="cobreJulio1" type="number" [(ngModel)]="cobreJulio1" value="0" step="0.001" /></td>
+        <td><input id="cobreAgosto1" type="number" [(ngModel)]="cobreAgosto1" value="0" step="0.001" /></td>
+        <td><input id="cobreSeptiembre1" type="number" [(ngModel)]="cobreSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="cobreOctubre1" type="number" [(ngModel)]="cobreOctubre1" value="0" step="0.001" /></td>
+        <td><input id="cobreNoviembre1" type="number" [(ngModel)]="cobreNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="cobreDiciembre1" type="number" [(ngModel)]="cobreDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="cobreMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cobreMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cobrePromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>MERCURIO</td>
         <td>Hg</td>
         <td>[mg/L]</td>
-        <td><input id="mercurioEnero" type="number" [(ngModel)]="mercurioEnero" value="0" step="0.001" /></td>
-        <td><input id="mercurioFebrero" type="number" [(ngModel)]="mercurioFebrero" value="0" step="0.001" /></td>
-        <td><input id="mercurioMarzo" type="number" [(ngModel)]="mercurioMarzo" value="0" step="0.001" /></td>
-        <td><input id="mercurioAbril" type="number" [(ngModel)]="mercurioAbril" value="0" step="0.001" /></td>
-        <td><input id="mercurioMayo" type="number" [(ngModel)]="mercurioMayo" value="0" step="0.001" /></td>
-        <td><input id="mercurioJunio" type="number" [(ngModel)]="mercurioJunio" value="0" step="0.001" /></td>
-        <td><input id="mercurioJulio" type="number" [(ngModel)]="mercurioJulio" value="0" step="0.001" /></td>
-        <td><input id="mercurioAgosto" type="number" [(ngModel)]="mercurioAgosto" value="0" step="0.001" /></td>
-        <td><input id="mercurioSeptiembre" type="number" [(ngModel)]="mercurioSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="mercurioOctubre" type="number" [(ngModel)]="mercurioOctubre" value="0" step="0.001" /></td>
-        <td><input id="mercurioNoviembre" type="number" [(ngModel)]="mercurioNoviembre" value="0" step="0.001" /></td>
-        <td><input id="mercurioDiciembre" type="number" [(ngModel)]="mercurioDiciembre" value="0" step="0.001" /></td>
-        <td><input id="mercurioMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="mercurioMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="mercurioPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="mercurioEnero1" type="number" [(ngModel)]="mercurioEnero1" value="0" step="0.001" /></td>
+        <td><input id="mercurioFebrero1" type="number" [(ngModel)]="mercurioFebrero1" value="0" step="0.001" /></td>
+        <td><input id="mercurioMarzo1" type="number" [(ngModel)]="mercurioMarzo1" value="0" step="0.001" /></td>
+        <td><input id="mercurioAbril1" type="number" [(ngModel)]="mercurioAbril1" value="0" step="0.001" /></td>
+        <td><input id="mercurioMayo1" type="number" [(ngModel)]="mercurioMayo1" value="0" step="0.001" /></td>
+        <td><input id="mercurioJunio1" type="number" [(ngModel)]="mercurioJunio1" value="0" step="0.001" /></td>
+        <td><input id="mercurioJulio1" type="number" [(ngModel)]="mercurioJulio1" value="0" step="0.001" /></td>
+        <td><input id="mercurioAgosto1" type="number" [(ngModel)]="mercurioAgosto1" value="0" step="0.001" /></td>
+        <td><input id="mercurioSeptiembre1" type="number" [(ngModel)]="mercurioSeptiembre1" value="0" step="0.001" />
+        </td>
+        <td><input id="mercurioOctubre1" type="number" [(ngModel)]="mercurioOctubre1" value="0" step="0.001" /></td>
+        <td><input id="mercurioNoviembre1" type="number" [(ngModel)]="mercurioNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="mercurioDiciembre1" type="number" [(ngModel)]="mercurioDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="mercurioMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="mercurioMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="mercurioPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>NIQUEL</td>
         <td>Ni</td>
         <td>[mg/L]</td>
-        <td><input id="niquelEnero" type="number" [(ngModel)]="niquelEnero" value="0" step="0.001" /></td>
-        <td><input id="niquelFebrero" type="number" [(ngModel)]="niquelFebrero" value="0" step="0.001" /></td>
-        <td><input id="niquelMarzo" type="number" [(ngModel)]="niquelMarzo" value="0" step="0.001" /></td>
-        <td><input id="niquelAbril" type="number" [(ngModel)]="niquelAbril" value="0" step="0.001" /></td>
-        <td><input id="niquelMayo" type="number" [(ngModel)]="niquelMayo" value="0" step="0.001" /></td>
-        <td><input id="niquelJunio" type="number" [(ngModel)]="niquelJunio" value="0" step="0.001" /></td>
-        <td><input id="niquelJulio" type="number" [(ngModel)]="niquelJulio" value="0" step="0.001" /></td>
-        <td><input id="niquelAgosto" type="number" [(ngModel)]="niquelAgosto" value="0" step="0.001" /></td>
-        <td><input id="niquelSeptiembre" type="number" [(ngModel)]="niquelSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="niquelOctubre" type="number" [(ngModel)]="niquelOctubre" value="0" step="0.001" /></td>
-        <td><input id="niquelNoviembre" type="number" [(ngModel)]="niquelNoviembre" value="0" step="0.001" /></td>
-        <td><input id="niquelDiciembre" type="number" [(ngModel)]="niquelDiciembre" value="0" step="0.001" /></td>
-        <td><input id="niquelMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="niquelMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="niquelPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="niquelEnero1" type="number" [(ngModel)]="niquelEnero1" value="0" step="0.001" /></td>
+        <td><input id="niquelFebrero1" type="number" [(ngModel)]="niquelFebrero1" value="0" step="0.001" /></td>
+        <td><input id="niquelMarzo1" type="number" [(ngModel)]="niquelMarzo1" value="0" step="0.001" /></td>
+        <td><input id="niquelAbril1" type="number" [(ngModel)]="niquelAbril1" value="0" step="0.001" /></td>
+        <td><input id="niquelMayo1" type="number" [(ngModel)]="niquelMayo1" value="0" step="0.001" /></td>
+        <td><input id="niquelJunio1" type="number" [(ngModel)]="niquelJunio1" value="0" step="0.001" /></td>
+        <td><input id="niquelJulio1" type="number" [(ngModel)]="niquelJulio1" value="0" step="0.001" /></td>
+        <td><input id="niquelAgosto1" type="number" [(ngModel)]="niquelAgosto1" value="0" step="0.001" /></td>
+        <td><input id="niquelSeptiembre1" type="number" [(ngModel)]="niquelSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="niquelOctubre1" type="number" [(ngModel)]="niquelOctubre1" value="0" step="0.001" /></td>
+        <td><input id="niquelNoviembre1" type="number" [(ngModel)]="niquelNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="niquelDiciembre1" type="number" [(ngModel)]="niquelDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="niquelMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="niquelMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="niquelPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <tr>
         <td>PLOMO</td>
         <td>Pb</td>
         <td>[mg/L]</td>
-        <td><input id="plomoEnero" type="number" [(ngModel)]="plomoEnero" value="0" step="0.001" /></td>
-        <td><input id="plomoFebrero" type="number" [(ngModel)]="plomoFebrero" value="0" step="0.001" /></td>
-        <td><input id="plomoMarzo" type="number" [(ngModel)]="plomoMarzo" value="0" step="0.001" /></td>
-        <td><input id="plomoAbril" type="number" [(ngModel)]="plomoAbril" value="0" step="0.001" /></td>
-        <td><input id="plomoMayo" type="number" [(ngModel)]="plomoMayo" value="0" step="0.001" /></td>
-        <td><input id="plomoJunio" type="number" [(ngModel)]="plomoJunio" value="0" step="0.001" /></td>
-        <td><input id="plomoJulio" type="number" [(ngModel)]="plomoJulio" value="0" step="0.001" /></td>
-        <td><input id="plomoAgosto" type="number" [(ngModel)]="plomoAgosto" value="0" step="0.001" /></td>
-        <td><input id="plomoSeptiembre" type="number" [(ngModel)]="plomoSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="plomoOctubre" type="number" [(ngModel)]="plomoOctubre" value="0" step="0.001" /></td>
-        <td><input id="plomoNoviembre" type="number" [(ngModel)]="plomoNoviembre" value="0" step="0.001" /></td>
-        <td><input id="plomoDiciembre" type="number" [(ngModel)]="plomoDiciembre" value="0" step="0.001" /></td>
-        <td><input id="plomoMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="plomoMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="plomoPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="plomoEnero1" type="number" [(ngModel)]="plomoEnero1" value="0" step="0.001" /></td>
+        <td><input id="plomoFebrero1" type="number" [(ngModel)]="plomoFebrero1" value="0" step="0.001" /></td>
+        <td><input id="plomoMarzo1" type="number" [(ngModel)]="plomoMarzo1" value="0" step="0.001" /></td>
+        <td><input id="plomoAbril1" type="number" [(ngModel)]="plomoAbril1" value="0" step="0.001" /></td>
+        <td><input id="plomoMayo1" type="number" [(ngModel)]="plomoMayo1" value="0" step="0.001" /></td>
+        <td><input id="plomoJunio1" type="number" [(ngModel)]="plomoJunio1" value="0" step="0.001" /></td>
+        <td><input id="plomoJulio1" type="number" [(ngModel)]="plomoJulio1" value="0" step="0.001" /></td>
+        <td><input id="plomoAgosto1" type="number" [(ngModel)]="plomoAgosto1" value="0" step="0.001" /></td>
+        <td><input id="plomoSeptiembre1" type="number" [(ngModel)]="plomoSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="plomoOctubre1" type="number" [(ngModel)]="plomoOctubre1" value="0" step="0.001" /></td>
+        <td><input id="plomoNoviembre1" type="number" [(ngModel)]="plomoNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="plomoDiciembre1" type="number" [(ngModel)]="plomoDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="plomoMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="plomoMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="plomoPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
       <!-- Fila para Zinc -->
       <tr>
         <td>ZINC</td>
         <td>Zn</td>
         <td>[mg/L]</td>
-        <td><input id="zincEnero" type="number" [(ngModel)]="zincEnero" value="0" step="0.001" /></td>
-        <td><input id="zincFebrero" type="number" [(ngModel)]="zincFebrero" value="0" step="0.001" /></td>
-        <td><input id="zincMarzo" type="number" [(ngModel)]="zincMarzo" value="0" step="0.001" /></td>
-        <td><input id="zincAbril" type="number" [(ngModel)]="zincAbril" value="0" step="0.001" /></td>
-        <td><input id="zincMayo" type="number" [(ngModel)]="zincMayo" value="0" step="0.001" /></td>
-        <td><input id="zincJunio" type="number" [(ngModel)]="zincJunio" value="0" step="0.001" /></td>
-        <td><input id="zincJulio" type="number" [(ngModel)]="zincJulio" value="0" step="0.001" /></td>
-        <td><input id="zincAgosto" type="number" [(ngModel)]="zincAgosto" value="0" step="0.001" /></td>
-        <td><input id="zincSeptiembre" type="number" [(ngModel)]="zincSeptiembre" value="0" step="0.001" /></td>
-        <td><input id="zincOctubre" type="number" [(ngModel)]="zincOctubre" value="0" step="0.001" /></td>
-        <td><input id="zincNoviembre" type="number" [(ngModel)]="zincNoviembre" value="0" step="0.001" /></td>
-        <td><input id="zincDiciembre" type="number" [(ngModel)]="zincDiciembre" value="0" step="0.001" /></td>
-        <td><input id="zincMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="zincMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="zincPromedio" type="number" value="0" step="0.001" readonly /></td>
-
+        <td><input id="zincEnero1" type="number" [(ngModel)]="zincEnero1" value="0" step="0.001" /></td>
+        <td><input id="zincFebrero1" type="number" [(ngModel)]="zincFebrero1" value="0" step="0.001" /></td>
+        <td><input id="zincMarzo1" type="number" [(ngModel)]="zincMarzo1" value="0" step="0.001" /></td>
+        <td><input id="zincAbril1" type="number" [(ngModel)]="zincAbril1" value="0" step="0.001" /></td>
+        <td><input id="zincMayo1" type="number" [(ngModel)]="zincMayo1" value="0" step="0.001" /></td>
+        <td><input id="zincJunio1" type="number" [(ngModel)]="zincJunio1" value="0" step="0.001" /></td>
+        <td><input id="zincJulio1" type="number" [(ngModel)]="zincJulio1" value="0" step="0.001" /></td>
+        <td><input id="zincAgosto1" type="number" [(ngModel)]="zincAgosto1" value="0" step="0.001" /></td>
+        <td><input id="zincSeptiembre1" type="number" [(ngModel)]="zincSeptiembre1" value="0" step="0.001" /></td>
+        <td><input id="zincOctubre1" type="number" [(ngModel)]="zincOctubre1" value="0" step="0.001" /></td>
+        <td><input id="zincNoviembre1" type="number" [(ngModel)]="zincNoviembre1" value="0" step="0.001" /></td>
+        <td><input id="zincDiciembre1" type="number" [(ngModel)]="zincDiciembre1" value="0" step="0.001" /></td>
+        <td><input id="zincMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="zincMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="zincPromedio1" type="number" value="0" step="0.001" readonly /></td>
       </tr>
 
       <!-- Fila para Pentaclorofenol -->
@@ -811,33 +920,767 @@
         <td>PENTACLOROFENOL</td>
         <td>C6OHCL5</td>
         <td>[mg/L]</td>
-        <td><input id="pentaclorofenolEnero" type="number" [(ngModel)]="pentaclorofenolEnero" value="0" step="0.001" />
-        </td>
-        <td><input id="pentaclorofenolFebrero" type="number" [(ngModel)]="pentaclorofenolFebrero" value="0"
+        <td><input id="pentaclorofenolEnero1" type="number" [(ngModel)]="pentaclorofenolEnero1" value="0"
             step="0.001" /></td>
-        <td><input id="pentaclorofenolMarzo" type="number" [(ngModel)]="pentaclorofenolMarzo" value="0" step="0.001" />
-        </td>
-        <td><input id="pentaclorofenolAbril" type="number" [(ngModel)]="pentaclorofenolAbril" value="0" step="0.001" />
-        </td>
-        <td><input id="pentaclorofenolMayo" type="number" [(ngModel)]="pentaclorofenolMayo" value="0" step="0.001" />
-        </td>
-        <td><input id="pentaclorofenolJunio" type="number" [(ngModel)]="pentaclorofenolJunio" value="0" step="0.001" />
-        </td>
-        <td><input id="pentaclorofenolJulio" type="number" [(ngModel)]="pentaclorofenolJulio" value="0" step="0.001" />
-        </td>
-        <td><input id="pentaclorofenolAgosto" type="number" [(ngModel)]="pentaclorofenolAgosto" value="0"
+        <td><input id="pentaclorofenolFebrero1" type="number" [(ngModel)]="pentaclorofenolFebrero1" value="0"
             step="0.001" /></td>
-        <td><input id="pentaclorofenolSeptiembre" type="number" [(ngModel)]="pentaclorofenolSeptiembre" value="0"
+        <td><input id="pentaclorofenolMarzo1" type="number" [(ngModel)]="pentaclorofenolMarzo1" value="0"
             step="0.001" /></td>
-        <td><input id="pentaclorofenolOctubre" type="number" [(ngModel)]="pentaclorofenolOctubre" value="0"
+        <td><input id="pentaclorofenolAbril1" type="number" [(ngModel)]="pentaclorofenolAbril1" value="0"
             step="0.001" /></td>
-        <td><input id="pentaclorofenolNoviembre" type="number" [(ngModel)]="pentaclorofenolNoviembre" value="0"
+        <td><input id="pentaclorofenolMayo1" type="number" [(ngModel)]="pentaclorofenolMayo1" value="0" step="0.001" />
+        </td>
+        <td><input id="pentaclorofenolJunio1" type="number" [(ngModel)]="pentaclorofenolJunio1" value="0"
             step="0.001" /></td>
-        <td><input id="pentaclorofenolDiciembre" type="number" [(ngModel)]="pentaclorofenolDiciembre" value="0"
+        <td><input id="pentaclorofenolJulio1" type="number" [(ngModel)]="pentaclorofenolJulio1" value="0"
             step="0.001" /></td>
-        <td><input id="pentaclorofenolMin" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="pentaclorofenolMax" type="number" value="0" step="0.001" readonly /></td>
-        <td><input id="pentaclorofenolPromedio" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="pentaclorofenolAgosto1" type="number" [(ngModel)]="pentaclorofenolAgosto1" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolSeptiembre1" type="number" [(ngModel)]="pentaclorofenolSeptiembre1" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolOctubre1" type="number" [(ngModel)]="pentaclorofenolOctubre1" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolNoviembre1" type="number" [(ngModel)]="pentaclorofenolNoviembre1" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolDiciembre1" type="number" [(ngModel)]="pentaclorofenolDiciembre1" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolMin1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="pentaclorofenolMax1" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="pentaclorofenolPromedio1" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <h3>CALIDAD DE LAS AGUAS INFILTRADAS</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>PARÁMETRO</th>
+        <th>ABREVIACIÓN</th>
+        <th>UNIDAD</th>
+        <th>ENERO</th>
+        <th>FEBRERO</th>
+        <th>MARZO</th>
+        <th>ABRIL</th>
+        <th>MAYO</th>
+        <th>JUNIO</th>
+        <th>JULIO</th>
+        <th>AGOSTO</th>
+        <th>SEPTIEMBRE</th>
+        <th>OCTUBRE</th>
+        <th>NOVIEMBRE</th>
+        <th>DICIEMBRE</th>
+        <th>MIN</th>
+        <th>MAX</th>
+        <th>PROMEDIO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>NITRÓGENO TOTAL</td>
+        <td>N</td>
+        <td>[mg/L]</td>
+        <td><input id="nitrogenoEnero2" type="number" [(ngModel)]="nitrogenoEnero2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoFebrero2" type="number" [(ngModel)]="nitrogenoFebrero2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoMarzo2" type="number" [(ngModel)]="nitrogenoMarzo2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoAbril2" type="number" [(ngModel)]="nitrogenoAbril2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoMayo2" type="number" [(ngModel)]="nitrogenoMayo2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoJunio2" type="number" [(ngModel)]="nitrogenoJunio2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoJulio2" type="number" [(ngModel)]="nitrogenoJulio2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoAgosto2" type="number" [(ngModel)]="nitrogenoAgosto2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoSeptiembre2" type="number" [(ngModel)]="nitrogenoSeptiembre2" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoOctubre2" type="number" [(ngModel)]="nitrogenoOctubre2" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoNoviembre2" type="number" [(ngModel)]="nitrogenoNoviembre2" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoDiciembre2" type="number" [(ngModel)]="nitrogenoDiciembre2" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>NITRÓGENO TOTAL KJELDAHL</td>
+        <td>NTK</td>
+        <td>[mg/L]</td>
+        <td><input id="nitrogenoKjeldahlEnero2" type="number" [(ngModel)]="nitrogenoKjeldahlEnero2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlFebrero2" type="number" [(ngModel)]="nitrogenoKjeldahlFebrero2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlMarzo2" type="number" [(ngModel)]="nitrogenoKjeldahlMarzo2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlAbril2" type="number" [(ngModel)]="nitrogenoKjeldahlAbril2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlMayo2" type="number" [(ngModel)]="nitrogenoKjeldahlMayo2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlJunio2" type="number" [(ngModel)]="nitrogenoKjeldahlJunio2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlJulio2" type="number" [(ngModel)]="nitrogenoKjeldahlJulio2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlAgosto2" type="number" [(ngModel)]="nitrogenoKjeldahlAgosto2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlSeptiembre2" type="number" [(ngModel)]="nitrogenoKjeldahlSeptiembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlOctubre2" type="number" [(ngModel)]="nitrogenoKjeldahlOctubre2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlNoviembre2" type="number" [(ngModel)]="nitrogenoKjeldahlNoviembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlDiciembre2" type="number" [(ngModel)]="nitrogenoKjeldahlDiciembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoKjeldahlMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoKjeldahlPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>FÓSFORO TOTAL</td>
+        <td>P</td>
+        <td>[mg/L]</td>
+        <td><input id="fosforoTotalEnero2" type="number" [(ngModel)]="fosforoTotalEnero2" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalFebrero2" type="number" [(ngModel)]="fosforoTotalFebrero2" value="0" step="0.001" />
+        </td>
+        <td><input id="fosforoTotalMarzo2" type="number" [(ngModel)]="fosforoTotalMarzo2" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalAbril2" type="number" [(ngModel)]="fosforoTotalAbril2" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalMayo2" type="number" [(ngModel)]="fosforoTotalMayo2" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalJunio2" type="number" [(ngModel)]="fosforoTotalJunio2" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalJulio2" type="number" [(ngModel)]="fosforoTotalJulio2" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalAgosto2" type="number" [(ngModel)]="fosforoTotalAgosto2" value="0" step="0.001" />
+        </td>
+        <td><input id="fosforoTotalSeptiembre2" type="number" [(ngModel)]="fosforoTotalSeptiembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="fosforoTotalOctubre2" type="number" [(ngModel)]="fosforoTotalOctubre2" value="0" step="0.001" />
+        </td>
+        <td><input id="fosforoTotalNoviembre2" type="number" [(ngModel)]="fosforoTotalNoviembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="fosforoTotalDiciembre2" type="number" [(ngModel)]="fosforoTotalDiciembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="fosforoTotalMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosforoTotalMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosforoTotalPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>FOSFATO</td>
+        <td>PO4</td>
+        <td>[mg/L]</td>
+        <td><input id="fosfatoEnero2" type="number" [(ngModel)]="fosfatoEnero2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoFebrero2" type="number" [(ngModel)]="fosfatoFebrero2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMarzo2" type="number" [(ngModel)]="fosfatoMarzo2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoAbril2" type="number" [(ngModel)]="fosfatoAbril2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMayo2" type="number" [(ngModel)]="fosfatoMayo2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoJunio2" type="number" [(ngModel)]="fosfatoJunio2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoJulio2" type="number" [(ngModel)]="fosfatoJulio2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoAgosto2" type="number" [(ngModel)]="fosfatoAgosto2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoSeptiembre2" type="number" [(ngModel)]="fosfatoSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoOctubre2" type="number" [(ngModel)]="fosfatoOctubre2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoNoviembre2" type="number" [(ngModel)]="fosfatoNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoDiciembre2" type="number" [(ngModel)]="fosfatoDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosfatoMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosfatoPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>DEMANDA QUÍMICA DE OXÍGENO</td>
+        <td>DQO</td>
+        <td>[mg/L]</td>
+        <td><input id="dqoEnero2" type="number" [(ngModel)]="dqoEnero2" value="0" step="0.001" /></td>
+        <td><input id="dqoFebrero2" type="number" [(ngModel)]="dqoFebrero2" value="0" step="0.001" /></td>
+        <td><input id="dqoMarzo2" type="number" [(ngModel)]="dqoMarzo2" value="0" step="0.001" /></td>
+        <td><input id="dqoAbril2" type="number" [(ngModel)]="dqoAbril2" value="0" step="0.001" /></td>
+        <td><input id="dqoMayo2" type="number" [(ngModel)]="dqoMayo2" value="0" step="0.001" /></td>
+        <td><input id="dqoJunio2" type="number" [(ngModel)]="dqoJunio2" value="0" step="0.001" /></td>
+        <td><input id="dqoJulio2" type="number" [(ngModel)]="dqoJulio2" value="0" step="0.001" /></td>
+        <td><input id="dqoAgosto2" type="number" [(ngModel)]="dqoAgosto2" value="0" step="0.001" /></td>
+        <td><input id="dqoSeptiembre2" type="number" [(ngModel)]="dqoSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="dqoOctubre2" type="number" [(ngModel)]="dqoOctubre2" value="0" step="0.001" /></td>
+        <td><input id="dqoNoviembre2" type="number" [(ngModel)]="dqoNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="dqoDiciembre2" type="number" [(ngModel)]="dqoDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="dqoMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dqoMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dqoPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>DEMANDA BIOLÓGICA DE OXÍGENO</td>
+        <td>DBO</td>
+        <td>[mg/L]</td>
+        <td><input id="dboEnero2" type="number" [(ngModel)]="dboEnero2" value="0" step="0.001" /></td>
+        <td><input id="dboFebrero2" type="number" [(ngModel)]="dboFebrero2" value="0" step="0.001" /></td>
+        <td><input id="dboMarzo2" type="number" [(ngModel)]="dboMarzo2" value="0" step="0.001" /></td>
+        <td><input id="dboAbril2" type="number" [(ngModel)]="dboAbril2" value="0" step="0.001" /></td>
+        <td><input id="dboMayo2" type="number" [(ngModel)]="dboMayo2" value="0" step="0.001" /></td>
+        <td><input id="dboJunio2" type="number" [(ngModel)]="dboJunio2" value="0" step="0.001" /></td>
+        <td><input id="dboJulio2" type="number" [(ngModel)]="dboJulio2" value="0" step="0.001" /></td>
+        <td><input id="dboAgosto2" type="number" [(ngModel)]="dboAgosto2" value="0" step="0.001" /></td>
+        <td><input id="dboSeptiembre2" type="number" [(ngModel)]="dboSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="dboOctubre2" type="number" [(ngModel)]="dboOctubre2" value="0" step="0.001" /></td>
+        <td><input id="dboNoviembre2" type="number" [(ngModel)]="dboNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="dboDiciembre2" type="number" [(ngModel)]="dboDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="dboMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dboMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dboPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>ARSÉNICO</td>
+        <td>As</td>
+        <td>[mg/L]</td>
+        <td><input id="arsenicoEnero2" type="number" [(ngModel)]="arsenicoEnero2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoFebrero2" type="number" [(ngModel)]="arsenicoFebrero2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMarzo2" type="number" [(ngModel)]="arsenicoMarzo2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoAbril2" type="number" [(ngModel)]="arsenicoAbril2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMayo2" type="number" [(ngModel)]="arsenicoMayo2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoJunio2" type="number" [(ngModel)]="arsenicoJunio2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoJulio2" type="number" [(ngModel)]="arsenicoJulio2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoAgosto2" type="number" [(ngModel)]="arsenicoAgosto2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoSeptiembre2" type="number" [(ngModel)]="arsenicoSeptiembre2" value="0" step="0.001" />
+        </td>
+        <td><input id="arsenicoOctubre2" type="number" [(ngModel)]="arsenicoOctubre2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoNoviembre2" type="number" [(ngModel)]="arsenicoNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoDiciembre2" type="number" [(ngModel)]="arsenicoDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="arsenicoMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="arsenicoPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>CADMIO</td>
+        <td>Cd</td>
+        <td>[mg/L]</td>
+        <td><input id="cadmioEnero2" type="number" [(ngModel)]="cadmioEnero2" value="0" step="0.001" /></td>
+        <td><input id="cadmioFebrero2" type="number" [(ngModel)]="cadmioFebrero2" value="0" step="0.001" /></td>
+        <td><input id="cadmioMarzo2" type="number" [(ngModel)]="cadmioMarzo2" value="0" step="0.001" /></td>
+        <td><input id="cadmioAbril2" type="number" [(ngModel)]="cadmioAbril2" value="0" step="0.001" /></td>
+        <td><input id="cadmioMayo2" type="number" [(ngModel)]="cadmioMayo2" value="0" step="0.001" /></td>
+        <td><input id="cadmioJunio2" type="number" [(ngModel)]="cadmioJunio2" value="0" step="0.001" /></td>
+        <td><input id="cadmioJulio2" type="number" [(ngModel)]="cadmioJulio2" value="0" step="0.001" /></td>
+        <td><input id="cadmioAgosto2" type="number" [(ngModel)]="cadmioAgosto2" value="0" step="0.001" /></td>
+        <td><input id="cadmioSeptiembre2" type="number" [(ngModel)]="cadmioSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="cadmioOctubre2" type="number" [(ngModel)]="cadmioOctubre2" value="0" step="0.001" /></td>
+        <td><input id="cadmioNoviembre2" type="number" [(ngModel)]="cadmioNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="cadmioDiciembre2" type="number" [(ngModel)]="cadmioDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="cadmioMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cadmioMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cadmioPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>CROMO</td>
+        <td>Cr</td>
+        <td>[mg/L]</td>
+        <td><input id="cromoEnero2" type="number" [(ngModel)]="cromoEnero2" value="0" step="0.001" /></td>
+        <td><input id="cromoFebrero2" type="number" [(ngModel)]="cromoFebrero2" value="0" step="0.001" /></td>
+        <td><input id="cromoMarzo2" type="number" [(ngModel)]="cromoMarzo2" value="0" step="0.001" /></td>
+        <td><input id="cromoAbril2" type="number" [(ngModel)]="cromoAbril2" value="0" step="0.001" /></td>
+        <td><input id="cromoMayo2" type="number" [(ngModel)]="cromoMayo2" value="0" step="0.001" /></td>
+        <td><input id="cromoJunio2" type="number" [(ngModel)]="cromoJunio2" value="0" step="0.001" /></td>
+        <td><input id="cromoJulio2" type="number" [(ngModel)]="cromoJulio2" value="0" step="0.001" /></td>
+        <td><input id="cromoAgosto2" type="number" [(ngModel)]="cromoAgosto2" value="0" step="0.001" /></td>
+        <td><input id="cromoSeptiembre2" type="number" [(ngModel)]="cromoSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="cromoOctubre2" type="number" [(ngModel)]="cromoOctubre2" value="0" step="0.001" /></td>
+        <td><input id="cromoNoviembre2" type="number" [(ngModel)]="cromoNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="cromoDiciembre2" type="number" [(ngModel)]="cromoDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="cromoMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cromoMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cromoPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>COBRE</td>
+        <td>Cu</td>
+        <td>[mg/L]</td>
+        <td><input id="cobreEnero2" type="number" [(ngModel)]="cobreEnero2" value="0" step="0.001" /></td>
+        <td><input id="cobreFebrero2" type="number" [(ngModel)]="cobreFebrero2" value="0" step="0.001" /></td>
+        <td><input id="cobreMarzo2" type="number" [(ngModel)]="cobreMarzo2" value="0" step="0.001" /></td>
+        <td><input id="cobreAbril2" type="number" [(ngModel)]="cobreAbril2" value="0" step="0.001" /></td>
+        <td><input id="cobreMayo2" type="number" [(ngModel)]="cobreMayo2" value="0" step="0.001" /></td>
+        <td><input id="cobreJunio2" type="number" [(ngModel)]="cobreJunio2" value="0" step="0.001" /></td>
+        <td><input id="cobreJulio2" type="number" [(ngModel)]="cobreJulio2" value="0" step="0.001" /></td>
+        <td><input id="cobreAgosto2" type="number" [(ngModel)]="cobreAgosto2" value="0" step="0.001" /></td>
+        <td><input id="cobreSeptiembre2" type="number" [(ngModel)]="cobreSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="cobreOctubre2" type="number" [(ngModel)]="cobreOctubre2" value="0" step="0.001" /></td>
+        <td><input id="cobreNoviembre2" type="number" [(ngModel)]="cobreNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="cobreDiciembre2" type="number" [(ngModel)]="cobreDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="cobreMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cobreMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cobrePromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>MERCURIO</td>
+        <td>Hg</td>
+        <td>[mg/L]</td>
+        <td><input id="mercurioEnero2" type="number" [(ngModel)]="mercurioEnero2" value="0" step="0.001" /></td>
+        <td><input id="mercurioFebrero2" type="number" [(ngModel)]="mercurioFebrero2" value="0" step="0.001" /></td>
+        <td><input id="mercurioMarzo2" type="number" [(ngModel)]="mercurioMarzo2" value="0" step="0.001" /></td>
+        <td><input id="mercurioAbril2" type="number" [(ngModel)]="mercurioAbril2" value="0" step="0.001" /></td>
+        <td><input id="mercurioMayo2" type="number" [(ngModel)]="mercurioMayo2" value="0" step="0.001" /></td>
+        <td><input id="mercurioJunio2" type="number" [(ngModel)]="mercurioJunio2" value="0" step="0.001" /></td>
+        <td><input id="mercurioJulio2" type="number" [(ngModel)]="mercurioJulio2" value="0" step="0.001" /></td>
+        <td><input id="mercurioAgosto2" type="number" [(ngModel)]="mercurioAgosto2" value="0" step="0.001" /></td>
+        <td><input id="mercurioSeptiembre2" type="number" [(ngModel)]="mercurioSeptiembre2" value="0" step="0.001" />
+        </td>
+        <td><input id="mercurioOctubre2" type="number" [(ngModel)]="mercurioOctubre2" value="0" step="0.001" /></td>
+        <td><input id="mercurioNoviembre2" type="number" [(ngModel)]="mercurioNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="mercurioDiciembre2" type="number" [(ngModel)]="mercurioDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="mercurioMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="mercurioMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="mercurioPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>NIQUEL</td>
+        <td>Ni</td>
+        <td>[mg/L]</td>
+        <td><input id="niquelEnero2" type="number" [(ngModel)]="niquelEnero2" value="0" step="0.001" /></td>
+        <td><input id="niquelFebrero2" type="number" [(ngModel)]="niquelFebrero2" value="0" step="0.001" /></td>
+        <td><input id="niquelMarzo2" type="number" [(ngModel)]="niquelMarzo2" value="0" step="0.001" /></td>
+        <td><input id="niquelAbril2" type="number" [(ngModel)]="niquelAbril2" value="0" step="0.001" /></td>
+        <td><input id="niquelMayo2" type="number" [(ngModel)]="niquelMayo2" value="0" step="0.001" /></td>
+        <td><input id="niquelJunio2" type="number" [(ngModel)]="niquelJunio2" value="0" step="0.001" /></td>
+        <td><input id="niquelJulio2" type="number" [(ngModel)]="niquelJulio2" value="0" step="0.001" /></td>
+        <td><input id="niquelAgosto2" type="number" [(ngModel)]="niquelAgosto2" value="0" step="0.001" /></td>
+        <td><input id="niquelSeptiembre2" type="number" [(ngModel)]="niquelSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="niquelOctubre2" type="number" [(ngModel)]="niquelOctubre2" value="0" step="0.001" /></td>
+        <td><input id="niquelNoviembre2" type="number" [(ngModel)]="niquelNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="niquelDiciembre2" type="number" [(ngModel)]="niquelDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="niquelMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="niquelMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="niquelPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>PLOMO</td>
+        <td>Pb</td>
+        <td>[mg/L]</td>
+        <td><input id="plomoEnero2" type="number" [(ngModel)]="plomoEnero2" value="0" step="0.001" /></td>
+        <td><input id="plomoFebrero2" type="number" [(ngModel)]="plomoFebrero2" value="0" step="0.001" /></td>
+        <td><input id="plomoMarzo2" type="number" [(ngModel)]="plomoMarzo2" value="0" step="0.001" /></td>
+        <td><input id="plomoAbril2" type="number" [(ngModel)]="plomoAbril2" value="0" step="0.001" /></td>
+        <td><input id="plomoMayo2" type="number" [(ngModel)]="plomoMayo2" value="0" step="0.001" /></td>
+        <td><input id="plomoJunio2" type="number" [(ngModel)]="plomoJunio2" value="0" step="0.001" /></td>
+        <td><input id="plomoJulio2" type="number" [(ngModel)]="plomoJulio2" value="0" step="0.001" /></td>
+        <td><input id="plomoAgosto2" type="number" [(ngModel)]="plomoAgosto2" value="0" step="0.001" /></td>
+        <td><input id="plomoSeptiembre2" type="number" [(ngModel)]="plomoSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="plomoOctubre2" type="number" [(ngModel)]="plomoOctubre2" value="0" step="0.001" /></td>
+        <td><input id="plomoNoviembre2" type="number" [(ngModel)]="plomoNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="plomoDiciembre2" type="number" [(ngModel)]="plomoDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="plomoMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="plomoMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="plomoPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <!-- Fila para Zinc -->
+      <tr>
+        <td>ZINC</td>
+        <td>Zn</td>
+        <td>[mg/L]</td>
+        <td><input id="zincEnero2" type="number" [(ngModel)]="zincEnero2" value="0" step="0.001" /></td>
+        <td><input id="zincFebrero2" type="number" [(ngModel)]="zincFebrero2" value="0" step="0.001" /></td>
+        <td><input id="zincMarzo2" type="number" [(ngModel)]="zincMarzo2" value="0" step="0.001" /></td>
+        <td><input id="zincAbril2" type="number" [(ngModel)]="zincAbril2" value="0" step="0.001" /></td>
+        <td><input id="zincMayo2" type="number" [(ngModel)]="zincMayo2" value="0" step="0.001" /></td>
+        <td><input id="zincJunio2" type="number" [(ngModel)]="zincJunio2" value="0" step="0.001" /></td>
+        <td><input id="zincJulio2" type="number" [(ngModel)]="zincJulio2" value="0" step="0.001" /></td>
+        <td><input id="zincAgosto2" type="number" [(ngModel)]="zincAgosto2" value="0" step="0.001" /></td>
+        <td><input id="zincSeptiembre2" type="number" [(ngModel)]="zincSeptiembre2" value="0" step="0.001" /></td>
+        <td><input id="zincOctubre2" type="number" [(ngModel)]="zincOctubre2" value="0" step="0.001" /></td>
+        <td><input id="zincNoviembre2" type="number" [(ngModel)]="zincNoviembre2" value="0" step="0.001" /></td>
+        <td><input id="zincDiciembre2" type="number" [(ngModel)]="zincDiciembre2" value="0" step="0.001" /></td>
+        <td><input id="zincMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="zincMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="zincPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+
+      <!-- Fila para Pentaclorofenol -->
+      <tr>
+        <td>PENTACLOROFENOL</td>
+        <td>C6OHCL5</td>
+        <td>[mg/L]</td>
+        <td><input id="pentaclorofenolEnero2" type="number" [(ngModel)]="pentaclorofenolEnero2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolFebrero2" type="number" [(ngModel)]="pentaclorofenolFebrero2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolMarzo2" type="number" [(ngModel)]="pentaclorofenolMarzo2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolAbril2" type="number" [(ngModel)]="pentaclorofenolAbril2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolMayo2" type="number" [(ngModel)]="pentaclorofenolMayo2" value="0" step="0.001" />
+        </td>
+        <td><input id="pentaclorofenolJunio2" type="number" [(ngModel)]="pentaclorofenolJunio2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolJulio2" type="number" [(ngModel)]="pentaclorofenolJulio2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolAgosto2" type="number" [(ngModel)]="pentaclorofenolAgosto2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolSeptiembre2" type="number" [(ngModel)]="pentaclorofenolSeptiembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolOctubre2" type="number" [(ngModel)]="pentaclorofenolOctubre2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolNoviembre2" type="number" [(ngModel)]="pentaclorofenolNoviembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolDiciembre2" type="number" [(ngModel)]="pentaclorofenolDiciembre2" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolMin2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="pentaclorofenolMax2" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="pentaclorofenolPromedio2" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <h3>CALIDAD DE LAS AGUAS CONSUMIDA</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>PARÁMETRO</th>
+        <th>ABREVIACIÓN</th>
+        <th>UNIDAD</th>
+        <th>ENERO</th>
+        <th>FEBRERO</th>
+        <th>MARZO</th>
+        <th>ABRIL</th>
+        <th>MAYO</th>
+        <th>JUNIO</th>
+        <th>JULIO</th>
+        <th>AGOSTO</th>
+        <th>SEPTIEMBRE</th>
+        <th>OCTUBRE</th>
+        <th>NOVIEMBRE</th>
+        <th>DICIEMBRE</th>
+        <th>MIN</th>
+        <th>MAX</th>
+        <th>PROMEDIO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>NITRÓGENO TOTAL</td>
+        <td>N</td>
+        <td>[mg/L]</td>
+        <td><input id="nitrogenoEnero3" type="number" [(ngModel)]="nitrogenoEnero3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoFebrero3" type="number" [(ngModel)]="nitrogenoFebrero3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoMarzo3" type="number" [(ngModel)]="nitrogenoMarzo3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoAbril3" type="number" [(ngModel)]="nitrogenoAbril3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoMayo3" type="number" [(ngModel)]="nitrogenoMayo3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoJunio3" type="number" [(ngModel)]="nitrogenoJunio3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoJulio3" type="number" [(ngModel)]="nitrogenoJulio3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoAgosto3" type="number" [(ngModel)]="nitrogenoAgosto3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoSeptiembre3" type="number" [(ngModel)]="nitrogenoSeptiembre3" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoOctubre3" type="number" [(ngModel)]="nitrogenoOctubre3" value="0" step="0.001" /></td>
+        <td><input id="nitrogenoNoviembre3" type="number" [(ngModel)]="nitrogenoNoviembre3" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoDiciembre3" type="number" [(ngModel)]="nitrogenoDiciembre3" value="0" step="0.001" />
+        </td>
+        <td><input id="nitrogenoMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>NITRÓGENO TOTAL KJELDAHL</td>
+        <td>NTK</td>
+        <td>[mg/L]</td>
+        <td><input id="nitrogenoKjeldahlEnero3" type="number" [(ngModel)]="nitrogenoKjeldahlEnero3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlFebrero3" type="number" [(ngModel)]="nitrogenoKjeldahlFebrero3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlMarzo3" type="number" [(ngModel)]="nitrogenoKjeldahlMarzo3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlAbril3" type="number" [(ngModel)]="nitrogenoKjeldahlAbril3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlMayo3" type="number" [(ngModel)]="nitrogenoKjeldahlMayo3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlJunio3" type="number" [(ngModel)]="nitrogenoKjeldahlJunio3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlJulio3" type="number" [(ngModel)]="nitrogenoKjeldahlJulio3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlAgosto3" type="number" [(ngModel)]="nitrogenoKjeldahlAgosto3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlSeptiembre3" type="number" [(ngModel)]="nitrogenoKjeldahlSeptiembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlOctubre3" type="number" [(ngModel)]="nitrogenoKjeldahlOctubre3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlNoviembre3" type="number" [(ngModel)]="nitrogenoKjeldahlNoviembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlDiciembre3" type="number" [(ngModel)]="nitrogenoKjeldahlDiciembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="nitrogenoKjeldahlMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoKjeldahlMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="nitrogenoKjeldahlPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>FÓSFORO TOTAL</td>
+        <td>P</td>
+        <td>[mg/L]</td>
+        <td><input id="fosforoTotalEnero3" type="number" [(ngModel)]="fosforoTotalEnero3" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalFebrero3" type="number" [(ngModel)]="fosforoTotalFebrero3" value="0" step="0.001" />
+        </td>
+        <td><input id="fosforoTotalMarzo3" type="number" [(ngModel)]="fosforoTotalMarzo3" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalAbril3" type="number" [(ngModel)]="fosforoTotalAbril3" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalMayo3" type="number" [(ngModel)]="fosforoTotalMayo3" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalJunio3" type="number" [(ngModel)]="fosforoTotalJunio3" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalJulio3" type="number" [(ngModel)]="fosforoTotalJulio3" value="0" step="0.001" /></td>
+        <td><input id="fosforoTotalAgosto3" type="number" [(ngModel)]="fosforoTotalAgosto3" value="0" step="0.001" />
+        </td>
+        <td><input id="fosforoTotalSeptiembre3" type="number" [(ngModel)]="fosforoTotalSeptiembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="fosforoTotalOctubre3" type="number" [(ngModel)]="fosforoTotalOctubre3" value="0" step="0.001" />
+        </td>
+        <td><input id="fosforoTotalNoviembre3" type="number" [(ngModel)]="fosforoTotalNoviembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="fosforoTotalDiciembre3" type="number" [(ngModel)]="fosforoTotalDiciembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="fosforoTotalMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosforoTotalMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosforoTotalPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>FOSFATO</td>
+        <td>PO4</td>
+        <td>[mg/L]</td>
+        <td><input id="fosfatoEnero3" type="number" [(ngModel)]="fosfatoEnero3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoFebrero3" type="number" [(ngModel)]="fosfatoFebrero3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMarzo3" type="number" [(ngModel)]="fosfatoMarzo3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoAbril3" type="number" [(ngModel)]="fosfatoAbril3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMayo3" type="number" [(ngModel)]="fosfatoMayo3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoJunio3" type="number" [(ngModel)]="fosfatoJunio3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoJulio3" type="number" [(ngModel)]="fosfatoJulio3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoAgosto3" type="number" [(ngModel)]="fosfatoAgosto3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoSeptiembre3" type="number" [(ngModel)]="fosfatoSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoOctubre3" type="number" [(ngModel)]="fosfatoOctubre3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoNoviembre3" type="number" [(ngModel)]="fosfatoNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoDiciembre3" type="number" [(ngModel)]="fosfatoDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="fosfatoMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosfatoMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="fosfatoPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>DEMANDA QUÍMICA DE OXÍGENO</td>
+        <td>DQO</td>
+        <td>[mg/L]</td>
+        <td><input id="dqoEnero3" type="number" [(ngModel)]="dqoEnero3" value="0" step="0.001" /></td>
+        <td><input id="dqoFebrero3" type="number" [(ngModel)]="dqoFebrero3" value="0" step="0.001" /></td>
+        <td><input id="dqoMarzo3" type="number" [(ngModel)]="dqoMarzo3" value="0" step="0.001" /></td>
+        <td><input id="dqoAbril3" type="number" [(ngModel)]="dqoAbril3" value="0" step="0.001" /></td>
+        <td><input id="dqoMayo3" type="number" [(ngModel)]="dqoMayo3" value="0" step="0.001" /></td>
+        <td><input id="dqoJunio3" type="number" [(ngModel)]="dqoJunio3" value="0" step="0.001" /></td>
+        <td><input id="dqoJulio3" type="number" [(ngModel)]="dqoJulio3" value="0" step="0.001" /></td>
+        <td><input id="dqoAgosto3" type="number" [(ngModel)]="dqoAgosto3" value="0" step="0.001" /></td>
+        <td><input id="dqoSeptiembre3" type="number" [(ngModel)]="dqoSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="dqoOctubre3" type="number" [(ngModel)]="dqoOctubre3" value="0" step="0.001" /></td>
+        <td><input id="dqoNoviembre3" type="number" [(ngModel)]="dqoNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="dqoDiciembre3" type="number" [(ngModel)]="dqoDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="dqoMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dqoMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dqoPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>DEMANDA BIOLÓGICA DE OXÍGENO</td>
+        <td>DBO</td>
+        <td>[mg/L]</td>
+        <td><input id="dboEnero3" type="number" [(ngModel)]="dboEnero3" value="0" step="0.001" /></td>
+        <td><input id="dboFebrero3" type="number" [(ngModel)]="dboFebrero3" value="0" step="0.001" /></td>
+        <td><input id="dboMarzo3" type="number" [(ngModel)]="dboMarzo3" value="0" step="0.001" /></td>
+        <td><input id="dboAbril3" type="number" [(ngModel)]="dboAbril3" value="0" step="0.001" /></td>
+        <td><input id="dboMayo3" type="number" [(ngModel)]="dboMayo3" value="0" step="0.001" /></td>
+        <td><input id="dboJunio3" type="number" [(ngModel)]="dboJunio3" value="0" step="0.001" /></td>
+        <td><input id="dboJulio3" type="number" [(ngModel)]="dboJulio3" value="0" step="0.001" /></td>
+        <td><input id="dboAgosto3" type="number" [(ngModel)]="dboAgosto3" value="0" step="0.001" /></td>
+        <td><input id="dboSeptiembre3" type="number" [(ngModel)]="dboSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="dboOctubre3" type="number" [(ngModel)]="dboOctubre3" value="0" step="0.001" /></td>
+        <td><input id="dboNoviembre3" type="number" [(ngModel)]="dboNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="dboDiciembre3" type="number" [(ngModel)]="dboDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="dboMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dboMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="dboPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>ARSÉNICO</td>
+        <td>As</td>
+        <td>[mg/L]</td>
+        <td><input id="arsenicoEnero3" type="number" [(ngModel)]="arsenicoEnero3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoFebrero3" type="number" [(ngModel)]="arsenicoFebrero3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMarzo3" type="number" [(ngModel)]="arsenicoMarzo3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoAbril3" type="number" [(ngModel)]="arsenicoAbril3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMayo3" type="number" [(ngModel)]="arsenicoMayo3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoJunio3" type="number" [(ngModel)]="arsenicoJunio3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoJulio3" type="number" [(ngModel)]="arsenicoJulio3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoAgosto3" type="number" [(ngModel)]="arsenicoAgosto3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoSeptiembre3" type="number" [(ngModel)]="arsenicoSeptiembre3" value="0" step="0.001" />
+        </td>
+        <td><input id="arsenicoOctubre3" type="number" [(ngModel)]="arsenicoOctubre3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoNoviembre3" type="number" [(ngModel)]="arsenicoNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoDiciembre3" type="number" [(ngModel)]="arsenicoDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="arsenicoMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="arsenicoMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="arsenicoPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>CADMIO</td>
+        <td>Cd</td>
+        <td>[mg/L]</td>
+        <td><input id="cadmioEnero3" type="number" [(ngModel)]="cadmioEnero3" value="0" step="0.001" /></td>
+        <td><input id="cadmioFebrero3" type="number" [(ngModel)]="cadmioFebrero3" value="0" step="0.001" /></td>
+        <td><input id="cadmioMarzo3" type="number" [(ngModel)]="cadmioMarzo3" value="0" step="0.001" /></td>
+        <td><input id="cadmioAbril3" type="number" [(ngModel)]="cadmioAbril3" value="0" step="0.001" /></td>
+        <td><input id="cadmioMayo3" type="number" [(ngModel)]="cadmioMayo3" value="0" step="0.001" /></td>
+        <td><input id="cadmioJunio3" type="number" [(ngModel)]="cadmioJunio3" value="0" step="0.001" /></td>
+        <td><input id="cadmioJulio3" type="number" [(ngModel)]="cadmioJulio3" value="0" step="0.001" /></td>
+        <td><input id="cadmioAgosto3" type="number" [(ngModel)]="cadmioAgosto3" value="0" step="0.001" /></td>
+        <td><input id="cadmioSeptiembre3" type="number" [(ngModel)]="cadmioSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="cadmioOctubre3" type="number" [(ngModel)]="cadmioOctubre3" value="0" step="0.001" /></td>
+        <td><input id="cadmioNoviembre3" type="number" [(ngModel)]="cadmioNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="cadmioDiciembre3" type="number" [(ngModel)]="cadmioDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="cadmioMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cadmioMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cadmioPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>CROMO</td>
+        <td>Cr</td>
+        <td>[mg/L]</td>
+        <td><input id="cromoEnero3" type="number" [(ngModel)]="cromoEnero3" value="0" step="0.001" /></td>
+        <td><input id="cromoFebrero3" type="number" [(ngModel)]="cromoFebrero3" value="0" step="0.001" /></td>
+        <td><input id="cromoMarzo3" type="number" [(ngModel)]="cromoMarzo3" value="0" step="0.001" /></td>
+        <td><input id="cromoAbril3" type="number" [(ngModel)]="cromoAbril3" value="0" step="0.001" /></td>
+        <td><input id="cromoMayo3" type="number" [(ngModel)]="cromoMayo3" value="0" step="0.001" /></td>
+        <td><input id="cromoJunio3" type="number" [(ngModel)]="cromoJunio3" value="0" step="0.001" /></td>
+        <td><input id="cromoJulio3" type="number" [(ngModel)]="cromoJulio3" value="0" step="0.001" /></td>
+        <td><input id="cromoAgosto3" type="number" [(ngModel)]="cromoAgosto3" value="0" step="0.001" /></td>
+        <td><input id="cromoSeptiembre3" type="number" [(ngModel)]="cromoSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="cromoOctubre3" type="number" [(ngModel)]="cromoOctubre3" value="0" step="0.001" /></td>
+        <td><input id="cromoNoviembre3" type="number" [(ngModel)]="cromoNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="cromoDiciembre3" type="number" [(ngModel)]="cromoDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="cromoMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cromoMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cromoPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>COBRE</td>
+        <td>Cu</td>
+        <td>[mg/L]</td>
+        <td><input id="cobreEnero3" type="number" [(ngModel)]="cobreEnero3" value="0" step="0.001" /></td>
+        <td><input id="cobreFebrero3" type="number" [(ngModel)]="cobreFebrero3" value="0" step="0.001" /></td>
+        <td><input id="cobreMarzo3" type="number" [(ngModel)]="cobreMarzo3" value="0" step="0.001" /></td>
+        <td><input id="cobreAbril3" type="number" [(ngModel)]="cobreAbril3" value="0" step="0.001" /></td>
+        <td><input id="cobreMayo3" type="number" [(ngModel)]="cobreMayo3" value="0" step="0.001" /></td>
+        <td><input id="cobreJunio3" type="number" [(ngModel)]="cobreJunio3" value="0" step="0.001" /></td>
+        <td><input id="cobreJulio3" type="number" [(ngModel)]="cobreJulio3" value="0" step="0.001" /></td>
+        <td><input id="cobreAgosto3" type="number" [(ngModel)]="cobreAgosto3" value="0" step="0.001" /></td>
+        <td><input id="cobreSeptiembre3" type="number" [(ngModel)]="cobreSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="cobreOctubre3" type="number" [(ngModel)]="cobreOctubre3" value="0" step="0.001" /></td>
+        <td><input id="cobreNoviembre3" type="number" [(ngModel)]="cobreNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="cobreDiciembre3" type="number" [(ngModel)]="cobreDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="cobreMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cobreMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="cobrePromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>MERCURIO</td>
+        <td>Hg</td>
+        <td>[mg/L]</td>
+        <td><input id="mercurioEnero3" type="number" [(ngModel)]="mercurioEnero3" value="0" step="0.001" /></td>
+        <td><input id="mercurioFebrero3" type="number" [(ngModel)]="mercurioFebrero3" value="0" step="0.001" /></td>
+        <td><input id="mercurioMarzo3" type="number" [(ngModel)]="mercurioMarzo3" value="0" step="0.001" /></td>
+        <td><input id="mercurioAbril3" type="number" [(ngModel)]="mercurioAbril3" value="0" step="0.001" /></td>
+        <td><input id="mercurioMayo3" type="number" [(ngModel)]="mercurioMayo3" value="0" step="0.001" /></td>
+        <td><input id="mercurioJunio3" type="number" [(ngModel)]="mercurioJunio3" value="0" step="0.001" /></td>
+        <td><input id="mercurioJulio3" type="number" [(ngModel)]="mercurioJulio3" value="0" step="0.001" /></td>
+        <td><input id="mercurioAgosto3" type="number" [(ngModel)]="mercurioAgosto3" value="0" step="0.001" /></td>
+        <td><input id="mercurioSeptiembre3" type="number" [(ngModel)]="mercurioSeptiembre3" value="0" step="0.001" />
+        </td>
+        <td><input id="mercurioOctubre3" type="number" [(ngModel)]="mercurioOctubre3" value="0" step="0.001" /></td>
+        <td><input id="mercurioNoviembre3" type="number" [(ngModel)]="mercurioNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="mercurioDiciembre3" type="number" [(ngModel)]="mercurioDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="mercurioMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="mercurioMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="mercurioPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>NIQUEL</td>
+        <td>Ni</td>
+        <td>[mg/L]</td>
+        <td><input id="niquelEnero3" type="number" [(ngModel)]="niquelEnero3" value="0" step="0.001" /></td>
+        <td><input id="niquelFebrero3" type="number" [(ngModel)]="niquelFebrero3" value="0" step="0.001" /></td>
+        <td><input id="niquelMarzo3" type="number" [(ngModel)]="niquelMarzo3" value="0" step="0.001" /></td>
+        <td><input id="niquelAbril3" type="number" [(ngModel)]="niquelAbril3" value="0" step="0.001" /></td>
+        <td><input id="niquelMayo3" type="number" [(ngModel)]="niquelMayo3" value="0" step="0.001" /></td>
+        <td><input id="niquelJunio3" type="number" [(ngModel)]="niquelJunio3" value="0" step="0.001" /></td>
+        <td><input id="niquelJulio3" type="number" [(ngModel)]="niquelJulio3" value="0" step="0.001" /></td>
+        <td><input id="niquelAgosto3" type="number" [(ngModel)]="niquelAgosto3" value="0" step="0.001" /></td>
+        <td><input id="niquelSeptiembre3" type="number" [(ngModel)]="niquelSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="niquelOctubre3" type="number" [(ngModel)]="niquelOctubre3" value="0" step="0.001" /></td>
+        <td><input id="niquelNoviembre3" type="number" [(ngModel)]="niquelNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="niquelDiciembre3" type="number" [(ngModel)]="niquelDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="niquelMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="niquelMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="niquelPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <tr>
+        <td>PLOMO</td>
+        <td>Pb</td>
+        <td>[mg/L]</td>
+        <td><input id="plomoEnero3" type="number" [(ngModel)]="plomoEnero3" value="0" step="0.001" /></td>
+        <td><input id="plomoFebrero3" type="number" [(ngModel)]="plomoFebrero3" value="0" step="0.001" /></td>
+        <td><input id="plomoMarzo3" type="number" [(ngModel)]="plomoMarzo3" value="0" step="0.001" /></td>
+        <td><input id="plomoAbril3" type="number" [(ngModel)]="plomoAbril3" value="0" step="0.001" /></td>
+        <td><input id="plomoMayo3" type="number" [(ngModel)]="plomoMayo3" value="0" step="0.001" /></td>
+        <td><input id="plomoJunio3" type="number" [(ngModel)]="plomoJunio3" value="0" step="0.001" /></td>
+        <td><input id="plomoJulio3" type="number" [(ngModel)]="plomoJulio3" value="0" step="0.001" /></td>
+        <td><input id="plomoAgosto3" type="number" [(ngModel)]="plomoAgosto3" value="0" step="0.001" /></td>
+        <td><input id="plomoSeptiembre3" type="number" [(ngModel)]="plomoSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="plomoOctubre3" type="number" [(ngModel)]="plomoOctubre3" value="0" step="0.001" /></td>
+        <td><input id="plomoNoviembre3" type="number" [(ngModel)]="plomoNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="plomoDiciembre3" type="number" [(ngModel)]="plomoDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="plomoMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="plomoMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="plomoPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+      <!-- Fila para Zinc -->
+      <tr>
+        <td>ZINC</td>
+        <td>Zn</td>
+        <td>[mg/L]</td>
+        <td><input id="zincEnero3" type="number" [(ngModel)]="zincEnero3" value="0" step="0.001" /></td>
+        <td><input id="zincFebrero3" type="number" [(ngModel)]="zincFebrero3" value="0" step="0.001" /></td>
+        <td><input id="zincMarzo3" type="number" [(ngModel)]="zincMarzo3" value="0" step="0.001" /></td>
+        <td><input id="zincAbril3" type="number" [(ngModel)]="zincAbril3" value="0" step="0.001" /></td>
+        <td><input id="zincMayo3" type="number" [(ngModel)]="zincMayo3" value="0" step="0.001" /></td>
+        <td><input id="zincJunio3" type="number" [(ngModel)]="zincJunio3" value="0" step="0.001" /></td>
+        <td><input id="zincJulio3" type="number" [(ngModel)]="zincJulio3" value="0" step="0.001" /></td>
+        <td><input id="zincAgosto3" type="number" [(ngModel)]="zincAgosto3" value="0" step="0.001" /></td>
+        <td><input id="zincSeptiembre3" type="number" [(ngModel)]="zincSeptiembre3" value="0" step="0.001" /></td>
+        <td><input id="zincOctubre3" type="number" [(ngModel)]="zincOctubre3" value="0" step="0.001" /></td>
+        <td><input id="zincNoviembre3" type="number" [(ngModel)]="zincNoviembre3" value="0" step="0.001" /></td>
+        <td><input id="zincDiciembre3" type="number" [(ngModel)]="zincDiciembre3" value="0" step="0.001" /></td>
+        <td><input id="zincMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="zincMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="zincPromedio3" type="number" value="0" step="0.001" readonly /></td>
+      </tr>
+
+      <!-- Fila para Pentaclorofenol -->
+      <tr>
+        <td>PENTACLOROFENOL</td>
+        <td>C6OHCL5</td>
+        <td>[mg/L]</td>
+        <td><input id="pentaclorofenolEnero3" type="number" [(ngModel)]="pentaclorofenolEnero3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolFebrero3" type="number" [(ngModel)]="pentaclorofenolFebrero3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolMarzo3" type="number" [(ngModel)]="pentaclorofenolMarzo3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolAbril3" type="number" [(ngModel)]="pentaclorofenolAbril3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolMayo3" type="number" [(ngModel)]="pentaclorofenolMayo3" value="0" step="0.001" />
+        </td>
+        <td><input id="pentaclorofenolJunio3" type="number" [(ngModel)]="pentaclorofenolJunio3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolJulio3" type="number" [(ngModel)]="pentaclorofenolJulio3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolAgosto3" type="number" [(ngModel)]="pentaclorofenolAgosto3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolSeptiembre3" type="number" [(ngModel)]="pentaclorofenolSeptiembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolOctubre3" type="number" [(ngModel)]="pentaclorofenolOctubre3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolNoviembre3" type="number" [(ngModel)]="pentaclorofenolNoviembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolDiciembre3" type="number" [(ngModel)]="pentaclorofenolDiciembre3" value="0"
+            step="0.001" /></td>
+        <td><input id="pentaclorofenolMin3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="pentaclorofenolMax3" type="number" value="0" step="0.001" readonly /></td>
+        <td><input id="pentaclorofenolPromedio3" type="number" value="0" step="0.001" readonly /></td>
       </tr>
     </tbody>
   </table>
@@ -846,7 +1689,7 @@
   <div class="col-md-12 text-center mt-4">
     <button class="btn btn-secondary me-2" (click)="previousStep()">Anterior</button>
     <button class="btn btn-primary me-2" (click)="calcular()">Enviar</button>
-    <button class="btn btn-success" (click)="download()">Ver Resumen</button>
+    <!-- <button class="btn btn-success" (click)="download()" [disabled]="!isLoggedIn">Descargar</button> -->
   </div>
 
 </div>
