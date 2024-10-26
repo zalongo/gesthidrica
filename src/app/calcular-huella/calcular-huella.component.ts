@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { GoogleSheetsService } from '../services/google-sheets.service';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-calcular-huella',
@@ -886,7 +885,7 @@ export class CalcularHuellaComponent {
     pentaclorofenol3Promedio: number = 0;
 
     // Inyectar el servicio de Google Sheets en el constructor
-    constructor(private googleSheetsService: GoogleSheetsService, private router: Router) { }
+    constructor(private googleSheetsService: GoogleSheetsService) { }
 
     // Método para avanzar al siguiente paso
     nextStep() {
