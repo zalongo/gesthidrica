@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-resumen',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './resumen.component.html',
   styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent implements OnInit {
-  aguaSuperficialFuenteUso: string = '';
-  aguaSuperficialEnero: number = 0;
+
   data: any;
 
   constructor(private router: Router) { }
