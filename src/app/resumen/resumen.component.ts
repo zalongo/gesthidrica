@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
@@ -9,9 +10,18 @@ import autoTable from 'jspdf-autotable';
   templateUrl: './resumen.component.html',
   styleUrls: ['./resumen.component.css']
 })
-export class ResumenComponent {
+export class ResumenComponent implements OnInit {
   aguaSuperficialFuenteUso: string = '';
   aguaSuperficialEnero: number = 0;
+  data: any;
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    // Acceder a los datos pasados
+    this.data = history.state.data; // Obtener 'data' del estado de la navegación
+    console.log(this.data); // Verificar que los datos se recibieron correctamente
+  }
 
   generaPdf() {
     const doc = new jsPDF({
