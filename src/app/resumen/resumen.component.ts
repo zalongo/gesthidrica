@@ -7,53 +7,86 @@ import autoTable from 'jspdf-autotable';
   standalone: true,
   imports: [],
   templateUrl: './resumen.component.html',
-  styleUrls: ['./resumen.component.css'] // Corrige 'styleUrl' a 'styleUrls'
+  styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent {
-  // Aquí puedes definir las propiedades necesarias para la tabla
-  aguaSuperficialFuenteUso: string = ''; // Ejemplo de propiedad
-  aguaSuperficialEnero: number = 0; // Ejemplo de propiedad
-  // ... otras propiedades ...
+  aguaSuperficialFuenteUso: string = '';
+  aguaSuperficialEnero: number = 0;
 
-  // Método para generar el PDF
   generaPdf() {
     const doc = new jsPDF({
-      orientation: 'portrait', // o 'landscape' si prefieres
+      orientation: 'portrait',
       unit: 'mm',
-      format: [1050, 1485], // Ancho y alto del PDF
+      format: [1050, 1485],
       putOnlyUsedFonts: true,
-      floatPrecision: 16 // Precisión de punto flotante
+      floatPrecision: 16
     });
 
-    const tableData: string[][] = []; // Declarar el tipo explícito
+    const tableData: string[][] = [];
 
-    // Obtener las filas de la tabla
-    const rows = document.querySelectorAll('.table-responsive table tbody tr');
+    const rows = document.querySelectorAll('.tabla-inventario table tbody tr');
     rows.forEach(row => {
       const cols = row.querySelectorAll('td');
-      const rowData: string[] = []; // Declarar el tipo explícito
+      const rowData: string[] = [];
       cols.forEach(col => {
-        rowData.push(col.innerText); // Extraer el texto de cada celda
+        rowData.push(col.innerText);
       });
-      tableData.push(rowData); // Agregar la fila al array de datos
+      tableData.push(rowData);
     });
 
-    // Agregar encabezados de la tabla
+    const tipo = [
+      { content: "HUELLA DE AGUA DIRECTA", colSpan: 2, rowSpan: 2 },
+      { content: "INVENTARIO", colSpan: 19 },
+      { content: "PUNTO MEDIO", colSpan: 4 },
+      { content: "PUNTO FINAL", colSpan: 6 }
+    ];
     const headers = [
-      'Ubicación', 'Nombre Flujo de Agua', 'Entrada Agua Potable', 'Entrada Agua Pozo',
-      'Entrada Agua Superficial', 'Salida Agua Descargada', 'Salida Agua Infiltrada',
-      'Agua Dulce Consumida', 'Nitrógeno Total', 'Nitrógeno Total Kjeldahl',
-      'Fosfato', 'Demanda Química de Oxígeno', 'Demanda Biológica de Oxígeno',
-      'Arsénico', 'Cadmio', 'Cromo', 'Cobre', 'Níquel', 'Plomo', 'Zinc',
-      'Pentaclorofenol'
+      // INNVENATRIO
+      'Entrada Agua Potable', 'Entrada Agua Pozo', 'Entrada Agua Superficial',
+      'Salida Agua Descargada', 'Salida Agua Infiltrada', 'Agua Dulce Consumida',
+      'Nitrógeno Total', 'Nitrógeno Total Kjeldahl', 'Fosfato', 'Demanda Química de Oxígeno',
+      'Demanda Biológica de Oxígeno', 'Arsénico', 'Cadmio', 'Cromo', 'Cobre',
+      'Níquel', 'Plomo', 'Zinc', 'Pentaclorofenol',
+
+      // PUNTO MEDIO
+      'Available WAter REmaining_AWARE 100', 'TOXICIDAD HUMANA_TOTAL',
+      'ECOTOXICIDAD DE AGUA DULCE', ' EUTROFIZACIÓN DE AGUA DULCE ',
+
+      //PUNTO FINAL
+      'POTENCIALES IMPACTOS A LA SALUD HUMANA POR ESCASEZ DE AGUA DULCE', 'ENFERMEDADES CAUSADAS POR TOXICIDAD DE AGUA DULCE',
+      'DISMINUCIÓN DE LA BIODIVERSIDAD TERRESTRE DEBIDO AL CONSUMO DE AGUA DULCE', 'DISMINUCIÓN DE LA BIODIVERSIDAD DE PLANTAS TERRESTRES DEBIDO A LA EXTRACCIÓN DE AGUA SUBTERRÁNEA',
+      'ECOSISTEMAS ACUÁTICOS AFECTADOS POR ECOTOXICIDAD DE AGUA DULCE', ' ECOSISTEMAS ACUÁTICOS AFECTADOS POR EUTROFIZACIÓN DE AGUA DULCE'
+
+    ];
+    const units = [
+      'Ubicación', 'Nombre fllujo de agua',
+      //INVENTARIO
+      '[m3/UF]', '[m3/UF]', '[m3/UF]', '[m3/UF]', '[m3/UF]',
+      '[kg N/UF]', '[kg NKT/UF]', '[kg P/UF]', '[kg PO4/UF]',
+      '[kg DQO/UF]', '[kg DBO/UF]', '[kg As/UF]', '[kg Cd/UF]',
+      '[kg Cr/UF]', '[kg Cu/UF]', '[kg Hg/UF]', '[kg Ni/UF]',
+      '[kg Pb/UF]', '[kg Zn/UF]', '[kg C6OHCL5/UF]',
+      // PUNTO MEDIO
+      '[m3 eq. global/UF]', '[CTUh/UF] ', "'[CTUe/UF] ", '[kg Peq/UF] ',
+      //PUNTO FINAL
+      '[DALY/UF]', '[DALY/UF]', '[PDF*m2*año/UF]', '[PDF*m2*año/UF]', '[PDF*m2*año/UF]', '[PDF*m2*año/UF]'
     ];
 
-    // Generar la tabla en el PDF
+    const tfootData = [
+      [{ content: "TOTALES", colSpan: 2 }, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ]
+
     autoTable(doc, {
-      head: [headers],
+      head: [tipo, headers, units],
       body: tableData,
+      foot: tfootData, // Agregar el tfoot
+      styles: {
+        halign: 'center',
+        lineColor: [0, 0, 0],  // Color negro para los bordes de las celdas
+        lineWidth: 0.2         // Grosor de los bordes de las celdas
+      }
     });
 
-    doc.save('tabla_huella_agua.pdf'); // Nombre del archivo PDF
+    doc.save('tabla_huella_agua.pdf');
   }
 }

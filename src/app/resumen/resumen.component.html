@@ -1,393 +1,1508 @@
-<div class="container">
-  <div class="table-responsive">
-    <button id="generate-pdf" class="btn btn-primary" (click)="generaPdf()">Generar PDF</button>
-    <!-- Botón para generar PDF -->
-    <table class="table table-striped table-bordered table-success">
-      <thead>
-        <tr style="font-size: 12px;">
-          <th colspan="6" style="font-size: 20px;">HUELLA DE AGUA DIRECTA</th>
-          <!-- INVENTARIO -->
-          <td>ENTRADA AGUA POTABLE </td>
-          <td>ENTRADA AGUA POZO </td>
-          <td>ENTRADA AGUA SUPERFICIAL</td>
-          <td>SALIDA AGUA DESCARGADA</td>
-          <td>SALIDA AGUA INFILTRADA</td>
-          <td>AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)</td>
-          <td>NITRÓGENO TOTAL</td>
-          <td>NITRÓGENO TOTAL KJELDAHL</td>
-          <td>FOSFATO</td>
-          <td>DEMANDA QUÍMICA DE OXÍGENO</td>
-          <td>DEMANDA BIOLÓGICA DE OXÍGENO</td>
-          <td>ARSÉNICO</td>
-          <td>CADMIO</td>
-          <td>CROMO</td>
-          <td>COBRE</td>
-          <td>NIQUEL</td>
-          <td>PLOMO</td>
-          <td>ZINC</td>
-          <td>PENTACLOROFENOL</td>
-          <!-- INVENTARIO -->
-        </tr>
-        <tr style="font-size: 10px;">
-          <th style="height: 20px;">Ubicación</th>
-          <th style="height: 20px;" colspan="5">Nombre Flujo de Agua</th>
-          <!-- Ajuste de altura -->
-          <td style="height: 20px;">[m3/UF]</td>
-          <td style="height: 20px;">[m3/UF]</td>
-          <td style="height: 20px;">[m3/UF]</td>
-          <td style="height: 20px;">[m3/UF]</td>
-          <td style="height: 20px;">[kg N/UF]</td>
-          <td style="height: 20px;">[kg NKT/UF]</td>
-          <td style="height: 20px;">[kg P/UF]</td>
-          <td style="height: 20px;">[kg PO4/UF]</td>
-          <td style="height: 20px;">[kg DQO/UF]</td>
-          <td style="height: 20px;">[kg As/UF]</td>
-          <td style="height: 20px;">[kg Cd/UF]</td>
-          <td style="height: 20px;">[kg Cd/UF]</td>
-          <td style="height: 20px;">[kg Cr/UF]</td>
-          <td style="height: 20px;">[kg Cu/UF]</td>
-          <td style="height: 20px;">[kg Hg/UF]</td>
-          <td style="height: 20px;">[kg Ni/UF]</td>
-          <td style="height: 20px;">[kg Pb/UF]</td>
-          <td style="height: 20px;">[kg Zn/UF]</td>
-          <td style="height: 20px;">[kg C6OHCL5/UF]</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Ejemplo: Agua Potable - Casino y Servicios Sanitarios</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua Potable -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua Potable -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua Potable -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua Potable -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Ejemplo: Agua de Pozo - Lavado de Materias Primas</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td colspan="5">0</td>
-          <td>Ejemplo: Agua de Pozo - Limpieza de Equipos</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td colspan="5">0</td>
-          <td>Agua de Pozo -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua de Pozo -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua de Canal "Nombre del Canal" - Condensadores Evaporativos</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua de XXX "Indicar Nombre de XXX" -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua de XXX "Indicar Nombre de XXX" -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td colspan="5">Agua de XXX "Indicar Nombre de XXX" -</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td colspan="6">Total</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-
-    </table>
+<section id="resumen">
+  <div class="container arriba" style="display: flex; justify-content: space-between;">
+    <h1 class="titulo">HUELLA DE AGUA DIRECTA</h1>
+    <div class="tabla-uf">
+      <table style="border: 1px solid black; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: rgb(86, 220, 86); color: white;">
+            <!-- Cambiado el color de fondo a verde y el texto a blanco -->
+            <th style="border: 1px solid black;">UF: AÑO MEDIDO</th>
+            <th style="border: 1px solid black;">$12.345</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2" style="border: 1px solid black; color: rgb(86, 220, 86); font-weight: bold;">LOS RESULTADOS
+              ESTÁN EXPRESADOS
+              POR UNIDAD FUNCIONAL (UF)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+  <div class="container-fluid">
+    <h2 style="text-align: center;">HUELLA DE AGUA DIRECTA</h2>
+    <div class="tablas-entradas-agua">
+      <div class="tabla-inventario" style="text-align: center;">
+        <div style="overflow-x: auto;">
+          <table style="border: 1px solid black; border-collapse: collapse; margin: 0 auto;">
+            <thead>
+              <tr>
+                <th colspan="2" rowspan="2"
+                  style="border: 1px solid black; background-color: rgb(76, 163, 210); color: white; min-width: 250px; ">
+                  HUELLA DE AGUA DIRECTA
+                </th>
+                <th colspan="21"
+                  style="border: 1px solid black; background-color: rgb(13, 49, 73); color: white; min-width: 250px;">
+                  INVENTARIO
+                </th>
+                <th colspan="4"
+                  style="border: 1px solid black; background-color: rgb(255, 197, 90); color: white; min-width: 250px;">
+                  PUNTO
+                  MEDIO
+                </th>
+                <th colspan="10"
+                  style="border: 1px solid black; background-color: rgb(174, 219, 105); color: white; min-width: 250px;">
+                  PUNTO
+                  FINAL
+                </th>
+              </tr>
+              <!-- INVENTARIO -->
+              <tr>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA POTABLE</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA POZO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA SUPERFICIAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">SALIDA AGUA
+                  DESCARGADA</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">SALIDA AGUA
+                  INFILTRADA</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">AGUA DULCE
+                  CONSUMIDA (HUELLA AZUL - WFN)</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NITRÓGENO
+                  TOTAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NITRÓGENO
+                  TOTAL KJELDAHL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">FÓSFORO
+                  TOTAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">FOSFATO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">DEMANDA
+                  QUÍMICA DE OXÍGENO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">DEMANDA
+                  BIOLÓGICA DE OXÍGENO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ARSÉNICO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">CADMIO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">CROMO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">COBRE</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">MERCURIO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NIQUEL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">PLOMO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ZINC</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">
+                  PENTACLOROFENOL</th>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">Available
+                  WAter REmaining_AWARE 100</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">
+                  TOXICIDAD HUMANA_TOTAL
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(255, 197, 90);">
+                  ECOTOXICIDAD DE AGUA
+                  DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">
+                  EUTROFIZACIÓN DE AGUA
+                  DULCE </th>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">POTENCIALES
+                  IMPACTOS A LA SALUD HUMANA POR
+                  ESCASEZ DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ENFERMEDADES
+                  CAUSADAS POR TOXICIDAD DE AGUA DULCE
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  DISMINUCIÓN DE LA
+                  BIODIVERSIDAD TERRESTRE DEBIDO
+                  AL CONSUMO DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  DISMINUCIÓN DE LA
+                  BIODIVERSIDAD DE PLANTAS
+                  TERRESTRES DEBIDO A LA EXTRACCIÓN DE AGUA SUBTERRÁNEA </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ECOSISTEMAS
+                  ACUÁTICOS AFECTADOS POR ECOTOXICIDAD
+                  DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ECOSISTEMAS
+                  ACUÁTICOS AFECTADOS POR EUTROFIZACIÓN
+                  DE AGUA DULCE</th>
+                <!-- PUNTO FINAL -->
+
+              </tr>
+
+              <tr>
+                <th
+                  style="border: 1px solid black; min-width: 250px; background-color: rgb(76, 163, 210); color: white;">
+                  UBICACIÓN
+                </th>
+                <th
+                  style="border: 1px solid black; min-width: 250px; background-color: rgb(76, 163, 210); color: white;">
+                  NOMBRE FLUJO
+                  DE AGUA</th>
+
+                <!-- INVENTARIO -->
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg N/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg NKT/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg P/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg PO4/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg DQO/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg DBO/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg As/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Cd/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Cr/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Cu/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Hg/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Ni/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Pb/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Zn/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  C6OHCL5/UF]</th>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[m3 eq.
+                  global/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[CTUh/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">'[CTUe/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[kg Peq/UF]
+                </th>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">[DALY/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">[DALY/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <tr>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;">ENTRADAS DE AGUA</th>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+                <th colspan="31" style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <!-- EJEMPLO: AGUA POTABLE - CASINO Y SERVICIOS SANITARIOS  -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">EJEMPLO: AGUA POTABLE - CASINO Y SERVICIOS SANITARIOS </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA POTABLE - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA POTABLE - </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA POTABLE - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA POTABLE - </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA POTABLE - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA POTABLE - </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA POTABLE - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA POTABLE - </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA POTABLE - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA POTABLE - </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA POTABLE - -->
+              <!-- EJEMPLO: AGUA DE POZO - LAVADO DE MATERIAS PRIMAS -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA POTABLE - </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- EJEMPLO: AGUA DE POZO - LAVADO DE MATERIAS PRIMAS -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">EJEMPLO: AGUA DE POZO - LAVADO DE MATERIAS PRIMAS</td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- EJEMPLO: AGUA DE POZO - LIMPIEZA DE EQUIPOS -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">EJEMPLO: AGUA DE POZO - LIMPIEZA DE EQUIPOS</td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+
+              <!-- AGUA DE POZO -  -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA DE POZO - </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+
+              </tr>
+
+              <!-- AGUA DE POZO -  -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA DE POZO -
+                </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+
+              </tr>
+
+              <!-- AGUA DE POZO -  -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA DE POZO -
+                </td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- EJEMPLO: AGUA DE CANAL "NOMBRE DEL CANAL" - CONDENSADORES EVAPORATIVOS  -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">EJEMPLO: AGUA DE CANAL "NOMBRE DEL CANAL" - CONDENSADORES
+                  EVAPORATIVOS
+                </td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA DE XXX "INDICAR NOMBRE DE XXX" -  -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA DE XXX "INDICAR NOMBRE DE XXX" -
+                </td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA DE XXX "INDICAR NOMBRE DE XXX" - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA DE XXX "INDICAR NOMBRE DE XXX" -</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA DE XXX "INDICAR NOMBRE DE XXX" - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA DE XXX "INDICAR NOMBRE DE XXX" -</td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA DE XXX "INDICAR NOMBRE DE XXX" - -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA DE XXX "INDICAR NOMBRE DE XXX" -</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+
+              <!-- SALIDAS DE AGUA -->
+              <tr>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;">SALIDAS DE AGUA</th>
+                <th colspan="33" style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+              </tr>
+
+              <!-- EJEMPLO: DESCARGA PTAR - CANAL "NOMBRE DEL CANAL" -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">EJEMPLO: DESCARGA PTAR - CANAL "NOMBRE DEL CANAL"</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- PROCESO/EQUIPO QUE DESCARGA - NOMBRE CUERPO RECEPTOR -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">PROCESO/EQUIPO QUE DESCARGA - NOMBRE CUERPO RECEPTOR</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- EJEMPLO: INFILTRACIÓN AGUAS SERVIDAS TRATADAS - DREN DE AGUAS SERVIDAS -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">EJEMPLO: INFILTRACIÓN AGUAS SERVIDAS TRATADAS - DREN DE AGUAS
+                  SERVIDAS</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- AGUA QUE INFILTRA - PROCESO/EQUIPO QUE INFILTRA -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">AGUA QUE INFILTRA - PROCESO/EQUIPO QUE INFILTRA</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- EJEMPLO: AGUA EVAPORADA - CONDENSADORES EVAPORATIVOS -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">EJEMPLO: AGUA EVAPORADA - CONDENSADORES EVAPORATIVOS</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA -->
+              <tr>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">TIPO DE AGUA CONSUMIDA - PROCESO/EQUIPO QUE CONSUME EL AGUA</td>
+
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2" style="text-align: right; border: 1px solid black;"><strong>TOTALES</strong></td>
+
+                <!-- INVENTARIO -->
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+
+                <!-- PUNTO MEDIO -->
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+
+                <!-- PUNTO FINAL -->
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="abajo">
+  <button (click)="generaPdf()" id="download-pdf" style="margin: 20px auto; display: block;">Descargar PDF</button>
+</section>
 
 <script>
-  document.getElementById('generate-pdf').addEventListener('click', function () {
-    // Lógica para generar y descargar el PDF de la tabla
-    const element = document.querySelector('.container'); // Selecciona la tabla
-    html2pdf()
-      .from(element)
-      .save('tabla_huella_agua.pdf'); // Nombre del archivo PDF
-  });
+  // Asegúrate de que jsPDF esté importado correctamente
+  // <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
 
 </script>
