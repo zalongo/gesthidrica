@@ -2148,6 +2148,7 @@ export class CalcularHuellaComponent {
     // Método para cálculos adicionales si es necesario
 
     calcular() {
+
         const toxixidadHumana = {
             ARSENICO: 0.027669,
             CADMIO: 0.000429,
@@ -3291,8 +3292,8 @@ export class CalcularHuellaComponent {
                 {
                     categoria: "SALIDA AGUA DESCARGADA",
                     proceso: this.salidaAguaDescargadaProceso,
-                    total: this.salidaAguaDescargadaTotal,
-                    promedio: this.salidaAguaDescargadaPromedio,
+                    salidaAguaDescargadaTotal: this.salidaAguaDescargadaTotal,
+                    salidaAguaDescargadaPromedio: this.salidaAguaDescargadaPromedio,
                     toxixidadHumana: toxixidadHumana1,
                     ecotoxixidad: ecotoxixidad1,
                     eutrofizacion: eutrofizacion1,
@@ -3464,8 +3465,8 @@ export class CalcularHuellaComponent {
                 {
                     categoria: "SALIDA AGUA INFILTRADA",
                     proceso: this.salidaAguaInfiltradaProceso,
-                    total: this.salidaAguaInfiltradaTotal,
-                    promedio: this.salidaAguaInfiltradaPromedio,
+                    salidaAguaInfiltradaTotal: this.salidaAguaInfiltradaTotal,
+                    salidaAguaInfiltradaPromedio: this.salidaAguaInfiltradaPromedio,
                     toxixidadHumana: toxixidadHumana2,
                     ecotoxixidad: ecotoxixidad2,
                     eutrofizacion: eutrofizacion2,
@@ -3637,17 +3638,14 @@ export class CalcularHuellaComponent {
                 {
                     categoria: "AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)",
                     proceso: this.salidaAguaConsumidaProceso,
-                    total: this.salidaAguaConsumidaTotal,
-                    promedio: this.salidaAguaConsumidaPromedio,
-                    toxixidadHumana: '',
-                    ecotoxixidad: '',
-                    eutrofizacion: '',
-                    enfermedadesPorToxicidad: '',
-                    ecosistemasAcuaticosAfectadosPorEcotoxicidad: '',
-                    ecosistemasAcuaticosAfectadosPorEutrofizacion: '',
-                    availableWaterRemainingAware: this.salidaAguaConsumidaTotal * 0.000017256729214146,
-                    potencialesImpactosSalud: this.salidaAguaConsumidaTotal * 80.095291,
-                    disminuciónBiodiversidadTerrestre: this.salidaAguaConsumidaTotal * 0.266051,
+                    salidaAguaConsumidaTotal: this.salidaAguaConsumidaTotal,
+                    salidaAguaConsumidaPromedio: this.salidaAguaConsumidaPromedio,
+                    toxixidadHumana: toxixidadHumana3,
+                    ecotoxixidad: ecotoxixidad3,
+                    eutrofizacion: eutrofizacion3,
+                    enfermedadesPorToxicidad: enfermedadesPorToxicidad3,
+                    ecosistemasAcuaticosAfectadosPorEcotoxicidad: ecosistemasAcuaticosAfectadosPorEcotoxicidad3,
+                    ecosistemasAcuaticosAfectadosPorEutrofizacion: ecosistemasAcuaticosAfectadosPorEutrofizacion3,
 
                     calidad: [
                         {
@@ -3657,7 +3655,9 @@ export class CalcularHuellaComponent {
                             min: this.nitrogeno3Min,
                             max: this.nitrogeno3Max,
                             promedio: this.nitrogeno3Promedio,
-                            emisionContaminantes: ''
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.nitrogeno3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Nitrógeno Total Kjeldahl',
@@ -3666,7 +3666,10 @@ export class CalcularHuellaComponent {
                             min: this.nitrogenoKjeldahl3Min,
                             max: this.nitrogenoKjeldahl3Max,
                             promedio: this.nitrogenoKjeldahl3Promedio,
-                            emisionContaminantes: ''
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio *
+                                    this.nitrogenoKjeldahl3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Fósforo Total',
@@ -3675,7 +3678,10 @@ export class CalcularHuellaComponent {
                             min: this.fosforoTotal3Min,
                             max: this.fosforoTotal3Max,
                             promedio: this.fosforoTotal3Promedio,
-                            emisionContaminantes: ''
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio *
+                                    this.fosforoTotal3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Fosfato',
@@ -3684,7 +3690,9 @@ export class CalcularHuellaComponent {
                             min: this.fosfato3Min,
                             max: this.fosfato3Max,
                             promedio: this.fosfato3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.fosfato3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Demanda Química De Oxígeno',
@@ -3693,7 +3701,8 @@ export class CalcularHuellaComponent {
                             min: this.dqo3Min,
                             max: this.dqo3Max,
                             promedio: this.dqo3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.dqo3Promedio) / 1000,
                         },
                         {
                             parametro: 'Demanda Biológica De Oxígeno',
@@ -3702,7 +3711,8 @@ export class CalcularHuellaComponent {
                             min: this.dbo3Min,
                             max: this.dbo3Max,
                             promedio: this.dbo3Promedio,
-                            emisionContaminantes: ''
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.dbo3Promedio) / 1000,
                         },
                         {
                             parametro: 'Arsénico',
@@ -3711,7 +3721,9 @@ export class CalcularHuellaComponent {
                             min: this.arsenico3Min,
                             max: this.arsenico3Max,
                             promedio: this.arsenico3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.arsenico3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Cadmio',
@@ -3720,7 +3732,9 @@ export class CalcularHuellaComponent {
                             min: this.cadmio3Min,
                             max: this.cadmio3Max,
                             promedio: this.cadmio3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.cadmio3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Cromo',
@@ -3729,7 +3743,8 @@ export class CalcularHuellaComponent {
                             min: this.cromo3Min,
                             max: this.cromo3Max,
                             promedio: this.cromo3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.cromo3Promedio) / 1000,
                         },
                         {
                             parametro: 'Cobre',
@@ -3738,7 +3753,8 @@ export class CalcularHuellaComponent {
                             min: this.cobre3Min,
                             max: this.cobre3Max,
                             promedio: this.cobre3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.cobre3Promedio) / 1000,
                         },
                         {
                             parametro: 'Mercurio',
@@ -3747,7 +3763,9 @@ export class CalcularHuellaComponent {
                             min: this.mercurio3Min,
                             max: this.mercurio3Max,
                             promedio: this.mercurio3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.mercurio3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Niquel',
@@ -3756,7 +3774,9 @@ export class CalcularHuellaComponent {
                             min: this.niquel3Min,
                             max: this.niquel3Max,
                             promedio: this.niquel3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.niquel3Promedio) /
+                                1000,
                         },
                         {
                             parametro: 'Plomo',
@@ -3765,7 +3785,8 @@ export class CalcularHuellaComponent {
                             min: this.plomo3Min,
                             max: this.plomo3Max,
                             promedio: this.plomo3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.plomo3Promedio) / 1000,
                         },
                         {
                             parametro: 'Zinc',
@@ -3774,7 +3795,8 @@ export class CalcularHuellaComponent {
                             min: this.zinc3Min,
                             max: this.zinc3Max,
                             promedio: this.zinc3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio * this.zinc3Promedio) / 1000,
                         },
                         {
                             parametro: 'Pentaclorofenol',
@@ -3783,7 +3805,10 @@ export class CalcularHuellaComponent {
                             min: this.pentaclorofenol3Min,
                             max: this.pentaclorofenol3Max,
                             promedio: this.pentaclorofenol3Promedio,
-                            emisionContaminantes: '',
+                            emisionContaminantes:
+                                (this.salidaAguaConsumidaPromedio *
+                                    this.pentaclorofenol3Promedio) /
+                                1000,
                         },
                     ],
                 }
