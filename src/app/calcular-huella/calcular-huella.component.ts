@@ -884,7 +884,6 @@ export class CalcularHuellaComponent {
   pentaclorofenol3Max: number = 0;
   pentaclorofenol3Promedio: number = 0;
 
-
   // Inyectar el servicio de Google Sheets en el constructor
   constructor(private googleSheetsService: GoogleSheetsService) {
     this.calcularTotalesProduccion();
@@ -939,7 +938,6 @@ export class CalcularHuellaComponent {
     this.calculaPentaclorofenol1();
     this.calculaPentaclorofenol2();
     this.calculaPentaclorofenol3();
-
   }
 
   // Método para avanzar al siguiente paso
@@ -2147,6 +2145,541 @@ export class CalcularHuellaComponent {
   // Método para cálculos adicionales si es necesario
 
   calcular() {
+    const toxixidadHumana = {
+      ARSENICO: 0.027669,
+      CADMIO: 0.000429,
+      CROMO: 0.005332,
+      COBRE: 0.000001,
+      MERCURIO: 0.00012,
+      NIQUEL: 0.000038,
+      PLOMO: 0.0,
+      ZINC: 0.0,
+      PENTACLOROFENOL: 0.000021,
+    };
+
+    const ecotoxixidad = {
+      ARSENICO: 40400.0,
+      CADMIO: 9710.0,
+      CROMO: 53000.0,
+      COBRE: 55200.0,
+      MERCURIO: 22100.0,
+      NIQUEL: 14900.0,
+      PLOMO: 375.0,
+      ZINC: 38600.0,
+      PENTACLOROFENOL: 78700.0,
+    };
+
+    const eutrofizacion = {
+      FOSFORO: 1.0,
+      FOSFATO: 0.326797,
+      DQO: 0.00719,
+    };
+
+    const toxixidadHumanaFinal = {
+      ARSENICO: 0.077954,
+      CADMIO: 0.001171,
+      CROMO: 0.061212,
+      COBRE: 0.000002,
+      MERCURIO: 0.00138,
+      NIQUEL: 0.00044,
+      PLOMO: 0.000004,
+      ZINC: 0.0,
+      PENTACLOROFENOL: 0.000238,
+    };
+
+    const ecotoxixidadFinal = {
+      ARSENICO: 22.22,
+      CADMIO: 5.3405,
+      CROMO: 29.15,
+      COBRE: 30.36,
+      MERCURIO: 12.155,
+      NIQUEL: 8.195,
+      PLOMO: 0.20625,
+      ZINC: 21.23,
+      PENTACLOROFENOL: 43.285,
+    };
+
+    const eutrofizacionFinal = {
+      FOSFORO: 34.958282,
+      FOSFATO: 11.424275,
+      DQO: 0.251334,
+    };
+
+    let toxixidadHumanaArsenico1 =
+      (toxixidadHumana.ARSENICO *
+        (this.salidaAguaDescargadaTotal * this.arsenico1Promedio)) /
+      1000;
+    let toxixidadHumanaCadmio1 =
+      (toxixidadHumana.CADMIO *
+        (this.salidaAguaDescargadaTotal * this.cadmio1Promedio)) /
+      1000;
+    let toxixidadHumanaCromo1 =
+      (toxixidadHumana.CROMO *
+        (this.salidaAguaDescargadaTotal * this.cromo1Promedio)) /
+      1000;
+    let toxixidadHumanaCobre1 =
+      (toxixidadHumana.COBRE *
+        (this.salidaAguaDescargadaTotal * this.cobre1Promedio)) /
+      1000;
+    let toxixidadHumanaMercurio1 =
+      (toxixidadHumana.MERCURIO *
+        (this.salidaAguaDescargadaTotal * this.mercurio1Promedio)) /
+      1000;
+    let toxixidadHumanaNiquel1 =
+      (toxixidadHumana.NIQUEL *
+        (this.salidaAguaDescargadaTotal * this.niquel1Promedio)) /
+      1000;
+    let toxixidadHumanaPlomo1 =
+      (toxixidadHumana.PLOMO *
+        (this.salidaAguaDescargadaTotal * this.plomo1Promedio)) /
+      1000;
+    let toxixidadHumanaZinc1 =
+      (toxixidadHumana.ZINC *
+        (this.salidaAguaDescargadaTotal * this.zinc1Promedio)) /
+      1000;
+    let toxixidadHumanaPentaclorofenol1 =
+      (toxixidadHumana.PENTACLOROFENOL *
+        (this.salidaAguaDescargadaTotal * this.pentaclorofenol1Promedio)) /
+      1000;
+
+    let ecotoxixidadArsenico1 =
+      (ecotoxixidad.ARSENICO *
+        (this.salidaAguaDescargadaTotal * this.arsenico1Promedio)) /
+      1000;
+    let ecotoxixidadCadmio1 =
+      (ecotoxixidad.CADMIO *
+        (this.salidaAguaDescargadaTotal * this.cadmio1Promedio)) /
+      1000;
+    let ecotoxixidadCromo1 =
+      (ecotoxixidad.CROMO *
+        (this.salidaAguaDescargadaTotal * this.cromo1Promedio)) /
+      1000;
+    let ecotoxixidadCobre1 =
+      (ecotoxixidad.COBRE *
+        (this.salidaAguaDescargadaTotal * this.cobre1Promedio)) /
+      1000;
+    let ecotoxixidadMercurio1 =
+      (ecotoxixidad.MERCURIO *
+        (this.salidaAguaDescargadaTotal * this.mercurio1Promedio)) /
+      1000;
+    let ecotoxixidadNiquel1 =
+      (ecotoxixidad.NIQUEL *
+        (this.salidaAguaDescargadaTotal * this.niquel1Promedio)) /
+      1000;
+    let ecotoxixidadPlomo1 =
+      (ecotoxixidad.PLOMO *
+        (this.salidaAguaDescargadaTotal * this.plomo1Promedio)) /
+      1000;
+    let ecotoxixidadZinc1 =
+      (ecotoxixidad.ZINC *
+        (this.salidaAguaDescargadaTotal * this.zinc1Promedio)) /
+      1000;
+    let ecotoxixidadPentaclorofenol1 =
+      (ecotoxixidad.PENTACLOROFENOL *
+        (this.salidaAguaDescargadaTotal * this.pentaclorofenol1Promedio)) /
+      1000;
+
+    let eutrofizacionFosforo1 =
+      (eutrofizacion.FOSFORO *
+        (this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio)) /
+      1000;
+    let eutrofizacionDqo1 =
+      (eutrofizacion.DQO *
+        (this.salidaAguaDescargadaTotal * this.dqo1Promedio)) /
+      1000;
+
+    let toxixidadHumanaArsenico2 =
+      (toxixidadHumana.ARSENICO *
+        (this.salidaAguaInfiltradaTotal * this.arsenico2Promedio)) /
+      1000;
+    let toxixidadHumanaCadmio2 =
+      (toxixidadHumana.CADMIO *
+        (this.salidaAguaInfiltradaTotal * this.cadmio2Promedio)) /
+      1000;
+    let toxixidadHumanaCromo2 =
+      (toxixidadHumana.CROMO *
+        (this.salidaAguaInfiltradaTotal * this.cromo2Promedio)) /
+      1000;
+    let toxixidadHumanaCobre2 =
+      (toxixidadHumana.COBRE *
+        (this.salidaAguaInfiltradaTotal * this.cobre2Promedio)) /
+      1000;
+    let toxixidadHumanaMercurio2 =
+      (toxixidadHumana.MERCURIO *
+        (this.salidaAguaInfiltradaTotal * this.mercurio2Promedio)) /
+      1000;
+    let toxixidadHumanaNiquel2 =
+      (toxixidadHumana.NIQUEL *
+        (this.salidaAguaInfiltradaTotal * this.niquel2Promedio)) /
+      1000;
+    let toxixidadHumanaPlomo2 =
+      (toxixidadHumana.PLOMO *
+        (this.salidaAguaInfiltradaTotal * this.plomo2Promedio)) /
+      1000;
+    let toxixidadHumanaZinc2 =
+      (toxixidadHumana.ZINC *
+        (this.salidaAguaInfiltradaTotal * this.zinc2Promedio)) /
+      1000;
+    let toxixidadHumanaPentaclorofenol2 =
+      (toxixidadHumana.PENTACLOROFENOL *
+        (this.salidaAguaInfiltradaTotal * this.pentaclorofenol2Promedio)) /
+      1000;
+
+    let ecotoxixidadArsenico2 =
+      (ecotoxixidad.ARSENICO *
+        (this.salidaAguaInfiltradaTotal * this.arsenico2Promedio)) /
+      1000;
+    let ecotoxixidadCadmio2 =
+      (ecotoxixidad.CADMIO *
+        (this.salidaAguaInfiltradaTotal * this.cadmio2Promedio)) /
+      1000;
+    let ecotoxixidadCromo2 =
+      (ecotoxixidad.CROMO *
+        (this.salidaAguaInfiltradaTotal * this.cromo2Promedio)) /
+      1000;
+    let ecotoxixidadCobre2 =
+      (ecotoxixidad.COBRE *
+        (this.salidaAguaInfiltradaTotal * this.cobre2Promedio)) /
+      1000;
+    let ecotoxixidadMercurio2 =
+      (ecotoxixidad.MERCURIO *
+        (this.salidaAguaInfiltradaTotal * this.mercurio2Promedio)) /
+      1000;
+    let ecotoxixidadNiquel2 =
+      (ecotoxixidad.NIQUEL *
+        (this.salidaAguaInfiltradaTotal * this.niquel2Promedio)) /
+      1000;
+    let ecotoxixidadPlomo2 =
+      (ecotoxixidad.PLOMO *
+        (this.salidaAguaInfiltradaTotal * this.plomo2Promedio)) /
+      1000;
+    let ecotoxixidadZinc2 =
+      (ecotoxixidad.ZINC *
+        (this.salidaAguaInfiltradaTotal * this.zinc2Promedio)) /
+      1000;
+    let ecotoxixidadPentaclorofenol2 =
+      (ecotoxixidad.PENTACLOROFENOL *
+        (this.salidaAguaInfiltradaTotal * this.pentaclorofenol2Promedio)) /
+      1000;
+
+    let eutrofizacionFosforo2 =
+      (eutrofizacion.FOSFORO *
+        (this.salidaAguaInfiltradaTotal * this.fosforoTotal2Promedio)) /
+      1000;
+    let eutrofizacionDqo2 =
+      (eutrofizacion.DQO *
+        (this.salidaAguaInfiltradaTotal * this.dqo2Promedio)) /
+      1000;
+
+    let toxixidadHumanaArsenico3 =
+      (toxixidadHumana.ARSENICO *
+        (this.salidaAguaConsumidaTotal * this.arsenico3Promedio)) /
+      1000;
+    let toxixidadHumanaCadmio3 =
+      (toxixidadHumana.CADMIO *
+        (this.salidaAguaConsumidaTotal * this.cadmio3Promedio)) /
+      1000;
+    let toxixidadHumanaCromo3 =
+      (toxixidadHumana.CROMO *
+        (this.salidaAguaConsumidaTotal * this.cromo3Promedio)) /
+      1000;
+    let toxixidadHumanaCobre3 =
+      (toxixidadHumana.COBRE *
+        (this.salidaAguaConsumidaTotal * this.cobre3Promedio)) /
+      1000;
+    let toxixidadHumanaMercurio3 =
+      (toxixidadHumana.MERCURIO *
+        (this.salidaAguaConsumidaTotal * this.mercurio3Promedio)) /
+      1000;
+    let toxixidadHumanaNiquel3 =
+      (toxixidadHumana.NIQUEL *
+        (this.salidaAguaConsumidaTotal * this.niquel3Promedio)) /
+      1000;
+    let toxixidadHumanaPlomo3 =
+      (toxixidadHumana.PLOMO *
+        (this.salidaAguaConsumidaTotal * this.plomo3Promedio)) /
+      1000;
+    let toxixidadHumanaZinc3 =
+      (toxixidadHumana.ZINC *
+        (this.salidaAguaConsumidaTotal * this.zinc3Promedio)) /
+      1000;
+    let toxixidadHumanaPentaclorofenol3 =
+      (toxixidadHumana.PENTACLOROFENOL *
+        (this.salidaAguaConsumidaTotal * this.pentaclorofenol3Promedio)) /
+      1000;
+
+    let ecotoxixidadArsenico3 =
+      (ecotoxixidad.ARSENICO *
+        (this.salidaAguaConsumidaTotal * this.arsenico3Promedio)) /
+      1000;
+    let ecotoxixidadCadmio3 =
+      (ecotoxixidad.CADMIO *
+        (this.salidaAguaConsumidaTotal * this.cadmio3Promedio)) /
+      1000;
+    let ecotoxixidadCromo3 =
+      (ecotoxixidad.CROMO *
+        (this.salidaAguaConsumidaTotal * this.cromo3Promedio)) /
+      1000;
+    let ecotoxixidadCobre3 =
+      (ecotoxixidad.COBRE *
+        (this.salidaAguaConsumidaTotal * this.cobre3Promedio)) /
+      1000;
+    let ecotoxixidadMercurio3 =
+      (ecotoxixidad.MERCURIO *
+        (this.salidaAguaConsumidaTotal * this.mercurio3Promedio)) /
+      1000;
+    let ecotoxixidadNiquel3 =
+      (ecotoxixidad.NIQUEL *
+        (this.salidaAguaConsumidaTotal * this.niquel3Promedio)) /
+      1000;
+    let ecotoxixidadPlomo3 =
+      (ecotoxixidad.PLOMO *
+        (this.salidaAguaConsumidaTotal * this.plomo3Promedio)) /
+      1000;
+    let ecotoxixidadZinc3 =
+      (ecotoxixidad.ZINC *
+        (this.salidaAguaConsumidaTotal * this.zinc3Promedio)) /
+      1000;
+    let ecotoxixidadPentaclorofenol3 =
+      (ecotoxixidad.PENTACLOROFENOL *
+        (this.salidaAguaConsumidaTotal * this.pentaclorofenol3Promedio)) /
+      1000;
+
+    let eutrofizacionFosforo3 =
+      (eutrofizacion.FOSFORO *
+        (this.salidaAguaConsumidaTotal * this.fosforoTotal3Promedio)) /
+      1000;
+    let eutrofizacionDqo3 =
+      (eutrofizacion.DQO *
+        (this.salidaAguaConsumidaTotal * this.dqo3Promedio)) /
+      1000;
+
+    let toxixidadHumana1 =
+      toxixidadHumanaArsenico1 +
+      toxixidadHumanaCadmio1 +
+      toxixidadHumanaCromo1 +
+      toxixidadHumanaCobre1 +
+      toxixidadHumanaMercurio1 +
+      toxixidadHumanaNiquel1 +
+      toxixidadHumanaPlomo1 +
+      toxixidadHumanaZinc1 +
+      toxixidadHumanaPentaclorofenol1;
+    let ecotoxixidad1 =
+      ecotoxixidadArsenico1 +
+      ecotoxixidadCadmio1 +
+      ecotoxixidadCromo1 +
+      ecotoxixidadCobre1 +
+      ecotoxixidadMercurio1 +
+      ecotoxixidadNiquel1 +
+      ecotoxixidadPlomo1 +
+      ecotoxixidadZinc1 +
+      ecotoxixidadPentaclorofenol1;
+    let eutrofizacion1 = eutrofizacionFosforo1 + eutrofizacionDqo1;
+
+    let toxixidadHumana2 =
+      toxixidadHumanaArsenico2 +
+      toxixidadHumanaCadmio2 +
+      toxixidadHumanaCromo2 +
+      toxixidadHumanaCobre2 +
+      toxixidadHumanaMercurio2 +
+      toxixidadHumanaNiquel2 +
+      toxixidadHumanaPlomo2 +
+      toxixidadHumanaZinc2 +
+      toxixidadHumanaPentaclorofenol2;
+    let ecotoxixidad2 =
+      ecotoxixidadArsenico2 +
+      ecotoxixidadCadmio2 +
+      ecotoxixidadCromo2 +
+      ecotoxixidadCobre2 +
+      ecotoxixidadMercurio2 +
+      ecotoxixidadNiquel2 +
+      ecotoxixidadPlomo2 +
+      ecotoxixidadZinc2 +
+      ecotoxixidadPentaclorofenol2;
+    let eutrofizacion2 = eutrofizacionFosforo2 + eutrofizacionDqo2;
+
+    let toxixidadHumana3 =
+      toxixidadHumanaArsenico3 +
+      toxixidadHumanaCadmio3 +
+      toxixidadHumanaCromo3 +
+      toxixidadHumanaCobre3 +
+      toxixidadHumanaMercurio3 +
+      toxixidadHumanaNiquel3 +
+      toxixidadHumanaPlomo3 +
+      toxixidadHumanaZinc3 +
+      toxixidadHumanaPentaclorofenol3;
+    let ecotoxixidad3 =
+      ecotoxixidadArsenico3 +
+      ecotoxixidadCadmio3 +
+      ecotoxixidadCromo3 +
+      ecotoxixidadCobre3 +
+      ecotoxixidadMercurio3 +
+      ecotoxixidadNiquel3 +
+      ecotoxixidadPlomo3 +
+      ecotoxixidadZinc3 +
+      ecotoxixidadPentaclorofenol3;
+    let eutrofizacion3 = eutrofizacionFosforo3 + eutrofizacionDqo3;
+
+
+
+
+
+
+
+    let enfermedadesPorToxicidad1Arcenico1 =
+      (toxixidadHumanaFinal.ARSENICO *
+        (this.salidaAguaDescargadaTotal * this.arsenico1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cadmio1 =
+      (toxixidadHumanaFinal.CADMIO *
+        (this.salidaAguaDescargadaTotal * this.cadmio1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cromo1 =
+      (toxixidadHumanaFinal.CROMO *
+        (this.salidaAguaDescargadaTotal * this.cromo1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cobre1 =
+      (toxixidadHumanaFinal.COBRE *
+        (this.salidaAguaDescargadaTotal * this.cobre1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Mercurio1 =
+      (toxixidadHumanaFinal.MERCURIO *
+        (this.salidaAguaDescargadaTotal * this.mercurio1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Niquel1 =
+      (toxixidadHumanaFinal.NIQUEL *
+        (this.salidaAguaDescargadaTotal * this.niquel1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Plomo1 =
+      (toxixidadHumanaFinal.PLOMO *
+        (this.salidaAguaDescargadaTotal * this.plomo1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Zinc1 =
+      (toxixidadHumanaFinal.ZINC *
+        (this.salidaAguaDescargadaTotal * this.zinc1Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Pentaclorofenol1 =
+      (toxixidadHumanaFinal.PENTACLOROFENOL *
+        (this.salidaAguaDescargadaTotal * this.pentaclorofenol1Promedio)) /
+      1000;
+
+    let enfermedadesPorToxicidad1 =
+      enfermedadesPorToxicidad1Arcenico1 +
+      enfermedadesPorToxicidad1Cadmio1 +
+      enfermedadesPorToxicidad1Cromo1 +
+      enfermedadesPorToxicidad1Cobre1 +
+      enfermedadesPorToxicidad1Mercurio1 +
+      enfermedadesPorToxicidad1Niquel1 +
+      enfermedadesPorToxicidad1Plomo1 +
+      enfermedadesPorToxicidad1Zinc1 +
+      enfermedadesPorToxicidad1Pentaclorofenol1;
+
+    let ecosistemasAcuaticosAfectadosPorEcotoxicidad1 = ecotoxixidad1 * 0.00055;
+    let ecosistemasAcuaticosAfectadosPorEutrofizacion1 = eutrofizacion1 * 35.0;
+
+
+    let enfermedadesPorToxicidad1Arcenico2 =
+      (toxixidadHumanaFinal.ARSENICO *
+        (this.salidaAguaInfiltradaTotal * this.arsenico2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cadmio2 =
+      (toxixidadHumanaFinal.CADMIO *
+        (this.salidaAguaInfiltradaTotal * this.cadmio2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cromo2 =
+      (toxixidadHumanaFinal.CROMO *
+        (this.salidaAguaInfiltradaTotal * this.cromo2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cobre2 =
+      (toxixidadHumanaFinal.COBRE *
+        (this.salidaAguaInfiltradaTotal * this.cobre2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Mercurio2 =
+      (toxixidadHumanaFinal.MERCURIO *
+        (this.salidaAguaInfiltradaTotal * this.mercurio2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Niquel2 =
+      (toxixidadHumanaFinal.NIQUEL *
+        (this.salidaAguaInfiltradaTotal * this.niquel2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Plomo2 =
+      (toxixidadHumanaFinal.PLOMO *
+        (this.salidaAguaInfiltradaTotal * this.plomo2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Zinc2 =
+      (toxixidadHumanaFinal.ZINC *
+        (this.salidaAguaInfiltradaTotal * this.zinc2Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Pentaclorofenol2 =
+      (toxixidadHumanaFinal.PENTACLOROFENOL *
+        (this.salidaAguaInfiltradaTotal * this.pentaclorofenol2Promedio)) /
+      1000;
+
+    let enfermedadesPorToxicidad2 =
+      enfermedadesPorToxicidad1Arcenico2 +
+      enfermedadesPorToxicidad1Cadmio2 +
+      enfermedadesPorToxicidad1Cromo2 +
+      enfermedadesPorToxicidad1Cobre2 +
+      enfermedadesPorToxicidad1Mercurio2 +
+      enfermedadesPorToxicidad1Niquel2 +
+      enfermedadesPorToxicidad1Plomo2 +
+      enfermedadesPorToxicidad1Zinc2 +
+      enfermedadesPorToxicidad1Pentaclorofenol1;
+
+    let ecosistemasAcuaticosAfectadosPorEcotoxicidad2 = ecotoxixidad2 * 0.00055;
+    let ecosistemasAcuaticosAfectadosPorEutrofizacion2 = eutrofizacion2 * 35.0;
+
+    let enfermedadesPorToxicidad1Arcenico3 =
+      (toxixidadHumanaFinal.ARSENICO *
+        (this.salidaAguaConsumidaTotal * this.arsenico3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cadmio3 =
+      (toxixidadHumanaFinal.CADMIO *
+        (this.salidaAguaConsumidaTotal * this.cadmio3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cromo3 =
+      (toxixidadHumanaFinal.CROMO *
+        (this.salidaAguaConsumidaTotal * this.cromo3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Cobre3 =
+      (toxixidadHumanaFinal.COBRE *
+        (this.salidaAguaConsumidaTotal * this.cobre3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Mercurio3 =
+      (toxixidadHumanaFinal.MERCURIO *
+        (this.salidaAguaConsumidaTotal * this.mercurio3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Niquel3 =
+      (toxixidadHumanaFinal.NIQUEL *
+        (this.salidaAguaConsumidaTotal * this.niquel3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Plomo3 =
+      (toxixidadHumanaFinal.PLOMO *
+        (this.salidaAguaConsumidaTotal * this.plomo3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Zinc3 =
+      (toxixidadHumanaFinal.ZINC *
+        (this.salidaAguaConsumidaTotal * this.zinc3Promedio)) /
+      1000;
+    let enfermedadesPorToxicidad1Pentaclorofenol3 =
+      (toxixidadHumanaFinal.PENTACLOROFENOL *
+        (this.salidaAguaConsumidaTotal * this.pentaclorofenol3Promedio)) /
+      1000;
+
+    let enfermedadesPorToxicidad3 =
+      enfermedadesPorToxicidad1Arcenico3 +
+      enfermedadesPorToxicidad1Cadmio3 +
+      enfermedadesPorToxicidad1Cromo3 +
+      enfermedadesPorToxicidad1Cobre3 +
+      enfermedadesPorToxicidad1Mercurio3 +
+      enfermedadesPorToxicidad1Niquel3 +
+      enfermedadesPorToxicidad1Plomo3 +
+      enfermedadesPorToxicidad1Zinc3 +
+      enfermedadesPorToxicidad1Pentaclorofenol1;
+
+    let ecosistemasAcuaticosAfectadosPorEcotoxicidad3 = ecotoxixidad3 * 0.00055;
+    let ecosistemasAcuaticosAfectadosPorEutrofizacion3 = eutrofizacion3 * 35.0;
+
     const data = {
       datosMedicion: {
         medicionHuella: this.medicionHuella,
@@ -2194,11 +2727,19 @@ export class CalcularHuellaComponent {
           aguaSuperficialPromedio: this.aguaSuperficialPromedio,
         },
       ],
+
       salidaAguaDescargada: [
         {
           proceso: this.salidaAguaDescargadaProceso,
           salidaAguaDescargadaTotal: this.salidaAguaDescargadaTotal,
           salidaAguaDescargadaPromedio: this.salidaAguaDescargadaPromedio,
+          toxixidadHumana: toxixidadHumana1,
+          ecotoxixidad: ecotoxixidad1,
+          eutrofizacion: eutrofizacion1,
+          enfermedadesPorToxicidad: enfermedadesPorToxicidad1,
+          ecosistemasAcuaticosAfectadosPorEcotoxicidad: ecosistemasAcuaticosAfectadosPorEcotoxicidad1,
+          ecosistemasAcuaticosAfectadosPorEutrofizacion: ecosistemasAcuaticosAfectadosPorEutrofizacion1,
+
           calidad: [
             {
               parametro: 'Nitrógeno Total',
@@ -2207,6 +2748,9 @@ export class CalcularHuellaComponent {
               min: this.nitrogeno1Min,
               max: this.nitrogeno1Max,
               promedio: this.nitrogeno1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.nitrogeno1Promedio) /
+                1000,
             },
             {
               parametro: 'Nitrógeno Total Kjeldahl',
@@ -2215,6 +2759,10 @@ export class CalcularHuellaComponent {
               min: this.nitrogenoKjeldahl1Min,
               max: this.nitrogenoKjeldahl1Max,
               promedio: this.nitrogenoKjeldahl1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal *
+                  this.nitrogenoKjeldahl1Promedio) /
+                1000,
             },
             {
               parametro: 'Fósforo Total',
@@ -2223,6 +2771,9 @@ export class CalcularHuellaComponent {
               min: this.fosforoTotal1Min,
               max: this.fosforoTotal1Max,
               promedio: this.fosforoTotal1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio) /
+                1000,
             },
             {
               parametro: 'Fosfato',
@@ -2231,6 +2782,8 @@ export class CalcularHuellaComponent {
               min: this.fosfato1Min,
               max: this.fosfato1Max,
               promedio: this.fosfato1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.fosfato1Promedio) / 1000,
             },
             {
               parametro: 'Demanda Química De Oxígeno',
@@ -2239,6 +2792,8 @@ export class CalcularHuellaComponent {
               min: this.dqo1Min,
               max: this.dqo1Max,
               promedio: this.dqo1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.dqo1Promedio) / 1000,
             },
             {
               parametro: 'Demanda Biológica De Oxígeno',
@@ -2247,6 +2802,8 @@ export class CalcularHuellaComponent {
               min: this.dbo1Min,
               max: this.dbo1Max,
               promedio: this.dbo1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.dbo1Promedio) / 1000,
             },
             {
               parametro: 'Arsénico',
@@ -2255,6 +2812,9 @@ export class CalcularHuellaComponent {
               min: this.arsenico1Min,
               max: this.arsenico1Max,
               promedio: this.arsenico1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.arsenico1Promedio) /
+                1000,
             },
             {
               parametro: 'Cadmio',
@@ -2263,6 +2823,8 @@ export class CalcularHuellaComponent {
               min: this.cadmio1Min,
               max: this.cadmio1Max,
               promedio: this.cadmio1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.cadmio1Promedio) / 1000,
             },
             {
               parametro: 'Cromo',
@@ -2271,6 +2833,8 @@ export class CalcularHuellaComponent {
               min: this.cromo1Min,
               max: this.cromo1Max,
               promedio: this.cromo1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.cromo1Promedio) / 1000,
             },
             {
               parametro: 'Cobre',
@@ -2279,6 +2843,8 @@ export class CalcularHuellaComponent {
               min: this.cobre1Min,
               max: this.cobre1Max,
               promedio: this.cobre1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.cobre1Promedio) / 1000,
             },
             {
               parametro: 'Mercurio',
@@ -2287,6 +2853,9 @@ export class CalcularHuellaComponent {
               min: this.mercurio1Min,
               max: this.mercurio1Max,
               promedio: this.mercurio1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.mercurio1Promedio) /
+                1000,
             },
             {
               parametro: 'Niquel',
@@ -2295,6 +2864,8 @@ export class CalcularHuellaComponent {
               min: this.niquel1Min,
               max: this.niquel1Max,
               promedio: this.niquel1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.niquel1Promedio) / 1000,
             },
             {
               parametro: 'Plomo',
@@ -2303,6 +2874,8 @@ export class CalcularHuellaComponent {
               min: this.plomo1Min,
               max: this.plomo1Max,
               promedio: this.plomo1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.plomo1Promedio) / 1000,
             },
             {
               parametro: 'Zinc',
@@ -2311,6 +2884,8 @@ export class CalcularHuellaComponent {
               min: this.zinc1Min,
               max: this.zinc1Max,
               promedio: this.zinc1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal * this.zinc1Promedio) / 1000,
             },
             {
               parametro: 'Pentaclorofenol',
@@ -2319,6 +2894,10 @@ export class CalcularHuellaComponent {
               min: this.pentaclorofenol1Min,
               max: this.pentaclorofenol1Max,
               promedio: this.pentaclorofenol1Promedio,
+              emisionContaminantes:
+                (this.salidaAguaDescargadaTotal *
+                  this.pentaclorofenol1Promedio) /
+                1000,
             },
           ],
         },
@@ -2328,6 +2907,13 @@ export class CalcularHuellaComponent {
           proceso: this.salidaAguaInfiltradaProceso,
           salidaAguaInfiltradaTotal: this.salidaAguaInfiltradaTotal,
           salidaAguaInfiltradaPromedio: this.salidaAguaInfiltradaPromedio,
+          toxixidadHumana: toxixidadHumana2,
+          ecotoxixidad: ecotoxixidad2,
+          eutrofizacion: eutrofizacion2,
+          enfermedadesPorToxicidad: enfermedadesPorToxicidad2,
+          ecosistemasAcuaticosAfectadosPorEcotoxicidad: ecosistemasAcuaticosAfectadosPorEcotoxicidad2,
+          ecosistemasAcuaticosAfectadosPorEutrofizacion: ecosistemasAcuaticosAfectadosPorEutrofizacion2,
+
           calidad: [
             {
               parametro: 'Nitrógeno Total',
@@ -2336,6 +2922,9 @@ export class CalcularHuellaComponent {
               min: this.nitrogeno2Min,
               max: this.nitrogeno2Max,
               promedio: this.nitrogeno2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.nitrogeno2Promedio) /
+                1000,
             },
             {
               parametro: 'Nitrógeno Total Kjeldahl',
@@ -2344,6 +2933,10 @@ export class CalcularHuellaComponent {
               min: this.nitrogenoKjeldahl2Min,
               max: this.nitrogenoKjeldahl2Max,
               promedio: this.nitrogenoKjeldahl2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal *
+                  this.nitrogenoKjeldahl2Promedio) /
+                1000,
             },
             {
               parametro: 'Fósforo Total',
@@ -2352,6 +2945,9 @@ export class CalcularHuellaComponent {
               min: this.fosforoTotal2Min,
               max: this.fosforoTotal2Max,
               promedio: this.fosforoTotal2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.fosforoTotal2Promedio) /
+                1000,
             },
             {
               parametro: 'Fosfato',
@@ -2360,6 +2956,8 @@ export class CalcularHuellaComponent {
               min: this.fosfato2Min,
               max: this.fosfato2Max,
               promedio: this.fosfato2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.fosfato2Promedio) / 1000,
             },
             {
               parametro: 'Demanda Química De Oxígeno',
@@ -2368,6 +2966,8 @@ export class CalcularHuellaComponent {
               min: this.dqo2Min,
               max: this.dqo2Max,
               promedio: this.dqo2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.dqo2Promedio) / 1000,
             },
             {
               parametro: 'Demanda Biológica De Oxígeno',
@@ -2376,6 +2976,8 @@ export class CalcularHuellaComponent {
               min: this.dbo2Min,
               max: this.dbo2Max,
               promedio: this.dbo2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.dbo2Promedio) / 1000,
             },
             {
               parametro: 'Arsénico',
@@ -2384,6 +2986,9 @@ export class CalcularHuellaComponent {
               min: this.arsenico2Min,
               max: this.arsenico2Max,
               promedio: this.arsenico2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.arsenico2Promedio) /
+                1000,
             },
             {
               parametro: 'Cadmio',
@@ -2392,6 +2997,8 @@ export class CalcularHuellaComponent {
               min: this.cadmio2Min,
               max: this.cadmio2Max,
               promedio: this.cadmio2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.cadmio2Promedio) / 1000,
             },
             {
               parametro: 'Cromo',
@@ -2400,6 +3007,8 @@ export class CalcularHuellaComponent {
               min: this.cromo2Min,
               max: this.cromo2Max,
               promedio: this.cromo2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.cromo2Promedio) / 1000,
             },
             {
               parametro: 'Cobre',
@@ -2408,6 +3017,8 @@ export class CalcularHuellaComponent {
               min: this.cobre2Min,
               max: this.cobre2Max,
               promedio: this.cobre2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.cobre2Promedio) / 1000,
             },
             {
               parametro: 'Mercurio',
@@ -2416,6 +3027,9 @@ export class CalcularHuellaComponent {
               min: this.mercurio2Min,
               max: this.mercurio2Max,
               promedio: this.mercurio2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.mercurio2Promedio) /
+                1000,
             },
             {
               parametro: 'Niquel',
@@ -2424,6 +3038,8 @@ export class CalcularHuellaComponent {
               min: this.niquel2Min,
               max: this.niquel2Max,
               promedio: this.niquel2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.niquel2Promedio) / 1000,
             },
             {
               parametro: 'Plomo',
@@ -2432,6 +3048,8 @@ export class CalcularHuellaComponent {
               min: this.plomo2Min,
               max: this.plomo2Max,
               promedio: this.plomo2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.plomo2Promedio) / 1000,
             },
             {
               parametro: 'Zinc',
@@ -2440,6 +3058,8 @@ export class CalcularHuellaComponent {
               min: this.zinc2Min,
               max: this.zinc2Max,
               promedio: this.zinc2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal * this.zinc2Promedio) / 1000,
             },
             {
               parametro: 'Pentaclorofenol',
@@ -2448,6 +3068,10 @@ export class CalcularHuellaComponent {
               min: this.pentaclorofenol2Min,
               max: this.pentaclorofenol2Max,
               promedio: this.pentaclorofenol2Promedio,
+              emisionContaminantes:
+                (this.salidaAguaInfiltradaTotal *
+                  this.pentaclorofenol2Promedio) /
+                1000,
             },
           ],
         },
@@ -2457,6 +3081,13 @@ export class CalcularHuellaComponent {
           proceso: this.salidaAguaConsumidaProceso,
           salidaAguaConsumidaTotal: this.salidaAguaConsumidaTotal,
           salidaAguaConsumidaPromedio: this.salidaAguaConsumidaPromedio,
+          toxixidadHumana: toxixidadHumana3,
+          ecotoxixidad: ecotoxixidad3,
+          eutrofizacion: eutrofizacion3,
+          enfermedadesPorToxicidad: enfermedadesPorToxicidad3,
+          ecosistemasAcuaticosAfectadosPorEcotoxicidad: ecosistemasAcuaticosAfectadosPorEcotoxicidad3,
+          ecosistemasAcuaticosAfectadosPorEutrofizacion: ecosistemasAcuaticosAfectadosPorEutrofizacion3,
+
           calidad: [
             {
               parametro: 'Nitrógeno Total',
@@ -2465,6 +3096,9 @@ export class CalcularHuellaComponent {
               min: this.nitrogeno3Min,
               max: this.nitrogeno3Max,
               promedio: this.nitrogeno3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.nitrogeno3Promedio) /
+                1000,
             },
             {
               parametro: 'Nitrógeno Total Kjeldahl',
@@ -2473,6 +3107,10 @@ export class CalcularHuellaComponent {
               min: this.nitrogenoKjeldahl3Min,
               max: this.nitrogenoKjeldahl3Max,
               promedio: this.nitrogenoKjeldahl3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio *
+                  this.nitrogenoKjeldahl3Promedio) /
+                1000,
             },
             {
               parametro: 'Fósforo Total',
@@ -2481,6 +3119,10 @@ export class CalcularHuellaComponent {
               min: this.fosforoTotal3Min,
               max: this.fosforoTotal3Max,
               promedio: this.fosforoTotal3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio *
+                  this.fosforoTotal3Promedio) /
+                1000,
             },
             {
               parametro: 'Fosfato',
@@ -2489,6 +3131,9 @@ export class CalcularHuellaComponent {
               min: this.fosfato3Min,
               max: this.fosfato3Max,
               promedio: this.fosfato3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.fosfato3Promedio) /
+                1000,
             },
             {
               parametro: 'Demanda Química De Oxígeno',
@@ -2497,6 +3142,8 @@ export class CalcularHuellaComponent {
               min: this.dqo3Min,
               max: this.dqo3Max,
               promedio: this.dqo3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.dqo3Promedio) / 1000,
             },
             {
               parametro: 'Demanda Biológica De Oxígeno',
@@ -2505,6 +3152,8 @@ export class CalcularHuellaComponent {
               min: this.dbo3Min,
               max: this.dbo3Max,
               promedio: this.dbo3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.dbo3Promedio) / 1000,
             },
             {
               parametro: 'Arsénico',
@@ -2513,6 +3162,9 @@ export class CalcularHuellaComponent {
               min: this.arsenico3Min,
               max: this.arsenico3Max,
               promedio: this.arsenico3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.arsenico3Promedio) /
+                1000,
             },
             {
               parametro: 'Cadmio',
@@ -2521,6 +3173,9 @@ export class CalcularHuellaComponent {
               min: this.cadmio3Min,
               max: this.cadmio3Max,
               promedio: this.cadmio3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.cadmio3Promedio) /
+                1000,
             },
             {
               parametro: 'Cromo',
@@ -2529,6 +3184,8 @@ export class CalcularHuellaComponent {
               min: this.cromo3Min,
               max: this.cromo3Max,
               promedio: this.cromo3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.cromo3Promedio) / 1000,
             },
             {
               parametro: 'Cobre',
@@ -2537,6 +3194,8 @@ export class CalcularHuellaComponent {
               min: this.cobre3Min,
               max: this.cobre3Max,
               promedio: this.cobre3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.cobre3Promedio) / 1000,
             },
             {
               parametro: 'Mercurio',
@@ -2545,6 +3204,9 @@ export class CalcularHuellaComponent {
               min: this.mercurio3Min,
               max: this.mercurio3Max,
               promedio: this.mercurio3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.mercurio3Promedio) /
+                1000,
             },
             {
               parametro: 'Niquel',
@@ -2553,6 +3215,9 @@ export class CalcularHuellaComponent {
               min: this.niquel3Min,
               max: this.niquel3Max,
               promedio: this.niquel3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.niquel3Promedio) /
+                1000,
             },
             {
               parametro: 'Plomo',
@@ -2561,6 +3226,8 @@ export class CalcularHuellaComponent {
               min: this.plomo3Min,
               max: this.plomo3Max,
               promedio: this.plomo3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.plomo3Promedio) / 1000,
             },
             {
               parametro: 'Zinc',
@@ -2569,6 +3236,8 @@ export class CalcularHuellaComponent {
               min: this.zinc3Min,
               max: this.zinc3Max,
               promedio: this.zinc3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio * this.zinc3Promedio) / 1000,
             },
             {
               parametro: 'Pentaclorofenol',
@@ -2577,6 +3246,10 @@ export class CalcularHuellaComponent {
               min: this.pentaclorofenol3Min,
               max: this.pentaclorofenol3Max,
               promedio: this.pentaclorofenol3Promedio,
+              emisionContaminantes:
+                (this.salidaAguaConsumidaPromedio *
+                  this.pentaclorofenol3Promedio) /
+                1000,
             },
           ],
         },
