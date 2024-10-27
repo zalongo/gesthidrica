@@ -224,7 +224,7 @@
 
               <!-- ENTRADA DE AGUA  -->
               <tr *ngFor="let entradaDeAgua of data.entrasdaDeAgua">
-                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">{{ data.datosEmpresa.ubicacionMedidaC }}</td>
                 <td style="border: 1px solid black;">{{ entradaDeAgua.fuente }}</td>
 
                 <!-- INVENTARIO -->
@@ -281,7 +281,7 @@
               </tr>
 
               <tr *ngFor="let salidaDeAgua of data.salidasDeAgua">
-                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">{{ data.datosEmpresa.ubicacionMedidaC }}</td>
                 <td style="border: 1px solid black;">{{ salidaDeAgua.proceso }}</td>
 
                 <!-- INVENTARIO -->

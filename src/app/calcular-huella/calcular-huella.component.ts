@@ -2586,7 +2586,13 @@ export class CalcularHuellaComponent {
         };
 
         const dataLista = {
-
+            datosEmpresa: {
+                nombreEmpresa: this.nombreEmpresa,
+                instalacionMedida: this.instalacionMedida,
+                ubicacionMedidaR: this.ubicacionMedidaR,
+                ubicacionMedidaC: this.ubicacionMedidaC,
+                tipoProducto: this.tipoProducto,
+            },
             entrasdaDeAgua: [
                 {
                     categoria: "ENTRADA AGUA POTABLE",
