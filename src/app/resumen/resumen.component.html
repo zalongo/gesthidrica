@@ -298,25 +298,25 @@
                   {{ salidaDeAgua.categoria == "AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)" ? salidaDeAgua.total : 0 }}
                 </td>
                 <td style="border: 1px solid black;" *ngFor="let calidad of salidaDeAgua.calidad">
-                  {{ calidad.promedio }}
+                  {{ calidad.emisionContaminantes }}
                   <!-- Imprime el promedio de cada parámetro de calidad -->
                 </td>
                 <!-- INVENTARIO -->
 
                 <!-- PUNTO MEDIO -->
-                <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.availableWaterRemainingAware }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.toxixidadHumana }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.ecotoxixidad }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.eutrofizacion }}</td>
                 <!-- PUNTO MEDIO -->
 
                 <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">{{ salidaDeAgua.potencialesImpactosSalud }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.enfermedadesPorToxicidad }}</td>
                 <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
-                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.potencialesImpactosSalud }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.ecosistemasAcuaticosAfectadosPorEcotoxicidad }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.ecosistemasAcuaticosAfectadosPorEutrofizacion }}</td>
                 <!-- PUNTO FINAL -->
               </tr>
 
@@ -327,14 +327,22 @@
                 <td colspan="2" style="text-align: right; border: 1px solid black;"><strong>TOTALES</strong></td>
 
                 <!-- INVENTARIO -->
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
-                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.entradaAguaPotableTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.entradaAguaPozoTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.entradaAguaSuperficialTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.salidaAguaDescargada }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.salidaAguaInfiltrada }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.aguaDulceConsumida }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.nitrogenoTatal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.nitrgenoTotalKjeldahl }}</strong></td>
                 <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
                 <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
                 <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
