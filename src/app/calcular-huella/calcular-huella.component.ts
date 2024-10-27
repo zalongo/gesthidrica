@@ -3645,8 +3645,8 @@ export class CalcularHuellaComponent {
                     enfermedadesPorToxicidad: '',
                     ecosistemasAcuaticosAfectadosPorEcotoxicidad: '',
                     ecosistemasAcuaticosAfectadosPorEutrofizacion: '',
-                    potencialesImpactosSalud: this.salidaAguaConsumidaTotal * 80.095291,
                     availableWaterRemainingAware: this.salidaAguaConsumidaTotal * 0.000017256729214146,
+                    potencialesImpactosSalud: this.salidaAguaConsumidaTotal * 80.095291,
                     disminuciónBiodiversidadTerrestre: this.salidaAguaConsumidaTotal * 0.266051,
 
                     calidad: [
