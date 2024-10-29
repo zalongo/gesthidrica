@@ -2680,611 +2680,197 @@ export class CalcularHuellaComponent {
         let ecosistemasAcuaticosAfectadosPorEutrofizacion3 =
             eutrofizacion3 * 34.958282;
 
-        const dataaa = {
-            datosMedicion: {
-                medicionHuella: this.medicionHuella,
-                anioMedicion: this.medicionHuella,
-                unidadFuncional: this.medicionHuella,
-            },
-            datosEmpresa: {
-                nombreEmpresa: this.nombreEmpresa,
-                instalacionMedida: this.instalacionMedida,
-                ubicacionMedidaR: this.ubicacionMedidaR,
-                ubicacionMedidaC: this.ubicacionMedidaC,
-                tipoProducto: this.tipoProducto,
-            },
-            datosResponsable: {
-                nombreResponsable: this.nombreResponsable,
-                cargoResponsable: this.cargoResponsable,
-                correoResponsable: this.correoResponsable,
-                telefonoResponsable: this.telefonoResponsable,
-            },
-            produccion: [
-                {
-                    producto: this.producto,
-                    produccionTotal: this.produccionTotal,
-                    produccionPromedio: this.produccionPromedio,
-                },
-            ],
-            entradasAguaPotable: [
-                {
-                    fuente: this.aguaPotableMensualUso,
-                    total: this.aguaPotableMensualTotal.toFixed(6),
-                    promedio: this.aguaPotableMensualPromedio.toFixed(6),
-                },
-            ],
-            entradasAguaPozo: [
-                {
-                    fuente: this.aguaPozoFuenteUso,
-                    aguaPozoTotal: this.aguaPozoTotal.toFixed(6),
-                    aguaPozoPromedio: this.aguaPozoPromedio.toFixed(6),
-                },
-            ],
-            entradasAguaSuperficial: [
-                {
-                    fuente: this.aguaSuperficialFuenteUso,
-                    aguaSuperficialTotal: this.aguaSuperficialTotal.toFixed(6),
-                    aguaSuperficialPromedio: this.aguaSuperficialPromedio.toFixed(6),
-                },
-            ],
 
-            salidaAguaDescargada: [
-                {
-                    proceso: this.salidaAguaDescargadaProceso,
-                    salidaAguaDescargadaTotal: this.salidaAguaDescargadaTotal.toFixed(6),
-                    salidaAguaDescargadaPromedio:
-                        this.salidaAguaDescargadaPromedio.toFixed(6),
-                    toxixidadHumana: toxixidadHumana1.toFixed(6),
-                    ecotoxixidad: ecotoxixidad1.toFixed(6),
-                    eutrofizacion: eutrofizacion1.toFixed(6),
-                    enfermedadesPorToxicidad: enfermedadesPorToxicidad1.toFixed(6),
-                    ecosistemasAcuaticosAfectadosPorEcotoxicidad:
-                        ecosistemasAcuaticosAfectadosPorEcotoxicidad1.toFixed(6),
-                    ecosistemasAcuaticosAfectadosPorEutrofizacion:
-                        ecosistemasAcuaticosAfectadosPorEutrofizacion1.toFixed(6),
 
-                    calidad: [
-                        {
-                            parametro: 'Nitrógeno Total',
-                            abreviacion: 'N',
-                            unidad: '[mg/L]',
-                            min: this.nitrogeno1Min.toFixed(6),
-                            max: this.nitrogeno1Max.toFixed(6),
-                            promedio: this.nitrogeno1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.nitrogeno1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Nitrógeno Total Kjeldahl',
-                            abreviacion: 'NTK',
-                            unidad: '[mg/L]',
-                            min: this.nitrogenoKjeldahl1Min.toFixed(6),
-                            max: this.nitrogenoKjeldahl1Max.toFixed(6),
-                            promedio: this.nitrogenoKjeldahl1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal *
-                                    this.nitrogenoKjeldahl1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Fósforo Total',
-                            abreviacion: 'P',
-                            unidad: '[mg/L]',
-                            min: this.fosforoTotal1Min.toFixed(6),
-                            max: this.fosforoTotal1Max.toFixed(6),
-                            promedio: this.fosforoTotal1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Fosfato',
-                            abreviacion: 'PO4',
-                            unidad: '[mg/L]',
-                            min: this.fosfato1Min.toFixed(6),
-                            max: this.fosfato1Max.toFixed(6),
-                            promedio: this.fosfato1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.fosfato1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Demanda Química De Oxígeno',
-                            abreviacion: 'DQO',
-                            unidad: '[mg/L]',
-                            min: this.dqo1Min.toFixed(6),
-                            max: this.dqo1Max.toFixed(6),
-                            promedio: this.dqo1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.dqo1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Demanda Biológica De Oxígeno',
-                            abreviacion: 'DBO',
-                            unidad: '[mg/L]',
-                            min: this.dbo1Min.toFixed(6),
-                            max: this.dbo1Max.toFixed(6),
-                            promedio: this.dbo1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.dbo1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Arsénico',
-                            abreviacion: 'As',
-                            unidad: '[mg/L]',
-                            min: this.arsenico1Min.toFixed(6),
-                            max: this.arsenico1Max.toFixed(6),
-                            promedio: this.arsenico1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.arsenico1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Cadmio',
-                            abreviacion: 'Cd',
-                            unidad: '[mg/L]',
-                            min: this.cadmio1Min.toFixed(6),
-                            max: this.cadmio1Max.toFixed(6),
-                            promedio: this.cadmio1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.cadmio1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Cromo',
-                            abreviacion: 'Cr',
-                            unidad: '[mg/L]',
-                            min: this.cromo1Min.toFixed(6),
-                            max: this.cromo1Max.toFixed(6),
-                            promedio: this.cromo1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.cromo1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Cobre',
-                            abreviacion: 'Cu',
-                            unidad: '[mg/L]',
-                            min: this.cobre1Min.toFixed(6),
-                            max: this.cobre1Max.toFixed(6),
-                            promedio: this.cobre1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.cobre1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Mercurio',
-                            abreviacion: 'Hg',
-                            unidad: '[mg/L]',
-                            min: this.mercurio1Min.toFixed(6),
-                            max: this.mercurio1Max.toFixed(6),
-                            promedio: this.mercurio1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.mercurio1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Niquel',
-                            abreviacion: 'Ni',
-                            unidad: '[mg/L]',
-                            min: this.niquel1Min.toFixed(6),
-                            max: this.niquel1Max.toFixed(6),
-                            promedio: this.niquel1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.niquel1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Plomo',
-                            abreviacion: 'Pb',
-                            unidad: '[mg/L]',
-                            min: this.plomo1Min.toFixed(6),
-                            max: this.plomo1Max.toFixed(6),
-                            promedio: this.plomo1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.plomo1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Zinc',
-                            abreviacion: 'Zn',
-                            unidad: '[mg/L]',
-                            min: this.zinc1Min.toFixed(6),
-                            max: this.zinc1Max.toFixed(6),
-                            promedio: this.zinc1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal * this.zinc1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Pentaclorofenol',
-                            abreviacion: 'C6OHCL5',
-                            unidad: '[mg/L]',
-                            min: this.pentaclorofenol1Min.toFixed(6),
-                            max: this.pentaclorofenol1Max.toFixed(6),
-                            promedio: this.pentaclorofenol1Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaDescargadaTotal *
-                                    this.pentaclorofenol1Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                    ],
-                },
-            ],
+        const totales = {
+            entradaAguaPotableTotal: Number(this.aguaPotableMensualTotal.toFixed(6)),
+            entradaAguaPozoTotal: Number(this.aguaSuperficialTotal.toFixed(6)),
+            entradaAguaSuperficialTotal: Number(this.aguaSuperficialTotal.toFixed(6)),
+            salidaAguaDescargada: Number(this.salidaAguaDescargadaTotal.toFixed(6)),
+            salidaAguaInfiltrada: Number(this.salidaAguaInfiltradaTotal.toFixed(6)),
+            aguaDulceConsumida: Number(this.salidaAguaConsumidaTotal.toFixed(6)),
 
-            salidaAguaInfiltrada: [
-                {
-                    proceso: this.salidaAguaInfiltradaProceso,
-                    salidaAguaInfiltradaTotal: this.salidaAguaInfiltradaTotal.toFixed(6),
-                    salidaAguaInfiltradaPromedio:
-                        this.salidaAguaInfiltradaPromedio.toFixed(6),
-                    toxixidadHumana: toxixidadHumana2.toFixed(6),
-                    ecotoxixidad: ecotoxixidad2.toFixed(6),
-                    eutrofizacion: eutrofizacion2.toFixed(6),
-                    enfermedadesPorToxicidad: enfermedadesPorToxicidad2.toFixed(6),
-                    ecosistemasAcuaticosAfectadosPorEcotoxicidad:
-                        ecosistemasAcuaticosAfectadosPorEcotoxicidad2.toFixed(6),
-                    ecosistemasAcuaticosAfectadosPorEutrofizacion:
-                        ecosistemasAcuaticosAfectadosPorEutrofizacion2.toFixed(6),
+            nitrogenoTatal: 0,
+            nitrgenoTotalKjeldahl: (
+                Number(((this.salidaAguaDescargadaTotal * this.nitrogenoKjeldahl1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.nitrogenoKjeldahl2Promedio) / 1000).toFixed(6))
+            ),
+            fosforoTotalTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio) / 1000).toFixed(6))
+            ),
+            fosfatoTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.fosfato1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.fosfato2Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaConsumidaTotal * this.fosfato3Promedio) / 1000).toFixed(6))
+            ),
+            demandaBioOxgTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.dbo1Promedio) / 1000).toFixed(6))
+            ),
+            arsenicoTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.arsenico1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.arsenico2Promedio) / 1000).toFixed(6))
+            ),
+            cadminioTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.cadmio1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.cadmio2Promedio) / 1000).toFixed(6))
+            ),
+            cromoTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.cromo1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.cromo2Promedio) / 1000).toFixed(6))
+            ),
+            cobreTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.cobre1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.cobre2Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaConsumidaTotal * this.cobre3Promedio) / 1000).toFixed(6))
+            ),
+            mercurioTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.mercurio1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.mercurio2Promedio) / 1000).toFixed(6))
+            ),
+            niquelTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.niquel1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.niquel2Promedio) / 1000).toFixed(6))
+            ),
+            plomoTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.plomo1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.plomo2Promedio) / 1000).toFixed(6))
+            ),
+            zincTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.zinc1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.zinc2Promedio) / 1000).toFixed(6))
+            ),
+            pentaclorofenolTotal: (
+                Number(((this.salidaAguaDescargadaTotal * this.pentaclorofenol1Promedio) / 1000).toFixed(6)) +
+                Number(((this.salidaAguaInfiltradaTotal * this.pentaclorofenol2Promedio) / 1000).toFixed(6))
+            ),
 
-                    calidad: [
-                        {
-                            parametro: 'Nitrógeno Total',
-                            abreviacion: 'N',
-                            unidad: '[mg/L]',
-                            min: this.nitrogeno2Min.toFixed(6),
-                            max: this.nitrogeno2Max.toFixed(6),
-                            promedio: this.nitrogeno2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.nitrogeno2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Nitrógeno Total Kjeldahl',
-                            abreviacion: 'NTK',
-                            unidad: '[mg/L]',
-                            min: this.nitrogenoKjeldahl2Min.toFixed(6),
-                            max: this.nitrogenoKjeldahl2Max.toFixed(6),
-                            promedio: this.nitrogenoKjeldahl2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal *
-                                    this.nitrogenoKjeldahl2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Fósforo Total',
-                            abreviacion: 'P',
-                            unidad: '[mg/L]',
-                            min: this.fosforoTotal2Min.toFixed(6),
-                            max: this.fosforoTotal2Max.toFixed(6),
-                            promedio: this.fosforoTotal2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.fosforoTotal2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Fosfato',
-                            abreviacion: 'PO4',
-                            unidad: '[mg/L]',
-                            min: this.fosfato2Min.toFixed(6),
-                            max: this.fosfato2Max.toFixed(6),
-                            promedio: this.fosfato2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.fosfato2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Demanda Química De Oxígeno',
-                            abreviacion: 'DQO',
-                            unidad: '[mg/L]',
-                            min: this.dqo2Min.toFixed(6),
-                            max: this.dqo2Max.toFixed(6),
-                            promedio: this.dqo2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.dqo2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Demanda Biológica De Oxígeno',
-                            abreviacion: 'DBO',
-                            unidad: '[mg/L]',
-                            min: this.dbo2Min.toFixed(6),
-                            max: this.dbo2Max.toFixed(6),
-                            promedio: this.dbo2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.dbo2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Arsénico',
-                            abreviacion: 'As',
-                            unidad: '[mg/L]',
-                            min: this.arsenico2Min.toFixed(6),
-                            max: this.arsenico2Max.toFixed(6),
-                            promedio: this.arsenico2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.arsenico2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Cadmio',
-                            abreviacion: 'Cd',
-                            unidad: '[mg/L]',
-                            min: this.cadmio2Min.toFixed(6),
-                            max: this.cadmio2Max.toFixed(6),
-                            promedio: this.cadmio2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.cadmio2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Cromo',
-                            abreviacion: 'Cr',
-                            unidad: '[mg/L]',
-                            min: this.cromo2Min.toFixed(6),
-                            max: this.cromo2Max.toFixed(6),
-                            promedio: this.cromo2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.cromo2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Cobre',
-                            abreviacion: 'Cu',
-                            unidad: '[mg/L]',
-                            min: this.cobre2Min.toFixed(6),
-                            max: this.cobre2Max.toFixed(6),
-                            promedio: this.cobre2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.cobre2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Mercurio',
-                            abreviacion: 'Hg',
-                            unidad: '[mg/L]',
-                            min: this.mercurio2Min.toFixed(6),
-                            max: this.mercurio2Max.toFixed(6),
-                            promedio: this.mercurio2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.mercurio2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Niquel',
-                            abreviacion: 'Ni',
-                            unidad: '[mg/L]',
-                            min: this.niquel2Min.toFixed(6),
-                            max: this.niquel2Max.toFixed(6),
-                            promedio: this.niquel2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.niquel2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Plomo',
-                            abreviacion: 'Pb',
-                            unidad: '[mg/L]',
-                            min: this.plomo2Min.toFixed(6),
-                            max: this.plomo2Max.toFixed(6),
-                            promedio: this.plomo2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.plomo2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Zinc',
-                            abreviacion: 'Zn',
-                            unidad: '[mg/L]',
-                            min: this.zinc2Min.toFixed(6),
-                            max: this.zinc2Max.toFixed(6),
-                            promedio: this.zinc2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.zinc2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                        {
-                            parametro: 'Pentaclorofenol',
-                            abreviacion: 'C6OHCL5',
-                            unidad: '[mg/L]',
-                            min: this.pentaclorofenol2Min.toFixed(6),
-                            max: this.pentaclorofenol2Max.toFixed(6),
-                            promedio: this.pentaclorofenol2Promedio.toFixed(6),
-                            emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal *
-                                    this.pentaclorofenol2Promedio) /
-                                1000
-                            ).toFixed(6),
-                        },
-                    ],
-                },
-            ],
-            salidaAguaConsumida: [
-                {
-                    proceso: this.salidaAguaConsumidaProceso,
-                    salidaAguaConsumidaTotal: this.salidaAguaConsumidaTotal.toFixed(6),
-                    salidaAguaConsumidaPromedio:
-                        this.salidaAguaConsumidaPromedio.toFixed(6),
-                    toxixidadHumana: toxixidadHumana3.toFixed(6),
-                    ecotoxixidad: ecotoxixidad3.toFixed(6),
-                    eutrofizacion: eutrofizacion3.toFixed(6),
-                    enfermedadesPorToxicidad: enfermedadesPorToxicidad3.toFixed(6),
-                    ecosistemasAcuaticosAfectadosPorEcotoxicidad:
-                        ecosistemasAcuaticosAfectadosPorEcotoxicidad3.toFixed(6),
-                    ecosistemasAcuaticosAfectadosPorEutrofizacion:
-                        ecosistemasAcuaticosAfectadosPorEutrofizacion3.toFixed(6),
+            availableWaterRemainingAwareTotal: Number((this.salidaAguaConsumidaTotal * 80.095291).toFixed(6)),
+            toxixidadHumanaTotal: Number((toxixidadHumana1 + toxixidadHumana2).toFixed(6)),
+            ecotoxixidadTotal: Number((ecotoxixidad1 + ecotoxixidad2).toFixed(6)),
+            eutrofizacionTotal: Number((eutrofizacion1 + eutrofizacion2).toFixed(6)),
 
-                    calidad: [
-                        {
-                            parametro: 'Nitrógeno Total',
-                            abreviacion: 'N',
-                            unidad: '[mg/L]',
-                            min: this.nitrogeno3Min.toFixed(6),
-                            max: this.nitrogeno3Max.toFixed(6),
-                            promedio: this.nitrogeno3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Nitrógeno Total Kjeldahl',
-                            abreviacion: 'NTK',
-                            unidad: '[mg/L]',
-                            min: this.nitrogenoKjeldahl3Min.toFixed(6),
-                            max: this.nitrogenoKjeldahl3Max.toFixed(6),
-                            promedio: this.nitrogenoKjeldahl3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Fósforo Total',
-                            abreviacion: 'P',
-                            unidad: '[mg/L]',
-                            min: this.fosforoTotal3Min.toFixed(6),
-                            max: this.fosforoTotal3Max.toFixed(6),
-                            promedio: this.fosforoTotal3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Fosfato',
-                            abreviacion: 'PO4',
-                            unidad: '[mg/L]',
-                            min: this.fosfato3Min.toFixed(6),
-                            max: this.fosfato3Max.toFixed(6),
-                            promedio: this.fosfato3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Demanda Química De Oxígeno',
-                            abreviacion: 'DQO',
-                            unidad: '[mg/L]',
-                            min: this.dqo3Min.toFixed(6),
-                            max: this.dqo3Max.toFixed(6),
-                            promedio: this.dqo3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Demanda Biológica De Oxígeno',
-                            abreviacion: 'DBO',
-                            unidad: '[mg/L]',
-                            min: this.dbo3Min.toFixed(6),
-                            max: this.dbo3Max.toFixed(6),
-                            promedio: this.dbo3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Arsénico',
-                            abreviacion: 'As',
-                            unidad: '[mg/L]',
-                            min: this.arsenico3Min.toFixed(6),
-                            max: this.arsenico3Max.toFixed(6),
-                            promedio: this.arsenico3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Cadmio',
-                            abreviacion: 'Cd',
-                            unidad: '[mg/L]',
-                            min: this.cadmio3Min.toFixed(6),
-                            max: this.cadmio3Max.toFixed(6),
-                            promedio: this.cadmio3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Cromo',
-                            abreviacion: 'Cr',
-                            unidad: '[mg/L]',
-                            min: this.cromo3Min.toFixed(6),
-                            max: this.cromo3Max.toFixed(6),
-                            promedio: this.cromo3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Cobre',
-                            abreviacion: 'Cu',
-                            unidad: '[mg/L]',
-                            min: this.cobre3Min.toFixed(6),
-                            max: this.cobre3Max.toFixed(6),
-                            promedio: this.cobre3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Mercurio',
-                            abreviacion: 'Hg',
-                            unidad: '[mg/L]',
-                            min: this.mercurio3Min.toFixed(6),
-                            max: this.mercurio3Max.toFixed(6),
-                            promedio: this.mercurio3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Niquel',
-                            abreviacion: 'Ni',
-                            unidad: '[mg/L]',
-                            min: this.niquel3Min.toFixed(6),
-                            max: this.niquel3Max.toFixed(6),
-                            promedio: this.niquel3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Plomo',
-                            abreviacion: 'Pb',
-                            unidad: '[mg/L]',
-                            min: this.plomo3Min.toFixed(6),
-                            max: this.plomo3Max.toFixed(6),
-                            promedio: this.plomo3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Zinc',
-                            abreviacion: 'Zn',
-                            unidad: '[mg/L]',
-                            min: this.zinc3Min.toFixed(6),
-                            max: this.zinc3Max.toFixed(6),
-                            promedio: this.zinc3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                        {
-                            parametro: 'Pentaclorofenol',
-                            abreviacion: 'C6OHCL5',
-                            unidad: '[mg/L]',
-                            min: this.pentaclorofenol3Min.toFixed(6),
-                            max: this.pentaclorofenol3Max.toFixed(6),
-                            promedio: this.pentaclorofenol3Promedio.toFixed(6),
-                            emisionContaminantes: '',
-                        },
-                    ],
-                },
-            ],
+            potencialesImpactosSaludTotal: Number((this.salidaAguaConsumidaTotal * 0.000017256729214146).toFixed(6)),
+            enfermedadesPorToxicidadTotal: Number((enfermedadesPorToxicidad1 + enfermedadesPorToxicidad2).toFixed(6)),
+            disminucionBiodiversidadTerrestreTotal: Number((this.salidaAguaConsumidaTotal * 0.266051).toFixed(6)),
+            ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal: Number((ecosistemasAcuaticosAfectadosPorEcotoxicidad1 + ecosistemasAcuaticosAfectadosPorEcotoxicidad2).toFixed(6)),
+            ecosistemasAcuaticosAfectadosPorEutrofizacionTotal: Number((ecosistemasAcuaticosAfectadosPorEutrofizacion1 + ecosistemasAcuaticosAfectadosPorEutrofizacion2).toFixed(6)),
+
+        };
+
+        const totalesPorcentaje = {
+            entradaAguaPotableTotal: 100,
+            entradaAguaPozoTotal: 100,
+            entradaAguaSuperficialTotal: 100,
+            salidaAguaDescargada: 100,
+            salidaAguaInfiltrada: 100,
+            aguaDulceConsumida: 100,
+
+            nitrogenoTotal: 0,
+            nitrgenoTotalKjeldahl: ((
+                (this.salidaAguaDescargadaTotal * this.nitrogenoKjeldahl1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.nitrogenoKjeldahl2Promedio / 1000)
+            ) / totales.nitrgenoTotalKjeldahl * 100).toFixed(1),
+
+            fosforoTotalTotal: ((
+                (this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio / 1000)
+            ) / totales.fosforoTotalTotal * 100).toFixed(1),
+
+            fosfatoTotal: isNaN((
+                (this.salidaAguaDescargadaTotal * this.fosfato1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.fosfato2Promedio / 1000) +
+                (this.salidaAguaConsumidaTotal * this.fosfato3Promedio / 1000)
+            ) / totales.fosfatoTotal * 100) ? 0 : (
+                (
+                    (this.salidaAguaDescargadaTotal * this.fosfato1Promedio / 1000) +
+                    (this.salidaAguaInfiltradaTotal * this.fosfato2Promedio / 1000) +
+                    (this.salidaAguaConsumidaTotal * this.fosfato3Promedio / 1000)
+                ) / totales.fosfatoTotal * 100
+            ).toFixed(1),
+            demandaBioOxgTotal: ((
+                (this.salidaAguaDescargadaTotal * this.dbo1Promedio / 1000)
+            ) / totales.demandaBioOxgTotal * 100).toFixed(1),
+
+            arsenicoTotal: ((
+                (this.salidaAguaDescargadaTotal * this.arsenico1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.arsenico2Promedio / 1000)
+            ) / totales.arsenicoTotal * 100).toFixed(1),
+
+            cadminioTotal: ((
+                (this.salidaAguaDescargadaTotal * this.cadmio1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.cadmio2Promedio / 1000)
+            ) / totales.cadminioTotal * 100).toFixed(1),
+
+            cromoTotal: ((
+                (this.salidaAguaDescargadaTotal * this.cromo1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.cromo2Promedio / 1000)
+            ) / totales.cromoTotal * 100).toFixed(1),
+
+            cobreTotal: ((
+                (this.salidaAguaDescargadaTotal * this.cobre1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.cobre2Promedio / 1000) +
+                (this.salidaAguaConsumidaTotal * this.cobre3Promedio / 1000)
+            ) / totales.cobreTotal * 100).toFixed(1),
+
+            mercurioTotal: ((
+                (this.salidaAguaDescargadaTotal * this.mercurio1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.mercurio2Promedio / 1000)
+            ) / totales.mercurioTotal * 100).toFixed(1),
+
+            niquelTotal: ((
+                (this.salidaAguaDescargadaTotal * this.niquel1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.niquel2Promedio / 1000)
+            ) / totales.niquelTotal * 100).toFixed(1),
+
+            plomoTotal: ((
+                (this.salidaAguaDescargadaTotal * this.plomo1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.plomo2Promedio / 1000)
+            ) / totales.plomoTotal * 100).toFixed(1),
+
+            zincTotal: ((
+                (this.salidaAguaDescargadaTotal * this.zinc1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.zinc2Promedio / 1000)
+            ) / totales.zincTotal * 100).toFixed(1),
+
+            pentaclorofenolTotal: ((
+                (this.salidaAguaDescargadaTotal * this.pentaclorofenol1Promedio / 1000) +
+                (this.salidaAguaInfiltradaTotal * this.pentaclorofenol2Promedio / 1000)
+            ) / totales.pentaclorofenolTotal * 100).toFixed(1),
+
+            availableWaterRemainingAwareTotal: ((
+                this.salidaAguaConsumidaTotal * 80.095291
+            ) / totales.availableWaterRemainingAwareTotal * 100).toFixed(1),
+
+            toxixidadHumanaTotal: ((
+                toxixidadHumana1 + toxixidadHumana2
+            ) / totales.toxixidadHumanaTotal * 100).toFixed(1),
+
+            ecotoxicidadTotal: ((
+                ecotoxixidad1 + ecotoxixidad2
+            ) / totales.ecotoxixidadTotal * 100).toFixed(1),
+
+            eutrofizacionTotal: ((
+                eutrofizacion1 + eutrofizacion2
+            ) / totales.eutrofizacionTotal * 100).toFixed(1),
+
+            potencialesImpactosSaludTotal: ((
+                this.salidaAguaConsumidaTotal * 0.000017256729214146
+            ) / totales.potencialesImpactosSaludTotal * 100).toFixed(1),
+
+            enfermedadesPorToxicidadTotal: ((
+                enfermedadesPorToxicidad1 + enfermedadesPorToxicidad2
+            ) / totales.enfermedadesPorToxicidadTotal * 100).toFixed(1),
+
+            disminucionBiodiversidadTerrestreTotal: ((
+                this.salidaAguaConsumidaTotal * 0.266051
+            ) / totales.disminucionBiodiversidadTerrestreTotal * 100).toFixed(1),
+
+            ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal: ((
+                ecosistemasAcuaticosAfectadosPorEcotoxicidad1 + ecosistemasAcuaticosAfectadosPorEcotoxicidad2
+            ) / totales.ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal * 100).toFixed(1),
+
+            ecosistemasAcuaticosAfectadosPorEutrofizacionTotal: ((
+                ecosistemasAcuaticosAfectadosPorEutrofizacion1 + ecosistemasAcuaticosAfectadosPorEutrofizacion2
+            ) / totales.ecosistemasAcuaticosAfectadosPorEutrofizacionTotal * 100).toFixed(1),
         };
 
         const dataLista = {
@@ -3301,18 +2887,22 @@ export class CalcularHuellaComponent {
                     fuente: this.aguaPotableMensualUso,
                     total: this.aguaPotableMensualTotal.toFixed(6),
                     promedio: this.aguaPotableMensualPromedio.toFixed(6),
+                    porcentaje: (this.aguaPotableMensualTotal / this.aguaPotableMensualTotal) * 100
                 },
                 {
                     categoria: 'ENTRADA AGUA POZO',
                     fuente: this.aguaPozoFuenteUso,
                     total: this.aguaPozoTotal.toFixed(6),
                     promedio: this.aguaPozoPromedio.toFixed(6),
+                    porcentaje: (this.aguaPozoTotal / this.aguaPozoTotal) * 100
                 },
                 {
                     categoria: 'ENTRADA AGUA SUPERFICIAL',
                     fuente: this.aguaSuperficialFuenteUso,
                     total: this.aguaSuperficialTotal.toFixed(6),
                     promedio: this.aguaSuperficialPromedio.toFixed(6),
+                    porcentaje: (this.aguaSuperficialTotal / this.aguaSuperficialTotal) * 100
+
                 },
             ],
             salidasDeAgua: [
@@ -3322,14 +2912,25 @@ export class CalcularHuellaComponent {
                     total: this.salidaAguaDescargadaTotal.toFixed(6),
                     promedio: this.salidaAguaDescargadaPromedio.toFixed(6),
                     toxixidadHumana: toxixidadHumana1.toFixed(6),
+                    toxixidadHumanaProcentaje: (toxixidadHumana1 / totales.toxixidadHumanaTotal * 100).toFixed(1),
                     ecotoxixidad: ecotoxixidad1.toFixed(6),
+                    ecotoxixidadPorcentaje: (ecotoxixidad1 / totales.ecotoxixidadTotal * 100).toFixed(1),
                     eutrofizacion: eutrofizacion1.toFixed(6),
+                    eutrofizacionPorcentahe: (eutrofizacion1 / totales.eutrofizacionTotal * 100).toFixed(1),
                     enfermedadesPorToxicidad: enfermedadesPorToxicidad1.toFixed(6),
+                    enfermedadesPorToxicidadPorcentaje: (enfermedadesPorToxicidad1 / totales.enfermedadesPorToxicidadTotal * 100).toFixed(1),
                     ecosistemasAcuaticosAfectadosPorEcotoxicidad:
                         ecosistemasAcuaticosAfectadosPorEcotoxicidad1.toFixed(6),
+                    ecosistemasAcuaticosAfectadosPorEcotoxicidadPorcentaje: (
+                        ecosistemasAcuaticosAfectadosPorEcotoxicidad1 / totales.ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal * 100).toFixed(1),
                     ecosistemasAcuaticosAfectadosPorEutrofizacion:
                         ecosistemasAcuaticosAfectadosPorEutrofizacion1.toFixed(6),
-
+                    ecosistemasAcuaticosAfectadosPorEutrofizacionPorcentaje: (
+                        ecosistemasAcuaticosAfectadosPorEutrofizacion1 / totales.ecosistemasAcuaticosAfectadosPorEutrofizacionTotal * 100).toFixed(1),
+                    porcentaje: this.salidaAguaDescargadaTotal / this.salidaAguaDescargadaTotal * 100,
+                    availableWaterRemainingAwarePorcentaje: 0,
+                    potencialesImpactosSaludPorcentaje: 0,
+                    disminucionBiodiversidadTerrestreTotal: 0,
                     calidad: [
                         {
                             parametro: 'Nitrógeno Total',
@@ -3342,6 +2943,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.nitrogeno1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.nitrogenoTatal ?
+                                (((this.salidaAguaDescargadaTotal * this.nitrogeno1Promedio) / 1000) / totales.nitrogenoTatal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Nitrógeno Total Kjeldahl',
@@ -3355,6 +2958,8 @@ export class CalcularHuellaComponent {
                                     this.nitrogenoKjeldahl1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.nitrgenoTotalKjeldahl ?
+                                (((this.salidaAguaDescargadaTotal * this.nitrogenoKjeldahl1Promedio) / 1000) / totales.nitrgenoTotalKjeldahl * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Fósforo Total',
@@ -3367,6 +2972,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.fosforoTotalTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio) / 1000) / totales.fosforoTotalTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Fosfato',
@@ -3379,6 +2986,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.fosfato1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.fosfatoTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.fosfato1Promedio) / 1000) / totales.fosfatoTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Demanda Química De Oxígeno',
@@ -3391,6 +3000,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.dqo1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.demandaBioOxgTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.dqo1Promedio) / 1000) / totales.demandaBioOxgTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Demanda Biológica De Oxígeno',
@@ -3403,6 +3014,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.dbo1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.demandaBioOxgTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.dbo1Promedio) / 1000) / totales.demandaBioOxgTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Arsénico',
@@ -3415,6 +3028,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.arsenico1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.arsenicoTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.arsenico1Promedio) / 1000) / totales.arsenicoTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Cadmio',
@@ -3427,6 +3042,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.cadmio1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.cadminioTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.cadmio1Promedio) / 1000) / totales.cadminioTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Cromo',
@@ -3439,6 +3056,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.cromo1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.cromoTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.cromo1Promedio) / 1000) / totales.cromoTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Cobre',
@@ -3451,6 +3070,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.cobre1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.cobreTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.cobre1Promedio) / 1000) / totales.cobreTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Mercurio',
@@ -3463,6 +3084,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.mercurio1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.mercurioTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.mercurio1Promedio) / 1000) / totales.mercurioTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Niquel',
@@ -3475,6 +3098,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.niquel1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.niquelTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.niquel1Promedio) / 1000) / totales.niquelTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Plomo',
@@ -3487,6 +3112,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.plomo1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.plomoTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.plomo1Promedio) / 1000) / totales.plomoTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Zinc',
@@ -3499,6 +3126,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaDescargadaTotal * this.zinc1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.zincTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.zinc1Promedio) / 1000) / totales.zincTotal * 100).toFixed(1) : '0.0',
                         },
                         {
                             parametro: 'Pentaclorofenol',
@@ -3512,6 +3141,8 @@ export class CalcularHuellaComponent {
                                     this.pentaclorofenol1Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.pentaclorofenolTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.pentaclorofenol1Promedio) / 1000) / totales.pentaclorofenolTotal * 100).toFixed(1) : '0.0',
                         },
                     ],
                 },
@@ -3521,14 +3152,25 @@ export class CalcularHuellaComponent {
                     total: this.salidaAguaInfiltradaTotal.toFixed(6),
                     promedio: this.salidaAguaInfiltradaPromedio.toFixed(6),
                     toxixidadHumana: toxixidadHumana2.toFixed(6),
+                    toxixidadHumanaProcentaje: (toxixidadHumana2 / totales.toxixidadHumanaTotal * 100).toFixed(1),
                     ecotoxixidad: ecotoxixidad2.toFixed(6),
+                    ecotoxixidadPorcentaje: (ecotoxixidad2 / totales.ecotoxixidadTotal * 100).toFixed(1),
                     eutrofizacion: eutrofizacion2.toFixed(6),
+                    eutrofizacionPorcentahe: (eutrofizacion2 / totales.eutrofizacionTotal * 100).toFixed(1),
                     enfermedadesPorToxicidad: enfermedadesPorToxicidad2.toFixed(6),
+                    enfermedadesPorToxicidadPorcentaje: (enfermedadesPorToxicidad2 / totales.enfermedadesPorToxicidadTotal * 100).toFixed(1),
                     ecosistemasAcuaticosAfectadosPorEcotoxicidad:
                         ecosistemasAcuaticosAfectadosPorEcotoxicidad2.toFixed(6),
+                    ecosistemasAcuaticosAfectadosPorEcotoxicidadPorcentaje: (
+                        ecosistemasAcuaticosAfectadosPorEcotoxicidad2 / totales.ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal * 100).toFixed(1),
                     ecosistemasAcuaticosAfectadosPorEutrofizacion:
                         ecosistemasAcuaticosAfectadosPorEutrofizacion2.toFixed(6),
-
+                    ecosistemasAcuaticosAfectadosPorEutrofizacionPorcentaje: (
+                        ecosistemasAcuaticosAfectadosPorEutrofizacion2 / totales.ecosistemasAcuaticosAfectadosPorEutrofizacionTotal * 100).toFixed(1),
+                    porcentaje: this.salidaAguaInfiltradaTotal / this.salidaAguaInfiltradaTotal * 100,
+                    availableWaterRemainingAwarePorcentaje: 0,
+                    potencialesImpactosSaludPorcentaje: 0,
+                    disminucionBiodiversidadTerrestreTotal: 0,
                     calidad: [
                         {
                             parametro: 'Nitrógeno Total',
@@ -3538,6 +3180,8 @@ export class CalcularHuellaComponent {
                             max: this.nitrogeno2Max.toFixed(6),
                             promedio: this.nitrogeno2Promedio.toFixed(6),
                             emisionContaminantes: ((this.salidaAguaInfiltradaTotal * this.nitrogeno2Promedio) / 1000).toFixed(6),
+                            porcentaje: totales.nitrogenoTatal ?
+                                (((this.salidaAguaInfiltradaTotal * this.nitrogeno2Promedio) / 1000) / totales.nitrogenoTatal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Nitrógeno Total Kjeldahl',
@@ -3547,6 +3191,8 @@ export class CalcularHuellaComponent {
                             max: this.nitrogenoKjeldahl2Max.toFixed(6),
                             promedio: this.nitrogenoKjeldahl2Promedio.toFixed(6),
                             emisionContaminantes: ((this.salidaAguaInfiltradaTotal * this.nitrogenoKjeldahl2Promedio) / 1000).toFixed(6),
+                            porcentaje: totales.nitrgenoTotalKjeldahl ?
+                                (((this.salidaAguaInfiltradaTotal * this.nitrogenoKjeldahl2Promedio) / 1000) / totales.nitrgenoTotalKjeldahl * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Fósforo Total',
@@ -3556,9 +3202,11 @@ export class CalcularHuellaComponent {
                             max: this.fosforoTotal2Max.toFixed(6),
                             promedio: this.fosforoTotal2Promedio.toFixed(6),
                             emisionContaminantes: (
-                                (this.salidaAguaInfiltradaTotal * this.fosforoTotal2Promedio) /
+                                (this.salidaAguaDescargadaTotal * this.fosforoTotal2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.fosforoTotalTotal ?
+                                (((this.salidaAguaDescargadaTotal * this.fosforoTotal2Promedio) / 1000) / totales.fosforoTotalTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Fosfato',
@@ -3571,6 +3219,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.fosfato2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.fosfatoTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.fosfato2Promedio) / 1000) / totales.fosfatoTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Demanda Química De Oxígeno',
@@ -3583,6 +3233,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.dqo2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.demandaBioOxgTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.dqo2Promedio) / 1000) / totales.demandaBioOxgTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Demanda Biológica De Oxígeno',
@@ -3595,6 +3247,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.dbo2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.demandaBioOxgTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.dbo2Promedio) / 1000) / totales.demandaBioOxgTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Arsénico',
@@ -3607,6 +3261,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.arsenico2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.arsenicoTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.arsenico2Promedio) / 1000) / totales.arsenicoTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Cadmio',
@@ -3619,6 +3275,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.cadmio2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.cadminioTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.cadmio2Promedio) / 1000) / totales.cadminioTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Cromo',
@@ -3631,6 +3289,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.cromo2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.cromoTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.cromo2Promedio) / 1000) / totales.cromoTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Cobre',
@@ -3643,6 +3303,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.cobre2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.cobreTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.cobre2Promedio) / 1000) / totales.cobreTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Mercurio',
@@ -3655,6 +3317,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.mercurio2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.mercurioTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.mercurio2Promedio) / 1000) / totales.mercurioTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Niquel',
@@ -3667,6 +3331,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.niquel2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.niquelTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.niquel2Promedio) / 1000) / totales.niquelTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Plomo',
@@ -3679,6 +3345,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.plomo2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.plomoTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.plomo2Promedio) / 1000) / totales.plomoTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Zinc',
@@ -3691,6 +3359,8 @@ export class CalcularHuellaComponent {
                                 (this.salidaAguaInfiltradaTotal * this.zinc2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.zincTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.zinc2Promedio) / 1000) / totales.zincTotal * 100).toFixed(1) : '0.0'
                         },
                         {
                             parametro: 'Pentaclorofenol',
@@ -3704,6 +3374,8 @@ export class CalcularHuellaComponent {
                                     this.pentaclorofenol2Promedio) /
                                 1000
                             ).toFixed(6),
+                            porcentaje: totales.pentaclorofenolTotal ?
+                                (((this.salidaAguaInfiltradaTotal * this.pentaclorofenol2Promedio) / 1000) / totales.pentaclorofenolTotal * 100).toFixed(1) : '0.0'
                         },
                     ],
                 },
@@ -3712,21 +3384,34 @@ export class CalcularHuellaComponent {
                     proceso: this.salidaAguaConsumidaProceso,
                     total: this.salidaAguaConsumidaTotal.toFixed(6),
                     promedio: this.salidaAguaConsumidaPromedio.toFixed(6),
-                    toxixidadHumana: '',
-                    ecotoxixidad: '',
-                    eutrofizacion: '',
-                    enfermedadesPorToxicidad: '',
-                    ecosistemasAcuaticosAfectadosPorEcotoxicidad: '',
-                    ecosistemasAcuaticosAfectadosPorEutrofizacion: '',
+                    toxixidadHumana: 0,
+                    ecotoxixidad: 0,
+                    ecotoxixidadPorcentaje: 0,
+                    eutrofizacion: 0,
+                    eutrofizacionPorcentahe: 0,
+                    enfermedadesPorToxicidad: 0,
+                    enfermedadesPorToxicidadPorcentaje: 0,
+                    ecosistemasAcuaticosAfectadosPorEcotoxicidad: 0,
+                    ecosistemasAcuaticosAfectadosPorEcotoxicidadPorcentaje: 0,
+                    ecosistemasAcuaticosAfectadosPorEutrofizacion: 0,
+                    ecosistemasAcuaticosAfectadosPorEutrofizacionPorcentaje: 0,
                     availableWaterRemainingAware: (
                         this.salidaAguaConsumidaTotal * 80.095291
                     ).toFixed(6),
+                    availableWaterRemainingAwarePorcentaje: ((this.salidaAguaConsumidaTotal * 80.095291) / totales.availableWaterRemainingAwareTotal * 100).toFixed(1),
                     potencialesImpactosSalud: (
                         this.salidaAguaConsumidaTotal * 0.000017256729214146
                     ).toFixed(6),
+                    potencialesImpactosSaludPorcentaje: ((
+                        this.salidaAguaConsumidaTotal * 0.000017256729214146
+                    ) / totales.potencialesImpactosSaludTotal * 100).toFixed(1),
                     disminucionBiodiversidadTerrestre: (
                         this.salidaAguaConsumidaTotal * 0.266051
                     ).toFixed(6),
+                    disminucionBiodiversidadTerrestreTotal: ((
+                        this.salidaAguaConsumidaTotal * 0.266051
+                    ) / totales.disminucionBiodiversidadTerrestreTotal * 100).toFixed(1),
+                    porcentaje: this.salidaAguaConsumidaTotal / this.salidaAguaConsumidaTotal * 100,
 
                     calidad: [
                         {
@@ -3737,6 +3422,7 @@ export class CalcularHuellaComponent {
                             max: this.nitrogeno3Max.toFixed(6),
                             promedio: this.nitrogeno3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Nitrógeno Total Kjeldahl',
@@ -3745,7 +3431,8 @@ export class CalcularHuellaComponent {
                             min: this.nitrogenoKjeldahl3Min.toFixed(6),
                             max: this.nitrogenoKjeldahl3Max.toFixed(6),
                             promedio: this.nitrogenoKjeldahl3Promedio.toFixed(6),
-                            emisionContaminantes: 0,
+                            emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Fósforo Total',
@@ -3755,6 +3442,7 @@ export class CalcularHuellaComponent {
                             max: this.fosforoTotal3Max.toFixed(6),
                             promedio: this.fosforoTotal3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Fosfato',
@@ -3764,6 +3452,7 @@ export class CalcularHuellaComponent {
                             max: this.fosfato3Max.toFixed(6),
                             promedio: this.fosfato3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Demanda Química De Oxígeno',
@@ -3773,6 +3462,7 @@ export class CalcularHuellaComponent {
                             max: this.dqo3Max.toFixed(6),
                             promedio: this.dqo3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Demanda Biológica De Oxígeno',
@@ -3782,6 +3472,7 @@ export class CalcularHuellaComponent {
                             max: this.dbo3Max.toFixed(6),
                             promedio: this.dbo3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Arsénico',
@@ -3791,6 +3482,7 @@ export class CalcularHuellaComponent {
                             max: this.arsenico3Max.toFixed(6),
                             promedio: this.arsenico3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Cadmio',
@@ -3800,6 +3492,7 @@ export class CalcularHuellaComponent {
                             max: this.cadmio3Max.toFixed(6),
                             promedio: this.cadmio3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Cromo',
@@ -3809,6 +3502,7 @@ export class CalcularHuellaComponent {
                             max: this.cromo3Max.toFixed(6),
                             promedio: this.cromo3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Cobre',
@@ -3818,6 +3512,7 @@ export class CalcularHuellaComponent {
                             max: this.cobre3Max.toFixed(6),
                             promedio: this.cobre3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Mercurio',
@@ -3827,6 +3522,7 @@ export class CalcularHuellaComponent {
                             max: this.mercurio3Max.toFixed(6),
                             promedio: this.mercurio3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Niquel',
@@ -3836,6 +3532,7 @@ export class CalcularHuellaComponent {
                             max: this.niquel3Max.toFixed(6),
                             promedio: this.niquel3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Plomo',
@@ -3845,6 +3542,7 @@ export class CalcularHuellaComponent {
                             max: this.plomo3Max.toFixed(6),
                             promedio: this.plomo3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Zinc',
@@ -3854,6 +3552,7 @@ export class CalcularHuellaComponent {
                             max: this.zinc3Max.toFixed(6),
                             promedio: this.zinc3Promedio.toFixed(6),
                             emisionContaminantes: '',
+                            porcentaje: 0
                         },
                         {
                             parametro: 'Pentaclorofenol',
@@ -3863,60 +3562,16 @@ export class CalcularHuellaComponent {
                             max: this.pentaclorofenol3Max.toFixed(6),
                             promedio: this.pentaclorofenol3Promedio.toFixed(6),
                             emisionContaminantes: '',
-                        },
+                            porcentaje: 0
+                        }
                     ],
+
                 },
             ],
-            totales: {
-                entradaAguaPotableTotal: this.aguaPotableMensualTotal.toFixed(6),
-                entradaAguaPozoTotal: this.aguaSuperficialTotal.toFixed(6),
-                entradaAguaSuperficialTotal: this.aguaSuperficialTotal.toFixed(6),
-                salidaAguaDescargada: this.salidaAguaDescargadaTotal.toFixed(6),
-                salidaAguaInfiltrada: this.salidaAguaInfiltradaTotal.toFixed(6),
-                aguaDulceConsumida: this.salidaAguaConsumidaTotal.toFixed(6),
-                nitrogenoTatal: 0,
-                nitrgenoTotalKjeldahl: ((this.salidaAguaDescargadaTotal * this.nitrogenoKjeldahl1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.nitrogenoKjeldahl2Promedio) / 1000),
-                fosforoTotal: ((this.salidaAguaDescargadaTotal * this.fosforoTotal1Promedio) / 1000).toFixed(6),
-                demandaBioOxgTotal: ((this.salidaAguaDescargadaTotal * this.dbo1Promedio) / 1000).toFixed(6),
-                arsenicoTotal: (((this.salidaAguaDescargadaTotal * this.arsenico1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.arsenico2Promedio) / 1000)).toFixed(6),
-                cadminioTotal: (((this.salidaAguaDescargadaTotal * this.cadmio1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.cadmio2Promedio) / 1000)).toFixed(6),
-                cromoTotal: (((this.salidaAguaDescargadaTotal * this.cromo1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.cromo2Promedio) / 1000)).toFixed(6),
-                cobreTotal: ((this.salidaAguaInfiltradaTotal * this.cobre2Promedio) / 1000).toFixed(6),
-                mercurioTotal: (((this.salidaAguaDescargadaTotal * this.mercurio1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.mercurio2Promedio) / 1000)).toFixed(6),
-                niquelTotal: (((this.salidaAguaDescargadaTotal * this.niquel1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.niquel2Promedio) / 1000)).toFixed(6),
-                plomoTotal: (((this.salidaAguaDescargadaTotal * this.plomo1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.plomo2Promedio) / 1000)).toFixed(6),
-                zincTotal: (((this.salidaAguaDescargadaTotal * this.zinc1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.zinc2Promedio) / 1000)).toFixed(6),
-                pentaclorofenolTotal: (((this.salidaAguaDescargadaTotal * this.pentaclorofenol1Promedio) / 1000) + ((this.salidaAguaInfiltradaTotal * this.pentaclorofenol1Promedio) / 1000)).toFixed(6),
-
-                availableWaterRemainingAwareTotal: (this.salidaAguaConsumidaTotal * 80.095291).toFixed(6),
-                toxixidadHumanaTotal: (toxixidadHumana1 + toxixidadHumana2).toFixed(6),
-                ecotoxixidadTotal: (ecotoxixidad1 + ecotoxixidad2).toFixed(6),
-                eutrofizacionTotal: (eutrofizacion1 + eutrofizacion2).toFixed(6),
-
-                potencialesImpactosSaludTotal: (this.salidaAguaConsumidaTotal * 0.000017256729214146).toFixed(6),
-                enfermedadesPorToxicidadTotal: (enfermedadesPorToxicidad1 + enfermedadesPorToxicidad2).toFixed(6),
-                disminucionBiodiversidadTerrestreTotal: (this.salidaAguaConsumidaTotal * 0.266051).toFixed(6),
-                ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal: (ecosistemasAcuaticosAfectadosPorEcotoxicidad1 + ecosistemasAcuaticosAfectadosPorEcotoxicidad2).toFixed(6),
-                ecosistemasAcuaticosAfectadosPorEutrofizacionTotal: (ecosistemasAcuaticosAfectadosPorEutrofizacion1 + ecosistemasAcuaticosAfectadosPorEutrofizacion2).toFixed(6),
-
-            },
+            totales,
+            totalesPorcentaje
         };
 
-        /* this.googleSheetsService.handleAuthClick()
-                    .then(() => {
-                        console.log('Usuario autenticado, ahora se guardarán los datos.');
-    
-                              // Después de autenticar, guarda los datos
-                              // return this.guardarDatos();
-                    })
-                    .then(() => {
-                        console.log('Datos guardados exitosamente. Ahora se habilitará el botón de descarga.');
-                              // this.isLoggedIn = true; // Actualiza el estado de autenticación
-                              // this.guardarDatos();
-                    })
-                    .catch((error) => {
-                        console.error('Error durante el proceso de autenticación o guardado:', error);
-                    }); */
         this.router.navigate(['/resumen'], { state: { data: dataLista } });
     }
 
