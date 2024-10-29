@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { jsPDF } from 'jspdf';
-import autoTable from 'jspdf-autotable';
+// import autoTable from 'jspdf-autotable';
+import html2canvas from 'html2canvas';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,13 +10,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './resumen.component.html',
-  styleUrls: ['./resumen.component.css']
+  styleUrls: ['./resumen.component.css'],
 })
 export class ResumenComponent implements OnInit {
+  @ViewChild('resumen', { static: false }) pdfContent!: ElementRef;
 
   data: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     // Acceder a los datos pasados
@@ -25,14 +27,44 @@ export class ResumenComponent implements OnInit {
 
   generaPdf() {
     const doc = new jsPDF({
-      orientation: 'portrait',
+      orientation: 'landscape',
       unit: 'mm',
-      format: [1050, 1485],
+      format: [1200, 1500], // Tamaño personalizado: 210 mm de alto por 2970 mm de ancho
       putOnlyUsedFonts: true,
-      floatPrecision: 16
+      floatPrecision: 16,
     });
 
-    const tableData: string[][] = [];
+    const resumen = this.pdfContent.nativeElement;
+
+    doc.setFontSize(22);
+    doc.text('HUELLA DE AGUA DIRECTA', 10, 20); // Ajusta la posición del título según sea necesario
+
+    html2canvas(resumen).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const imgWidth = 1485; // Ancho de la imagen en el PDF
+      const pageHeight = 1200; // Altura de la página en el PDF
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 30;
+
+      // Agrega la imagen al PDF
+      doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      // Si la imagen es más alta que una página, agrega páginas adicionales
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        doc.addPage();
+        doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      doc.save('tabla_huella_agua.pdf');
+      console.log('guarda');
+      // Guarda el PDF
+    });
+
+    /* const tableData: string[][] = [];
 
     const rows = document.querySelectorAll('.tabla-inventario table tbody tr');
     rows.forEach(row => {
@@ -97,6 +129,6 @@ export class ResumenComponent implements OnInit {
       }
     });
 
-    doc.save('tabla_huella_agua.pdf');
+    doc.save('tabla_huella_agua.pdf'); */
   }
 }
