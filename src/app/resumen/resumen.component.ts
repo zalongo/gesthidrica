@@ -29,7 +29,7 @@ export class ResumenComponent implements OnInit {
     const doc = new jsPDF({
       orientation: 'landscape',
       unit: 'mm',
-      format: [1200, 1500], // Tamaño personalizado: 210 mm de alto por 2970 mm de ancho
+      format: [300, 1500], // Tamaño personalizado: 210 mm de alto por 2970 mm de ancho
       putOnlyUsedFonts: true,
       floatPrecision: 16,
     });
@@ -42,7 +42,7 @@ export class ResumenComponent implements OnInit {
     html2canvas(resumen).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
       const imgWidth = 1485; // Ancho de la imagen en el PDF
-      const pageHeight = 1200; // Altura de la página en el PDF
+      const pageHeight = 300; // Altura de la página en el PDF
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
       let heightLeft = imgHeight;
       let position = 30;
