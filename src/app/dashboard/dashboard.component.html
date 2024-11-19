@@ -43,11 +43,12 @@
             </h5>
             <div class="accordion-body accordion-collapse collapse" [attr.id]="'collapse' + i"
               data-bs-parent="#accordionExample">
-              <div class="row">
+              <div class="row" *ngFor="let chart of card.charts">
                 <!-- Gráfico -->
                 <div class="col-md-6">
                   <div class="card">
-                    <canvas [attr.id]="card.id"></canvas>
+                    <h4>{{chart.title}}</h4>
+                    <canvas [attr.id]="chart.id"></canvas>
                   </div>
                 </div>
 
@@ -65,7 +66,7 @@
                         </thead>
                         <tbody>
                           <!-- Mostrar los últimos 10 valores de la variable seleccionada -->
-                          <tr *ngFor="let data of getFilteredData(card.title)">
+                          <tr *ngFor="let data of getFilteredData(chart.id)">
                             <td class="col-md-4">{{data.fecha}}</td>
                             <td class="col-md-4">{{data.value}}</td>
                             <td class="col-md-4">{{data.hora}}</td>
