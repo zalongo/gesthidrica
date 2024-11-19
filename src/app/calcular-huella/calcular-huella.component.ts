@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./calcular-huella.component.css'],
 })
 export class CalcularHuellaComponent {
-    currentStep: number = 5;
+    currentStep: number = 1;
     isLoggedIn: boolean = false;
 
     // Datos de la medición de huella
