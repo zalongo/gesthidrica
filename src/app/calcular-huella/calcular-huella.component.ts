@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { GoogleSheetsService } from '../services/google-sheets.service';
+// import { GoogleSheetsService } from '../services/google-sheets.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class CalcularHuellaComponent {
     nombreEmpresa: string = '';
     instalacionMedida: string = '';
     ubicacionMedidaR: string = '';
-    ubicacionMedidaC: string = 'Temuco';
+    ubicacionMedidaC: string = '';
     tipoProducto: string = '';
     nombreResponsable: string = '';
     cargoResponsable: string = '';
@@ -30,123 +30,123 @@ export class CalcularHuellaComponent {
     telefonoResponsable: string = '';
 
     // Datos de producción mensual
-    producto: string = 'Avellanas';
-    descripcion: string = 'Corylus avellana L';
+    producto: string = '';
+    descripcion: string = '';
     unidad: string = 'ton';
-    enero: number = 773.97;
-    febrero: number = 905.9;
-    marzo: number = 709.02;
-    abril: number = 669.3;
-    mayo: number = 502.43;
-    junio: number = 979.19;
-    julio: number = 713.72;
-    agosto: number = 818.12;
-    septiembre: number = 872.26;
-    octubre: number = 506.78;
-    noviembre: number = 648.4;
-    diciembre: number = 875.56;
+    enero: number = 0;
+    febrero: number = 0;
+    marzo: number = 0;
+    abril: number = 0;
+    mayo: number = 0;
+    junio: number = 0;
+    julio: number = 0;
+    agosto: number = 0;
+    septiembre: number = 0;
+    octubre: number = 0;
+    noviembre: number = 0;
+    diciembre: number = 0;
     produccionTotal: number = 0;
     produccionPromedio: number = 0;
 
     // Datos de entrada de agua potable mensual
     aguaPotableMensualUso: string = 'Sistemas Sanitarios';
-    aguaPotableMensualEnero: number = 12.96;
-    aguaPotableMensualFebrero: number = 11.85;
-    aguaPotableMensualMarzo: number = 14.96;
-    aguaPotableMensualAbril: number = 12.73;
-    aguaPotableMensualMayo: number = 14.48;
-    aguaPotableMensualJunio: number = 10.22;
-    aguaPotableMensualJulio: number = 12.22;
-    aguaPotableMensualAgosto: number = 12.08;
-    aguaPotableMensualSeptiembre: number = 12.31;
-    aguaPotableMensualOctubre: number = 10.15;
-    aguaPotableMensualNoviembre: number = 14.96;
-    aguaPotableMensualDiciembre: number = 14.19;
+    aguaPotableMensualEnero: number = 0;
+    aguaPotableMensualFebrero: number = 0;
+    aguaPotableMensualMarzo: number = 0;
+    aguaPotableMensualAbril: number = 0;
+    aguaPotableMensualMayo: number = 0;
+    aguaPotableMensualJunio: number = 0;
+    aguaPotableMensualJulio: number = 0;
+    aguaPotableMensualAgosto: number = 0;
+    aguaPotableMensualSeptiembre: number = 0;
+    aguaPotableMensualOctubre: number = 0;
+    aguaPotableMensualNoviembre: number = 0;
+    aguaPotableMensualDiciembre: number = 0;
     aguaPotableMensualTotal: number = 0;
     aguaPotableMensualPromedio: number = 0;
 
     // Datos de entrada de agua de pozo mensual
     aguaPozoFuenteUso: string = 'Producción';
-    aguaPozoEnero: number = 58.13;
-    aguaPozoFebrero: number = 51.51;
-    aguaPozoMarzo: number = 65.71;
-    aguaPozoAbril: number = 66.82;
-    aguaPozoMayo: number = 68.22;
-    aguaPozoJunio: number = 67.24;
-    aguaPozoJulio: number = 55.75;
-    aguaPozoAgosto: number = 68.5;
-    aguaPozoSeptiembre: number = 68.06;
-    aguaPozoOctubre: number = 50.62;
-    aguaPozoNoviembre: number = 65.17;
-    aguaPozoDiciembre: number = 53.84;
+    aguaPozoEnero: number = 0;
+    aguaPozoFebrero: number = 0;
+    aguaPozoMarzo: number = 0;
+    aguaPozoAbril: number = 0;
+    aguaPozoMayo: number = 0;
+    aguaPozoJunio: number = 0;
+    aguaPozoJulio: number = 0;
+    aguaPozoAgosto: number = 0;
+    aguaPozoSeptiembre: number = 0;
+    aguaPozoOctubre: number = 0;
+    aguaPozoNoviembre: number = 0;
+    aguaPozoDiciembre: number = 0;
     aguaPozoTotal: number = 0;
     aguaPozoPromedio: number = 0;
 
     // Datos de entrada de agua dulce de fuentes superficiales mensual
     aguaSuperficialFuenteUso: string = 'Producción';
-    aguaSuperficialEnero: number = 69.62;
-    aguaSuperficialFebrero: number = 56.23;
-    aguaSuperficialMarzo: number = 66.82;
-    aguaSuperficialAbril: number = 63.58;
-    aguaSuperficialMayo: number = 62.59;
-    aguaSuperficialJunio: number = 66.97;
-    aguaSuperficialJulio: number = 65.16;
-    aguaSuperficialAgosto: number = 56.27;
-    aguaSuperficialSeptiembre: number = 59.1;
-    aguaSuperficialOctubre: number = 59.71;
-    aguaSuperficialNoviembre: number = 55.18;
-    aguaSuperficialDiciembre: number = 58.04;
+    aguaSuperficialEnero: number = 0;
+    aguaSuperficialFebrero: number = 0;
+    aguaSuperficialMarzo: number = 0;
+    aguaSuperficialAbril: number = 0;
+    aguaSuperficialMayo: number = 0;
+    aguaSuperficialJunio: number = 0;
+    aguaSuperficialJulio: number = 0;
+    aguaSuperficialAgosto: number = 0;
+    aguaSuperficialSeptiembre: number = 0;
+    aguaSuperficialOctubre: number = 0;
+    aguaSuperficialNoviembre: number = 0;
+    aguaSuperficialDiciembre: number = 0;
     aguaSuperficialTotal: number = 0;
     aguaSuperficialPromedio: number = 0;
 
     // Datos de salida de agua descargada mensual
     salidaAguaDescargadaProceso: string = 'Producción';
-    salidaAguaDescargadaEnero: number = 11.82;
-    salidaAguaDescargadaFebrero: number = 13.53;
-    salidaAguaDescargadaMarzo: number = 11.11;
-    salidaAguaDescargadaAbril: number = 14.72;
-    salidaAguaDescargadaMayo: number = 14.33;
-    salidaAguaDescargadaJunio: number = 14.42;
-    salidaAguaDescargadaJulio: number = 12.91;
-    salidaAguaDescargadaAgosto: number = 12.29;
-    salidaAguaDescargadaSeptiembre: number = 10.47;
-    salidaAguaDescargadaOctubre: number = 10.01;
-    salidaAguaDescargadaNoviembre: number = 13.59;
-    salidaAguaDescargadaDiciembre: number = 14.32;
+    salidaAguaDescargadaEnero: number = 0;
+    salidaAguaDescargadaFebrero: number = 0;
+    salidaAguaDescargadaMarzo: number = 0;
+    salidaAguaDescargadaAbril: number = 0;
+    salidaAguaDescargadaMayo: number = 0;
+    salidaAguaDescargadaJunio: number = 0;
+    salidaAguaDescargadaJulio: number = 0;
+    salidaAguaDescargadaAgosto: number = 0;
+    salidaAguaDescargadaSeptiembre: number = 0;
+    salidaAguaDescargadaOctubre: number = 0;
+    salidaAguaDescargadaNoviembre: number = 0;
+    salidaAguaDescargadaDiciembre: number = 0;
     salidaAguaDescargadaTotal: number = 0;
     salidaAguaDescargadaPromedio: number = 0;
 
     //dATOS DER SALIDA DE AGUA INFILTRADA MENSUAL
     salidaAguaInfiltradaProceso: string = 'Producción';
-    salidaAguaInfiltradaEnero: number = 9.76;
-    salidaAguaInfiltradaFebrero: number = 7.27;
-    salidaAguaInfiltradaMarzo: number = 7.66;
-    salidaAguaInfiltradaAbril: number = 6.27;
-    salidaAguaInfiltradaMayo: number = 8.35;
-    salidaAguaInfiltradaJunio: number = 6.29;
-    salidaAguaInfiltradaJulio: number = 7.17;
-    salidaAguaInfiltradaAgosto: number = 5.78;
-    salidaAguaInfiltradaSeptiembre: number = 7.63;
-    salidaAguaInfiltradaOctubre: number = 7.01;
-    salidaAguaInfiltradaNoviembre: number = 6.74;
-    salidaAguaInfiltradaDiciembre: number = 5.41;
+    salidaAguaInfiltradaEnero: number = 0;
+    salidaAguaInfiltradaFebrero: number = 0;
+    salidaAguaInfiltradaMarzo: number = 0;
+    salidaAguaInfiltradaAbril: number = 0;
+    salidaAguaInfiltradaMayo: number = 0;
+    salidaAguaInfiltradaJunio: number = 0;
+    salidaAguaInfiltradaJulio: number = 0;
+    salidaAguaInfiltradaAgosto: number = 0;
+    salidaAguaInfiltradaSeptiembre: number = 0;
+    salidaAguaInfiltradaOctubre: number = 0;
+    salidaAguaInfiltradaNoviembre: number = 0;
+    salidaAguaInfiltradaDiciembre: number = 0;
     salidaAguaInfiltradaTotal: number = 0;
     salidaAguaInfiltradaPromedio: number = 0;
 
     // Datos de salida de agua consumida mensual
     salidaAguaConsumidaProceso: string = 'Producción';
-    salidaAguaConsumidaEnero: number = 106.17;
-    salidaAguaConsumidaFebrero: number = 86.94;
-    salidaAguaConsumidaMarzo: number = 113.76;
-    salidaAguaConsumidaAbril: number = 109.41;
-    salidaAguaConsumidaMayo: number = 108.13;
-    salidaAguaConsumidaJunio: number = 113.5;
-    salidaAguaConsumidaJulio: number = 100.83;
-    salidaAguaConsumidaAgosto: number = 106.7;
-    salidaAguaConsumidaSeptiembre: number = 109.06;
-    salidaAguaConsumidaOctubre: number = 93.31;
-    salidaAguaConsumidaNoviembre: number = 100.02;
-    salidaAguaConsumidaDiciembre: number = 92.15;
+    salidaAguaConsumidaEnero: number = 0;
+    salidaAguaConsumidaFebrero: number = 0;
+    salidaAguaConsumidaMarzo: number = 0;
+    salidaAguaConsumidaAbril: number = 0;
+    salidaAguaConsumidaMayo: number = 0;
+    salidaAguaConsumidaJunio: number = 0;
+    salidaAguaConsumidaJulio: number = 0;
+    salidaAguaConsumidaAgosto: number = 0;
+    salidaAguaConsumidaSeptiembre: number = 0;
+    salidaAguaConsumidaOctubre: number = 0;
+    salidaAguaConsumidaNoviembre: number = 0;
+    salidaAguaConsumidaDiciembre: number = 0;
     salidaAguaConsumidaTotal: number = 0;
     salidaAguaConsumidaPromedio: number = 0;
 
@@ -200,67 +200,67 @@ export class CalcularHuellaComponent {
     nitrogeno3Promedio: number = 0;
 
     //DatosUltimaPagF2
-    nitrogenoKjeldahlEnero1: number = 8.3;
-    nitrogenoKjeldahlFebrero1: number = 10.4;
-    nitrogenoKjeldahlMarzo1: number = 31.4;
-    nitrogenoKjeldahlAbril1: number = 26.3;
-    nitrogenoKjeldahlMayo1: number = 36.2;
-    nitrogenoKjeldahlJunio1: number = 47;
-    nitrogenoKjeldahlJulio1: number = 43.2;
-    nitrogenoKjeldahlAgosto1: number = 45.7;
-    nitrogenoKjeldahlSeptiembre1: number = 1.6;
-    nitrogenoKjeldahlOctubre1: number = 22;
-    nitrogenoKjeldahlNoviembre1: number = 4.4;
-    nitrogenoKjeldahlDiciembre1: number = 31.2;
+    nitrogenoKjeldahlEnero1: number = 0;
+    nitrogenoKjeldahlFebrero1: number = 0;
+    nitrogenoKjeldahlMarzo1: number = 0;
+    nitrogenoKjeldahlAbril1: number = 0;
+    nitrogenoKjeldahlMayo1: number = 0;
+    nitrogenoKjeldahlJunio1: number = 0;
+    nitrogenoKjeldahlJulio1: number = 0;
+    nitrogenoKjeldahlAgosto1: number = 0;
+    nitrogenoKjeldahlSeptiembre1: number = 0;
+    nitrogenoKjeldahlOctubre1: number = 0;
+    nitrogenoKjeldahlNoviembre1: number = 0;
+    nitrogenoKjeldahlDiciembre1: number = 0;
     nitrogenoKjeldahl1Min: number = 0;
     nitrogenoKjeldahl1Max: number = 0;
     nitrogenoKjeldahl1Promedio: number = 0;
 
-    nitrogenoKjeldahlEnero2: number = 9.2;
-    nitrogenoKjeldahlFebrero2: number = 41;
-    nitrogenoKjeldahlMarzo2: number = 12.8;
-    nitrogenoKjeldahlAbril2: number = 15.5;
-    nitrogenoKjeldahlMayo2: number = 4.1;
-    nitrogenoKjeldahlJunio2: number = 24.7;
-    nitrogenoKjeldahlJulio2: number = 23;
-    nitrogenoKjeldahlAgosto2: number = 26.6;
-    nitrogenoKjeldahlSeptiembre2: number = 33.8;
-    nitrogenoKjeldahlOctubre2: number = 16;
-    nitrogenoKjeldahlNoviembre2: number = 40.6;
-    nitrogenoKjeldahlDiciembre2: number = 10.9;
+    nitrogenoKjeldahlEnero2: number =0;
+    nitrogenoKjeldahlFebrero2: number =0;
+    nitrogenoKjeldahlMarzo2: number =0;
+    nitrogenoKjeldahlAbril2: number =0;
+    nitrogenoKjeldahlMayo2: number = 0;
+    nitrogenoKjeldahlJunio2: number =0;
+    nitrogenoKjeldahlJulio2: number =0;
+    nitrogenoKjeldahlAgosto2: number =0;
+    nitrogenoKjeldahlSeptiembre2: number =0;
+    nitrogenoKjeldahlOctubre2: number =0;
+    nitrogenoKjeldahlNoviembre2: number =0;
+    nitrogenoKjeldahlDiciembre2: number =0;
     nitrogenoKjeldahl2Min: number = 0;
     nitrogenoKjeldahl2Max: number = 0;
     nitrogenoKjeldahl2Promedio: number = 0;
 
-    nitrogenoKjeldahlEnero3: number = 8.3;
-    nitrogenoKjeldahlFebrero3: number = 10.4;
-    nitrogenoKjeldahlMarzo3: number = 31.4;
-    nitrogenoKjeldahlAbril3: number = 26.3;
-    nitrogenoKjeldahlMayo3: number = 36.2;
-    nitrogenoKjeldahlJunio3: number = 47;
-    nitrogenoKjeldahlJulio3: number = 43.2;
-    nitrogenoKjeldahlAgosto3: number = 45.7;
-    nitrogenoKjeldahlSeptiembre3: number = 1.6;
-    nitrogenoKjeldahlOctubre3: number = 22;
-    nitrogenoKjeldahlNoviembre3: number = 4.4;
-    nitrogenoKjeldahlDiciembre3: number = 31.2;
+    nitrogenoKjeldahlEnero3: number = 0;
+    nitrogenoKjeldahlFebrero3: number = 0;
+    nitrogenoKjeldahlMarzo3: number = 0;
+    nitrogenoKjeldahlAbril3: number = 0;
+    nitrogenoKjeldahlMayo3: number = 0;
+    nitrogenoKjeldahlJunio3: number = 0;
+    nitrogenoKjeldahlJulio3: number = 0;
+    nitrogenoKjeldahlAgosto3: number = 0;
+    nitrogenoKjeldahlSeptiembre3: number = 0;
+    nitrogenoKjeldahlOctubre3: number = 0;
+    nitrogenoKjeldahlNoviembre3: number = 0;
+    nitrogenoKjeldahlDiciembre3: number = 0;
     nitrogenoKjeldahl3Min: number = 0;
     nitrogenoKjeldahl3Max: number = 0;
     nitrogenoKjeldahl3Promedio: number = 0;
 
     //DatosUltimaPagF3
-    fosforoTotalEnero1: number = 4.5;
-    fosforoTotalFebrero1: number = 5.6;
-    fosforoTotalMarzo1: number = 9.4;
-    fosforoTotalAbril1: number = 2.1;
-    fosforoTotalMayo1: number = 3;
-    fosforoTotalJunio1: number = 0.9;
-    fosforoTotalJulio1: number = 6.1;
-    fosforoTotalAgosto1: number = 3.5;
-    fosforoTotalSeptiembre1: number = 0.8;
-    fosforoTotalOctubre1: number = 2.6;
-    fosforoTotalNoviembre1: number = 3.5;
-    fosforoTotalDiciembre1: number = 0.3;
+    fosforoTotalEnero1: number = 0;
+    fosforoTotalFebrero1: number = 0;
+    fosforoTotalMarzo1: number = 0;
+    fosforoTotalAbril1: number = 0;
+    fosforoTotalMayo1: number = 0;
+    fosforoTotalJunio1: number = 0;
+    fosforoTotalJulio1: number = 0;
+    fosforoTotalAgosto1: number = 0;
+    fosforoTotalSeptiembre1: number = 0;
+    fosforoTotalOctubre1: number = 0;
+    fosforoTotalNoviembre1: number = 0;
+    fosforoTotalDiciembre1: number = 0;
     fosforoTotal1Min: number = 0;
     fosforoTotal1Max: number = 0;
     fosforoTotal1Promedio: number = 0;
@@ -281,18 +281,18 @@ export class CalcularHuellaComponent {
     fosforoTotal2Max: number = 0;
     fosforoTotal2Promedio: number = 0;
 
-    fosforoTotalEnero3: number = 4.5;
-    fosforoTotalFebrero3: number = 5.6;
-    fosforoTotalMarzo3: number = 9.4;
-    fosforoTotalAbril3: number = 2.1;
-    fosforoTotalMayo3: number = 3;
-    fosforoTotalJunio3: number = 0.9;
-    fosforoTotalJulio3: number = 6.1;
-    fosforoTotalAgosto3: number = 3.5;
-    fosforoTotalSeptiembre3: number = 0.8;
-    fosforoTotalOctubre3: number = 2.6;
-    fosforoTotalNoviembre3: number = 3.5;
-    fosforoTotalDiciembre3: number = 0.3;
+    fosforoTotalEnero3: number = 0;
+    fosforoTotalFebrero3: number = 0;
+    fosforoTotalMarzo3: number = 0;
+    fosforoTotalAbril3: number = 0;
+    fosforoTotalMayo3: number = 0;
+    fosforoTotalJunio3: number = 0;
+    fosforoTotalJulio3: number = 0;
+    fosforoTotalAgosto3: number = 0;
+    fosforoTotalSeptiembre3: number = 0;
+    fosforoTotalOctubre3: number = 0;
+    fosforoTotalNoviembre3: number = 0;
+    fosforoTotalDiciembre3: number = 0;
     fosforoTotal3Min: number = 0;
     fosforoTotal3Max: number = 0;
     fosforoTotal3Promedio: number = 0;
@@ -396,18 +396,18 @@ export class CalcularHuellaComponent {
     dqo3Promedio: number = 0;
 
     //DatosUltimaPagF6
-    dboEnero1: number = 21.5;
-    dboFebrero1: number = 20.2;
-    dboMarzo1: number = 0.7;
-    dboAbril1: number = 10;
-    dboMayo1: number = 8;
-    dboJunio1: number = 26.3;
-    dboJulio1: number = 21;
-    dboAgosto1: number = 4.5;
-    dboSeptiembre1: number = 7.8;
-    dboOctubre1: number = 23.4;
-    dboNoviembre1: number = 5.7;
-    dboDiciembre1: number = 7;
+    dboEnero1: number = 0;
+    dboFebrero1: number = 0;
+    dboMarzo1: number = 0;
+    dboAbril1: number = 0;
+    dboMayo1: number = 0;
+    dboJunio1: number = 0;
+    dboJulio1: number = 0;
+    dboAgosto1: number = 0;
+    dboSeptiembre1: number = 0;
+    dboOctubre1: number = 0;
+    dboNoviembre1: number = 0;
+    dboDiciembre1: number = 0;
     dbo1Min: number = 0;
     dbo1Max: number = 0;
     dbo1Promedio: number = 0;
@@ -428,165 +428,165 @@ export class CalcularHuellaComponent {
     dbo2Max: number = 0;
     dbo2Promedio: number = 0;
 
-    dboEnero3: number = 21.5;
-    dboFebrero3: number = 20.2;
-    dboMarzo3: number = 0.7;
-    dboAbril3: number = 10;
-    dboMayo3: number = 8;
-    dboJunio3: number = 26.3;
-    dboJulio3: number = 21;
-    dboAgosto3: number = 4.5;
-    dboSeptiembre3: number = 7.8;
-    dboOctubre3: number = 23.4;
-    dboNoviembre3: number = 5.7;
-    dboDiciembre3: number = 7;
+    dboEnero3: number = 0;
+    dboFebrero3: number = 0;
+    dboMarzo3: number = 0;
+    dboAbril3: number = 0;
+    dboMayo3: number = 0;
+    dboJunio3: number = 0;
+    dboJulio3: number = 0;
+    dboAgosto3: number = 0;
+    dboSeptiembre3: number = 0;
+    dboOctubre3: number = 0;
+    dboNoviembre3: number = 0;
+    dboDiciembre3: number = 0;
     dbo3Min: number = 0;
     dbo3Max: number = 0;
     dbo3Promedio: number = 0;
 
     //DatosUltimaPagF7
-    arsenicoEnero1: number = 0.25;
-    arsenicoFebrero1: number = 0.29;
-    arsenicoMarzo1: number = 0.28;
-    arsenicoAbril1: number = 0.45;
-    arsenicoMayo1: number = 0.47;
-    arsenicoJunio1: number = 0.04;
+    arsenicoEnero1: number = 0;
+    arsenicoFebrero1: number = 0;
+    arsenicoMarzo1: number = 0;
+    arsenicoAbril1: number = 0;
+    arsenicoMayo1: number = 0;
+    arsenicoJunio1: number = 0;
     arsenicoJulio1: number = 0;
-    arsenicoAgosto1: number = 0.15;
-    arsenicoSeptiembre1: number = 0.03;
-    arsenicoOctubre1: number = 0.1;
-    arsenicoNoviembre1: number = 0.04;
-    arsenicoDiciembre1: number = 0.17;
+    arsenicoAgosto1: number = 0;
+    arsenicoSeptiembre1: number = 0;
+    arsenicoOctubre1: number = 0;
+    arsenicoNoviembre1: number = 0;
+    arsenicoDiciembre1: number = 0;
     arsenico1Min: number = 0;
     arsenico1Max: number = 0;
     arsenico1Promedio: number = 0;
 
-    arsenicoEnero2: number = 0.13;
-    arsenicoFebrero2: number = 0.29;
-    arsenicoMarzo2: number = 0.23;
-    arsenicoAbril2: number = 0.28;
-    arsenicoMayo2: number = 0.42;
-    arsenicoJunio2: number = 0.34;
-    arsenicoJulio2: number = 0.12;
-    arsenicoAgosto2: number = 0.49;
-    arsenicoSeptiembre2: number = 0.44;
-    arsenicoOctubre2: number = 0.48;
-    arsenicoNoviembre2: number = 0.17;
-    arsenicoDiciembre2: number = 0.39;
+    arsenicoEnero2: number = 0;
+    arsenicoFebrero2: number = 0;
+    arsenicoMarzo2: number = 0;
+    arsenicoAbril2: number = 0;
+    arsenicoMayo2: number = 0;
+    arsenicoJunio2: number = 0;
+    arsenicoJulio2: number = 0;
+    arsenicoAgosto2: number = 0;
+    arsenicoSeptiembre2: number = 0;
+    arsenicoOctubre2: number = 0;
+    arsenicoNoviembre2: number = 0;
+    arsenicoDiciembre2: number = 0;
     arsenico2Min: number = 0;
     arsenico2Max: number = 0;
     arsenico2Promedio: number = 0;
 
-    arsenicoEnero3: number = 0.25;
-    arsenicoFebrero3: number = 0.29;
-    arsenicoMarzo3: number = 0.28;
-    arsenicoAbril3: number = 0.45;
-    arsenicoMayo3: number = 0.47;
-    arsenicoJunio3: number = 0.04;
+    arsenicoEnero3: number = 0;
+    arsenicoFebrero3: number = 0;
+    arsenicoMarzo3: number = 0;
+    arsenicoAbril3: number = 0;
+    arsenicoMayo3: number = 0;
+    arsenicoJunio3: number = 0;
     arsenicoJulio3: number = 0;
-    arsenicoAgosto3: number = 0.15;
-    arsenicoSeptiembre3: number = 0.03;
-    arsenicoOctubre3: number = 0.1;
-    arsenicoNoviembre3: number = 0.04;
-    arsenicoDiciembre3: number = 0.17;
+    arsenicoAgosto3: number = 0;
+    arsenicoSeptiembre3: number = 0;
+    arsenicoOctubre3: number = 0;
+    arsenicoNoviembre3: number = 0;
+    arsenicoDiciembre3: number = 0;
     arsenico3Min: number = 0;
     arsenico3Max: number = 0;
     arsenico3Promedio: number = 0;
 
     //DatosUltimaPagF8
-    cadmioEnero1: number = 0.0046;
-    cadmioFebrero1: number = 0.0099;
-    cadmioMarzo1: number = 0.0033;
-    cadmioAbril1: number = 0.0029;
-    cadmioMayo1: number = 0.0041;
-    cadmioJunio1: number = 0.0063;
-    cadmioJulio1: number = 0.0095;
-    cadmioAgosto1: number = 0.0024;
-    cadmioSeptiembre1: number = 0.0079;
-    cadmioOctubre1: number = 0.008;
-    cadmioNoviembre1: number = 0.0055;
-    cadmioDiciembre1: number = 0.003;
+    cadmioEnero1: number = 0;
+    cadmioFebrero1: number = 0;
+    cadmioMarzo1: number = 0;
+    cadmioAbril1: number = 0;
+    cadmioMayo1: number = 0;
+    cadmioJunio1: number = 0;
+    cadmioJulio1: number = 0;
+    cadmioAgosto1: number = 0;
+    cadmioSeptiembre1: number = 0;
+    cadmioOctubre1: number = 0;
+    cadmioNoviembre1: number = 0;
+    cadmioDiciembre1: number = 0;
     cadmio1Min: number = 0;
     cadmio1Max: number = 0;
     cadmio1Promedio: number = 0;
 
-    cadmioEnero2: number = 0.004;
-    cadmioFebrero2: number = 0.0041;
-    cadmioMarzo2: number = 0.0017;
-    cadmioAbril2: number = 0.006;
-    cadmioMayo2: number = 0.0069;
-    cadmioJunio2: number = 0.0084;
-    cadmioJulio2: number = 0.0061;
-    cadmioAgosto2: number = 0.004;
+    cadmioEnero2: number = 0;
+    cadmioFebrero2: number = 0;
+    cadmioMarzo2: number = 0;
+    cadmioAbril2: number = 0;
+    cadmioMayo2: number = 0;
+    cadmioJunio2: number = 0;
+    cadmioJulio2: number = 0;
+    cadmioAgosto2: number = 0;
     cadmioSeptiembre2: number = 0;
-    cadmioOctubre2: number = 0.0023;
-    cadmioNoviembre2: number = 0.0028;
-    cadmioDiciembre2: number = 0.0028;
+    cadmioOctubre2: number = 0;
+    cadmioNoviembre2: number = 0;
+    cadmioDiciembre2: number = 0;
     cadmio2Min: number = 0;
     cadmio2Max: number = 0;
     cadmio2Promedio: number = 0;
 
-    cadmioEnero3: number = 0.0046;
-    cadmioFebrero3: number = 0.0099;
-    cadmioMarzo3: number = 0.0033;
-    cadmioAbril3: number = 0.0029;
-    cadmioMayo3: number = 0.0041;
-    cadmioJunio3: number = 0.0063;
-    cadmioJulio3: number = 0.0095;
-    cadmioAgosto3: number = 0.0024;
-    cadmioSeptiembre3: number = 0.0079;
-    cadmioOctubre3: number = 0.008;
-    cadmioNoviembre3: number = 0.0055;
-    cadmioDiciembre3: number = 0.003;
+    cadmioEnero3: number = 0;
+    cadmioFebrero3: number = 0;
+    cadmioMarzo3: number = 0;
+    cadmioAbril3: number = 0;
+    cadmioMayo3: number = 0;
+    cadmioJunio3: number = 0;
+    cadmioJulio3: number = 0;
+    cadmioAgosto3: number = 0;
+    cadmioSeptiembre3: number = 0;
+    cadmioOctubre3: number = 0;
+    cadmioNoviembre3: number = 0;
+    cadmioDiciembre3: number = 0;
     cadmio3Min: number = 0;
     cadmio3Max: number = 0;
     cadmio3Promedio: number = 0;
 
     //DatosUltimaPagF9
-    cromoEnero1: number = 0.0496;
-    cromoFebrero1: number = 0.0012;
-    cromoMarzo1: number = 0.0163;
-    cromoAbril1: number = 0.0339;
-    cromoMayo1: number = 0.0205;
-    cromoJunio1: number = 0.0245;
-    cromoJulio1: number = 0.0315;
-    cromoAgosto1: number = 0.0009;
-    cromoSeptiembre1: number = 0.0343;
-    cromoOctubre1: number = 0.036;
-    cromoNoviembre1: number = 0.0012;
-    cromoDiciembre1: number = 0.0425;
+    cromoEnero1: number = 0;
+    cromoFebrero1: number = 0;
+    cromoMarzo1: number = 0;
+    cromoAbril1: number = 0;
+    cromoMayo1: number = 0;
+    cromoJunio1: number = 0;
+    cromoJulio1: number = 0;
+    cromoAgosto1: number = 0;
+    cromoSeptiembre1: number = 0;
+    cromoOctubre1: number = 0;
+    cromoNoviembre1: number = 0;
+    cromoDiciembre1: number = 0;
     cromo1Min: number = 0;
     cromo1Max: number = 0;
     cromo1Promedio: number = 0;
 
-    cromoEnero2: number = 0.0306;
-    cromoFebrero2: number = 0.0107;
-    cromoMarzo2: number = 0.0297;
-    cromoAbril2: number = 0.023;
-    cromoMayo2: number = 0.0159;
-    cromoJunio2: number = 0.0101;
-    cromoJulio2: number = 0.0309;
-    cromoAgosto2: number = 0.0356;
-    cromoSeptiembre2: number = 0.0428;
-    cromoOctubre2: number = 0.0422;
-    cromoNoviembre2: number = 0.0172;
-    cromoDiciembre2: number = 0.0174;
+    cromoEnero2: number = 0;
+    cromoFebrero2: number = 0;
+    cromoMarzo2: number = 0;
+    cromoAbril2: number = 0;
+    cromoMayo2: number = 0;
+    cromoJunio2: number = 0;
+    cromoJulio2: number = 0;
+    cromoAgosto2: number = 0;
+    cromoSeptiembre2: number = 0;
+    cromoOctubre2: number = 0;
+    cromoNoviembre2: number = 0;
+    cromoDiciembre2: number = 0;
     cromo2Min: number = 0;
     cromo2Max: number = 0;
     cromo2Promedio: number = 0;
 
-    cromoEnero3: number = 0.0496;
-    cromoFebrero3: number = 0.0012;
-    cromoMarzo3: number = 0.0163;
-    cromoAbril3: number = 0.0339;
-    cromoMayo3: number = 0.0205;
-    cromoJunio3: number = 0.0245;
-    cromoJulio3: number = 0.0315;
-    cromoAgosto3: number = 0.0009;
-    cromoSeptiembre3: number = 0.0343;
-    cromoOctubre3: number = 0.036;
-    cromoNoviembre3: number = 0.0012;
-    cromoDiciembre3: number = 0.0425;
+    cromoEnero3: number = 0;
+    cromoFebrero3: number = 0;
+    cromoMarzo3: number = 0;
+    cromoAbril3: number = 0;
+    cromoMayo3: number = 0;
+    cromoJunio3: number = 0;
+    cromoJulio3: number = 0;
+    cromoAgosto3: number = 0;
+    cromoSeptiembre3: number = 0;
+    cromoOctubre3: number = 0;
+    cromoNoviembre3: number = 0;
+    cromoDiciembre3: number = 0;
     cromo3Min: number = 0;
     cromo3Max: number = 0;
     cromo3Promedio: number = 0;
@@ -608,18 +608,18 @@ export class CalcularHuellaComponent {
     cobre1Max: number = 0;
     cobre1Promedio: number = 0;
 
-    cobreEnero2: number = 0.5;
-    cobreFebrero2: number = 0.64;
-    cobreMarzo2: number = 0.28;
-    cobreAbril2: number = 0.34;
-    cobreMayo2: number = 0.79;
-    cobreJunio2: number = 0.56;
-    cobreJulio2: number = 0.54;
-    cobreAgosto2: number = 0.6;
-    cobreSeptiembre2: number = 0.7;
-    cobreOctubre2: number = 0.54;
-    cobreNoviembre2: number = 0.14;
-    cobreDiciembre2: number = 0.42;
+    cobreEnero2: number = 0;
+    cobreFebrero2: number = 0;
+    cobreMarzo2: number = 0;
+    cobreAbril2: number = 0;
+    cobreMayo2: number = 0;
+    cobreJunio2: number = 0;
+    cobreJulio2: number = 0;
+    cobreAgosto2: number = 0;
+    cobreSeptiembre2: number = 0;
+    cobreOctubre2: number = 0;
+    cobreNoviembre2: number = 0;
+    cobreDiciembre2: number = 0;
     cobre2Min: number = 0;
     cobre2Max: number = 0;
     cobre2Promedio: number = 0;
@@ -641,253 +641,253 @@ export class CalcularHuellaComponent {
     cobre3Promedio: number = 0;
 
     //DatosUltimaPagF11
-    mercurioEnero1: number = 0.00041;
-    mercurioFebrero1: number = 0.00053;
-    mercurioMarzo1: number = 0.00038;
-    mercurioAbril1: number = 0.00086;
-    mercurioMayo1: number = 0.00025;
-    mercurioJunio1: number = 0.00078;
-    mercurioJulio1: number = 0.00077;
-    mercurioAgosto1: number = 0.00004;
-    mercurioSeptiembre1: number = 0.00081;
-    mercurioOctubre1: number = 0.00035;
-    mercurioNoviembre1: number = 0.0004;
-    mercurioDiciembre1: number = 0.00046;
+    mercurioEnero1: number = 0;
+    mercurioFebrero1: number = 0;
+    mercurioMarzo1: number = 0;
+    mercurioAbril1: number = 0;
+    mercurioMayo1: number = 0;
+    mercurioJunio1: number = 0;
+    mercurioJulio1: number = 0;
+    mercurioAgosto1: number = 0;
+    mercurioSeptiembre1: number = 0;
+    mercurioOctubre1: number = 0;
+    mercurioNoviembre1: number = 0;
+    mercurioDiciembre1: number = 0;
     mercurio1Min: number = 0;
     mercurio1Max: number = 0;
     mercurio1Promedio: number = 0;
 
-    mercurioEnero2: number = 0.00018;
-    mercurioFebrero2: number = 0.00095;
-    mercurioMarzo2: number = 0.0005;
-    mercurioAbril2: number = 0.00093;
-    mercurioMayo2: number = 0.00056;
-    mercurioJunio2: number = 0.00054;
-    mercurioJulio2: number = 0.00097;
-    mercurioAgosto2: number = 0.00037;
-    mercurioSeptiembre2: number = 0.00013;
-    mercurioOctubre2: number = 0.00012;
-    mercurioNoviembre2: number = 0.00081;
-    mercurioDiciembre2: number = 0.00096;
+    mercurioEnero2: number = 0;
+    mercurioFebrero2: number = 0;
+    mercurioMarzo2: number = 0;
+    mercurioAbril2: number = 0;
+    mercurioMayo2: number = 0;
+    mercurioJunio2: number = 0;
+    mercurioJulio2: number = 0;
+    mercurioAgosto2: number = 0;
+    mercurioSeptiembre2: number = 0;
+    mercurioOctubre2: number = 0;
+    mercurioNoviembre2: number = 0;
+    mercurioDiciembre2: number = 0;
     mercurio2Min: number = 0;
     mercurio2Max: number = 0;
     mercurio2Promedio: number = 0;
 
-    mercurioEnero3: number = 0.00041;
-    mercurioFebrero3: number = 0.00053;
-    mercurioMarzo3: number = 0.00038;
-    mercurioAbril3: number = 0.00086;
-    mercurioMayo3: number = 0.00025;
-    mercurioJunio3: number = 0.00078;
-    mercurioJulio3: number = 0.00077;
-    mercurioAgosto3: number = 0.00004;
-    mercurioSeptiembre3: number = 0.00081;
-    mercurioOctubre3: number = 0.00035;
-    mercurioNoviembre3: number = 0.0004;
-    mercurioDiciembre3: number = 0.00046;
+    mercurioEnero3: number = 0;
+    mercurioFebrero3: number = 0;
+    mercurioMarzo3: number = 0;
+    mercurioAbril3: number = 0;
+    mercurioMayo3: number = 0;
+    mercurioJunio3: number = 0;
+    mercurioJulio3: number = 0;
+    mercurioAgosto3: number = 0;
+    mercurioSeptiembre3: number = 0;
+    mercurioOctubre3: number = 0;
+    mercurioNoviembre3: number = 0;
+    mercurioDiciembre3: number = 0;
     mercurio3Min: number = 0;
     mercurio3Max: number = 0;
     mercurio3Promedio: number = 0;
 
     //DatosUltimaPagF12
-    niquelEnero1: number = 0.014;
-    niquelFebrero1: number = 0.158;
-    niquelMarzo1: number = 0.076;
-    niquelAbril1: number = 0.039;
-    niquelMayo1: number = 0.074;
-    niquelJunio1: number = 0.039;
-    niquelJulio1: number = 0.095;
-    niquelAgosto1: number = 0.125;
-    niquelSeptiembre1: number = 0.139;
-    niquelOctubre1: number = 0.085;
-    niquelNoviembre1: number = 0.087;
-    niquelDiciembre1: number = 0.031;
+    niquelEnero1: number = 0;
+    niquelFebrero1: number = 0;
+    niquelMarzo1: number = 0;
+    niquelAbril1: number = 0;
+    niquelMayo1: number = 0;
+    niquelJunio1: number = 0;
+    niquelJulio1: number = 0;
+    niquelAgosto1: number = 0;
+    niquelSeptiembre1: number = 0;
+    niquelOctubre1: number = 0;
+    niquelNoviembre1: number = 0;
+    niquelDiciembre1: number = 0;
     niquel1Min: number = 0;
     niquel1Max: number = 0;
     niquel1Promedio: number = 0;
 
-    niquelEnero2: number = 0.036;
-    niquelFebrero2: number = 0.013;
-    niquelMarzo2: number = 0.1;
-    niquelAbril2: number = 0.006;
-    niquelMayo2: number = 0.08;
-    niquelJunio2: number = 0.097;
-    niquelJulio2: number = 0.058;
-    niquelAgosto2: number = 0.059;
-    niquelSeptiembre2: number = 0.1;
-    niquelOctubre2: number = 0.042;
-    niquelNoviembre2: number = 0.076;
-    niquelDiciembre2: number = 0.048;
+    niquelEnero2: number = 0;
+    niquelFebrero2: number = 0;
+    niquelMarzo2: number = 0;
+    niquelAbril2: number = 0;
+    niquelMayo2: number = 0;
+    niquelJunio2: number = 0;
+    niquelJulio2: number = 0;
+    niquelAgosto2: number = 0;
+    niquelSeptiembre2: number = 0;
+    niquelOctubre2: number = 0;
+    niquelNoviembre2: number = 0;
+    niquelDiciembre2: number = 0;
     niquel2Min: number = 0;
     niquel2Max: number = 0;
     niquel2Promedio: number = 0;
 
-    niquelEnero3: number = 0.014;
-    niquelFebrero3: number = 0.158;
-    niquelMarzo3: number = 0.076;
-    niquelAbril3: number = 0.039;
-    niquelMayo3: number = 0.074;
-    niquelJunio3: number = 0.039;
-    niquelJulio3: number = 0.095;
-    niquelAgosto3: number = 0.125;
-    niquelSeptiembre3: number = 0.139;
-    niquelOctubre3: number = 0.085;
-    niquelNoviembre3: number = 0.087;
-    niquelDiciembre3: number = 0.031;
+    niquelEnero3: number = 0;
+    niquelFebrero3: number = 0;
+    niquelMarzo3: number = 0;
+    niquelAbril3: number = 0;
+    niquelMayo3: number = 0;
+    niquelJunio3: number = 0;
+    niquelJulio3: number = 0;
+    niquelAgosto3: number = 0;
+    niquelSeptiembre3: number = 0;
+    niquelOctubre3: number = 0;
+    niquelNoviembre3: number = 0;
+    niquelDiciembre3: number = 0;
     niquel3Min: number = 0;
     niquel3Max: number = 0;
     niquel3Promedio: number = 0;
 
     //DatosUltimaPagF13
-    plomoEnero1: number = 0.04;
-    plomoFebrero1: number = 0.026;
-    plomoMarzo1: number = 0.007;
-    plomoAbril1: number = 0.017;
-    plomoMayo1: number = 0.019;
-    plomoJunio1: number = 0.047;
-    plomoJulio1: number = 0.007;
-    plomoAgosto1: number = 0.003;
-    plomoSeptiembre1: number = 0.034;
-    plomoOctubre1: number = 0.046;
-    plomoNoviembre1: number = 0.022;
-    plomoDiciembre1: number = 0.05;
+    plomoEnero1: number = 0;
+    plomoFebrero1: number = 0;
+    plomoMarzo1: number = 0;
+    plomoAbril1: number = 0;
+    plomoMayo1: number = 0;
+    plomoJunio1: number = 0;
+    plomoJulio1: number = 0;
+    plomoAgosto1: number = 0;
+    plomoSeptiembre1: number = 0;
+    plomoOctubre1: number = 0;
+    plomoNoviembre1: number = 0;
+    plomoDiciembre1: number = 0;
     plomo1Min: number = 0;
     plomo1Max: number = 0;
     plomo1Promedio: number = 0;
 
-    plomoEnero2: number = 0.008;
-    plomoFebrero2: number = 0.12;
-    plomoMarzo2: number = 0.087;
-    plomoAbril2: number = 0.002;
-    plomoMayo2: number = 0.14;
-    plomoJunio2: number = 0.181;
-    plomoJulio2: number = 0.093;
-    plomoAgosto2: number = 0.064;
-    plomoSeptiembre2: number = 0.036;
-    plomoOctubre2: number = 0.091;
-    plomoNoviembre2: number = 0.041;
-    plomoDiciembre2: number = 0.006;
+    plomoEnero2: number = 0;
+    plomoFebrero2: number = 0;
+    plomoMarzo2: number = 0;
+    plomoAbril2: number = 0;
+    plomoMayo2: number = 0;
+    plomoJunio2: number = 0;
+    plomoJulio2: number = 0;
+    plomoAgosto2: number = 0;
+    plomoSeptiembre2: number = 0;
+    plomoOctubre2: number = 0;
+    plomoNoviembre2: number = 0;
+    plomoDiciembre2: number = 0;
     plomo2Min: number = 0;
     plomo2Max: number = 0;
     plomo2Promedio: number = 0;
 
-    plomoEnero3: number = 0.04;
-    plomoFebrero3: number = 0.026;
-    plomoMarzo3: number = 0.007;
-    plomoAbril3: number = 0.017;
-    plomoMayo3: number = 0.019;
-    plomoJunio3: number = 0.047;
-    plomoJulio3: number = 0.007;
-    plomoAgosto3: number = 0.003;
-    plomoSeptiembre3: number = 0.034;
-    plomoOctubre3: number = 0.046;
-    plomoNoviembre3: number = 0.022;
-    plomoDiciembre3: number = 0.05;
+    plomoEnero3: number = 0;
+    plomoFebrero3: number = 0;
+    plomoMarzo3: number = 0;
+    plomoAbril3: number = 0;
+    plomoMayo3: number = 0;
+    plomoJunio3: number = 0;
+    plomoJulio3: number = 0;
+    plomoAgosto3: number = 0;
+    plomoSeptiembre3: number = 0;
+    plomoOctubre3: number = 0;
+    plomoNoviembre3: number = 0;
+    plomoDiciembre3: number = 0;
     plomo3Min: number = 0;
     plomo3Max: number = 0;
     plomo3Promedio: number = 0;
 
     //DatosUltimaPagF14
-    zincEnero1: number = 0.04;
-    zincFebrero1: number = 1;
-    zincMarzo1: number = 2.58;
-    zincAbril1: number = 0.04;
-    zincMayo1: number = 1;
-    zincJunio1: number = 1.19;
-    zincJulio1: number = 2.41;
-    zincAgosto1: number = 1.46;
-    zincSeptiembre1: number = 1.73;
-    zincOctubre1: number = 2.58;
-    zincNoviembre1: number = 0.93;
-    zincDiciembre1: number = 2.21;
+    zincEnero1: number = 0;
+    zincFebrero1: number = 0;
+    zincMarzo1: number = 0;
+    zincAbril1: number = 0;
+    zincMayo1: number = 0;
+    zincJunio1: number = 0;
+    zincJulio1: number = 0;
+    zincAgosto1: number = 0;
+    zincSeptiembre1: number = 0;
+    zincOctubre1: number = 0;
+    zincNoviembre1: number = 0;
+    zincDiciembre1: number = 0;
     zinc1Min: number = 0;
     zinc1Max: number = 0;
     zinc1Promedio: number = 0;
 
-    zincEnero2: number = 0.77;
-    zincFebrero2: number = 0.78;
-    zincMarzo2: number = 0.3;
-    zincAbril2: number = 0.02;
-    zincMayo2: number = 0.53;
-    zincJunio2: number = 0.35;
-    zincJulio2: number = 0.9;
-    zincAgosto2: number = 0.32;
-    zincSeptiembre2: number = 0.47;
-    zincOctubre2: number = 0.07;
-    zincNoviembre2: number = 0.61;
-    zincDiciembre2: number = 0.06;
+    zincEnero2: number = 0;
+    zincFebrero2: number = 0;
+    zincMarzo2: number = 0;
+    zincAbril2: number = 0;
+    zincMayo2: number = 0;
+    zincJunio2: number = 0;
+    zincJulio2: number = 0;
+    zincAgosto2: number = 0;
+    zincSeptiembre2: number = 0;
+    zincOctubre2: number = 0;
+    zincNoviembre2: number = 0;
+    zincDiciembre2: number = 0;
     zinc2Min: number = 0;
     zinc2Max: number = 0;
     zinc2Promedio: number = 0;
 
-    zincEnero3: number = 0.04;
-    zincFebrero3: number = 1;
-    zincMarzo3: number = 2.58;
-    zincAbril3: number = 0.04;
-    zincMayo3: number = 1;
-    zincJunio3: number = 1.19;
-    zincJulio3: number = 2.41;
-    zincAgosto3: number = 1.46;
-    zincSeptiembre3: number = 1.73;
-    zincOctubre3: number = 2.58;
-    zincNoviembre3: number = 0.93;
-    zincDiciembre3: number = 2.21;
+    zincEnero3: number = 0;
+    zincFebrero3: number = 0;
+    zincMarzo3: number = 0;
+    zincAbril3: number = 0;
+    zincMayo3: number = 0;
+    zincJunio3: number = 0;
+    zincJulio3: number = 0;
+    zincAgosto3: number = 0;
+    zincSeptiembre3: number = 0;
+    zincOctubre3: number = 0;
+    zincNoviembre3: number = 0;
+    zincDiciembre3: number = 0;
     zinc3Min: number = 0;
     zinc3Max: number = 0;
     zinc3Promedio: number = 0;
 
     //DatosUltimaPagF15
-    pentaclorofenolEnero1: number = 0.00818;
-    pentaclorofenolFebrero1: number = 0.00546;
-    pentaclorofenolMarzo1: number = 0.00114;
-    pentaclorofenolAbril1: number = 0.00512;
-    pentaclorofenolMayo1: number = 0.00534;
-    pentaclorofenolJunio1: number = 0.00067;
-    pentaclorofenolJulio1: number = 0.00091;
-    pentaclorofenolAgosto1: number = 0.00442;
-    pentaclorofenolSeptiembre1: number = 0.00204;
-    pentaclorofenolOctubre1: number = 0.00559;
-    pentaclorofenolNoviembre1: number = 0.00583;
-    pentaclorofenolDiciembre1: number = 0.00552;
+    pentaclorofenolEnero1: number = 0;
+    pentaclorofenolFebrero1: number = 0;
+    pentaclorofenolMarzo1: number = 0;
+    pentaclorofenolAbril1: number = 0;
+    pentaclorofenolMayo1: number = 0;
+    pentaclorofenolJunio1: number = 0;
+    pentaclorofenolJulio1: number = 0;
+    pentaclorofenolAgosto1: number = 0;
+    pentaclorofenolSeptiembre1: number = 0;
+    pentaclorofenolOctubre1: number = 0;
+    pentaclorofenolNoviembre1: number = 0;
+    pentaclorofenolDiciembre1: number = 0;
     pentaclorofenol1Min: number = 0;
     pentaclorofenol1Max: number = 0;
     pentaclorofenol1Promedio: number = 0;
 
-    pentaclorofenolEnero2: number = 0.00818;
-    pentaclorofenolFebrero2: number = 0.00546;
-    pentaclorofenolMarzo2: number = 0.00114;
-    pentaclorofenolAbril2: number = 0.00512;
-    pentaclorofenolMayo2: number = 0.00534;
-    pentaclorofenolJunio2: number = 0.00067;
-    pentaclorofenolJulio2: number = 0.00091;
-    pentaclorofenolAgosto2: number = 0.00442;
-    pentaclorofenolSeptiembre2: number = 0.00204;
-    pentaclorofenolOctubre2: number = 0.00559;
-    pentaclorofenolNoviembre2: number = 0.00583;
-    pentaclorofenolDiciembre2: number = 0.00552;
+    pentaclorofenolEnero2: number = 0;
+    pentaclorofenolFebrero2: number = 0;
+    pentaclorofenolMarzo2: number = 0;
+    pentaclorofenolAbril2: number = 0;
+    pentaclorofenolMayo2: number = 0;
+    pentaclorofenolJunio2: number = 0;
+    pentaclorofenolJulio2: number = 0;
+    pentaclorofenolAgosto2: number = 0;
+    pentaclorofenolSeptiembre2: number = 0;
+    pentaclorofenolOctubre2: number = 0;
+    pentaclorofenolNoviembre2: number = 0;
+    pentaclorofenolDiciembre2: number = 0;
     pentaclorofenol2Min: number = 0;
     pentaclorofenol2Max: number = 0;
     pentaclorofenol2Promedio: number = 0;
 
-    pentaclorofenolEnero3: number = 0.00818;
-    pentaclorofenolFebrero3: number = 0.00546;
-    pentaclorofenolMarzo3: number = 0.00114;
-    pentaclorofenolAbril3: number = 0.00512;
-    pentaclorofenolMayo3: number = 0.00534;
-    pentaclorofenolJunio3: number = 0.00067;
-    pentaclorofenolJulio3: number = 0.00091;
-    pentaclorofenolAgosto3: number = 0.00442;
-    pentaclorofenolSeptiembre3: number = 0.00204;
-    pentaclorofenolOctubre3: number = 0.00559;
-    pentaclorofenolNoviembre3: number = 0.00583;
-    pentaclorofenolDiciembre3: number = 0.00552;
+    pentaclorofenolEnero3: number = 0;
+    pentaclorofenolFebrero3: number = 0;
+    pentaclorofenolMarzo3: number = 0;
+    pentaclorofenolAbril3: number = 0;
+    pentaclorofenolMayo3: number = 0;
+    pentaclorofenolJunio3: number = 0;
+    pentaclorofenolJulio3: number = 0;
+    pentaclorofenolAgosto3: number = 0;
+    pentaclorofenolSeptiembre3: number = 0;
+    pentaclorofenolOctubre3: number = 0;
+    pentaclorofenolNoviembre3: number = 0;
+    pentaclorofenolDiciembre3: number = 0;
     pentaclorofenol3Min: number = 0;
     pentaclorofenol3Max: number = 0;
     pentaclorofenol3Promedio: number = 0;
 
     // Inyectar el servicio de Google Sheets en el constructor
     constructor(
-        private googleSheetsService: GoogleSheetsService,
+
         private router: Router
     ) {
         this.calcularTotalesProduccion();
@@ -959,7 +959,7 @@ export class CalcularHuellaComponent {
     }
 
     // Método para guardar los datos en Google Sheets
-    guardarDatos() {
+  /*   guardarDatos() {
         this.guardarDatosHoja3();
         this.guardarDatosHoja4();
         this.guardarDatosHoja5();
@@ -967,10 +967,10 @@ export class CalcularHuellaComponent {
         this.guardarDatosCalidadAgua();
 
         // Reiniciar el formulario después de guardar los datos
-    }
+    } */
 
     // Método específico para guardar datos en Hoja 3
-    private guardarDatosHoja3() {
+   /*  private guardarDatosHoja3() {
         const rango = '3. INFORMACIÓN!B5:B18'; // El rango específico en la hoja 3
         const valores = [
             [this.medicionHuella], // B5
@@ -997,10 +997,10 @@ export class CalcularHuellaComponent {
             .catch((error: any) => {
                 console.error('Error al guardar los datos en Hoja 3:', error);
             });
-    }
+    } */
 
     // Método específico para guardar datos en Hoja 4
-    private guardarDatosHoja4() {
+    /* private guardarDatosHoja4() {
         const rango = '4. PRODUCCIÓN!A6:O6'; // Rango que cubre de A6 a N6 en una sola operación
         const valores = [
             [
@@ -2145,7 +2145,7 @@ export class CalcularHuellaComponent {
                     error
                 );
             });
-    }
+    } */
     // Método para cálculos adicionales si es necesario
 
     calcular() {
@@ -5671,7 +5671,7 @@ export class CalcularHuellaComponent {
         this.pentaclorofenol3Promedio = suma / 12;
     }
 
-    download() {
+    /* download() {
         // Si el usuario está autenticado, proceder a descargar las hojas seleccionadas
         this.googleSheetsService.handleAuthClick().then(() => {
             console.log('Usuario autenticado, ahora se guardarán los datos.');
@@ -5703,5 +5703,5 @@ export class CalcularHuellaComponent {
         } else {
             console.error('El usuario no está autenticado. No se puede descargar.');
         }
-    }
+    } */
 }
