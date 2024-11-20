@@ -54,9 +54,9 @@ export class EmpresaListComponent {
         case 'datosHistoricos':
           this.router.navigate(['/historicosEmpresa']);
           break;
-        case 'datosCruzados':
+        /* case 'datosCruzados':
           this.router.navigate(['/datosCruzadosEmpresa']);
-          break;
+          break; */
         case 'tiempoReal':
           this.router.navigate(['/dashboard']);
           break;
