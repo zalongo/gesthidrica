@@ -190,7 +190,7 @@ export class GoogleSheetsService {
         spreadsheetId: sheetId,
         range: range,
       });
-      console.log('Records fetched from Google Sheets:', response.result.values);
+      // console.log('Records fetched from Google Sheets:', response.result.values);
       return response.result.values;
     } catch (err) {
       console.error('Error fetching records:', err);
