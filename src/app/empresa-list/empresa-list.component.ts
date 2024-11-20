@@ -17,17 +17,17 @@ export class EmpresaListComponent {
     // { nombre: 'Agrícola los Pellines', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agricola Jorge Borgeaud', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Los Puntales', representante: 'Nombre Apellido', comuna: 'Comuna' },
-    { nombre: 'Soc. Inv. Matristica', representante: 'Nombre Apellido', comuna: 'Comuna' },
+    // { nombre: 'Soc. Inv. Matristica', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Tomás Echavarri', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Domingo Guzmán', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola AgroAngol', representante: 'Nombre Apellido', comuna: 'Comuna' },
-    // { nombre: 'Agrícola Los Tatas', representante: 'Nombre Apellido', comuna: 'Comuna' },
+    { nombre: 'Agrícola Los Tatas', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Santa Marina', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola David Estrada', representante: 'Nombre Apellido', comuna: 'Comuna' }
   ];
 
   selectedEmpresa: any;
-  
+
 
   constructor(private router: Router) {}
 
