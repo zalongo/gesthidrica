@@ -1,6 +1,6 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectorRef } from '@angular/core';
 import { GoogleSheetsService } from '../services/google-sheets.service';
-import { Chart, registerables, Title } from 'chart.js';
+import { Chart, registerables, Title, ChartTypeRegistry } from 'chart.js';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './empresa-historico.component.html',
-  styleUrls: ['./empresa-historico.component.css']
+  styleUrls: ['./empresa-historico.component.css'],
 })
 export class EmpresaHistoricoComponent implements AfterViewInit {
   options = [
@@ -18,19 +18,187 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     { nombre: 'Velocidad Viento' },
   ];
 
-  cards = [
+  /*   cards = [
     { id: 'lineChart1', title: 'Temperatura', visible: false },
     { id: 'lineChart2', title: 'Humedad Suelo', visible: false },
     { id: 'barChart1', title: 'Velocidad Viento', visible: false },
+  ]; */
+
+  cards = [
+    {
+      id: 'chart_0',
+      title: 'Temperatura',
+      visible: false,
+      charts: [
+        {
+          id: 'chart_0',
+          title: 'Temperatura',
+          type: 'line',
+          unit: '°C',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Estacion!A:H',
+          index: 2,
+          visible: false,
+        },
+      ],
+    },
+    {
+      id: 'chart_1',
+      title: 'Humedad Suelo',
+      visible: false,
+      charts: [
+        {
+          id: 'chart_1',
+          title: 'Humedad Suelo Lector 1',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Humedad!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'chart_1.1',
+          title: 'Humedad Suelo Lector 2',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Humedad!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'chart_1.2',
+          title: 'Humedad Suelo Lector 3',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Humedad!A:D',
+          index: 2,
+          visible: false,
+        },
+      ],
+    },
+    {
+      id: 'chart_2',
+      title: 'Velocidad Viento',
+      visible: false,
+      charts: [
+        {
+          id: 'chart_2',
+          title: 'Velocidad Viento',
+          type: 'bar',
+          unit: 'Km/h',
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderColor: 'rgba(255, 159, 64, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Estacion!A:H',
+          index: 5,
+          visible: false,
+        },
+      ],
+    },
+    {
+      id: 'chart_3',
+      title: 'Bateria',
+      visible: false,
+      charts: [
+        {
+          id: 'chart_3',
+          title: 'Bateria',
+          type: 'line',
+          unit: 'V',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Humedad!A:D',
+          index: 3,
+          visible: false,
+        },
+      ],
+    },
+    {
+      id: 'chart_4',
+      title: 'Humedad aire',
+      visible: false,
+      charts: [
+        {
+          id: 'chart_4',
+          title: 'Humedad aire',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Estacion!A:H',
+          index: 3,
+          visible: false,
+        },
+      ],
+    },
+    {
+      id: 'chart_5',
+      title: 'Precipitación',
+      visible: false,
+      charts: [
+        {
+          id: 'chart_5',
+          title: 'Precipitación',
+          type: 'line',
+          unit: 'mm',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Estacion!A:H',
+          index: 7,
+          visible: false,
+        },
+      ],
+    },
+    {
+      id: 'chart_6',
+      title: 'Caudalímetro',
+      visible: false,
+      charts: [
+        {
+          id: 'chart_6',
+          title: 'Caudalímetro',
+          type: 'line',
+          unit: 'L/min',
+          backgroundColor: 'rgba(255, 206, 86, 0.2)',
+          borderColor: 'rgba(255, 206, 86, 1)',
+          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          tab: 'Caudal!A:E',
+          index: 2,
+          visible: false,
+        },
+      ],
+    },
   ];
 
   tablaVisible: boolean = false;
   fechaInicio: string = '';
   fechaLimite: string = '';
 
-  ultimosValoresData: { label: string, value: number, unit: string }[] = [];
+  ultimosValoresData: { label: string; value: number; unit: string }[] = [];
 
-  selectedOption: string = this.options[0].nombre;
+  selectedOption: string = this.cards[0].charts[0].id;
+
+  dataByVariable: {
+    [key: string]: {
+      value: number;
+
+      unit: string;
+    }[];
+  } = {};
 
   ngAfterViewInit(): void {
     this.loadGoogleSheetsData();
@@ -44,7 +212,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
 
     setTimeout(() => {
       this.casosGraficos(this.selectedOption);
-      this.loadGoogleSheetsData(); 
+      this.loadGoogleSheetsData();
       this.tablaVisible = true; // Mostrar la tabla después de presionar 'Guardar'
     }, 300);
   }
@@ -62,14 +230,14 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     const end = new Date(this.fechaLimite);
 
     // Filtrar registros por fecha
-    const filteredRecords = records.filter(record => {
+    const filteredRecords = records.filter((record) => {
       const date = this.convertDateFormat(record[0]);
       return date >= start && date <= end;
     });
 
     // Agrupar registros por día
     const recordsByDay: { [key: string]: any[] } = {};
-    filteredRecords.forEach(record => {
+    filteredRecords.forEach((record) => {
       const date = this.convertDateFormat(record[0]);
       const dateStr = date.toISOString().split('T')[0]; // Formato YYYY-MM-DD
       if (!recordsByDay[dateStr]) {
@@ -80,7 +248,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
 
     // Seleccionar una cantidad específica de datos por día
     const selectedRecords: any[] = [];
-    Object.keys(recordsByDay).forEach(dateStr => {
+    Object.keys(recordsByDay).forEach((dateStr) => {
       const dayRecords = recordsByDay[dateStr];
       // Limitar la cantidad de datos por día
       const limitedRecords = dayRecords.slice(0, 6); // Por ejemplo, tomar solo 6 registros por día
@@ -91,7 +259,13 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
   }
 
   casosGraficos(opcion: string) {
-    switch (opcion) {
+    this.cards.map((card) => {
+      card.visible = card.id === opcion;
+      card.charts.map((chart) => {
+        chart.visible = chart.id === opcion;
+      });
+    });
+    /* switch (opcion) {
       case 'Temperatura':
         this.cards[0].visible = true;
         this.cards[1].visible = false;
@@ -110,193 +284,270 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
         this.cards[0].visible = false;
         this.createBarChart1();
         break;
-    }
+    } */
   }
 
   charts: { [key: string]: Chart } = {};
 
-  constructor(private googleSheetsService: GoogleSheetsService) {
+  constructor(
+    private googleSheetsService: GoogleSheetsService,
+    private cdRef: ChangeDetectorRef
+  ) {
     Chart.register(...registerables);
   }
 
   async loadGoogleSheetsData() {
     this.googleSheetsService.authStatus.subscribe(async (authenticated) => {
       if (authenticated) {
-        const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
+        this.cards.map((card) => {
+          if (card.visible) {
+            card.charts.map(async (chart) => {
+              const sheetId = chart.sheet;
+              const range = chart.tab;
+              const index = chart.index;
+              const unit = chart.unit;
+              let records = await this.googleSheetsService.getRecords(
+                sheetId,
+                range
+              );
+
+              if (this.fechaInicio && this.fechaLimite) {
+                records = this.filterRecordsByDate(records);
+              }
+
+              if (typeof this.charts[chart.id] != 'undefined') {
+                this.charts[chart.id].destroy();
+              }
+
+              if (records.length > 0) {
+                this.updateChartsWithGoogleSheetsData(
+                  chart,
+                  records,
+                  index,
+                  unit
+                );
+              }
+
+
+              this.cdRef.detectChanges(); // Forzar actualización de vista
+            });
+          }
+        });
+
+        /* const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
 
         // Obtener datos de la hoja de Humedad
         const humidityRange = 'Humedad';
-        const humidityRecords = await this.googleSheetsService.getRecords(sheetId, humidityRange);
+        const humidityRecords = await this.googleSheetsService.getRecords(
+          sheetId,
+          humidityRange
+        );
 
         // Obtener datos de la hoja de Estación
         const stationRange = 'Estacion';
-        const stationRecords = await this.googleSheetsService.getRecords(sheetId, stationRange);
+        const stationRecords = await this.googleSheetsService.getRecords(
+          sheetId,
+          stationRange
+        );
 
         if (humidityRecords.length > 0 && stationRecords.length > 0) {
-          this.updateChartsWithGoogleSheetsData(humidityRecords, stationRecords);
-          this.updateTableWithGoogleSheetsData(humidityRecords, stationRecords); 
-        }
+          this.updateChartsWithGoogleSheetsData(
+            humidityRecords,
+            stationRecords
+          );
+          this.updateTableWithGoogleSheetsData(humidityRecords, stationRecords);
+        } */
       } else {
         this.googleSheetsService.handleAuthClick();
       }
     });
   }
 
-  updateTableWithGoogleSheetsData(humidityRecords: any[], stationRecords: any[]) {
+/*   updateTableWithGoogleSheetsData(
+    humidityRecords: any[],
+    stationRecords: any[]
+  ) {
     const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords);
     const filteredStationRecords = this.filterRecordsByDate(stationRecords);
 
     switch (this.selectedOption) {
       case 'Temperatura':
-        this.ultimosValoresData = filteredStationRecords.map(record => ({
-          label: record[0] + " " + record[1],
+        this.ultimosValoresData = filteredStationRecords.map((record) => ({
+          label: record[0] + ' ' + record[1],
           value: parseFloat(record[2].replace(',', '.')),
-          unit: '°C'
+          unit: '°C',
         }));
         break;
       case 'Humedad':
-        this.ultimosValoresData = filteredHumidityRecords.map(record => ({
-          label: record[0] + " " + record[1],
+        this.ultimosValoresData = filteredHumidityRecords.map((record) => ({
+          label: record[0] + ' ' + record[1],
           value: parseFloat(record[1].replace(',', '.')),
-          unit: '%'
+          unit: '%',
         }));
         break;
       case 'Velocidad Viento':
-        this.ultimosValoresData = filteredStationRecords.map(record => ({
-          label: record[0] + " " + record[1],
+        this.ultimosValoresData = filteredStationRecords.map((record) => ({
+          label: record[0] + ' ' + record[1],
           value: parseFloat(record[5].replace(',', '.')),
-          unit: 'Km/h'
+          unit: 'Km/h',
         }));
         break;
     }
-  }
+  } */
 
-  updateChart(chart: Chart, labels: string[], data: number[], label: string) {
+  /*   updateChart(chart: Chart, labels: string[], data: number[], label: string) {
     chart.data.labels = labels;
     chart.data.datasets[0].data = data;
     chart.data.datasets[0].label = label;
     chart.update();
+  } */
+
+  updateChart(
+    chart: Chart | undefined,
+    labels: string[],
+    data: number[],
+    label: string
+  ) {
+    if (chart) {
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = data;
+      chart.data.datasets[0].label = label;
+      chart.update();
+    } else {
+      console.error('Chart is not defined or not initialized properly');
+    }
   }
 
-  updateChartsWithGoogleSheetsData(humidityRecords: any[], stationRecords: any[]) {
-    const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords);
+  updateChartsWithGoogleSheetsData(
+    chart: any,
+    records: [string],
+    index: number,
+    unit: string
+    /* humidityRecords: any[],
+    stationRecords: any[] */
+  ) {
+    const lastRecords = records.slice(-30);
+    const labels = lastRecords.map(
+      (record: string) => record[0] + ' ' + record[1]
+    );
+    const data = lastRecords.map((record: string) =>
+      parseFloat(record[index].replace(',', '.'))
+    );
+
+    if (data && data.length) {
+      this.storeVariableData(chart.id, labels, data, unit);
+    }
+
+    this.createChart(
+      chart.id,
+      chart.title,
+      chart.type,
+      chart.backgroundColor,
+      chart.borderColor
+    );
+
+    // Actualizar los gráficos con los datos
+    this.updateChart(this.charts[chart.id], labels, data, unit);
+
+    /* const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords);
     const filteredStationRecords = this.filterRecordsByDate(stationRecords);
 
-    const labelsHumidity = filteredHumidityRecords.map(record => record[0] + " " + record[1]);
-    const humidityData = filteredHumidityRecords.map(record => parseFloat(record[1].replace(',', '.')));
+    const labelsHumidity = filteredHumidityRecords.map(
+      (record) => record[0] + ' ' + record[1]
+    );
+    const humidityData = filteredHumidityRecords.map((record) =>
+      parseFloat(record[1].replace(',', '.'))
+    );
 
-    const labelsStation = filteredStationRecords.map(record => record[0] + " " + record[1]);
-    const temperatureData = filteredStationRecords.map(record => parseFloat(record[2].replace(',', '.')));
-    const windSpeedData = filteredStationRecords.map(record => parseFloat(record[5].replace(',', '.')));
+    const labelsStation = filteredStationRecords.map(
+      (record) => record[0] + ' ' + record[1]
+    );
+    const temperatureData = filteredStationRecords.map((record) =>
+      parseFloat(record[2].replace(',', '.'))
+    );
+    const windSpeedData = filteredStationRecords.map((record) =>
+      parseFloat(record[5].replace(',', '.'))
+    );
 
     if (this.cards[0].visible) {
       this.createLineChart1();
-      this.updateChart(this.charts['lineChart1'], labelsStation, temperatureData, '°C');
+      this.updateChart(
+        this.charts['lineChart1'],
+        labelsStation,
+        temperatureData,
+        '°C'
+      );
     }
     if (this.cards[1].visible) {
       this.createLineChart2();
-      this.updateChart(this.charts['lineChart2'], labelsHumidity, humidityData, '%');
+      this.updateChart(
+        this.charts['lineChart2'],
+        labelsHumidity,
+        humidityData,
+        '%'
+      );
     }
     if (this.cards[2].visible) {
       this.createBarChart1();
-      this.updateChart(this.charts['barChart1'], labelsStation, windSpeedData, 'Km/h');
+      this.updateChart(
+        this.charts['barChart1'],
+        labelsStation,
+        windSpeedData,
+        'Km/h'
+      );
+    } */
+  }
+
+  storeVariableData(
+    label: string,
+    labels: string[],
+    data: number[],
+    unit: string = ''
+  ) {
+    if (data && data.length) {
+      this.dataByVariable[label] = labels.map((dateTime, index) => ({
+        value: data[index],
+        unit: unit, // Asegura que la unidad esté presente
+      }));
+    } else {
+      console.warn(`No hay datos para almacenar en la variable ${label}`);
     }
   }
 
-  createLineChart1() {
-    const existingChart = this.charts['lineChart1'];
-    if (existingChart) {
-      existingChart.destroy();
-    }
-    const ctx = document.getElementById('lineChart1') as HTMLCanvasElement;
+  createChart(
+    id: string,
+    title: string,
+    chartTipe: keyof ChartTypeRegistry,
+    backgroundColor: string,
+    borderColor: string
+  ) {
+    const ctx = document.getElementById(id) as HTMLCanvasElement;
     if (ctx) {
-      this.charts['lineChart1'] = new Chart(ctx, {
-        type: 'line',
+      this.charts[id] = new Chart(ctx, {
+        type: chartTipe,
         data: {
           labels: [],
-          datasets: [{
-            label: '°C',
-            data: [],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 2
-          }]
+          datasets: [
+            {
+              label: title,
+              data: [],
+              backgroundColor: backgroundColor,
+              borderColor: borderColor,
+              borderWidth: 1,
+            },
+          ],
         },
         options: {
-          responsive: true,
-          maintainAspectRatio: false,
           scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
+            y: { beginAtZero: true },
+          },
+        },
       });
     }
   }
 
-  createLineChart2() {
-    const existingChart = this.charts['lineChart2'];
-    if (existingChart) {
-      existingChart.destroy(); // Destruir el gráfico existente
-    }
 
-    const ctx = document.getElementById('lineChart2') as HTMLCanvasElement;
-    this.charts['lineChart2'] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: [],
-        datasets: [{
-          label: '%',
-          data: [],
-          backgroundColor: 'rgba(153, 102, 255, 0.2)',
-          borderColor: 'rgba(153, 102, 255, 1)',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  }
 
-  createBarChart1() {
-    const existingChart = this.charts['barChart1'];
-    if (existingChart) {
-      existingChart.destroy(); // Destruir el gráfico existente
-    }
 
-    const ctx = document.getElementById('barChart1') as HTMLCanvasElement;
-    this.charts['barChart1'] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: [],
-        datasets: [{
-          label: 'Km/h',
-          data: [],
-          backgroundColor: 'rgba(255, 159, 64, 0.2)',
-          borderColor: 'rgba(255, 159, 64, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            beginAtZero: true
-          },
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  }
+
 }
