@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Chart, registerables, ChartTypeRegistry } from 'chart.js';
 import { GoogleSheetsService } from '../services/google-sheets.service';
@@ -37,7 +37,7 @@ export class DashboardComponent implements AfterViewInit {
       charts: [
         {
           id: 'chart_1',
-          title: 'Lector 1',
+          title: 'Humedad Suelo Lector 1',
           type: 'line',
           unit: '%',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
@@ -48,7 +48,7 @@ export class DashboardComponent implements AfterViewInit {
         },
         {
           id: 'chart_1.1',
-          title: 'Lector 2',
+          title: 'Humedad Suelo Lector 2',
           type: 'line',
           unit: '%',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
@@ -59,7 +59,7 @@ export class DashboardComponent implements AfterViewInit {
         },
         {
           id: 'chart_1.2',
-          title: 'Lector 3',
+          title: 'Humedad Suelo Lector 3',
           type: 'line',
           unit: '%',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
@@ -175,7 +175,10 @@ export class DashboardComponent implements AfterViewInit {
     }[];
   } = {};
 
-  constructor(private googleSheetsService: GoogleSheetsService) {
+  constructor(
+    private googleSheetsService: GoogleSheetsService,
+    private cdRef: ChangeDetectorRef
+  ) {
     Chart.register(...registerables);
   }
 
@@ -245,8 +248,14 @@ export class DashboardComponent implements AfterViewInit {
                 range
               );
               if (records.length > 0) {
-                this.updateChartsWithGoogleSheetsData(chart.id, records, index, unit);
+                this.updateChartsWithGoogleSheetsData(
+                  chart.id,
+                  records,
+                  index,
+                  unit
+                );
               }
+              this.cdRef.detectChanges(); // Forzar actualización de vista
             });
           }
         });
@@ -266,9 +275,16 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   // Función para actualizar los gráficos con los datos obtenidos
-  updateChartsWithGoogleSheetsData(id: string, records:[string], index: number, unit:string) {
+  updateChartsWithGoogleSheetsData(
+    id: string,
+    records: [string],
+    index: number,
+    unit: string
+  ) {
     const lastRecords = records.slice(-30);
-    const labels = lastRecords.map((record:string) => record[0] + ' ' + record[1]);
+    const labels = lastRecords.map(
+      (record: string) => record[0] + ' ' + record[1]
+    );
     const data = lastRecords.map((record: string) =>
       parseFloat(record[index].replace(',', '.'))
     );
@@ -278,16 +294,8 @@ export class DashboardComponent implements AfterViewInit {
     }
 
     // Actualizar los gráficos con los datos
-    this.updateChart(
-      this.charts[id],
-      labels,
-      data,
-      unit
-    );
-
-    console.log(this.charts);
+    this.updateChart(this.charts[id], labels, data, unit);
   }
-
 
   // Función para almacenar datos históricos de cada variable con validación
   storeVariableData(
@@ -310,9 +318,9 @@ export class DashboardComponent implements AfterViewInit {
 
   // Función para obtener el último valor de una variable
   getLastValue(
-    title: string
+    id: string
   ): { value: number; unit: string; fecha: string; hora: string } | null {
-    const data = this.dataByVariable[title];
+    const data = this.dataByVariable[id];
     return data && data.length ? data[data.length - 1] : null;
   }
 
