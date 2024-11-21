@@ -28,7 +28,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
       unit: '%',
       backgroundColor: 'rgba(153, 102, 255, 0.2)',
       borderColor: 'rgba(153, 102, 255, 1)',
-      sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+      sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
       tab: 'Humedad!A:D',
       index: 2,
       data: [],
@@ -41,7 +41,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
       unit: '%',
       backgroundColor: 'rgba(153, 102, 255, 0.2)',
       borderColor: 'rgba(153, 102, 255, 1)',
-      sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+      sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
       tab: 'Humedad!A:D',
       index: 2,
       data: [],
@@ -54,7 +54,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
       unit: '%',
       backgroundColor: 'rgba(153, 102, 255, 0.2)',
       borderColor: 'rgba(153, 102, 255, 1)',
-      sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+      sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
       tab: 'Humedad!A:D',
       index: 2,
       data: [],
@@ -67,7 +67,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
       unit: 'Km/h',
       backgroundColor: 'rgba(255, 159, 64, 0.2)',
       borderColor: 'rgba(255, 159, 64, 1)',
-      sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+      sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
       tab: 'Estacion!A:H',
       index: 5,
       data: [],
@@ -80,7 +80,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
       unit: '°C',
       backgroundColor: 'rgba(75, 192, 192, 0.2)',
       borderColor: 'rgba(75, 192, 192, 1)',
-      sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+      sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
       tab: 'Estacion!A:H',
       index: 2,
       data: [],
@@ -103,7 +103,7 @@ export class EmpresaDatosCruzadosComponent implements AfterViewInit {
   async loadGoogleSheetsData() {
     this.googleSheetsService.authStatus.subscribe(async (authenticated) => {
       if (authenticated) {
-        const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
+        const sheetId = '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU';
 
         // Obtener datos de la hoja de Humedad
         const humidityRange = 'Humedad';

@@ -55,11 +55,11 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr *ngFor="let data of getFilteredData(chart.id)">
-              <td class="col-md-4">{{ data.fecha }}</td>
-              <td class="col-md-4">{{ data.value }}</td>
-              <td class="col-md-4">{{ data.hora }}</td>
-            </tr> -->
+          <tr *ngFor="let data of ultimosValoresData">
+              <td>{{data.label}}</td>
+              <td>{{data.value}}</td>
+              <td>{{data.unit}}</td>
+            </tr>
         </tbody>
       </table>
     </div>

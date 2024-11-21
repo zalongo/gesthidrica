@@ -15,7 +15,7 @@ export class GoogleSheetsService {
   private API_KEY = 'AIzaSyDkxDDVxkMV9UerEdr85IL-hxXYXjqF5pA';
   private DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
   private SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
-  public spreadsheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
+  public spreadsheetId = '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU';
 
 
   private tokenClient: any;

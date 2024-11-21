@@ -25,7 +25,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
   ]; */
 
   cards = [
-    {
+    /*   {
       id: 'chart_0',
       title: 'Temperatura',
       visible: false,
@@ -37,57 +37,117 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
           unit: '°C',
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 2,
           visible: false,
         },
       ],
-    },
+    }, */
     {
       id: 'chart_1',
       title: 'Humedad Suelo',
       visible: false,
       charts: [
         {
-          id: 'chart_1',
-          title: 'Humedad Suelo Lector 1',
+          id: 'sonda_1',
+          title: 'Humedad Suelo Sonda 1',
           type: 'line',
           unit: '%',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
           borderColor: 'rgba(153, 102, 255, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
-          tab: 'Humedad!A:D',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S1!A:D',
           index: 2,
           visible: false,
         },
         {
-          id: 'chart_1.1',
-          title: 'Humedad Suelo Lector 2',
+          id: 'sonda_2',
+          title: 'Humedad Suelo Sonda 2',
           type: 'line',
           unit: '%',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
           borderColor: 'rgba(153, 102, 255, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
-          tab: 'Humedad!A:D',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S2!A:D',
           index: 2,
           visible: false,
         },
         {
-          id: 'chart_1.2',
-          title: 'Humedad Suelo Lector 3',
+          id: 'sonda_3',
+          title: 'Humedad Suelo Sonda 3',
           type: 'line',
           unit: '%',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
           borderColor: 'rgba(153, 102, 255, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
-          tab: 'Humedad!A:D',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S3!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_4',
+          title: 'Humedad Suelo Sonda 4',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S4!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_5',
+          title: 'Humedad Suelo Sonda 5',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S5!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_6',
+          title: 'Humedad Suelo Sonda 6',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S6!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_7',
+          title: 'Humedad Suelo Sonda 7',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S7!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_8',
+          title: 'Humedad Suelo Sonda 8',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S8!A:D',
           index: 2,
           visible: false,
         },
       ],
     },
-    {
+    /* {
       id: 'chart_2',
       title: 'Velocidad Viento',
       visible: false,
@@ -99,7 +159,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
           unit: 'Km/h',
           backgroundColor: 'rgba(255, 159, 64, 0.2)',
           borderColor: 'rgba(255, 159, 64, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 5,
           visible: false,
@@ -118,7 +178,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
           unit: 'V',
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgba(54, 162, 235, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Humedad!A:D',
           index: 3,
           visible: false,
@@ -137,7 +197,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
           unit: '%',
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 3,
           visible: false,
@@ -156,7 +216,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
           unit: 'mm',
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgba(54, 162, 235, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 7,
           visible: false,
@@ -175,13 +235,13 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
           unit: 'L/min',
           backgroundColor: 'rgba(255, 206, 86, 0.2)',
           borderColor: 'rgba(255, 206, 86, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Caudal!A:E',
           index: 2,
           visible: false,
         },
       ],
-    },
+    }, */
   ];
 
   tablaVisible: boolean = false;
@@ -226,8 +286,18 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     if (!this.fechaInicio || !this.fechaLimite) {
       return records;
     }
-    const start = new Date(this.fechaInicio);
-    const end = new Date(this.fechaLimite);
+
+    const [startYear, startMonth, startDay] = this.fechaInicio
+      .split('-')
+      .map(Number);
+    const start = new Date(
+      Date.UTC(startYear, startMonth - 1, startDay, 0, 0, 0)
+    );
+
+    const [endYear, endMonth, endDay] = this.fechaLimite.split('-').map(Number);
+    const end = new Date(Date.UTC(endYear, endMonth - 1, endDay, 23, 59, 59));
+
+    console.log(start, end);
 
     // Filtrar registros por fecha
     const filteredRecords = records.filter((record) => {
@@ -263,7 +333,6 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
       card.visible = card.id === opcion;
       card.charts.map((chart) => {
         chart.visible = chart.id === opcion;
-        console.log(chart.id, chart.visible);
       });
     });
     /* switch (opcion) {
@@ -302,41 +371,47 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
       if (authenticated) {
         this.cards.map((card) => {
           // if (card.visible) {
-            card.charts.map(async (chart) => {
-              if (chart.visible) {
-                const sheetId = chart.sheet;
-                const range = chart.tab;
-                const index = chart.index;
-                const unit = chart.unit;
-                let records = await this.googleSheetsService.getRecords(
-                  sheetId,
-                  range
-                );
+          card.charts.map(async (chart) => {
+            if (chart.visible) {
+              const sheetId = chart.sheet;
+              const range = chart.tab;
+              const index = chart.index;
+              const unit = chart.unit;
+              let records = await this.googleSheetsService.getRecords(
+                sheetId,
+                range
+              );
 
-                if (this.fechaInicio && this.fechaLimite) {
-                  records = this.filterRecordsByDate(records);
-                }
-
-                if (typeof this.charts[chart.id] != 'undefined') {
-                  this.charts[chart.id].destroy();
-                }
-
-                if (records.length > 0) {
-                  this.updateChartsWithGoogleSheetsData(
-                    chart,
-                    records,
-                    index,
-                    unit
-                  );
-                }
-
-                this.cdRef.detectChanges(); // Forzar actualización de vista
+              if (this.fechaInicio && this.fechaLimite) {
+                records = this.filterRecordsByDate(records);
               }
-            });
+
+              this.ultimosValoresData = records.map((record: string[]) => ({
+                label: record[0] + ' ' + record[1],
+                value: parseFloat(record[2].replace(',', '.')),
+                unit: chart.unit,
+              }));
+
+              if (typeof this.charts[chart.id] != 'undefined') {
+                this.charts[chart.id].destroy();
+              }
+
+              if (records.length > 0) {
+                this.updateChartsWithGoogleSheetsData(
+                  chart,
+                  records,
+                  index,
+                  unit
+                );
+              }
+
+              this.cdRef.detectChanges(); // Forzar actualización de vista
+            }
+          });
           // }
         });
 
-        /* const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
+        /* const sheetId = '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU';
 
         // Obtener datos de la hoja de Humedad
         const humidityRange = 'Humedad';
@@ -449,8 +524,6 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     );
 
     // Actualizar los gráficos con los datos
-    console.log('id', chart.id);
-    console.log('charts', this.charts);
     this.updateChart(this.charts[chart.id], labels, data, unit);
 
     /* const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords);
