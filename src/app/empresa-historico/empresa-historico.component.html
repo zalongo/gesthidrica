@@ -38,12 +38,12 @@
   <div class="row contenido">
     <ng-container *ngFor="let card of cards; let i = index">
       <!-- Gráfico -->
-      <div class="col-md-6" *ngFor="let chart of card.charts">
-        <div class="card" *ngIf="chart.visible">
+      <ng-container *ngFor="let chart of card.charts">
+        <div class="col-md-6 card" *ngIf="chart.visible">
           <h4 class="text-center">{{ chart.title }}</h4>
           <canvas [attr.id]="chart.id"></canvas>
         </div>
-      </div>
+      </ng-container>
     </ng-container>
     <div class="col-6 card tabla" *ngIf="tablaVisible">
       <table class="table" style="text-align: center">

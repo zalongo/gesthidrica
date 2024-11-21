@@ -263,6 +263,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
       card.visible = card.id === opcion;
       card.charts.map((chart) => {
         chart.visible = chart.id === opcion;
+        console.log(chart.id, chart.visible);
       });
     });
     /* switch (opcion) {
@@ -300,38 +301,39 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     this.googleSheetsService.authStatus.subscribe(async (authenticated) => {
       if (authenticated) {
         this.cards.map((card) => {
-          if (card.visible) {
+          // if (card.visible) {
             card.charts.map(async (chart) => {
-              const sheetId = chart.sheet;
-              const range = chart.tab;
-              const index = chart.index;
-              const unit = chart.unit;
-              let records = await this.googleSheetsService.getRecords(
-                sheetId,
-                range
-              );
-
-              if (this.fechaInicio && this.fechaLimite) {
-                records = this.filterRecordsByDate(records);
-              }
-
-              if (typeof this.charts[chart.id] != 'undefined') {
-                this.charts[chart.id].destroy();
-              }
-
-              if (records.length > 0) {
-                this.updateChartsWithGoogleSheetsData(
-                  chart,
-                  records,
-                  index,
-                  unit
+              if (chart.visible) {
+                const sheetId = chart.sheet;
+                const range = chart.tab;
+                const index = chart.index;
+                const unit = chart.unit;
+                let records = await this.googleSheetsService.getRecords(
+                  sheetId,
+                  range
                 );
+
+                if (this.fechaInicio && this.fechaLimite) {
+                  records = this.filterRecordsByDate(records);
+                }
+
+                if (typeof this.charts[chart.id] != 'undefined') {
+                  this.charts[chart.id].destroy();
+                }
+
+                if (records.length > 0) {
+                  this.updateChartsWithGoogleSheetsData(
+                    chart,
+                    records,
+                    index,
+                    unit
+                  );
+                }
+
+                this.cdRef.detectChanges(); // Forzar actualización de vista
               }
-
-
-              this.cdRef.detectChanges(); // Forzar actualización de vista
             });
-          }
+          // }
         });
 
         /* const sheetId = '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM';
@@ -363,7 +365,7 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     });
   }
 
-/*   updateTableWithGoogleSheetsData(
+  /*   updateTableWithGoogleSheetsData(
     humidityRecords: any[],
     stationRecords: any[]
   ) {
@@ -447,6 +449,8 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
     );
 
     // Actualizar los gráficos con los datos
+    console.log('id', chart.id);
+    console.log('charts', this.charts);
     this.updateChart(this.charts[chart.id], labels, data, unit);
 
     /* const filteredHumidityRecords = this.filterRecordsByDate(humidityRecords);
@@ -545,9 +549,4 @@ export class EmpresaHistoricoComponent implements AfterViewInit {
       });
     }
   }
-
-
-
-
-
 }
