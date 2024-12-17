@@ -1,0 +1,239 @@
+<div class="card mb-4">
+    <div class="card-header">
+      <h3>Producción Mensual</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="nombreResponsable" class="form-label"
+              >Producto</label
+            >
+            <input
+              id="producto"
+              type="text"
+              name="producto"
+              [(ngModel)]="producto"
+              (ngModelChange)="productoChange.emit($event)"
+              class="form-control"
+              />
+            </div>
+          </div>
+        <div class="col-md-6">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <div class="input-group mb-3">
+            <input
+            id="descripcion"
+            type="text"
+            name="descripcion"
+            [(ngModel)]="descripcion"
+            (ngModelChange)="descripcionChange.emit($event)"
+              class="form-control"
+            />
+            <span class="input-group-text" id="basic-addon2"
+              >m<sup>3</sup></span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table-produccion-mensual">
+          <thead>
+            <tr>
+              <th>Enero</th>
+              <th>Febrero</th>
+              <th>Marzo</th>
+              <th>Abril</th>
+              <th>Mayo</th>
+              <th>Junio</th>
+              <th>Julio</th>
+              <th>Agosto</th>
+              <th>Septiembre</th>
+              <th>Octubre</th>
+              <th>Noviembre</th>
+              <th>Diciembre</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input
+                  id="enero"
+                  type="number"
+                  name="enero"
+                  [(ngModel)]="enero"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="eneroChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="febrero"
+                  type="number"
+                  name="febrero"
+                  [(ngModel)]="febrero"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="febreroChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="marzo"
+                  type="number"
+                  name="marzo"
+                  [(ngModel)]="marzo"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="marzoChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="abril"
+                  type="number"
+                  name="abril"
+                  [(ngModel)]="abril"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="abrilChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="mayo"
+                  type="number"
+                  name="mayo"
+                  [(ngModel)]="mayo"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="mayoChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="junio"
+                  type="number"
+                  name="junio"
+                  [(ngModel)]="junio"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="junioChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="julio"
+                  type="number"
+                  name="julio"
+                  [(ngModel)]="julio"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="julioChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="agosto"
+                  type="number"
+                  name="agosto"
+                  [(ngModel)]="agosto"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="agostoChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="septiembre"
+                  type="number"
+                  name="septiembre"
+                  [(ngModel)]="septiembre"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="septiembreChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="octubre"
+                  type="number"
+                  name="octubre"
+                  [(ngModel)]="octubre"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="octubreChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="noviembre"
+                  type="number"
+                  name="noviembre"
+                  [(ngModel)]="noviembre"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="noviembreChange.emit($event)"
+                />
+              </td>
+              <td>
+                <input
+                  id="diciembre"
+                  type="number"
+                  name="diciembre"
+                  [(ngModel)]="diciembre"
+                  required
+                  class="form-control numero"
+                  (ngModelChange)="diciembreChange.emit($event)"
+                />
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td><br><br></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th class="total">Total</th>
+              <td colspan="3">
+                <input
+                  id="total"
+                  type="text"
+                  name="total"
+                  [(ngModel)]="total"
+
+                  readonly
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th class="total">Promedio</th>
+                <td colspan="3">
+                  <input
+                  id="promedio"
+                  type="text"
+                  name="promedio"
+                  [(ngModel)]="promedio"
+                  readonly
+                  />
+                </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 d-flex justify-content-between">
+    <button class="btn btn-secondary btn-lg" (click)="onPrevious()">
+      Anterior
+    </button>
+    <button class="btn btn-primary btn-lg" (click)="onNext()">
+      Siguiente
+    </button>
+  </div>

@@ -1,0 +1,219 @@
+<div class="card mb-4">
+    <div class="card-header">
+      <h3>Datos de la Medición de Huella de Agua</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="medicionHuella" class="form-label"
+              >¿A qué se le medirá la huella de agua?</label
+            >
+            <input
+              id="medicionHuella"
+              type="text"
+              name="medicionHuella"
+              [(ngModel)]="medicionHuella"
+              class="form-control"
+              (ngModelChange)="medicionHuellaChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mb-3">
+            <label for="anioMedicion" class="form-label">Año de medición</label>
+            <input
+              id="anioMedicion"
+              type="text"
+              name="anioMedicion"
+              class="form-control"
+              [(ngModel)]="anioMedicion"
+              (ngModelChange)="anioMedicionChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mb-3">
+            <label for="unidadFuncional" class="form-label"
+              >Unidad Funcional (UF)</label
+            >
+            <input
+              id="unidadFuncional"
+              type="text"
+              name="unidadFuncional"
+              class="form-control"
+              [(ngModel)]="unidadFuncional"
+              (ngModelChange)="unidadFuncionalChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <h3>Datos de la Empresa</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="nombreEmpresa" class="form-label"
+              >Nombre de la empresa</label
+            >
+            <input
+              id="nombreEmpresa"
+              type="text"
+              name="nombreEmpresa"
+              [(ngModel)]="nombreEmpresa"
+              class="form-control"
+              (ngModelChange)="nombreEmpresaChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="instalacionMedida" class="form-label"
+              >Instalación que se medirá</label
+            >
+            <input
+              id="instalacionMedida"
+              type="text"
+              name="instalacionMedida"
+              [(ngModel)]="instalacionMedida"
+              class="form-control"
+              (ngModelChange)="instalacionMedidaChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="ubicacionMedidaR" class="form-label"
+              >Ubicación de la instalación: Región</label
+            >
+            <input
+              id="ubicacionMedidaR"
+              type="text"
+              name="ubicacionMedidaR"
+              [(ngModel)]="ubicacionMedidaR"
+              class="form-control"
+              (ngModelChange)="ubicacionMedidaRChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="ubicacionMedidaC" class="form-label"
+              >Ubicación de la instalación: Comuna</label
+            >
+            <input
+              id="ubicacionMedidaC"
+              type="text"
+              name="ubicacionMedidaC"
+              [(ngModel)]="ubicacionMedidaC"
+              class="form-control"
+              (ngModelChange)="ubicacionMedidaCChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="tipoProducto" class="form-label"
+              >Tipo de producto que se fabrican en la instalación</label
+            >
+            <input
+              id="tipoProducto"
+              type="text"
+              name="tipoProducto"
+              [(ngModel)]="tipoProducto"
+              class="form-control"
+              (ngModelChange)="tipoProductoChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <h3>Datos del Responsable de Completar la Planilla</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="nombreResponsable" class="form-label"
+              >Nombre y Apellido</label
+            >
+            <input
+              id="nombreResponsable"
+              type="text"
+              name="nombreResponsable"
+              [(ngModel)]="nombreResponsable"
+              class="form-control"
+              (ngModelChange)="nombreResponsableChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="cargoResponsable" class="form-label">Cargo</label>
+            <input
+              id="cargoResponsable"
+              type="text"
+              name="cargoResponsable"
+              [(ngModel)]="cargoResponsable"
+              class="form-control"
+              (ngModelChange)="cargoResponsableChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="correoResponsable" class="form-label">Correo</label>
+            <input
+              id="correoResponsable"
+              type="email"
+              name="correoResponsable"
+              [(ngModel)]="correoResponsable"
+              class="form-control"
+              (ngModelChange)="correoResponsableChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="telefonoResponsable" class="form-label">Teléfono</label>
+            <input
+              id="telefonoResponsable"
+              type="tel"
+              name="telefonoResponsable"
+              [(ngModel)]="telefonoResponsable"
+              class="form-control"
+              (ngModelChange)="telefonoResponsableChange.emit($event)"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end mt-3">
+    <button class="btn btn-primary btn-lg" (click)="nextStep()">
+      Siguiente
+    </button>
+  </div>
