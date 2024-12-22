@@ -2,9 +2,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div class="container mt-4">
-        <router-outlet></router-outlet>
-      </div>
+      <ng-container *ngIf="router.url === '/calcularHuella'; else defaultContainer">
+        <div class="container-fluid mt-4">
+          <router-outlet></router-outlet>
+        </div>
+      </ng-container>
+      <ng-template #defaultContainer>
+        <div class="container mt-4">
+          <router-outlet></router-outlet>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

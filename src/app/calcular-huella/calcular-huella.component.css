@@ -45,3 +45,37 @@ th {
   font-size: 20px;
   padding-top: 10px;
 }
+
+
+
+.table-produccion-mensual th,
+.table-produccion-mensual td {
+  min-width: 100px;
+}
+
+.table-produccion-mensual .contaminante{
+  min-width: 200px;
+}
+
+.table-produccion-mensual .contaminante span small{
+display: block;
+font-size: 10px;
+}
+
+.table-produccion-mensual th{
+  text-align: center;
+  border: 0;
+}
+
+.table-produccion-mensual tfoot th{
+  text-align: left;
+}
+
+.table-produccion-mensual tfoot input{
+  border: 0;
+}
+
+.table-produccion-mensual td{
+  padding: 0 5px;
+  border: 0;
+}
