@@ -25,43 +25,64 @@ export class ResumenComponent implements OnInit {
     console.log(this.data); // Verificar que los datos se recibieron correctamente
   }
 
-  generaPdf() {
-    const doc = new jsPDF({
-      orientation: 'landscape',
-      unit: 'mm',
-      format: [300, 1500], // Tamaño personalizado: 210 mm de alto por 2970 mm de ancho
-      putOnlyUsedFonts: true,
-      floatPrecision: 16,
-    });
+  generaPdf(): void {
+    const content = document.getElementById('graficos-todos');
+    if (!content) {
+      console.error('El div especificado no existe.');
+      return;
+    }
 
-    const resumen = this.pdfContent.nativeElement;
+    // Configuración del PDF (hoja tamaño Carta, orientación horizontal)
+    const pdf = new jsPDF('landscape', 'mm', 'letter');
+    const margin = 10; // Margen del PDF
 
-    doc.setFontSize(22);
-    doc.text('HUELLA DE AGUA DIRECTA', 10, 20); // Ajusta la posición del título según sea necesario
-
-    html2canvas(resumen).then((canvas) => {
+    html2canvas(content, { scale: 2 }).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
-      const imgWidth = 1485; // Ancho de la imagen en el PDF
-      const pageHeight = 300; // Altura de la página en el PDF
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      let heightLeft = imgHeight;
-      let position = 30;
+      const pdfWidth = pdf.internal.pageSize.getWidth() - margin * 2;
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-      // Agrega la imagen al PDF
-      doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
+      // Dividimos el contenido en múltiples páginas si es necesario
+      const pageHeight = pdf.internal.pageSize.getHeight() - margin * 2;
 
-      // Si la imagen es más alta que una página, agrega páginas adicionales
-      while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        doc.addPage();
-        doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+      if (pdfHeight <= pageHeight) {
+        // Contenido cabe en una sola página
+        pdf.addImage(imgData, 'PNG', margin, margin, pdfWidth, pdfHeight);
+      } else {
+        // Contenido necesita múltiples páginas
+        let canvasPosition = 0;
+        while (canvasPosition < canvas.height) {
+          const pageCanvas = document.createElement('canvas');
+          pageCanvas.width = canvas.width;
+          pageCanvas.height = pageHeight * (canvas.width / pdfWidth);
+
+          const pageContext = pageCanvas.getContext('2d');
+          if (!pageContext) {
+            console.error('No se pudo obtener el contexto del canvas.');
+            return;
+          }
+
+          pageContext.drawImage(
+            canvas,
+            0,
+            canvasPosition,
+            canvas.width,
+            pageCanvas.height,
+            0,
+            0,
+            pageCanvas.width,
+            pageCanvas.height
+          );
+
+          const pageData = pageCanvas.toDataURL('image/png');
+          pdf.addImage(pageData, 'PNG', margin, margin, pdfWidth, pageHeight);
+
+          canvasPosition += pageCanvas.height;
+          if (canvasPosition < canvas.height) pdf.addPage();
+        }
       }
 
-      doc.save('tabla_huella_agua.pdf');
-      console.log('guarda');
-      // Guarda el PDF
+      // Guardamos el PDF con el nombre especificado
+      pdf.save('tabla_huella_agua.pdf');
     });
 
     /* const tableData: string[][] = [];

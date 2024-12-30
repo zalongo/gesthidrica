@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <ng-container *ngIf="router.url === '/calcularHuella'; else defaultContainer">
+      <ng-container *ngIf="router.url === '/calcularHuella' || router.url === '/resumen'; else defaultContainer">
         <div class="container-fluid mt-4">
           <router-outlet></router-outlet>
         </div>

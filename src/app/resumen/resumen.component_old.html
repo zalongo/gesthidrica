@@ -1,0 +1,808 @@
+<section>
+  <div class="container arriba" style="display: flex; justify-content: space-between;">
+    <h1 class="titulo">HUELLA DE AGUA DIRECTA</h1>
+    <div class="tabla-uf">
+      <table style="border: 1px solid black; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: rgb(86, 220, 86); color: white;">
+            <!-- Cambiado el color de fondo a verde y el texto a blanco -->
+            <th style="border: 1px solid black;">UF: AÑO MEDIDO</th>
+            <th style="border: 1px solid black;">$12.345</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2" style="border: 1px solid black; color: rgb(86, 220, 86); font-weight: bold;">LOS RESULTADOS
+              ESTÁN EXPRESADOS
+              POR UNIDAD FUNCIONAL (UF)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <h2 style="text-align: center;">HUELLA DE AGUA DIRECTA</h2>
+    <div class="tablas-entradas-agua">
+      <div class="tabla-inventario" style="text-align: center;">
+        <div style="overflow-x: auto;">
+          <table style="border: 1px solid black; border-collapse: collapse; margin: 0 auto;" id="resumen" #resumen>
+            <thead>
+              <tr>
+                <th colspan="2" rowspan="2"
+                  style="border: 1px solid black; background-color: rgb(76, 163, 210); color: white; min-width: 250px; ">
+                  HUELLA DE AGUA DIRECTA
+                </th>
+                <th colspan="21"
+                  style="border: 1px solid black; background-color: rgb(13, 49, 73); color: white; min-width: 250px;">
+                  INVENTARIO
+                </th>
+                <th colspan="4"
+                  style="border: 1px solid black; background-color: rgb(255, 197, 90); color: white; min-width: 250px;">
+                  PUNTO
+                  MEDIO
+                </th>
+                <th colspan="10"
+                  style="border: 1px solid black; background-color: rgb(174, 219, 105); color: white; min-width: 250px;">
+                  PUNTO
+                  FINAL
+                </th>
+              </tr>
+              <!-- INVENTARIO -->
+              <tr>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA POTABLE</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA POZO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA SUPERFICIAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">SALIDA AGUA
+                  DESCARGADA</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">SALIDA AGUA
+                  INFILTRADA</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">AGUA DULCE
+                  CONSUMIDA (HUELLA AZUL - WFN)</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NITRÓGENO
+                  TOTAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NITRÓGENO
+                  TOTAL KJELDAHL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">FÓSFORO
+                  TOTAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">FOSFATO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">DEMANDA
+                  QUÍMICA DE OXÍGENO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">DEMANDA
+                  BIOLÓGICA DE OXÍGENO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ARSÉNICO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">CADMIO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">CROMO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">COBRE</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">MERCURIO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NIQUEL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">PLOMO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ZINC</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">
+                  PENTACLOROFENOL</th>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">Available
+                  WAter REmaining_AWARE 100</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">
+                  TOXICIDAD HUMANA_TOTAL
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(255, 197, 90);">
+                  ECOTOXICIDAD DE AGUA
+                  DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">
+                  EUTROFIZACIÓN DE AGUA
+                  DULCE </th>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">POTENCIALES
+                  IMPACTOS A LA SALUD HUMANA POR
+                  ESCASEZ DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ENFERMEDADES
+                  CAUSADAS POR TOXICIDAD DE AGUA DULCE
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  DISMINUCIÓN DE LA
+                  BIODIVERSIDAD TERRESTRE DEBIDO
+                  AL CONSUMO DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  DISMINUCIÓN DE LA
+                  BIODIVERSIDAD DE PLANTAS
+                  TERRESTRES DEBIDO A LA EXTRACCIÓN DE AGUA SUBTERRÁNEA </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ECOSISTEMAS
+                  ACUÁTICOS AFECTADOS POR ECOTOXICIDAD
+                  DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ECOSISTEMAS
+                  ACUÁTICOS AFECTADOS POR EUTROFIZACIÓN
+                  DE AGUA DULCE</th>
+                <!-- PUNTO FINAL -->
+
+              </tr>
+
+              <tr>
+                <th
+                  style="border: 1px solid black; min-width: 250px; background-color: rgb(76, 163, 210); color: white;">
+                  UBICACIÓN
+                </th>
+                <th
+                  style="border: 1px solid black; min-width: 250px; background-color: rgb(76, 163, 210); color: white;">
+                  NOMBRE FLUJO
+                  DE AGUA</th>
+
+                <!-- INVENTARIO -->
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg N/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg NKT/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg P/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg PO4/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg DQO/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg DBO/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg As/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Cd/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Cr/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Cu/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Hg/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Ni/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Pb/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg Zn/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  C6OHCL5/UF]</th>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[m3 eq.
+                  global/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[CTUh/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">'[CTUe/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[kg Peq/UF]
+                </th>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">[DALY/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">[DALY/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <tr>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;">ENTRADAS DE AGUA</th>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+                <th colspan="31" style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <!-- ENTRADA DE AGUA  -->
+              <tr *ngFor="let entradaDeAgua of data.entrasdaDeAgua">
+                <td style="border: 1px solid black;">{{ data.datosEmpresa.ubicacionMedidaC }}</td>
+                <td style="border: 1px solid black;">{{ entradaDeAgua.fuente }}</td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">
+                  {{ entradaDeAgua.categoria == "ENTRADA AGUA POTABLE" ? entradaDeAgua.total : 0 }}
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ entradaDeAgua.categoria == "ENTRADA AGUA POZO" ? entradaDeAgua.total : 0 }}
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ entradaDeAgua.categoria == "ENTRADA AGUA SUPERFICIAL" ? entradaDeAgua.total : 0 }}
+                </td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0 </td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- SALIDAS DE AGUA -->
+              <tr>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;">SALIDAS DE AGUA</th>
+                <th colspan="33" style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+              </tr>
+
+              <tr *ngFor="let salidaDeAgua of data.salidasDeAgua">
+                <td style="border: 1px solid black;">{{ data.datosEmpresa.ubicacionMedidaC }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.proceso }}</td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.categoria == "SALIDA AGUA DESCARGADA" ? salidaDeAgua.total : 0 }}
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.categoria == "SALIDA AGUA INFILTRADA" ? salidaDeAgua.total : 0 }}
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.categoria == "AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)" ? salidaDeAgua.total : 0 }}
+                </td>
+                <td style="border: 1px solid black;" *ngFor="let calidad of salidaDeAgua.calidad">
+                  {{ calidad.emisionContaminantes }}
+                  <!-- Imprime el promedio de cada parámetro de calidad -->
+                </td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">{{ salidaDeAgua.availableWaterRemainingAware }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.toxixidadHumana }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.ecotoxixidad }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.eutrofizacion }}</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">{{ salidaDeAgua.potencialesImpactosSalud }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.enfermedadesPorToxicidad }}</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.disminucionBiodiversidadTerrestre }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.ecosistemasAcuaticosAfectadosPorEcotoxicidad }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.ecosistemasAcuaticosAfectadosPorEutrofizacion }}</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+
+              <tr>
+                <td colspan="2" style="text-align: right; border: 1px solid black;"><strong>TOTALES</strong></td>
+
+                <!-- INVENTARIO -->
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.entradaAguaPotableTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.entradaAguaPozoTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.entradaAguaSuperficialTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.salidaAguaDescargada }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.salidaAguaInfiltrada }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.aguaDulceConsumida }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.nitrogenoTatal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.nitrgenoTotalKjeldahl }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.fosforoTotalTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.fosfatoTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.demandaBioOxgTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.arsenicoTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.cadminioTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.cromoTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.cobreTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.mercurioTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.niquelTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.plomoTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;"><strong>{{ data.totales.zincTotal }}</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.pentaclorofenolTotal }}</strong></td>
+
+                <!-- PUNTO MEDIO -->
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.availableWaterRemainingAwareTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.toxixidadHumanaTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.ecotoxixidadTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.eutrofizacionTotal }}</strong></td>
+
+                <!-- PUNTO FINAL -->
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.potencialesImpactosSaludTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.enfermedadesPorToxicidadTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.disminucionBiodiversidadTerrestreTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal }}</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totales.ecosistemasAcuaticosAfectadosPorEutrofizacionTotal }}</strong></td>
+              </tr>
+            </tbody>
+
+            <tr>
+              <td colspan="33"><br><br></td>
+            </tr>
+            <thead>
+              <tr>
+                <th colspan="2" rowspan="2" style=" background-color: white; color: white; min-width: 250px; ">
+                </th>
+              </tr>
+              <!-- INVENTARIO -->
+              <tr>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA POTABLE</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA POZO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ENTRADA
+                  AGUA SUPERFICIAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">SALIDA
+                  AGUA
+                  DESCARGADA</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">SALIDA
+                  AGUA
+                  INFILTRADA</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">AGUA
+                  DULCE
+                  CONSUMIDA (HUELLA AZUL - WFN)</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NITRÓGENO
+                  TOTAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NITRÓGENO
+                  TOTAL KJELDAHL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">FÓSFORO
+                  TOTAL</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">FOSFATO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">DEMANDA
+                  QUÍMICA DE OXÍGENO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">DEMANDA
+                  BIOLÓGICA DE OXÍGENO</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ARSÉNICO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">CADMIO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">CROMO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">COBRE
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">MERCURIO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">NIQUEL
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">PLOMO
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">ZINC</th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">
+                  PENTACLOROFENOL</th>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">Available
+                  WAter REmaining_AWARE 100</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">
+                  TOXICIDAD HUMANA_TOTAL
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(255, 197, 90);">
+                  ECOTOXICIDAD DE AGUA
+                  DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">
+                  EUTROFIZACIÓN DE AGUA
+                  DULCE </th>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  POTENCIALES
+                  IMPACTOS A LA SALUD HUMANA POR
+                  ESCASEZ DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ENFERMEDADES
+                  CAUSADAS POR TOXICIDAD DE AGUA DULCE
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  DISMINUCIÓN DE LA
+                  BIODIVERSIDAD TERRESTRE DEBIDO
+                  AL CONSUMO DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  DISMINUCIÓN DE LA
+                  BIODIVERSIDAD DE PLANTAS
+                  TERRESTRES DEBIDO A LA EXTRACCIÓN DE AGUA SUBTERRÁNEA </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ECOSISTEMAS
+                  ACUÁTICOS AFECTADOS POR ECOTOXICIDAD
+                  DE AGUA DULCE </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  ECOSISTEMAS
+                  ACUÁTICOS AFECTADOS POR EUTROFIZACIÓN
+                  DE AGUA DULCE</th>
+                <!-- PUNTO FINAL -->
+
+              </tr>
+
+              <tr>
+                <th style=" min-width: 250px; background-color: white; color: white;">
+                </th>
+                <th style=" min-width: 250px; background-color: white; color: white;"></th>
+
+                <!-- INVENTARIO -->
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[m3/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg N/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  NKT/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg P/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  PO4/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  DQO/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  DBO/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  As/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  Cd/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  Cr/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  Cu/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  Hg/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  Ni/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  Pb/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  Zn/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 250px; background-color: rgb(116, 149, 185);">[kg
+                  C6OHCL5/UF]</th>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[m3 eq.
+                  global/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[CTUh/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">'[CTUe/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(255, 197, 90);">[kg
+                  Peq/UF]
+                </th>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">[DALY/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">[DALY/UF]
+                </th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <th style="border: 1px solid black; min-width: 350px; background-color: rgb(174, 219, 105);">
+                  [PDF*m2*año/UF]</th>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <tr>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;">ENTRADAS DE AGUA
+                </th>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+                <th colspan="31" style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <!-- ENTRADA DE AGUA  -->
+              <tr *ngFor="let entradaDeAgua of data.entrasdaDeAgua">
+                <td style="border: 1px solid black;">{{ data.datosEmpresa.ubicacionMedidaC }}</td>
+                <td style="border: 1px solid black;">{{ entradaDeAgua.fuente }}</td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">
+                  {{ entradaDeAgua.categoria == "ENTRADA AGUA POTABLE" ? entradaDeAgua.porcentaje : 0 }}%
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ entradaDeAgua.categoria == "ENTRADA AGUA POZO" ? entradaDeAgua.porcentaje : 0 }}%
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ entradaDeAgua.categoria == "ENTRADA AGUA SUPERFICIAL" ? entradaDeAgua.porcentaje : 0 }}%
+                </td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0 </td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+              <!-- SALIDAS DE AGUA -->
+              <tr>
+                <th style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;">SALIDAS DE AGUA</th>
+                <th colspan="33" style="background-color: rgba(223, 207, 105, 0.944); border: 1px solid black;"></th>
+              </tr>
+
+              <tr *ngFor="let salidaDeAgua of data.salidasDeAgua">
+                <td style="border: 1px solid black;">{{ data.datosEmpresa.ubicacionMedidaC }}</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.proceso }}</td>
+
+                <!-- INVENTARIO -->
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.categoria == "SALIDA AGUA DESCARGADA" ? salidaDeAgua.porcentaje : 0 }}%
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.categoria == "SALIDA AGUA INFILTRADA" ? salidaDeAgua.porcentaje : 0 }}%
+                </td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.categoria == "AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)" ? salidaDeAgua.porcentaje : 0 }}%
+                </td>
+                <td style="border: 1px solid black;" *ngFor="let calidad of salidaDeAgua.calidad">
+                  {{ calidad.porcentaje }} %
+                  <!-- Imprime el promedio de cada parámetro de calidad -->
+                </td>
+                <!-- INVENTARIO -->
+
+                <!-- PUNTO MEDIO -->
+                <td style="border: 1px solid black;">{{ salidaDeAgua.availableWaterRemainingAwarePorcentaje }} %</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.toxixidadHumanaProcentaje }}%</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.ecotoxixidadPorcentaje }}%</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.eutrofizacionPorcentahe }}%</td>
+                <!-- PUNTO MEDIO -->
+
+                <!-- PUNTO FINAL -->
+                <td style="border: 1px solid black;">{{ salidaDeAgua.potencialesImpactosSaludPorcentaje }}%</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.enfermedadesPorToxicidadPorcentaje }}%</td>
+                <td style="border: 1px solid black;">0</td>
+                <td style="border: 1px solid black;">{{ salidaDeAgua.disminucionBiodiversidadTerrestreTotal }}%</td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.ecosistemasAcuaticosAfectadosPorEcotoxicidadPorcentaje }}%</td>
+                <td style="border: 1px solid black;">
+                  {{ salidaDeAgua.ecosistemasAcuaticosAfectadosPorEutrofizacionPorcentaje }}%</td>
+                <!-- PUNTO FINAL -->
+              </tr>
+
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="2" style="text-align: right; border: 1px solid black;"><strong>TOTALES</strong></td>
+
+                <!-- INVENTARIO -->
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.entradaAguaPotableTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.entradaAguaPozoTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.entradaAguaSuperficialTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.salidaAguaDescargada }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.salidaAguaInfiltrada }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.aguaDulceConsumida }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.nitrogenoTatal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.nitrgenoTotalKjeldahl }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.fosforoTotalTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.fosfatoTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>0%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.demandaBioOxgTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.arsenicoTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.cadminioTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.cromoTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.cobreTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.mercurioTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.niquelTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.plomoTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.zincTotal }}%</strong>
+                </td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.pentaclorofenolTotal }}%</strong>
+                </td>
+
+                <!-- PUNTO MEDIO -->
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.availableWaterRemainingAwareTotal }}%</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.toxixidadHumanaTotal }}%</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.ecotoxixidadTotal }}%</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.eutrofizacionTotal }}%</strong></td>
+
+                <!-- PUNTO FINAL -->
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.potencialesImpactosSaludTotal }}%</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.enfermedadesPorToxicidadTotal }}%</strong></td>
+                <td style="text-align: center; border: 1px solid black;"><strong>0%</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.disminucionBiodiversidadTerrestreTotal }}%</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.ecosistemasAcuaticosAfectadosPorEcotoxicidadTotal }}%</strong></td>
+                <td style="text-align: center; border: 1px solid black;">
+                  <strong>{{ data.totalesPorcentaje.ecosistemasAcuaticosAfectadosPorEutrofizacionTotal }}% </strong> </td>
+              </tr>
+            </tfoot>
+
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="abajo">
+  <button (click)="generaPdf()" id="download-pdf" style="margin: 20px auto; display: block;">Descargar PDF</button>
+</section>
+
+<script>
+  // Asegúrate de que jsPDF esté importado correctamente
+  // <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
+
+</script>
