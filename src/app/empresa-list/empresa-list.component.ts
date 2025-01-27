@@ -23,7 +23,7 @@ export class EmpresaListComponent {
     // { nombre: 'Agrícola AgroAngol', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Los Tatas', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Santa Marina', representante: 'Nombre Apellido', comuna: 'Comuna' },
-    { nombre: 'Agrícola David Estrada', representante: 'Nombre Apellido', comuna: 'Comuna' }
+    { nombre: 'Agrícola David Estrada', representante: 'Nombre Apellido', comuna: 'Angol' }
   ];
 
   selectedEmpresa: any;
