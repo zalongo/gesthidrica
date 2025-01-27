@@ -12,10 +12,10 @@ import { GoogleSheetsService } from '../services/google-sheets.service';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-    {
+    /*   {
       id: 'chart_0',
       title: 'Temperatura',
-      visible: true,
+      visible: false,
       charts: [
         {
           id: 'chart_0',
@@ -24,13 +24,13 @@ export class DashboardComponent implements AfterViewInit {
           unit: '°C',
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 2,
           visible: false,
         },
       ],
-    },
+    }, */
     {
       id: 'chart_1',
       title: 'Humedad Suelo',
@@ -38,22 +38,106 @@ export class DashboardComponent implements AfterViewInit {
       charts: [
         {
           id: 'sonda_1',
-          title: 'Humedad Suelo',
+          title: 'Humedad Suelo Sonda 1',
           type: 'line',
           unit: '%',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
           borderColor: 'rgba(153, 102, 255, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
-          tab: 'Humedad!A:D',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S1!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_2',
+          title: 'Humedad Suelo Sonda 2',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S2!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_3',
+          title: 'Humedad Suelo Sonda 3',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S3!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_4',
+          title: 'Humedad Suelo Sonda 4',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S4!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_5',
+          title: 'Humedad Suelo Sonda 5',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S5!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_6',
+          title: 'Humedad Suelo Sonda 6',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S6!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_7',
+          title: 'Humedad Suelo Sonda 7',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S7!A:D',
+          index: 2,
+          visible: false,
+        },
+        {
+          id: 'sonda_8',
+          title: 'Humedad Suelo Sonda 8',
+          type: 'line',
+          unit: '%',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
+          tab: 'S8!A:D',
           index: 2,
           visible: false,
         },
       ],
     },
-    {
+    /* {
       id: 'chart_2',
       title: 'Velocidad Viento',
-      visible: true,
+      visible: false,
       charts: [
         {
           id: 'chart_2',
@@ -62,7 +146,7 @@ export class DashboardComponent implements AfterViewInit {
           unit: 'Km/h',
           backgroundColor: 'rgba(255, 159, 64, 0.2)',
           borderColor: 'rgba(255, 159, 64, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 5,
           visible: false,
@@ -72,7 +156,7 @@ export class DashboardComponent implements AfterViewInit {
     {
       id: 'chart_3',
       title: 'Bateria',
-      visible: true,
+      visible: false,
       charts: [
         {
           id: 'chart_3',
@@ -81,7 +165,7 @@ export class DashboardComponent implements AfterViewInit {
           unit: 'V',
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgba(54, 162, 235, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Humedad!A:D',
           index: 3,
           visible: false,
@@ -91,7 +175,7 @@ export class DashboardComponent implements AfterViewInit {
     {
       id: 'chart_4',
       title: 'Humedad aire',
-      visible: true,
+      visible: false,
       charts: [
         {
           id: 'chart_4',
@@ -100,18 +184,17 @@ export class DashboardComponent implements AfterViewInit {
           unit: '%',
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 3,
           visible: false,
         },
       ],
     },
-
     {
       id: 'chart_5',
       title: 'Precipitación',
-      visible: true,
+      visible: false,
       charts: [
         {
           id: 'chart_5',
@@ -120,17 +203,17 @@ export class DashboardComponent implements AfterViewInit {
           unit: 'mm',
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgba(54, 162, 235, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Estacion!A:H',
           index: 7,
-          visible: true,
+          visible: false,
         },
       ],
     },
     {
       id: 'chart_6',
       title: 'Caudalímetro',
-      visible: true,
+      visible: false,
       charts: [
         {
           id: 'chart_6',
@@ -139,13 +222,13 @@ export class DashboardComponent implements AfterViewInit {
           unit: 'L/min',
           backgroundColor: 'rgba(255, 206, 86, 0.2)',
           borderColor: 'rgba(255, 206, 86, 1)',
-          sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
+          sheet: '1COTTEaurLgtKJAvjBLpyCpGKWwvUa7Esdqo3O_bK9bU',
           tab: 'Caudal!A:E',
           index: 2,
           visible: false,
         },
       ],
-    },
+    }, */
   ];
 
   charts: { [key: string]: Chart } = {};
