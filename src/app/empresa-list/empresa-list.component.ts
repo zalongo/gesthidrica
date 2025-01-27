@@ -9,15 +9,18 @@ declare var bootstrap: any;
   standalone: true,
   imports: [CommonModule],
   templateUrl: './empresa-list.component.html',
-  styleUrls: ['./empresa-list.component.css']
+  styleUrls: ['./empresa-list.component.css'],
 })
-
 export class EmpresaListComponent {
   empresas = [
     // { nombre: 'Agrícola los Pellines', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agricola Jorge Borgeaud', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Los Puntales', representante: 'Nombre Apellido', comuna: 'Comuna' },
-    { nombre: 'Soc. Inv. Matristica', representante: 'Nombre Apellido', comuna: 'Comuna' },
+    {
+      nombre: 'Soc. Inv. Matristica',
+      representante: 'Nombre Apellido',
+      comuna: 'Quino',
+    },
     // { nombre: 'Agrícola Tomás Echavarri', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Domingo Guzmán', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola AgroAngol', representante: 'Nombre Apellido', comuna: 'Comuna' },
@@ -27,7 +30,6 @@ export class EmpresaListComponent {
   ];
 
   selectedEmpresa: any;
-
 
   constructor(private router: Router) {}
 
@@ -43,9 +45,9 @@ export class EmpresaListComponent {
   navigateTo(option: string) {
     const modalElement = document.getElementById('empresaModal');
     if (modalElement) {
-      const modal = bootstrap.Modal.getInstance(modalElement);  // Obtén la instancia del modal
+      const modal = bootstrap.Modal.getInstance(modalElement); // Obtén la instancia del modal
       if (modal) {
-        modal.hide();  // Cierra el modal
+        modal.hide(); // Cierra el modal
       }
     }
 
