@@ -34,7 +34,7 @@ interface SalidaAgua {
   enfermedadesPorToxicidad: number;
   enfermedadesPorToxicidadPorcentaje: number;
   ecosistemasAcuaticosAfectadosPorEcotoxicidad: number;
-  disminucionBiodiversidadTerrestrePorcentaje:number;
+  disminucionBiodiversidadTerrestrePorcentaje: number;
   ecosistemasAcuaticosAfectadosPorEcotoxicidadPorcentaje: number;
   ecosistemasAcuaticosAfectadosPorEutrofizacion: number;
   ecosistemasAcuaticosAfectadosPorEutrofizacionPorcentaje: number;
@@ -84,6 +84,8 @@ type DatosMensuales = {
 })
 export class CalcularHuellaComponent {
   currentStep: number = 1;
+  prevStep: number = 0;
+  nexStep: number = 2;
   isLoggedIn: boolean = false;
 
   meses = [
@@ -683,11 +685,158 @@ export class CalcularHuellaComponent {
 
   // Inyectar el servicio de Google Sheets en el constructor
   constructor(private router: Router) {
-    this.llenaDatos();
+    window.scrollTo(0, 0);
+    this.cargarDatos();
+    // this.llenaDatos();
     // this.calcularTotalesProduccion();
     this.calculaEntradaAgua();
     this.calculaSalidasAgua();
     this.calculaContaminantes();
+  }
+
+  // Método para guardar datos en el localStorage
+  guardarDatos() {
+    const datosGenerales = {
+      anioMedicion: this.anioMedicion,
+      nombreEmpresa: this.nombreEmpresa,
+      nombreResponsable: this.nombreResponsable,
+      ubicacionMedidaR: this.ubicacionMedidaR,
+      ubicacionMedidaC: this.ubicacionMedidaC,
+      cargoResponsable: this.cargoResponsable,
+      correoResponsable: this.correoResponsable,
+      telefonoResponsable: this.telefonoResponsable,
+    };
+
+    const datosPorAnio = {
+      contaminantes: this.contaminantes,
+      fuentesDeAgua: this.fuentesDeAgua,
+      salidasDeAgua: this.salidasDeAgua,
+      producto: this.producto,
+      descripcion: this.descripcion,
+      unidad: this.unidad,
+      enero: this.enero,
+      febrero: this.febrero,
+      marzo: this.marzo,
+      abril: this.abril,
+      mayo: this.mayo,
+      junio: this.junio,
+      julio: this.julio,
+      agosto: this.agosto,
+      septiembre: this.septiembre,
+      octubre: this.octubre,
+      noviembre: this.noviembre,
+      diciembre: this.diciembre,
+    };
+
+    localStorage.setItem(
+      'calcularHuellaDatosGenerales',
+      JSON.stringify(datosGenerales)
+    );
+
+    const allData = JSON.parse(
+      localStorage.getItem('calcularHuellaDatosPorAnio') || '{}'
+    );
+
+    if (!allData[this.anioMedicion] && this.currentStep == 1) {
+      return;
+    }
+    allData[this.anioMedicion] = datosPorAnio;
+    localStorage.setItem('calcularHuellaDatosPorAnio', JSON.stringify(allData));
+  }
+
+  // Método para cargar datos desde el localStorage
+  cargarDatos(ignoreAnio: boolean = false) {
+    const datosGenerales = JSON.parse(
+      localStorage.getItem('calcularHuellaDatosGenerales') || '{}'
+    );
+
+    if (!ignoreAnio) {
+      this.anioMedicion = datosGenerales.anioMedicion || '';
+    }
+    this.nombreEmpresa = datosGenerales.nombreEmpresa || '';
+    this.nombreResponsable = datosGenerales.nombreResponsable || '';
+    this.ubicacionMedidaR = datosGenerales.ubicacionMedidaR || '';
+    this.ubicacionMedidaC = datosGenerales.ubicacionMedidaC || '';
+    this.cargoResponsable = datosGenerales.cargoResponsable || '';
+    this.correoResponsable = datosGenerales.correoResponsable || '';
+    this.telefonoResponsable = datosGenerales.telefonoResponsable || '';
+
+    const allData = JSON.parse(
+      localStorage.getItem('calcularHuellaDatosPorAnio') || '{}'
+    );
+
+    const datosPorAnio = allData[this.anioMedicion];
+    console.log(this.anioMedicion, datosPorAnio);
+
+    if (datosPorAnio) {
+      this.contaminantes = datosPorAnio.contaminantes || this.contaminantes;
+      this.fuentesDeAgua = datosPorAnio.fuentesDeAgua || this.fuentesDeAgua;
+      this.salidasDeAgua = datosPorAnio.salidasDeAgua || this.salidasDeAgua;
+      this.producto = datosPorAnio.producto || '';
+      this.descripcion = datosPorAnio.descripcion || '';
+      this.unidad = datosPorAnio.unidad || 'ton';
+      this.enero = datosPorAnio.enero || 0;
+      this.febrero = datosPorAnio.febrero || 0;
+      this.marzo = datosPorAnio.marzo || 0;
+      this.abril = datosPorAnio.abril || 0;
+      this.mayo = datosPorAnio.mayo || 0;
+      this.junio = datosPorAnio.junio || 0;
+      this.julio = datosPorAnio.julio || 0;
+      this.agosto = datosPorAnio.agosto || 0;
+      this.septiembre = datosPorAnio.septiembre || 0;
+      this.octubre = datosPorAnio.octubre || 0;
+      this.noviembre = datosPorAnio.noviembre || 0;
+      this.diciembre = datosPorAnio.diciembre || 0;
+    } else {
+      this.contaminantes = this.contaminantes;
+      this.fuentesDeAgua = this.fuentesDeAgua;
+      this.salidasDeAgua = this.salidasDeAgua;
+      this.producto = '';
+      this.descripcion = '';
+      this.unidad = 'ton';
+      this.enero = 0;
+      this.febrero = 0;
+      this.marzo = 0;
+      this.abril = 0;
+      this.mayo = 0;
+      this.junio = 0;
+      this.julio = 0;
+      this.agosto = 0;
+      this.septiembre = 0;
+      this.octubre = 0;
+      this.noviembre = 0;
+      this.diciembre = 0;
+    }
+  }
+
+  limpiaDatosAnioInView() {
+    const allData = JSON.parse(
+      localStorage.getItem('calcularHuellaDatosPorAnio') || '{}'
+    );
+
+    const datosPorAnio = allData[this.anioMedicion];
+    console.log(this.anioMedicion, datosPorAnio);
+
+    if (!datosPorAnio) {
+      this.contaminantes = this.contaminantes;
+      this.fuentesDeAgua = this.fuentesDeAgua;
+      this.salidasDeAgua = this.salidasDeAgua;
+      this.producto = '';
+      this.descripcion = '';
+      this.unidad = 'ton';
+      this.enero = 0;
+      this.febrero = 0;
+      this.marzo = 0;
+      this.abril = 0;
+      this.mayo = 0;
+      this.junio = 0;
+      this.julio = 0;
+      this.agosto = 0;
+      this.septiembre = 0;
+      this.octubre = 0;
+      this.noviembre = 0;
+      this.diciembre = 0;
+    }
   }
 
   llenaDatos() {
@@ -715,6 +864,7 @@ export class CalcularHuellaComponent {
     this.octubre = 506.78;
     this.noviembre = 648.4;
     this.diciembre = 875.56;
+    /*
 
     this.fuentesDeAgua[0].datosMensuales['enero'] = 12.96;
     this.fuentesDeAgua[0].datosMensuales['febrero'] = 11.85;
@@ -1168,7 +1318,9 @@ export class CalcularHuellaComponent {
     this.salidasDeAgua[1].contaminantes[11].datosMensuales['junio'] = 0.097;
     this.salidasDeAgua[1].contaminantes[11].datosMensuales['julio'] = 0.058;
     this.salidasDeAgua[1].contaminantes[11].datosMensuales['agosto'] = 0.059;
-    this.salidasDeAgua[1].contaminantes[11].datosMensuales['septiembre'] = 0.1;
+    this.salidasDeAgua[1].contaminantes[11].datosMensuales[
+      'septiembre'
+    ] = 0.1;
     this.salidasDeAgua[1].contaminantes[11].datosMensuales['octubre'] = 0.042;
     this.salidasDeAgua[1].contaminantes[11].datosMensuales['noviembre'] = 0.076;
     this.salidasDeAgua[1].contaminantes[11].datosMensuales['diciembre'] = 0.048;
@@ -1219,16 +1371,28 @@ export class CalcularHuellaComponent {
     this.salidasDeAgua[1].contaminantes[14].datosMensuales[
       'diciembre'
     ] = 0.00552;
+
+ */
   }
 
   // Método para avanzar al siguiente paso
   nextStep() {
-    this.currentStep++;
+    this.guardarDatos();
+    this.prevStep = this.currentStep;
+    this.nexStep = this.currentStep + 1;
+    this.currentStep = this.nexStep;
+    this.cargarDatos();
+    window.scrollTo(0, 0);
   }
 
   // Método para retroceder al paso anterior
   previousStep() {
-    this.currentStep--;
+    // this.guardarDatos();
+    this.prevStep = this.currentStep;
+    this.nexStep = this.currentStep - 1;
+    this.currentStep = this.nexStep;
+    this.cargarDatos();
+    window.scrollTo(0, 0);
   }
 
   actualizarDatoMensualFuente(nombreFuente: string, mes: string, event: Event) {
@@ -1475,9 +1639,9 @@ export class CalcularHuellaComponent {
         fuente: fuente.nombre,
         total: fuente.total,
         promedio: fuente.promedio.toFixed(6),
-        porcentaje:0,
+        porcentaje: 0,
         disminucionBiodiversidadPlantas: fuente.disminucionBiodiversidadPlantas,
-        disminucionBiodiversidadPlantasPorcentaje: 0
+        disminucionBiodiversidadPlantasPorcentaje: 0,
       });
 
       totales['disminucionBiodiversidadPlantas'] +=
@@ -1757,5 +1921,87 @@ export class CalcularHuellaComponent {
     });
 
     console.log(this.salidasDeAgua);
+  }
+
+  agregarNuevaFuenteAgua() {
+    const nuevaFuente = {
+      nombre: `Agua Potable ${
+        this.fuentesDeAgua.filter((f) => f.categoria === 'ENTRADA AGUA POTABLE')
+          .length + 1
+      }`,
+      uso: 'Sistemas Sanitarios',
+      categoria: 'ENTRADA AGUA POTABLE',
+      datosMensuales: {
+        enero: 0,
+        febrero: 0,
+        marzo: 0,
+        abril: 0,
+        mayo: 0,
+        junio: 0,
+        julio: 0,
+        agosto: 0,
+        septiembre: 0,
+        octubre: 0,
+        noviembre: 0,
+        diciembre: 0,
+      },
+      total: 0,
+      promedio: 0,
+      valor: 0,
+      disminucionBiodiversidadPlantas: 0,
+      disminucionBiodiversidadPlantasPorcentaje: 0,
+    };
+
+    this.fuentesDeAgua.push(nuevaFuente);
+  }
+
+  agregarNuevaSalidaAgua() {
+    const nuevaSalida = {
+      nombre: `Nueva Salida ${this.salidasDeAgua.length + 1}`,
+      proceso: 'Producción',
+      categoria: 'SALIDA AGUA DESCARGADA',
+      datosMensuales: { ...this.datosMensuales } as DatosMensuales,
+      total: 0,
+      promedio: 0,
+      valor: 0,
+      consumida: false,
+      contaminantes: [],
+      toxixidadHumana: 0,
+      ecotoxicidad: 0,
+      eutrofizacion: 0,
+      availableWaterRemainingAware: 0,
+      potencialesImpactosSalud: 0,
+      enfermedadesPorToxicidad: 0,
+      disminucionBiodiversidadTerrestre: 0,
+      ecosistemasAcuaticosAfectadosPorEcotoxicidad: 0,
+      ecosistemasAcuaticosAfectadosPorEutrofizacion: 0,
+
+      toxixidadHumanaPrcentaje: 0,
+      ecotoxicidadPrcentaje: 0,
+      eutrofizacionPrcentaje: 0,
+      availableWaterRemainingAwarePrcentaje: 0,
+      potencialesImpactosSaludPrcentaje: 0,
+      enfermedadesPorToxicidadPrcentaje: 0,
+      disminucionBiodiversidadTerrestrePrcentaje: 0,
+      ecosistemasAcuaticosAfectadosPorEcotoxicidadPrcentaje: 0,
+      ecosistemasAcuaticosAfectadosPorEutrofizacionPrcentaje: 0,
+    };
+
+    this.salidasDeAgua.push(nuevaSalida);
+  }
+
+  onCategoriaChange(salida: SalidaAgua, categoria: string | null): void {
+    if (!categoria) {
+      return;
+    }
+    salida.categoria = categoria;
+    if (
+      categoria === 'SALIDA AGUA DESCARGADA' ||
+      categoria === 'SALIDA AGUA INFILTRADA'
+    ) {
+      salida.contaminantes = this.cloneContaminantes();
+    } else if (categoria === 'AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)') {
+      salida.contaminantes = [];
+    }
   }
 }

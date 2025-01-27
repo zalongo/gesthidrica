@@ -23,9 +23,16 @@ export class ResumenComponent implements OnInit {
     // Acceder a los datos pasados
     this.data = history.state.data; // Obtener 'data' del estado de la navegación
     console.log(this.data); // Verificar que los datos se recibieron correctamente
+    window.scrollTo(0, 0);
   }
 
   generaPdf(): void {
+    const downloadButton = document.getElementById('download-pdf') as HTMLButtonElement;
+    if (downloadButton) {
+      downloadButton.innerText = 'Generando Documento...';
+      downloadButton.disabled = true;
+    }
+
     const content = document.getElementById('graficos-todos');
     if (!content) {
       console.error('El div especificado no existe.');
@@ -83,6 +90,11 @@ export class ResumenComponent implements OnInit {
 
       // Guardamos el PDF con el nombre especificado
       pdf.save('tabla_huella_agua.pdf');
+
+      if (downloadButton) {
+        downloadButton.innerText = 'Descargar PDF';
+        downloadButton.disabled = false;
+      }
     });
 
     /* const tableData: string[][] = [];

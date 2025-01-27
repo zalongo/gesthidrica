@@ -25,6 +25,7 @@ export class DatosMedicionComponent {
   @Input() telefonoResponsable = '';
 
   @Output() onNextStep = new EventEmitter<void>();
+  @Output() onAnioChange = new EventEmitter<void>();
   @Output() medicionHuellaChange = new EventEmitter<string>();
   @Output() anioMedicionChange = new EventEmitter<string>();
   @Output() unidadFuncionalChange = new EventEmitter<string>();
@@ -40,5 +41,9 @@ export class DatosMedicionComponent {
 
   nextStep() {
     this.onNextStep.emit();
+  }
+
+  anioChange() {
+    this.onAnioChange.emit();
   }
 }

@@ -16,6 +16,7 @@
         [(correoResponsable)]="correoResponsable"
         [(telefonoResponsable)]="telefonoResponsable"
         (onNextStep)="nextStep()"
+        (onAnioChange)="cargarDatos(true)"
       ></app-datos-medicion>
     </div>
 
@@ -43,12 +44,29 @@
     </div>
 
     <div *ngIf="currentStep == 3">
-      <div class="mb-5">
+      <div class="mb-5 d-flex justify-content-between align-items-center">
         <h2>Fuentes de Agua</h2>
+     <!--    <button class="btn btn-success" (click)="agregarNuevaFuenteAgua()">
+          <i class="fas fa-plus"></i> Agregar Fuente de Agua Potable
+        </button> -->
       </div>
       <div class="card mb-4" *ngFor="let fuente of fuentesDeAgua">
         <div class="card-header">
-          <h3>{{ fuente.nombre }} - {{ fuente.uso }}</h3>
+         <!--  <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="fuente.nombre"
+            placeholder="Nombre de la Fuente"
+          />
+          <select
+            class="form-control mt-2"
+            [(ngModel)]="fuente.categoria"
+          >
+            <option value="ENTRADA AGUA POTABLE">ENTRADA AGUA POTABLE</option>
+            <option value="ENTRADA AGUA POZO">ENTRADA AGUA POZO</option>
+            <option value="ENTRADA AGUA SUPERFICIAL">ENTRADA AGUA SUPERFICIAL</option>
+          </select> -->
+          <h3>{{ fuente.nombre }} - {{ fuente.categoria }}</h3>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -98,17 +116,37 @@
           Anterior
         </button>
         <button class="btn btn-primary btn-lg" (click)="nextStep()">
-          Siguiente
+          Guardar y Continuar
         </button>
       </div>
     </div>
 
     <div *ngIf="currentStep == 4">
-      <div class="mb-5">
+      <div class="mb-5 d-flex justify-content-between align-items-center">
         <h2>Salidas de Agua</h2>
+        <!-- <button class="btn btn-success" (click)="agregarNuevaSalidaAgua()">
+          <i class="fas fa-plus"></i> Agregar Salida de Agua
+        </button> -->
       </div>
       <div class="card mb-4" *ngFor="let salida of salidasDeAgua">
         <div class="card-header">
+
+                  <!--   <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="salida.nombre"
+            placeholder="Nombre de la Fuente"
+          />
+          <select
+            class="form-control mt-2"
+            [(ngModel)]="salida.categoria"
+          >
+            <option value="SALIDA AGUA DESCARGADA">SALIDA AGUA DESCARGADA</option>
+            <option value="SALIDA AGUA INFILTRADA">SALIDA AGUA INFILTRADA</option>
+            <option value="AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)">AGUA DULCE CONSUMIDA (HUELLA AZUL - WFN)</option>
+          </select> -->
+
+
           <h3>{{ salida.nombre }} - {{ salida.proceso }}</h3>
         </div>
         <div class="card-body">
@@ -159,7 +197,7 @@
           Anterior
         </button>
         <button class="btn btn-primary btn-lg" (click)="nextStep()">
-          Siguiente
+          Guardar y Continuar
         </button>
       </div>
     </div>
@@ -227,7 +265,7 @@
           Anterior
         </button>
         <button class="btn btn-primary btn-lg" (click)="calcular()">
-          Calcular
+          Guardar y Calcular
         </button>
         <!-- <button class="btn btn-success" (click)="download()" [disabled]="!isLoggedIn">Descargar</button> -->
       </div>

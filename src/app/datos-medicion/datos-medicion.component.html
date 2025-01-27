@@ -30,6 +30,7 @@
               class="form-control"
               [(ngModel)]="anioMedicion"
               (ngModelChange)="anioMedicionChange.emit($event)"
+              (change)="anioChange()"
               required
             />
           </div>
@@ -214,6 +215,6 @@
 
   <div class="d-flex justify-content-end my-3">
     <button class="btn btn-primary btn-lg" (click)="nextStep()">
-      Siguiente
+      Guardar y Continuar
     </button>
   </div>
