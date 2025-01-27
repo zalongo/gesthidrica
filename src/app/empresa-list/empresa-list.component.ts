@@ -21,9 +21,9 @@ export class EmpresaListComponent {
     // { nombre: 'Agrícola Tomás Echavarri', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Domingo Guzmán', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola AgroAngol', representante: 'Nombre Apellido', comuna: 'Comuna' },
-    { nombre: 'Agrícola Los Tatas', representante: 'Nombre Apellido', comuna: 'Comuna' },
+    // { nombre: 'Agrícola Los Tatas', representante: 'Nombre Apellido', comuna: 'Comuna' },
     // { nombre: 'Agrícola Santa Marina', representante: 'Nombre Apellido', comuna: 'Comuna' },
-    // { nombre: 'Agrícola David Estrada', representante: 'Nombre Apellido', comuna: 'Comuna' }
+    { nombre: 'Agrícola David Estrada', representante: 'Nombre Apellido', comuna: 'Comuna' }
   ];
 
   selectedEmpresa: any;
