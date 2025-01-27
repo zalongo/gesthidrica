@@ -12,10 +12,10 @@ import { GoogleSheetsService } from '../services/google-sheets.service';
 })
 export class DashboardComponent implements AfterViewInit {
   cards = [
-      {
+    {
       id: 'chart_0',
       title: 'Temperatura',
-      visible: false,
+      visible: true,
       charts: [
         {
           id: 'chart_0',
@@ -44,7 +44,7 @@ export class DashboardComponent implements AfterViewInit {
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
           borderColor: 'rgba(153, 102, 255, 1)',
           sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
-          tab: 'S1!A:D',
+          tab: 'Humedad!A:D',
           index: 2,
           visible: false,
         },
@@ -53,7 +53,7 @@ export class DashboardComponent implements AfterViewInit {
     {
       id: 'chart_2',
       title: 'Velocidad Viento',
-      visible: false,
+      visible: true,
       charts: [
         {
           id: 'chart_2',
@@ -72,7 +72,7 @@ export class DashboardComponent implements AfterViewInit {
     {
       id: 'chart_3',
       title: 'Bateria',
-      visible: false,
+      visible: true,
       charts: [
         {
           id: 'chart_3',
@@ -91,7 +91,7 @@ export class DashboardComponent implements AfterViewInit {
     {
       id: 'chart_4',
       title: 'Humedad aire',
-      visible: false,
+      visible: true,
       charts: [
         {
           id: 'chart_4',
@@ -107,10 +107,11 @@ export class DashboardComponent implements AfterViewInit {
         },
       ],
     },
+
     {
       id: 'chart_5',
       title: 'Precipitación',
-      visible: false,
+      visible: true,
       charts: [
         {
           id: 'chart_5',
@@ -122,14 +123,14 @@ export class DashboardComponent implements AfterViewInit {
           sheet: '1f1j-yBgvjxgeeIb6cDCrd3ucaV1cejKjsKkzs_B99BM',
           tab: 'Estacion!A:H',
           index: 7,
-          visible: false,
+          visible: true,
         },
       ],
     },
     {
       id: 'chart_6',
       title: 'Caudalímetro',
-      visible: false,
+      visible: true,
       charts: [
         {
           id: 'chart_6',
@@ -290,14 +291,23 @@ export class DashboardComponent implements AfterViewInit {
     unit: string = ''
   ) {
     if (data && data.length) {
-      this.dataByVariable[label] = labels.map((dateTime, index) => {
-        return index !== 0 ? {
-          value: data[index],
-          fecha: this.extractDate(dateTime),
-          hora: this.extractTime(dateTime),
-          unit: unit, // Asegura que la unidad esté presente
-        } : null;
-      }).filter(item => item !== null) as { value: number; fecha: string; hora: string; unit: string; }[];
+      this.dataByVariable[label] = labels
+        .map((dateTime, index) => {
+          return index !== 0
+            ? {
+                value: data[index],
+                fecha: this.extractDate(dateTime),
+                hora: this.extractTime(dateTime),
+                unit: unit, // Asegura que la unidad esté presente
+              }
+            : null;
+        })
+        .filter((item) => item !== null) as {
+        value: number;
+        fecha: string;
+        hora: string;
+        unit: string;
+      }[];
     } else {
       console.warn(`No hay datos para almacenar en la variable ${label}`);
     }
